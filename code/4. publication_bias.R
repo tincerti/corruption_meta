@@ -6,12 +6,15 @@ rm(list=ls())
 # Libraries
 library(tidyverse)
 library(metafor)
+library(stargazer)
+library(gridExtra)
+library(ggplotify)
 
 # Data import
 load(file="data/meta_results.RData")
 
 ################################################################################
-# Analysis
+# Funnel Plot Analysis
 ################################################################################
 # Examine number of published articles by field or survey
 # with  group
@@ -19,17 +22,51 @@ sum = meta %>%
   group_by(published, type) %>% 
   summarise (number = n())
 
-# Regression test for funnel plot asymmetry
-regtest = regtest(me_mod, model = "lm", predictor = "sei")
-funnel(me_mod)
-qqnorm(fe_survey)
-qqnorm(fe_field)
-qqnorm(re)
+# Funnel plot for all experiments
+re_funnel = funnel(re, 
+            back = "grey95", col = "steelblue2",
+            digits = c(1,2))
 
-# p-curve
+dev.copy(pdf,'figs/funnel_re_all.pdf')
+dev.off()
+
+# Funnel plot for field experiments
+funnel(re_field, 
+       back = "grey95", col = "steelblue2",
+       digits = c(1,2))
+
+dev.copy(pdf,'figs/funnel_re_field.pdf')
+dev.off()
+
+# Funnel plot for survey experiments
+funnel(fe_survey, 
+       back = "grey95", col = "steelblue2",
+       digits = c(1,2))
+
+funnel(re_survey, 
+       back = "grey95", col = "steelblue2",
+       digits = c(1,2))
+
+dev.copy(pdf,'figs/funnel_re_survey.pdf')
+dev.off()
+
+# Funnel plot with moderator for field experiments
+funnel(me_mod, 
+          back = "grey95", col = "steelblue2",
+          digits = c(1,2))
+
+dev.copy(pdf,'figs/funnel_all_mod.pdf')
+dev.off()
+
+# Regression test for funnel plot asymmetry
+regtest_re = regtest(re, model = "lm", predictor = "sei")
+regtest_mod = regtest(me_mod, model = "lm", predictor = "sei")
+
+regtest_re_survey = regtest(re_survey, model = "lm", predictor = "sei")
+regtest_re_field = regtest(re_field, model = "lm", predictor = "sei")
 
 ################################################################################
-# Plot p-values
+# P-curve
 ################################################################################
 # Calculate p-values from point estimates and standard errors
 meta$p = with(meta, pnorm(ate_vote/se_vote))

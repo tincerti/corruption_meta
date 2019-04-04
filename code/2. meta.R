@@ -68,6 +68,9 @@ meta = meta %>%
   arrange(ate_vote) %>%
   mutate(author_reduced = reorder(author_reduced, -ate_vote))
 
+# Fixed effects model without moderators
+fe = rma.uni(yi = ate_vote, sei = se_vote, data = meta, method = "FE")
+
 # Random effects model without moderators
 re = rma(yi = ate_vote, sei = se_vote, data = meta)
 het_all = re$tau2
@@ -83,5 +86,5 @@ pred = predict(me_mod, newmods = cbind(seq(from = 0, to = 1, by = 1), 0), addx =
 ################################################################################
 # Save information for plotting
 ################################################################################
-save(meta, field, survey, re, me_mod, fe_field, fe_survey, re_field, re_survey, 
+save(meta, field, survey, fe, re, me_mod, fe_field, fe_survey, re_field, re_survey, 
      file = "data/meta_results.RData")
