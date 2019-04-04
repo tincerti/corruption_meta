@@ -1,0 +1,300 @@
+    %!TEX encoding = UTF-8 Unicode 
+\documentclass[usenames,dvipsnames]{beamer}
+
+    \usetheme{metropolis}
+
+   \usecolortheme{seahorse}
+   
+        \usepackage{pgfpages}
+\usepackage{CJKutf8} 
+\usepackage{tcolorbox}
+
+    \setbeamercovered{invisible}
+    \usepackage{tikz}   
+    \usetikzlibrary{shapes,arrows}
+\usepackage{graphicx}% http://ctan.org/pkg/graphicx
+\usepackage{booktabs}
+    \usepackage{framed, color}
+    \definecolor{shadecolor}{rgb}{1, 0.8, 0.3}
+    % To remove the navigation symbols from
+    % the bottom of slides%
+ %\setbeameroption{show notes on second screen}
+%\setbeameroption{show only notes}
+    \setbeamertemplate{navigation symbols}{}
+    %
+  \setbeamercolor{section in head/foot}{fg=black, bg=structure.fg!20!white}
+
+\usepackage[natbibapa]{apacite}
+\bibliographystyle{apacite}
+\bibpunct{(}{)}{;}{a}{}{,}
+
+\usetikzlibrary{calc}
+
+
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=6em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+
+\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
+\newcommand{\DrawBox}[1][]{%
+    \tikz[overlay,remember picture]{
+    \draw[red,#1]
+      ($(left)+(-0.2em,0.9em)$) rectangle
+      ($(right)+(0.2em,-0.3em)$);}
+}
+
+\newenvironment{variableblock}[3]{%
+  \setbeamercolor{block body}{#2}
+  \setbeamercolor{block title}{#3}
+  \begin{block}{#1}}{\end{block}}
+
+\makeatletter
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=1\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}%
+    \insertsectionnavigationhorizontal{0.8\paperwidth }{}{}%
+     \insertframenumber /  \inserttotalframenumber
+ \end{beamercolorbox}}%
+ % \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+   % \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+  \hspace*{2ex} 
+  %\end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+
+\usepackage{graphicx}
+\usepackage[caption=false]{subfig}
+\usepackage{multicol}
+\usepackage{color, colortbl}
+\definecolor{Gray}{gray}{0.9}
+
+%\definecolor{white}{white}{0.9}
+
+%\setbeamercovered{white}
+    %\usepackage{bm} % For typesetting bold math (not \mathbold)
+    %\logo{\includegraphics[height=0.6cm]{yourlogo.eps}}
+\title{Does providing corruption information reduce vote share? A meta-analysis}
+\date{\today} 
+\author{Trevor Incerti}
+\institute{Yale University}
+
+\begin{document}
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+
+\begin{frame}
+\frametitle{Research Question}
+Do voters in democratic countries hold politicians accountable for corruption?
+\pause
+\begin{itemize}
+\item Recent ARPS review (\citet{de2017electoral}): ``Empirical evidence to date is \textcolor{Cerulean}{mixed}, and it often suggests that the electoral punishment of corruption is rather mild.'' 
+\pause
+\item Is evidence actually mixed? What have we learned from a recent explosion of experimental research on this subject?
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{List of experimental studies}
+
+
+\begin{table}[!htbp] \centering 
+  \caption{Field experiments}
+  \label{tab:field} 
+  \small
+\resizebox{\linewidth}{!}{
+\begin{tabular}{@{\extracolsep{0pt}} cccccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ Study & Country & Treatment & Vote share \\ 
+\hline \\[-1.8ex] 
+\citet{arias2018priors} & Mexico & Fliers & Positive \\
+\citet{banerjee2010can}\textsuperscript{1} & India & Newspaper & Null \\
+\citet{banerjee2011informed}\textsuperscript{2} & India & Canvas/Newspaper & Null \\
+\citet{boas2018norms} & Brazil & Fliers & Null \\
+\citet{buntaine2018sms} & Ghana & SMS & Null/Negative \\
+\citet{chong2014does} & Mexico & Fliers & Negative \\
+\citet{de2011voters} & Brazil & Fliers & Null/Negative \\
+\citet{ferraz2008exposing} & Brazil &  Audits & Negative \\ 
+%\citet{humphreys2012policing} & Uganda & Fliers & Negative \\
+\hline \\[-1.8ex] 
+\end{tabular} }
+\end{table} 
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{List of experimental studies}
+
+
+\begin{table}[!htb] \centering 
+  \caption{Survey experiments}
+  \label{tab:survey} 
+  \small
+  \resizebox{\textheight}{!}{
+\begin{tabular}{@{\extracolsep{5pt}} cccccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ Study & Country & Treatment & Vote share \\ 
+\hline \\[-1.8ex] 
+\citet{avenburg2016corruption} & Brazil & Information & Negative \\
+%\citet{anduiza2013turning} & Spain & Information & Negative \\
+\citet{banerjee2014poor} & India & Information & Negative \\
+\citet{breitenstein2019choosing} & Spain & Information & Negative \\
+\citet{boas2018norms} & Brazil & Information & Negative \\
+%\citet{de2011voters} & Brazil & Fliers & Negative \\
+\citet{eggers2018corruption} & UK & Information & Negative \\
+\citet{franchino2015voting} & Italy & Information & Negative \\
+\citet{klavsnja2013economy} & Sweden & Information & Negative \\
+\citet{klavsnja2013economy} & Moldova & Information & Null \\
+\citet{klavsnja2017voters} & Argentina & Information & Negative \\
+\citet{klavsnja2017voters} & Chile & Information & Negative \\
+\citet{klavsnja2017voters} & Uruguay & Information & Negative \\
+\citet{mares2019voting} & Romania & Information & Negative \\
+\citet{vera2017heterogeneous} & Peru & Information & Negative \\
+\citet{winters2013lacking} & Brazil & Information & Negative \\
+\citet{winters2015political} & Brazil & Information & Negative \\
+\citet{winters2016s}\textsuperscript{1} & Brazil & Information & Negative \\
+\citet{weitz2017can}\textsuperscript{1} & Brazil & Information & Negative \\
+\citet{winters2018information} & Argentina & Information & Negative \\
+\hline \\[-1.8ex] 
+\end{tabular}}
+\end{table} 
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Methods}
+
+\begin{frame}
+\frametitle{Meta-Analysis}
+Meta-analysis of all \textcolor{Cerulean}{experimental} studies conducted to date. 
+\pause
+\begin{itemize}
+\item Independent variable: provision of information about corrupt actions of politician.
+\pause
+\item Dependent variable: (incumbent) vote-share.
+\pause
+\item Random assignment of information regarding
+incumbent corruption, followed by measurement of voting outcomes.
+\pause
+\item Excludes experiments that inform all respondents that the politician is corrupt.
+\begin{itemize}
+\item E.g. Compare one type of information provision (e.g. source) to another.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Analytical details}
+\begin{itemize}
+\item Where there are multiple corruption treatments (e.g. varying source of information), I replicate the studies and code corruption as a binary treatment (0 = clean, 1 = corrupt).
+\pause
+\item Studies that use non-binary vote choices are rescaled into a binary vote choice.
+\pause
+\item Point estimates, standard errors and/or confidence intervals are not always explicitly reported (4 cases). In these cases standard errors are estimated by digitally measuring coefficient plots.
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Results}
+
+\begin{frame}
+\frametitle{Results: Field Experiments}
+
+\only<1>{
+\begin{figure}
+\hspace*{-11mm}
+\includegraphics[scale=0.83]{../figs/field.pdf}
+\end{figure}
+}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Results: Survey Experiments}
+
+\only<1>{
+\begin{figure}
+\vspace*{-1cm}
+\hspace*{-11mm}
+\includegraphics[scale=0.83]{../figs/survey.pdf}
+\end{figure}
+}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Results}
+\begin{itemize}
+\item Survey experiments overestimate the ATE of providing corruption information to voters relative to field experiments.
+\pause
+\begin{itemize}
+\item \textcolor{Cerulean}{Fail to reject the null hypothesis} of no treatment effect in field experiments.
+\pause
+\item Corrupt candidates punished by respondents by between \textcolor{Cerulean}{34 percentage points} (random effects) and \textcolor{Cerulean}{36 percentage points} (fixed effects) in survey experiments.
+\pause
+\item 70\% of the total heterogeneity across studies can be accounted for by including a dummy variable for type of experiment.
+\pause
+\item Point estimate of this dummy variable (0 = survey, 1 = field) is equal to 0.33 (significant at 1\% level), while the overall estimate across studies is -.34. 
+
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Discussion}
+
+\begin{frame}
+\frametitle{Discussion}
+What might account for this discrepancy?
+\pause
+\begin{itemize}
+\item Publication bias
+\pause
+\item Social desirability bias
+\pause
+\item Lack of complexity in survey experiments.
+\pause
+\item Analyzing/interpreting results of survey experiments incorrectly. 
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusion}
+
+\begin{frame}
+\frametitle{Conclusion}
+Conclusion here. 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliography{bibliography}
+\end{document}
