@@ -8,6 +8,7 @@
 %\usepackage[OT1]{fontenc}
 \usepackage{setspace}
 \usepackage{enumitem}
+\usepackage[bottom]{footmisc}
 \usepackage{url}
 \usepackage[font={bf}]{caption}
 \usepackage{float}
@@ -168,6 +169,7 @@ By contrast, this meta-analysis suggests that: (1) In aggregate, the effect of p
 
 %A future draft of this paper explores the mechanisms behind these effects, testing for social desirability bias, publication bias, etc. 
 
+
 \section{Corruption information and electoral accountability} \label{sec: information}
 
 Experimental support for the hypothesis that providing voters with information about politicians' corrupt acts decreases their re-election rates is ostensibly mixed. Field experiments have provided some causal evidence that informing voters of candidate corruption has negative effects on candidate vote-share. This information has been provided by: randomized financial audits \citep{ferraz2008exposing}, fliers revealing corrupt actions of politicians, \citep{de2011voters, chong2014does}, and even SMS messages \citep{buntaine2018sms}. However, null findings are also prevalent, and the negative effects reported above sometimes only manifest in particular subgroups. \citet{banerjee2010can} primed voters in rural India not to vote for corrupt candidates, and \citet{banerjee2011informed} provided information on politicians' spending discrepancies, with both studies finding null effects on vote share. \citet{boas2018norms} similarly find null effects from distributing fliers in Brazil. Finally, \citet{arias2018priors, arias2019information} find that providing Mexican voters with information (fliers) about mayoral corruption actually \textit{increased} incumbent party vote share by 3\%.\footnote{The authors theorize that this average effect stems from levels of reported malfeasance actually being lower than voters no-information expectations of corruption.} 
@@ -192,12 +194,6 @@ Economic benefit has been argued to act as a similar mitigating factor.  \citet{
 
 Evidence of co-partisanship as a limiting factor to corruption deterrence is mixed. \citet{anduiza2013turning} and \citet{breitenstein2019choosing} both show that co-partisanship decreases the importance of corruption to Spanish voters using survey experiments. \citet{solaz2018group} induce in-group attachment in a lab-experiment of UK subjects, finding that in-group membership reduces sanction of ``corrupt'' participants. However, \citet{klavsnja2017voters} find relatively small effects of co-partisanship compared to corruption allegations (3.5x) in Argentina, Chile, and Uruguay,\footnote{The authors note that partisan attachments are particularly weak in these three countries.} and \citet{rundquist1977corrupt} find null effects in the US in the 1970s. \citet{konstantinidis2013sources} also find that partisanship does not moderate electoral punishment of corruption in a survey experiment in Greece. This evidence unsurprisingly suggests that strong partisan effects occur where partisan attachments are strongest. Likewise, if co-ethnicity mitigates punishment of corrupt behavior, we may see these effects in highly fractionalized societies.
 
-%\section{Interactions with respondent characteristics}\label{sec: interactions}
-
-%[Gender]
-%[Partisanship]
-%[Education]
-
 \section{Research Design and Methods} \label{sec: Methods}
 
 \subsection{Search methods and criteria for inclusion}\label{sec: criteria}
@@ -209,8 +205,6 @@ Field experiments are included if researchers randomly assigned information rega
 For survey experiments, studies must test a no-information control group versus a corruption information treatment group and measure vote choice for a hypothetical candidate. This necessarily excludes studies that compare one type of information provision (e.g. source) to another and the control group is one type of information rather than no information, or where the politician is always known to be corrupt \citep{konstantinidis2013sources, botero2015says, anduiza2013turning, rundquist1977corrupt, munoz2012voters}. The ``survey experiment'' in \citet{de2011voters} is also excluded as it does not use hypothetical candidates, but instead asks voters if they would have changed their actual voting behavior in response to receiving corruption information.\footnote{This study has a null finding. The overall results are not sensitive to the inclusion of this estimate. See \autoref{fig: meta-field_defig} for meta-analysis including this study.} In many cases, studies have multiple corruption treatments (e.g. high quality information vs. low quality information, co-partisan vs. opposition party, etc.). In these cases, I replicate the studies and code corruption as a binary treatment (0 = clean, 1 = corrupt) where \textit{all} treatment arms that provide corruption information are combined into a single treatment. Studies that use non-binary vote choices are rescaled into a binary vote choice.\footnote{For example, a 1-4 scale is recoded so that 1 or 2 is equal to no vote, and 3 or 4 is equal to a vote.} In some cases, point estimates, standard errors and/or confidence intervals are not explicitly reported (4 cases), and in these cases standard errors are estimated by digitally measuring coefficient plots.\footnote{I recognize that this introduces non-statistical measurement error into the meta-analysis. However, it is not possible for these errors to be large enough to effect the substantive conclusions of the analysis.}
 
 A full list of all studies - disaggregated by field and survey experiments - that meet the criteria outlined above are provided in \autoref{tab:field} and \autoref{tab:survey} below. A list of lab experiments (3 total) can also be found in and \autoref{tab:lab}, although these are not included in the analysis. 
-
-%A causal examination, however, reveals point estimates in line with survey experiments. 
 
 \begin{table}[!htbp] \centering 
   \caption{Field experiments}
