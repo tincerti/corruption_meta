@@ -3,8 +3,8 @@
 ********************************************************************************
 clear all
 
-global import "/Users/trevorincerti/Box Sync/Projects/corruption_meta/data/"
-global export "/Users/trevorincerti/Box Sync/Projects/corruption_meta/figs/"
+global import "/Users/trevorincerti/gitrepos/corruption_meta/data/"
+global export "/Users/trevorincerti/gitrepos/corruption_meta/figs/"
 
 use "${import}/franchino_zucchini.dta"
 
@@ -86,8 +86,8 @@ coefplot (matrix(plot[1,])), ci((plot[5,] plot[6,])) ///
 	ytitle("Probability of voting for corrupt candidate (%)" " ") ///
 	xtitle(" " "Policy platform") ///
 	yline(.5, lstyle(grid)) ///
-	xlabel(, labsize(small)) ///
-	xsize(6) ysize(3) ///
+	xlabel(, labsize(medsmall)) ///
+	xsize(6.6) ysize(3) ///
 	color(midblue) ciopts(lcolor(gs10))
 
 * Export plot
