@@ -22,6 +22,7 @@
 \usepackage{amsmath} 
 \usepackage{authblk}
 \usepackage{xcolor}
+\usepackage{blindtext}
 %\usepackage[varg]{txfonts}  Older version of ``g'' in math.
 
 % bibliography packages
@@ -140,7 +141,7 @@
 \begin{document}
 \singlespace
 \title{\textbf{Does providing corruption information reduce vote share? A meta-analysis}\vspace{-1ex}\thanks{}}
-% I would like to thank Alex Coppock, Joshua Kalla, Frances Rosenbluth, Radha Sarkar, and Fredrik Sävje for exceptionally helpful feedback and suggestions.
+% I would like to thank Alex Coppock, Joshua Kalla, Dan Mattingly, Frances Rosenbluth, Radha Sarkar, and Fredrik Sävje for exceptionally helpful feedback and suggestions.
 \author{Trevor Incerti\thanks{trevor.incerti@yale.edu}\vspace{-1ex}}
 \affil{\textit{Yale University}\vspace{-2.5ex}}
 \date{\today}
@@ -165,7 +166,7 @@ Competitive elections create a system whereby voters can hold policy makers acco
 
 Numerous experiments have examined whether providing voters with information about the corrupt acts of politicians decreases their re-election rates. Literature reviews preceding these projects often indicate that there is little consensus on how voters respond to information about corrupt politicians \citep{botero2015says, buntaine2018sms, arias2018priors, klavsnja2017voters, solaz2018group, de2017electoral}. Others indicate that experiments have provided us with evidence that voters strongly punish individual politicians involved in malfeasance \citep{chong2014does, winters2015political, winters2016s, weitz2017can}.
 
-By contrast, this meta-analysis suggests that: (1) In aggregate, the effect of providing information about incumbent corruption on incumbent vote share in field experiments is null, and (2) compared to field experiments, survey experiments vastly overestimate the negative effects of corruption information on electoral outcomes. I also examine the mechanisms that may give rise to this discrepancy, exploring the possibility of publication bias, social desirability bias, lack of complexity and/or realism of hypothetical vignettes, and misinterpretation of results from conjoint experiments. I find no evidence of publication bias, implying that the discrepancy arises due to differences in experimental design. Social desirability bias may cause survey experiments to capture anti-corruption norms rather than realistic voter behavior, and the same norms may cause voters to select a clean candidate in a simple hypothetical vignette where respondents lacks information. Conjoint experiments attempt to alleviate this issue, but are often analyzed in ways that fail to illuminate the most substantively important comparisons.  
+By contrast, this meta-analysis suggests that: (1) In aggregate, the effect of providing information about incumbent corruption on incumbent vote share in field experiments is null, and (2) compared to field experiments, survey experiments vastly overestimate the negative effects of corruption information on electoral outcomes. I also examine the mechanisms that may give rise to this discrepancy, exploring the possibility of publication bias, social desirability bias, lack of complexity and/or realism of hypothetical vignettes, and misinterpretation of results from conjoint experiments. I find no evidence of publication bias, implying that the discrepancy arises due to differences in experimental design. Social desirability bias may cause survey experiments to capture anti-corruption norms rather than realistic voter behavior, and the same norms may cause voters to select a clean candidate in a simple hypothetical vignette where respondents lack information. Conjoint experiments attempt to alleviate this issue, but are often analyzed in ways that may fail to illuminate the most substantively important comparisons.  
 
 %A future draft of this paper explores the mechanisms behind these effects, testing for social desirability bias, publication bias, etc. 
 
@@ -174,7 +175,7 @@ By contrast, this meta-analysis suggests that: (1) In aggregate, the effect of p
 
 Experimental support for the hypothesis that providing voters with information about politicians' corrupt acts decreases their re-election rates is ostensibly mixed. Field experiments have provided some causal evidence that informing voters of candidate corruption has negative effects on candidate vote-share. This information has been provided by: randomized financial audits \citep{ferraz2008exposing}, fliers revealing corrupt actions of politicians, \citep{de2011voters, chong2014does}, and even SMS messages \citep{buntaine2018sms}. However, null findings are also prevalent, and the negative effects reported above sometimes only manifest in particular subgroups. \citet{banerjee2010can} primed voters in rural India not to vote for corrupt candidates, and \citet{banerjee2011informed} provided information on politicians' spending discrepancies, with both studies finding null effects on vote share. \citet{boas2018norms} similarly find null effects from distributing fliers in Brazil. Finally, \citet{arias2018priors, arias2019information} find that providing Mexican voters with information (fliers) about mayoral corruption actually \textit{increased} incumbent party vote share by 3\%.\footnote{The authors theorize that this average effect stems from levels of reported malfeasance actually being lower than voters no-information expectations of corruption.} 
 
-Survey experiments paint a much more optimistic picture, consistently showing large negative effects from information treatments on hypothetical vote share. These experiments often manipulate moderating factors other than information provision (e.g. quality of information, source of information, whether the candidate is a co-partisan or co-ethnic, whether corruption brings economic benefits, etc.), but even so systematically show negative treatment effects \citep{avenburg2016corruption, anduiza2013turning, boas2018norms, breitenstein2019choosing, de2011voters, eggers2018corruption, franchino2015voting, klavsnja2013economy, klavsnja2017voters, vera2017heterogeneous, winters2013lacking, winters2015political, weitz2017can}.\footnote{These experiments have historically taken the form of single treatment arm or multiple arm factorial vignettes, but more recently have tended toward conjoint experiments \citep{mares2019voting, klavsnja2017voters, franchino2015voting, breitenstein2019choosing}.} \citet{boas2018norms} note differential results that they obtain from a field and survey experiment (null in field, negative in survey), arguing that this may reflects that norms against malfeasance in Brazil may not translate into action in real life. Meta-analysis confirms that this is not only the case for their experiment in Brazil, but extends across a systematic review of all studies conducted to date. Lab experiments that reveal corrupt actions to fellow players appear to have a similar bias to survey experiments, and also tend to show large negative treatment effects \citep{arvate2017condemning, azfar2007transparency, solaz2018group}.
+Survey experiments paint a much more optimistic picture, consistently showing large negative effects from information treatments on hypothetical vote share. These experiments often manipulate moderating factors other than information provision (e.g. quality of information, source of information, whether the candidate is a co-partisan or co-ethnic, whether corruption brings economic benefits, etc.), but even so systematically show negative treatment effects \citep{avenburg2016corruption, anduiza2013turning, banerjee2014poor, breitenstein2019choosing, boas2018norms, eggers2018corruption, franchino2015voting, klavsnja2013economy, klavsnja2017voters, mares2019voting, vera2017heterogeneous, winters2013lacking, winters2015political, winters2016s, weitz2017can, winters2018information}.\footnote{These experiments have historically taken the form of single treatment arm or multiple arm factorial vignettes, but more recently have tended toward conjoint experiments \citep{mares2019voting, klavsnja2017voters, franchino2015voting, breitenstein2019choosing}.} \citet{boas2018norms} note differential results that they obtain from a field and survey experiment (null in field, negative in survey), arguing that this may reflects that norms against malfeasance in Brazil may not translate into action in real life. Meta-analysis confirms that this is not only the case for their experiment in Brazil, but extends across a systematic review of all studies conducted to date. Lab experiments that reveal corrupt actions to fellow players appear to have a similar bias to survey experiments, and also tend to show large negative treatment effects \citep{arvate2017condemning, azfar2007transparency, solaz2018group}.
 
 
 
@@ -296,7 +297,7 @@ Based on the meta-analyses shown in \autoref{fig: meta-field} and \autoref{fig: 
 
 By contrast, holding other candidate features fixed by design, corrupt candidates are punished by respondents by approximately 36 percentage points in survey experiments based on fixed effects meta-analysis and 34 percentage points using random effects meta-analysis. Of the 17 survey experiments, only one shows a null effect \citep{klavsnja2013economy}, while all others are negative and significantly different from zero at conventional levels. Overall, these studies indicate a large electoral penalty for engaging in corrupt acts when voters are made aware of the malfeasance, but these results may not be reflective of real-world voter behavior. 
 
-Examining all studies together, a test for heterogeneity by type of experiment (field or survey) reveals that up to 70\% of the total heterogeneity across studies can be accounted for by including a dummy variable for type of experiment (0 = survey, 1 = field) in the model. This dummy variable has a significant influence on the effectiveness of the information treatment at the 1\% level. In fact, the point estimate of this dummy variable is equal to 0.33, while the overall estimate across studies is -.34, implying that the predicted treatment effect across experiments is not significantly different from zero when an indicator for type of experiment is included in the model. 
+Examining all studies together, a test for heterogeneity by type of experiment (field or survey) reveals that up to 70\% of the total heterogeneity across studies can be accounted for by including a dummy variable for type of experiment (0 = survey, 1 = field) in the model. This dummy variable has a significant influence on the effectiveness of the information treatment at the 1\% level. In fact, the point estimate of this dummy variable is equal to 0.33, while the overall estimate across studies is -.34,\footnote{Using a mixed effects model with with a field experiment moderator.} implying that the predicted treatment effect across experiments is not significantly different from zero when an indicator for type of experiment is included in the model. 
 
 \section{Discussion} \label{sec: discussion}
 
@@ -452,11 +453,12 @@ These findings suggest that while vote-choice survey experiments may provide inf
 \label{fig: funnel_re_survey}
 \end{figure}
 
-\begin{table}[!htbp] \centering 
+\begin{table}[ht] \centering 
   \caption{Regression tests for funnel plot asymmetry}
   \label{tab: funnel} 
   \small
-\begin{tabular}{@{\extracolsep{5pt}} cccccccc} 
+  \vspace{0.5cm}
+\begin{tabular}{@{\extracolsep{88pt}} cccccccc} 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
  Studies included & p-value \\ 
@@ -466,6 +468,7 @@ All with moderator & 0.4512  \\
 Field &  0.8403  \\
 Survey & 0.3159  \\
 \hline \\[-1.8ex] 
+\vspace{128in}
 \end{tabular} 
 \end{table} 
 \FloatBarrier
