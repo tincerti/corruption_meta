@@ -8,6 +8,7 @@
         \usepackage{pgfpages}
 \usepackage{CJKutf8} 
 \usepackage{tcolorbox}
+\usepackage[textfont={small}]{caption}
 
     \setbeamercovered{invisible}
     \usepackage{tikz}   
@@ -188,12 +189,14 @@ Do voters in democratic countries hold politicians accountable for corruption?
 Meta-analysis of all \textcolor{Cerulean}{experimental} studies conducted to date. 
 \pause
 \begin{itemize}
-\item Independent variable: provision of information about corrupt actions of politician.
+\item \textcolor{Cerulean}{Treatment}: corruption information provision. 
 \pause
-\item Dependent variable: (incumbent) vote-share.
+\item \textcolor{Cerulean}{Outcome}: (incumbent) vote-share.
 \pause
 \item Random assignment of information regarding
 incumbent corruption, followed by measurement of voting outcomes.
+\pause
+\item Includes both \textcolor{Cerulean}{published articles and working papers}.
 \pause
 \item Excludes experiments that inform all respondents that the politician is corrupt.
 \begin{itemize}
@@ -262,7 +265,9 @@ incumbent corruption, followed by measurement of voting outcomes.
 \item 70\% of the total heterogeneity across studies can be accounted for by including a dummy variable for type of experiment.
 \pause
 \item Point estimate of this dummy variable (0 = survey, 1 = field) is equal to 0.33 (significant at 1\% level), while the overall estimate across studies is -.34. 
-
+\begin{itemize}
+\item Mixed effects meta-analysis with moderator. 
+\end{itemize}
 \end{itemize}
 \end{itemize}
 \end{frame}
@@ -275,7 +280,7 @@ incumbent corruption, followed by measurement of voting outcomes.
 What might account for this discrepancy?
 \pause
 \begin{itemize}
-\item Publication bias
+\item Publication bias and/or p-hacking
 \pause
 \item Social desirability bias
 \pause
@@ -287,12 +292,133 @@ What might account for this discrepancy?
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Publication bias and p-hacking}
+\textcolor{Cerulean}{Little evidence of publication bias} within survey experiments:
+\pause
+\begin{itemize}
+\item P-curve - virtually all results significant at 1\% level (not clustered around 0.05).
+\pause
+\item Tests for funnel plot asymmetry. 
+\end{itemize}
+\pause
+Unclear with field experiments
+\begin{itemize}
+\item Five of eight papers published. Three unpublished papers all have null findings. 
+\pause
+\item Not enough data for formal tests. 
+\end{itemize}
+\pause
+But, \textcolor{Cerulean}{differences in experimental design} likely account for the difference in the magnitude of treatment effects.
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Social desirability bias}
+\begin{itemize}
+\pause
+\item Anti-corruption norms exist in most countries.
+\begin{itemize}
+\pause
+\item No costs to selecting the socially desirable option in hypothetical vignette. 
+\pause
+\item In actual election voters may discount information, or have strong material/ideological incentives to stick with candidate.
+\end{itemize}
+\pause
+\item How to overcome social desirability bias in survey experiments?
+\begin{itemize}
+\pause
+\item Perform experiments during \textcolor{Cerulean}{actual elections} using real candidates.
+\pause
+\item Use \textcolor{Cerulean}{list experiments}, which have been shown to make a difference in admission to vote-buying \citep{gonzalez2012vote}.
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Survey complexity and conjoint experiments}
+Randomizing more candidate characteristics may more adequately capture moderating factors and reduce social desirability bias.
+\begin{itemize}
+\pause
+\item But may be best not to compare magnitudes of individual AMCEs (e.g. corruption AMCE vs. partisan AMCE). 
+\pause
+\item Instead, compare the probability of voting for a candidate with outlier characteristics such as corruption to the probability of voting for a realistic candidate without this characteristic.
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Survey complexity and conjoint experiments}
+
+\begin{figure}[!hb]
+\hspace*{-11mm}
+\includegraphics[scale = 0.77]{../figs/fz_margins_right.pdf}
+\vspace{0.2cm}
+\caption{\citet{franchino2015voting} conjoint: can policy positions overcome corruption (conservative respondents)?}
+\small
+\vspace{-0.3cm}
+\label{fig: fz_margins_right}
+\end{figure}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Survey complexity and conjoint experiments}
+
+
+\begin{figure}[!hb]
+\hspace*{-11mm}
+\includegraphics[scale = 0.77]{../figs/fz_margins_left.pdf}
+\vspace{0.2cm}
+\caption{\citet{franchino2015voting} conjoint: can policy positions overcome corruption (liberal respondents)?}
+\small
+\vspace{-0.5cm}
+\label{fig: fz_margins_left}
+\end{figure}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
 
 \begin{frame}
 \frametitle{Conclusion}
-Conclusion here. 
+\begin{itemize}
+\pause
+\item Effect of corruption information on vote-choice \textcolor{Cerulean}{differs drastically} between field and survey experiments.
+\begin{itemize}
+\pause
+\item \textcolor{Cerulean}{Null} in field experiments.
+\item \textcolor{Cerulean}{-34 to -36 percentage points} in survey experiments. 
+\end{itemize}
+\pause
+\item Discrepancy does not seem to be driven by publication bias/p-hacking.
+\pause
+\item May arise from social desirability bias, lack of complexity and/or realism of hypothetical vignettes, and misinterpretation of results from conjoint experiments.
+
+\end{itemize}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Conclusion}
+\begin{itemize}
+\item Vote-choice survey experiments may provide information on the directionality of informational treatments, but point estimates they provide may not be representative of real-world voting behavior. 
+\pause
+\item Researchers should exercise caution when interpreting actions taken in hypothetical vignettes as indicative of real world behavior such as voting. 
+\end{itemize}
+
+\end{frame}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

@@ -12,17 +12,17 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibliography.bib
-I was expecting a `,' or a `}'---line 498 of file bibliography.bib
+I was expecting a `,' or a `}'---line 529 of file bibliography.bib
  :   
  :   url={http://www.lokniti.org/pdf/all-india-findings.pdf}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 520 of file bibliography.bib
+I was expecting a `,' or a `}'---line 551 of file bibliography.bib
  :   
  :   url={http://www.lokniti.org/media/PDF-upload/1536130357_23397100_download_report.pdf}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Repeated entry---line 534 of file bibliography.bib
+Repeated entry---line 565 of file bibliography.bib
  : @article{mares2019voting
  :                         ,
 I'm skipping whatever remains of this entry
@@ -30,45 +30,45 @@ apacite.bst [2013/07/21 v6.03 APA bibliography style]
 Warning--No address in arias2018priors
 Warning--No school in avenburg2016corruption
 Warning--No journal in klavsnja2017voters
-You've used 23 entries,
+You've used 24 entries,
             6951 wiz_defined-function locations,
-            1398 strings with 15042 characters,
-and the built_in function-call counts, 48219 in all, are:
-= -- 5935
-> -- 384
-< -- 2569
-+ -- 2637
-- -- 46
-* -- 3241
-:= -- 9359
-add.period$ -- 95
-call.type$ -- 23
-change.case$ -- 392
+            1404 strings with 15270 characters,
+and the built_in function-call counts, 50627 in all, are:
+= -- 6217
+> -- 411
+< -- 2695
++ -- 2779
+- -- 48
+* -- 3408
+:= -- 9801
+add.period$ -- 99
+call.type$ -- 24
+change.case$ -- 409
 chr.to.int$ -- 0
-cite$ -- 49
-duplicate$ -- 1168
-empty$ -- 1710
-format.name$ -- 656
-if$ -- 8860
+cite$ -- 51
+duplicate$ -- 1246
+empty$ -- 1794
+format.name$ -- 706
+if$ -- 9295
 int.to.chr$ -- 0
-int.to.str$ -- 69
+int.to.str$ -- 72
 missing$ -- 0
-newline$ -- 590
-num.names$ -- 184
-pop$ -- 638
+newline$ -- 620
+num.names$ -- 192
+pop$ -- 669
 preamble$ -- 1
-purify$ -- 92
+purify$ -- 96
 quote$ -- 0
-skip$ -- 3025
+skip$ -- 3164
 stack$ -- 0
-substring$ -- 2816
-swap$ -- 688
-text.length$ -- 46
+substring$ -- 2966
+swap$ -- 731
+text.length$ -- 48
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 1968
+type$ -- 2048
 warning$ -- 3
-while$ -- 217
+while$ -- 233
 width$ -- 0
-write$ -- 757
+write$ -- 800
 (There were 3 error messages)
