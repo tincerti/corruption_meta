@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  9 APR 2019 13:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  9 APR 2019 14:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -851,7 +851,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 478.
 Here is how much of TeX's memory you used:
  11810 strings out of 492995
  174226 string characters out of 6132704
- 380955 words of memory out of 5000000
+ 379955 words of memory out of 5000000
  15003 multiletter control sequences out of 15000+600000
  25164 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -866,7 +866,7 @@ pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
 fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
 
-Output written on corruption_voting_meta.pdf (28 pages, 317169 bytes).
+Output written on corruption_voting_meta.pdf (28 pages, 317065 bytes).
 PDF statistics:
  695 PDF objects out of 1000 (max. 8388607)
  617 compressed objects within 7 object streams
