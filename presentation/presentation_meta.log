@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  10 APR 2019 14:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  10 APR 2019 14:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2232,10 +2232,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 28404 strings out of 492995
- 577154 string characters out of 6132704
+ 28396 strings out of 492995
+ 576963 string characters out of 6132704
  686841 words of memory out of 5000000
- 31176 multiletter control sequences out of 15000+600000
+ 31168 multiletter control sequences out of 15000+600000
  12801 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,16n,97p,1880b,817s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2246,7 +2246,7 @@ sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></
 usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></
 usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
 sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on presentation_meta.pdf (59 pages, 281702 bytes).
+Output written on presentation_meta.pdf (59 pages, 281371 bytes).
 PDF statistics:
  811 PDF objects out of 1000 (max. 8388607)
  708 compressed objects within 8 object streams
