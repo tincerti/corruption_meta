@@ -22,53 +22,46 @@ I was expecting a `,' or a `}'---line 551 of file bibliography.bib
  :   url={http://www.lokniti.org/media/PDF-upload/1536130357_23397100_download_report.pdf}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Repeated entry---line 565 of file bibliography.bib
- : @article{mares2019voting
- :                         ,
-I'm skipping whatever remains of this entry
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
-Warning--No address in arias2018priors
-Warning--No school in avenburg2016corruption
-Warning--No journal in klavsnja2017voters
-You've used 24 entries,
+You've used 3 entries,
             6951 wiz_defined-function locations,
-            1404 strings with 15270 characters,
-and the built_in function-call counts, 50627 in all, are:
-= -- 6217
-> -- 411
-< -- 2695
-+ -- 2779
-- -- 48
-* -- 3408
-:= -- 9801
-add.period$ -- 99
-call.type$ -- 24
-change.case$ -- 409
+            1291 strings with 11360 characters,
+and the built_in function-call counts, 6236 in all, are:
+= -- 750
+> -- 55
+< -- 312
++ -- 336
+- -- 6
+* -- 425
+:= -- 1214
+add.period$ -- 12
+call.type$ -- 3
+change.case$ -- 51
 chr.to.int$ -- 0
-cite$ -- 51
-duplicate$ -- 1246
-empty$ -- 1794
-format.name$ -- 706
-if$ -- 9295
+cite$ -- 6
+duplicate$ -- 162
+empty$ -- 229
+format.name$ -- 98
+if$ -- 1139
 int.to.chr$ -- 0
-int.to.str$ -- 72
+int.to.str$ -- 9
 missing$ -- 0
-newline$ -- 620
-num.names$ -- 192
-pop$ -- 669
+newline$ -- 83
+num.names$ -- 24
+pop$ -- 78
 preamble$ -- 1
-purify$ -- 96
+purify$ -- 12
 quote$ -- 0
-skip$ -- 3164
+skip$ -- 386
 stack$ -- 0
-substring$ -- 2966
-swap$ -- 731
-text.length$ -- 48
+substring$ -- 360
+swap$ -- 101
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 2048
-warning$ -- 3
-while$ -- 233
+type$ -- 240
+warning$ -- 0
+while$ -- 30
 width$ -- 0
-write$ -- 800
-(There were 3 error messages)
+write$ -- 107
+(There were 2 error messages)

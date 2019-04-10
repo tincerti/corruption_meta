@@ -91,7 +91,7 @@ survey = rbind(survey, meta_fe, meta_re)
 survey$author_reduced = fct_relevel(survey$author_reduced, "Fixed effects model", after = 0)
 survey$author_reduced = fct_relevel(survey$author_reduced, "Random effects model", after = 0)
 
-# Plot field results
+# Plot survey results
 ggplot(survey, aes(ate_vote, author_reduced)) +
   geom_point(color = "steelblue2", size = 1.5) + 
   geom_point(data = subset(survey, 

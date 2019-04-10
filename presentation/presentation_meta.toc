@@ -2,4 +2,4 @@
 \beamer@sectionintoc {2}{Methods}{7}{0}{2}
 \beamer@sectionintoc {3}{Results}{17}{0}{3}
 \beamer@sectionintoc {4}{Discussion}{25}{0}{4}
-\beamer@sectionintoc {5}{Conclusion}{49}{0}{5}
+\beamer@sectionintoc {5}{Conclusion}{50}{0}{5}
