@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  9 APR 2019 14:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  10 APR 2019 13:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -729,13 +729,13 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <7> not available
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
  [4] [5]
-[6] [7] <../figs/field.pdf, id=376, 433.62pt x 252.945pt>
+[6] [7] <../figs/field.pdf, id=382, 433.62pt x 252.945pt>
 File: ../figs/field.pdf Graphic file (type pdf)
 
 <use ../figs/field.pdf>
 Package pdftex.def Info: ../figs/field.pdf used on input line 279.
 (pdftex.def)             Requested size: 433.61894pt x 252.94438pt.
- <../figs/survey.pdf, id=377, 433.62pt x 289.08pt>
+ <../figs/survey.pdf, id=383, 433.62pt x 289.08pt>
 File: ../figs/survey.pdf Graphic file (type pdf)
 
 <use ../figs/survey.pdf>
@@ -744,7 +744,7 @@ Package pdftex.def Info: ../figs/survey.pdf used on input line 288.
  [8] [9] [10 <../figs/field.pdf> <../figs/survey.pdf>]
 [11
 
-] [12] [13] <../figs/fz_margins_right.pdf, id=468, 476.98201pt x 216.81pt>
+] [12] [13] <../figs/fz_margins_right.pdf, id=474, 476.98201pt x 216.81pt>
 File: ../figs/fz_margins_right.pdf Graphic file (type pdf)
 
 <use ../figs/fz_margins_right.pdf>
@@ -755,7 +755,7 @@ Overfull \hbox (7.22581pt too wide) in paragraph at lines 332--334
 [][]
  []
 
-<../figs/fz_margins_left.pdf, id=473, 476.98201pt x 216.81pt>
+<../figs/fz_margins_left.pdf, id=479, 476.98201pt x 216.81pt>
 File: ../figs/fz_margins_left.pdf Graphic file (type pdf)
 
 <use ../figs/fz_margins_left.pdf>
@@ -770,21 +770,21 @@ Overfull \hbox (7.22581pt too wide) in paragraph at lines 341--343
 [17] (./corruption_voting_meta.bbl [18
 
 ] [19] [20]) [21] [22]
-<../figs/field_no_banerjee.pdf, id=549, 433.62pt x 252.945pt>
+<../figs/field_no_banerjee.pdf, id=555, 433.62pt x 252.945pt>
 File: ../figs/field_no_banerjee.pdf Graphic file (type pdf)
 
 <use ../figs/field_no_banerjee.pdf>
 Package pdftex.def Info: ../figs/field_no_banerjee.pdf used on input line 400.
 (pdftex.def)             Requested size: 403.26244pt x 235.23642pt.
 
-<../figs/survey_defig.pdf, id=558, 433.62pt x 289.08pt>
+<../figs/survey_defig.pdf, id=564, 433.62pt x 289.08pt>
 File: ../figs/survey_defig.pdf Graphic file (type pdf)
 
 <use ../figs/survey_defig.pdf>
 Package pdftex.def Info: ../figs/survey_defig.pdf used on input line 407.
 (pdftex.def)             Requested size: 403.26244pt x 268.84161pt.
  [23 <../figs/field_no_banerjee.pdf> <../figs/survey_defig.pdf>] <../figs/funne
-l_re_all.pdf, id=588, 505.89pt x 505.89pt>
+l_re_all.pdf, id=594, 505.89pt x 505.89pt>
 File: ../figs/funnel_re_all.pdf Graphic file (type pdf)
 
 <use ../figs/funnel_re_all.pdf>
@@ -795,7 +795,7 @@ Overfull \hbox (36.13373pt too wide) in paragraph at lines 421--423
 [][]
  []
 
-<../figs/funnel_all_mod.pdf, id=589, 505.89pt x 505.89pt>
+<../figs/funnel_all_mod.pdf, id=595, 505.89pt x 505.89pt>
 File: ../figs/funnel_all_mod.pdf Graphic file (type pdf)
 
 <use ../figs/funnel_all_mod.pdf>
@@ -806,7 +806,7 @@ Overfull \hbox (36.13373pt too wide) in paragraph at lines 430--432
 [][]
  []
 
-<../figs/funnel_re_field.pdf, id=590, 505.89pt x 505.89pt>
+<../figs/funnel_re_field.pdf, id=596, 505.89pt x 505.89pt>
 File: ../figs/funnel_re_field.pdf Graphic file (type pdf)
 
 <use ../figs/funnel_re_field.pdf>
@@ -817,7 +817,7 @@ Overfull \hbox (36.13373pt too wide) in paragraph at lines 439--441
 [][]
  []
 
-<../figs/funnel_re_survey.pdf, id=591, 505.89pt x 505.89pt>
+<../figs/funnel_re_survey.pdf, id=597, 505.89pt x 505.89pt>
 File: ../figs/funnel_re_survey.pdf Graphic file (type pdf)
 
 <use ../figs/funnel_re_survey.pdf>
@@ -849,13 +849,13 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 478.
 ### semi simple group (level 1) entered at line 155 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 11810 strings out of 492995
- 174226 string characters out of 6132704
- 379955 words of memory out of 5000000
- 15003 multiletter control sequences out of 15000+600000
+ 11822 strings out of 492995
+ 174548 string characters out of 6132704
+ 380065 words of memory out of 5000000
+ 15013 multiletter control sequences out of 15000+600000
  25164 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,12n,70p,2004b,701s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,12n,70p,2026b,701s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
@@ -866,10 +866,10 @@ pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
 fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
 
-Output written on corruption_voting_meta.pdf (28 pages, 317065 bytes).
+Output written on corruption_voting_meta.pdf (28 pages, 318495 bytes).
 PDF statistics:
- 695 PDF objects out of 1000 (max. 8388607)
- 617 compressed objects within 7 object streams
- 114 named destinations out of 1000 (max. 500000)
+ 702 PDF objects out of 1000 (max. 8388607)
+ 624 compressed objects within 7 object streams
+ 116 named destinations out of 1000 (max. 500000)
  115 words of extra memory for PDF output out of 10000 (max. 10000000)
 

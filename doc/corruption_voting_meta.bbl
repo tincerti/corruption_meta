@@ -375,6 +375,36 @@ Buntaine, M\BPBI T.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Chauchard%
+, Klasnja%
+\BCBL {}\ \BBA {} Harish%
+}{%
+Chauchard%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2017}}%
+}]{%
+chauchard2017limited}
+\APACinsertmetastar {%
+chauchard2017limited}%
+\begin{APACrefauthors}%
+Chauchard, S.%
+, Klasnja, M.%
+\BCBL {}\ \BBA {} Harish, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The limited impact of information on political
+  accountability: An experiment on financial disclosures in India} {The limited
+  impact of information on political accountability: An experiment on financial
+  disclosures in india}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Unpublished manuscript). Dartmouth College, Hanover,
+  NH}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Chong%
 , De~La~O%
 , Karlan%
@@ -1016,6 +1046,30 @@ Weitz-Shapiro, R.%
   punishment of corruption in brazil}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{The Journal of Politics}{79}{1}{60--74}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Weschle%
+}{%
+Weschle%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+weschle2016punishing}
+\APACinsertmetastar {%
+weschle2016punishing}%
+\begin{APACrefauthors}%
+Weschle, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Punishing personal and electoral corruption:
+  Experimental evidence from India} {Punishing personal and electoral
+  corruption: Experimental evidence from india}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Research \& Politics}{3}{2}{2053168016645136}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  9 APR 2019 14:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  10 APR 2019 13:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1748,18 +1748,18 @@ thkerncmss.
 ) [2
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 106
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 108
 .
-LaTeX Font Info:    No file OMScmss.fd. on input line 106.
+LaTeX Font Info:    No file OMScmss.fd. on input line 108.
 
 
 LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 106.
+(Font)              for symbol `textbullet' on input line 108.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 106.
+(Font)              size <5> substituted on input line 108.
 
 
 Overfull \hbox (5.33331pt too wide) has occurred while \output is active
@@ -1789,18 +1789,14 @@ Overfull \hbox (5.33331pt too wide) has occurred while \output is active
 
 [6
 
+] [7
+
 ]
-Overfull \vbox (9.69424pt too high) detected at line 182
- []
-
-
 Overfull \hbox (5.33331pt too wide) has occurred while \output is active
 [][]|  
  []
 
-[7
-
-] [8
+[8
 
 ]
 Overfull \hbox (5.33331pt too wide) has occurred while \output is active
@@ -1858,28 +1854,43 @@ Overfull \hbox (5.33331pt too wide) has occurred while \output is active
 
 [16
 
-]
-Overfull \hbox (5.33331pt too wide) has occurred while \output is active
-[][]|  
- []
+] [17
 
-[17
-
-] [18
-
-] <../figs/field.pdf, id=282, 433.62pt x 252.945pt>
+] <../figs/field.pdf, id=221, 433.62pt x 252.945pt>
 File: ../figs/field.pdf Graphic file (type pdf)
 
 <use ../figs/field.pdf>
-Package pdftex.def Info: ../figs/field.pdf used on input line 237.
+Package pdftex.def Info: ../figs/field.pdf used on input line 163.
 (pdftex.def)             Requested size: 359.90451pt x 209.94429pt.
 
-Overfull \hbox (23.74995pt too wide) in paragraph at lines 237--237
+Overfull \hbox (23.74995pt too wide) in paragraph at lines 163--163
  |  [] 
  []
 
 
-Overfull \vbox (10.58829pt too high) detected at line 237
+Overfull \vbox (10.58829pt too high) detected at line 163
+ []
+
+
+Overfull \hbox (5.33331pt too wide) has occurred while \output is active
+[][]|  
+ []
+
+[18
+
+ <../figs/field.pdf>] <../figs/survey.pdf, id=242, 433.62pt x 289.08pt>
+File: ../figs/survey.pdf Graphic file (type pdf)
+
+<use ../figs/survey.pdf>
+Package pdftex.def Info: ../figs/survey.pdf used on input line 178.
+(pdftex.def)             Requested size: 359.90451pt x 239.93633pt.
+
+Overfull \hbox (23.74995pt too wide) in paragraph at lines 178--178
+ |  [] 
+ []
+
+
+Overfull \vbox (12.12758pt too high) detected at line 178
  []
 
 
@@ -1889,29 +1900,14 @@ Overfull \hbox (5.33331pt too wide) has occurred while \output is active
 
 [19
 
- <../figs/field.pdf>] <../figs/survey.pdf, id=304, 433.62pt x 289.08pt>
-File: ../figs/survey.pdf Graphic file (type pdf)
-
-<use ../figs/survey.pdf>
-Package pdftex.def Info: ../figs/survey.pdf used on input line 252.
-(pdftex.def)             Requested size: 359.90451pt x 239.93633pt.
-
-Overfull \hbox (23.74995pt too wide) in paragraph at lines 252--252
- |  [] 
- []
-
-
-Overfull \vbox (12.12758pt too high) detected at line 252
- []
-
-
+ <../figs/survey.pdf>]
 Overfull \hbox (5.33331pt too wide) has occurred while \output is active
 [][]|  
  []
 
 [20
 
- <../figs/survey.pdf>]
+]
 Overfull \hbox (5.33331pt too wide) has occurred while \output is active
 [][]|  
  []
@@ -1939,14 +1935,14 @@ Overfull \hbox (5.33331pt too wide) has occurred while \output is active
 
 [24
 
+] [25
+
 ]
 Overfull \hbox (5.33331pt too wide) has occurred while \output is active
 [][]|  
  []
 
-[25
-
-] [26
+[26
 
 ]
 Overfull \hbox (5.33331pt too wide) has occurred while \output is active
@@ -2088,26 +2084,42 @@ Overfull \hbox (5.33331pt too wide) has occurred while \output is active
 
 [46
 
-]
+] <../figs/fz_margins_right.pdf, id=579, 476.98201pt x 216.81pt>
+File: ../figs/fz_margins_right.pdf Graphic file (type pdf)
+
+<use ../figs/fz_margins_right.pdf>
+Package pdftex.def Info: ../figs/fz_margins_right.pdf used on input line 298.
+(pdftex.def)             Requested size: 367.27727pt x 166.9442pt.
+
+Overfull \hbox (31.12271pt too wide) in paragraph at lines 298--298
+ |  [] 
+ []
+
+
+Overfull \vbox (6.34259pt too high) detected at line 298
+ []
+
+
 Overfull \hbox (5.33331pt too wide) has occurred while \output is active
 [][]|  
  []
 
 [47
 
-] <../figs/fz_margins_right.pdf, id=640, 476.98201pt x 216.81pt>
-File: ../figs/fz_margins_right.pdf Graphic file (type pdf)
+ <../figs/fz_margins_right.pdf>]
+<../figs/fz_margins_left.pdf, id=608, 476.98201pt x 216.81pt>
+File: ../figs/fz_margins_left.pdf Graphic file (type pdf)
 
-<use ../figs/fz_margins_right.pdf>
-Package pdftex.def Info: ../figs/fz_margins_right.pdf used on input line 369.
+<use ../figs/fz_margins_left.pdf>
+Package pdftex.def Info: ../figs/fz_margins_left.pdf used on input line 315.
 (pdftex.def)             Requested size: 367.27727pt x 166.9442pt.
 
-Overfull \hbox (31.12271pt too wide) in paragraph at lines 369--369
+Overfull \hbox (31.12271pt too wide) in paragraph at lines 315--315
  |  [] 
  []
 
 
-Overfull \vbox (6.34259pt too high) detected at line 369
+Overfull \vbox (0.65213pt too high) detected at line 315
  []
 
 
@@ -2117,30 +2129,14 @@ Overfull \hbox (5.33331pt too wide) has occurred while \output is active
 
 [48
 
- <../figs/fz_margins_right.pdf>]
-<../figs/fz_margins_left.pdf, id=667, 476.98201pt x 216.81pt>
-File: ../figs/fz_margins_left.pdf Graphic file (type pdf)
+ <../figs/fz_margins_left.pdf>] [49
 
-<use ../figs/fz_margins_left.pdf>
-Package pdftex.def Info: ../figs/fz_margins_left.pdf used on input line 386.
-(pdftex.def)             Requested size: 367.27727pt x 166.9442pt.
-
-Overfull \hbox (31.12271pt too wide) in paragraph at lines 386--386
- |  [] 
- []
-
-
-Overfull \vbox (0.65213pt too high) detected at line 386
- []
-
-
+]
 Overfull \hbox (5.33331pt too wide) has occurred while \output is active
 [][]|  
  []
 
-[49
-
- <../figs/fz_margins_left.pdf>] [50
+[50
 
 ]
 Overfull \hbox (5.33331pt too wide) has occurred while \output is active
@@ -2184,14 +2180,7 @@ Overfull \hbox (5.33331pt too wide) has occurred while \output is active
 
 [56
 
-]
-Overfull \hbox (5.33331pt too wide) has occurred while \output is active
-[][]|  
- []
-
-[57
-
-] (./presentation_meta.bbl [58
+] (./presentation_meta.bbl [57
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2201,9 +2190,17 @@ Overfull \hbox (5.33331pt too wide) has occurred while \output is active
 [][]|  
  []
 
-[59
+[58
 
 ]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (5.33331pt too wide) has occurred while \output is active
+[][]|  
+ []
+
+[59]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -2219,20 +2216,12 @@ Overfull \hbox (5.33331pt too wide) has occurred while \output is active
 [][]|  
  []
 
-[61]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
+[61])
 Overfull \hbox (5.33331pt too wide) has occurred while \output is active
 [][]|  
  []
 
-[62])
-Overfull \hbox (5.33331pt too wide) has occurred while \output is active
-[][]|  
- []
-
-[63]
+[62]
 \tf@nav=\write8
 \openout8 = `presentation_meta.nav'.
 
@@ -2242,11 +2231,11 @@ Overfull \hbox (5.33331pt too wide) has occurred while \output is active
 \tf@snm=\write10
 \openout10 = `presentation_meta.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 427.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 427.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 356.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 356.
  (./presentation_meta.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 427.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 427.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 356.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 356.
 Package rerunfilecheck Info: File `presentation_meta.out' has not changed.
 (rerunfilecheck)             Checksum: 4B910A17F72F0890C2ED15ABD4EDBAC1;221.
 
@@ -2259,11 +2248,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 28551 strings out of 492995
- 580402 string characters out of 6132704
- 693841 words of memory out of 5000000
- 31293 multiletter control sequences out of 15000+600000
- 15990 words of font info for 58 fonts, out of 8000000 for 9000
+ 28503 strings out of 492995
+ 579650 string characters out of 6132704
+ 686841 words of memory out of 5000000
+ 31251 multiletter control sequences out of 15000+600000
+ 12801 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,16n,97p,1880b,874s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb
@@ -2273,10 +2262,10 @@ sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></
 usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></
 usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
 sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on presentation_meta.pdf (63 pages, 205758 bytes).
+Output written on presentation_meta.pdf (62 pages, 200937 bytes).
 PDF statistics:
- 904 PDF objects out of 1000 (max. 8388607)
- 800 compressed objects within 8 object streams
- 161 named destinations out of 1000 (max. 500000)
+ 866 PDF objects out of 1000 (max. 8388607)
+ 763 compressed objects within 8 object streams
+ 157 named destinations out of 1000 (max. 500000)
  103 words of extra memory for PDF output out of 10000 (max. 10000000)
 
