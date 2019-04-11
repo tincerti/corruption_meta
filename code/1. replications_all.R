@@ -179,6 +179,24 @@ se.fz = summary(fz_corrupt, cluster = IDContatto)$coef[2, 2]
 n.fz = 347
 
 ################################################################################
+# Eggers, Vivyan, and Wagner 2017
+################################################################################
+eggers = readRDS("data/experiment_data_eggers.Rds", refhook = NULL)
+
+# Run model
+evw_corrupt <- lm(voteinc ~ mp.misconduct, data = eggers)
+summary(evw_corrupt, cluster = "id")
+
+# Extract point estimates
+ate.evw = summary(evw_corrupt, cluster = id)$coef[2, 1]
+
+# Extract standard errors
+se.evw = summary(evw_corrupt, cluster = id)$coef[2, 2]
+
+# Extract number of observations
+n.evw = 1962
+
+################################################################################
 # Add to meta analysis dataframe
 ################################################################################
 # Winters/Weitz-Shapiro 2017
@@ -241,14 +259,36 @@ fz = data.frame(type="Survey", year=2014 , author = "Franchino and Zucchini",
                    ate_vote = ate.fz, se_vote = se.fz, ci_upper = NA, 
                    ci_lower = NA, N = n.fz, published = 1, Notes = NA)
 
+# Eggers, Vivyan, and Wagner 2017
+evw = data.frame(type="Survey", year=2017 , author = "Eggers, Vivyan, and Wagner", 
+                   author_reduced = "Eggers et al.", country = "UK", 
+                   ate_vote = ate.evw, se_vote = se.evw, ci_upper = NA, 
+                   ci_lower = NA, N = n.evw, published = 1, Notes = NA)
 
 # Combine dataframes
 meta = rbind(results, wsw17, wsw13, wsw15, wsw18, kt_sweden, kt_moldova,
-             mv, b, fz) 
+             mv, b, fz, evw) 
 #            defig, wsw13comp, wsw13nocomp, wsw13noinfo)
 
 # Save combined dataframe
 save(meta, file = "data/meta.RData")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ################################################################################
 # Avenburg dissertation

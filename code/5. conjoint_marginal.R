@@ -11,6 +11,8 @@ library(foreign)
 
 # Data import
 fz = read.dta('data/franchino_zucchini.dta')
+eggers = readRDS("data/experiment_data_eggers.Rds", refhook = NULL)
+write.dta(eggers, "data/eggers.dta")
 
 ################################################################################
 # Define combinations
