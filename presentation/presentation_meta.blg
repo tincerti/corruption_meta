@@ -23,45 +23,45 @@ I was expecting a `,' or a `}'---line 551 of file bibliography.bib
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
-You've used 3 entries,
+You've used 5 entries,
             6951 wiz_defined-function locations,
-            1291 strings with 11360 characters,
-and the built_in function-call counts, 6236 in all, are:
-= -- 750
-> -- 55
-< -- 312
-+ -- 336
-- -- 6
-* -- 425
-:= -- 1214
-add.period$ -- 12
-call.type$ -- 3
-change.case$ -- 51
+            1302 strings with 11806 characters,
+and the built_in function-call counts, 10909 in all, are:
+= -- 1330
+> -- 101
+< -- 549
++ -- 579
+- -- 10
+* -- 725
+:= -- 2058
+add.period$ -- 22
+call.type$ -- 5
+change.case$ -- 86
 chr.to.int$ -- 0
-cite$ -- 6
-duplicate$ -- 162
-empty$ -- 229
-format.name$ -- 98
-if$ -- 1139
+cite$ -- 10
+duplicate$ -- 283
+empty$ -- 396
+format.name$ -- 180
+if$ -- 2007
 int.to.chr$ -- 0
-int.to.str$ -- 9
+int.to.str$ -- 15
 missing$ -- 0
-newline$ -- 83
-num.names$ -- 24
-pop$ -- 78
+newline$ -- 139
+num.names$ -- 40
+pop$ -- 173
 preamble$ -- 1
-purify$ -- 12
+purify$ -- 20
 quote$ -- 0
-skip$ -- 386
+skip$ -- 682
 stack$ -- 0
-substring$ -- 360
-swap$ -- 101
-text.length$ -- 6
+substring$ -- 613
+swap$ -- 167
+text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 240
+type$ -- 464
 warning$ -- 0
-while$ -- 30
+while$ -- 58
 width$ -- 0
-write$ -- 107
+write$ -- 185
 (There were 2 error messages)

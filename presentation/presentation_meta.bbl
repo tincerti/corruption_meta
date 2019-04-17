@@ -1,6 +1,68 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
+Banerjee%
+, Green%
+, Green%
+\BCBL {}\ \BBA {} Pande%
+}{%
+Banerjee%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2010}}%
+}]{%
+banerjee2010can}
+\APACinsertmetastar {%
+banerjee2010can}%
+\begin{APACrefauthors}%
+Banerjee, A.%
+, Green, D.%
+, Green, J.%
+\BCBL {}\ \BBA {} Pande, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2010}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Can voters be primed to choose better legislators?
+  Experimental evidence from rural India} {Can voters be primed to choose
+  better legislators? experimental evidence from rural india}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Presented and the Political Economics Seminar, Stanford
+  University.} {Presented and the political economics seminar, stanford
+  university.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Banerjee%
+, Kumar%
+, Pande%
+\BCBL {}\ \BBA {} Su%
+}{%
+Banerjee%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2011}}%
+}]{%
+banerjee2011informed}
+\APACinsertmetastar {%
+banerjee2011informed}%
+\begin{APACrefauthors}%
+Banerjee, A.%
+, Kumar, S.%
+, Pande, R.%
+\BCBL {}\ \BBA {} Su, F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Do informed voters make better choices? Experimental
+  evidence from urban India} {Do informed voters make better choices?
+  experimental evidence from urban india}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Unpublished manuscript}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 De~Vries%
 \ \BBA {} Solaz%
 }{%

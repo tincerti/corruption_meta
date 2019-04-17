@@ -1,5 +1,6 @@
 \beamer@sectionintoc {1}{Introduction}{2}{0}{1}
-\beamer@sectionintoc {2}{Methods}{7}{0}{2}
-\beamer@sectionintoc {3}{Results}{16}{0}{3}
-\beamer@sectionintoc {4}{Discussion}{24}{0}{4}
-\beamer@sectionintoc {5}{Conclusion}{49}{0}{5}
+\beamer@sectionintoc {2}{Methods}{8}{0}{2}
+\beamer@sectionintoc {3}{Results}{15}{0}{3}
+\beamer@sectionintoc {4}{Discussion}{23}{0}{4}
+\beamer@sectionintoc {5}{Conclusion}{48}{0}{5}
+\beamer@sectionintoc {6}{Supplemental material}{59}{1}{6}

@@ -83,7 +83,7 @@
     %\usepackage{bm} % For typesetting bold math (not \mathbold)
     %\logo{\includegraphics[height=0.6cm]{yourlogo.eps}}
 \title{Does providing corruption information reduce vote share? A meta-analysis}
-\date{\today} 
+\date{April 12, 2019} 
 \author{Trevor Incerti}
 %\institute{Yale University}
 
@@ -96,14 +96,16 @@
 
 \begin{frame}
 \frametitle{Research Question}
-Do voters in democratic countries hold politicians accountable for corruption?
+\textbf{Do voters hold politicians accountable for corruption?}
 \pause
 \begin{itemize}
-\item Key question of electoral accountability. 
+\item Key question of \textcolor{Cerulean}{electoral accountability}. 
 \pause
-\item Recent ARPS review (\citet{de2017electoral}): ``Empirical evidence to date is \textcolor{Cerulean}{mixed}, and it often suggests that the electoral punishment of corruption is rather mild.'' 
+\item ARPS review: ``Empirical evidence to date is \textcolor{Cerulean}{mixed}, and it often suggests that the electoral punishment of corruption is rather mild.'' \citep{de2017electoral} 
 \pause
-\item Is evidence actually mixed? What have we learned from a recent explosion of experimental research on this subject?
+\item Recent explosion of experimental research on this subject. 
+\pause
+\item What have we learned from this research? Is evidence actually mixed?
 \end{itemize}
 \end{frame}
 
@@ -120,24 +122,12 @@ Meta-analysis of all \textcolor{Cerulean}{experimental} studies conducted to dat
 \pause
 \item \textcolor{Cerulean}{Outcome}: (incumbent) vote-share.
 \pause
-\item Random assignment of information regarding incumbent corruption, followed by measurement of voting outcomes.
+\item Random assignment of corruption information $\rightarrow$ measurement of voting outcomes.
+\pause
+\item As treatments are not always assigned identically, I take steps to standardize where possible. \hyperlink{details}{\beamerbutton{Details}}
 \pause
 \item Includes both \textcolor{Cerulean}{published articles and working papers}.
 \end{itemize}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}
-\frametitle{Analytical details}
-\begin{itemize}
-\item Where there are multiple corruption treatments (e.g. varying source of information), I replicate the studies and code corruption as a binary treatment (0 = clean, 1 = corrupt).
-\pause
-\item Studies that use non-binary vote choices are rescaled into a binary vote choice.
-\pause
-\item Point estimates, standard errors and/or confidence intervals are not always explicitly reported (4 cases). In these cases standard errors are estimated by digitally measuring coefficient plots.
-\end{itemize}
-
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -176,7 +166,7 @@ Meta-analysis of all \textcolor{Cerulean}{experimental} studies conducted to dat
 \begin{frame}
 \frametitle{Results}
 \begin{itemize}
-\item Survey experiments overestimate the ATE of providing corruption information to voters relative to field experiments.
+\item Survey experiments overestimate the negative effect of providing information to voters relative to field experiments.
 \pause
 \begin{itemize}
 \item Corrupt candidates punished by approximately \textcolor{Cerulean}{zero percentage points} in field experiments.
@@ -184,10 +174,10 @@ Meta-analysis of all \textcolor{Cerulean}{experimental} studies conducted to dat
 \item Corrupt candidates punished by respondents by between \textcolor{Cerulean}{33 percentage points} (random effects) and \textcolor{Cerulean}{35 percentage points} (fixed effects) in survey experiments.
 \pause
 \item 66\% of the total heterogeneity across studies can be accounted for by including a dummy variable for type of experiment.
-\pause
-\item Point estimate of this dummy variable (0 = survey, 1 = field) is equal to 0.32 (significant at 1\% level), while the overall estimate across studies is -.33. 
 \begin{itemize}
 \item Mixed effects meta-analysis with moderator. 
+\pause
+\item Point estimate of this dummy variable (0 = survey, 1 = field) is equal to +0.32 (significant at 1\% level), while the overall estimate across studies is -0.33. 
 \end{itemize}
 \end{itemize}
 \end{itemize}
@@ -198,7 +188,7 @@ Meta-analysis of all \textcolor{Cerulean}{experimental} studies conducted to dat
 
 \begin{frame}
 \frametitle{Discussion}
-What might account for this discrepancy?
+What might account for the discrepancy between field and survey experiments?
 \pause
 \begin{itemize}
 \item Publication bias and/or p-hacking
@@ -221,7 +211,7 @@ What might account for this discrepancy?
 \begin{itemize}
 \item P-curve - virtually all results significant at 1\% level (not clustered around 0.05).
 \pause
-\item Tests for funnel plot asymmetry. 
+\item Tests for funnel plot asymmetry. \hyperlink{funnel}{\beamerbutton{Figures}}
 \end{itemize}
 \pause
 Unclear with field experiments
@@ -262,7 +252,7 @@ But, \textcolor{Cerulean}{differences in experimental design} likely account for
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \frametitle{Survey complexity and conjoint experiments}
-Randomizing more candidate characteristics may more adequately capture moderating factors and reduce social desirability bias.
+\textcolor{Cerulean}{Conjoint experiments}: Randomizing more candidate characteristics may capture variety of moderating factors and reduce social desirability bias.
 \begin{itemize}
 \pause
 \item But, traditional method of analysis (comparing magnitudes of individual average marginal component effects) may be misleading. 
@@ -289,9 +279,9 @@ Randomizing more candidate characteristics may more adequately capture moderatin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \frametitle{Survey complexity and conjoint experiments}
-\textcolor{Cerulean}{Proposal}: Compare the probability of voting for a candidate with outlier characteristics such as corruption to the probability of voting for a realistic candidate without this characteristic.
+\textcolor{Cerulean}{Proposal}: Compare the probability of voting for a \textcolor{Cerulean}{realistic candidate} with outlier characteristics such as corruption to the probability of voting for a \textcolor{Cerulean}{realistic candidate} without this characteristic.
 \begin{itemize}
-\item E.g. What is the probability of a Democrat voting for a typical Democratic candidate who is corrupt?
+\item E.g. What is the probability of a Democratic voter voting for a typical Democratic candidate who is corrupt?
 \end{itemize}
 
 \end{frame}
@@ -347,8 +337,15 @@ Randomizing more candidate characteristics may more adequately capture moderatin
 \pause
 \item Discrepancy does not seem to be driven by publication bias/p-hacking.
 \pause
-\item May arise from social desirability bias, lack of complexity and/or realism of hypothetical vignettes, and misinterpretation of results from conjoint experiments.
-
+\item May arise from:
+\begin{itemize} 
+\pause
+\item Social desirability bias
+\pause
+\item Lack of realism of hypothetical vignettes 
+\pause
+\item Misinterpretation of results from conjoint experiments.
+\end{itemize}
 \end{itemize}
 \end{frame}
 
@@ -364,9 +361,128 @@ Randomizing more candidate characteristics may more adequately capture moderatin
 
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
 
+\section{Supplemental material}
+
+\begin{frame}[label=details]
+\frametitle{Analytical details}
+\begin{itemize}
+\item Where there are multiple corruption treatments (e.g. varying source of information), I replicate the studies and code corruption as a binary treatment (0 = clean, 1 = corrupt).
+\pause
+\item Studies that use non-binary vote choices are rescaled into a binary vote choice.
+\pause
+\item Point estimates, standard errors and/or confidence intervals are not always explicitly reported (4 cases). In these cases standard errors are estimated by digitally measuring coefficient plots.
+\pause
+\item Two field experiments include general anti-corruption treatments not specific to candidates. Robustness check excludes these studies. 
+\end{itemize}
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[label=supplemental]
+\frametitle{Robustness checks}
+
+\begin{figure}[!hb]
+\hspace*{-11mm}
+\includegraphics[scale = 0.75]{../figs/field_no_banerjee.pdf}
+\vspace{-0.2cm}
+\caption{Field experiments: Average treatment effect of corruption information on incumbent vote share (excluding \cite{banerjee2010can} and \citet{banerjee2011informed})}
+\small
+\vspace{-0.5cm}
+\label{fig: field_no_banerjee}
+\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[label=funnel]
+\frametitle{Funnel plot asymmetry}
+
+\begin{table}[ht] \centering 
+  \caption{Regression tests for funnel plot asymmetry}
+  \label{tab: funnel} 
+  \small
+  \vspace{0.5cm}
+\begin{tabular}{@{\extracolsep{50pt}} cccccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ Studies included & p-value \\ 
+ \hline \\[-1.8ex] 
+All & 0.0016  \\
+All with moderator & 0.4512  \\
+Field &  0.8403  \\
+Survey & 0.3159  \\
+\hline \\[-1.8ex] 
+\vspace{128in}
+\end{tabular} 
+\end{table} 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[label=supplemental]
+\frametitle{Funnel plot asymmetry}
+
+\begin{figure}[!hb]
+\vspace*{-3mm}
+\includegraphics[scale = 0.45]{../figs/funnel_re_all.pdf}
+\vspace{-0.2cm}
+\caption{Funnel plot: All experiments}
+\small
+\vspace{-0.5cm}
+\label{fig: funnel_all}
+\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[label=supplemental]
+\frametitle{Funnel plot asymmetry}
+
+\begin{figure}[!hb]
+\vspace*{-3mm}
+\includegraphics[scale = 0.45]{../figs/funnel_all_mod.pdf}
+\vspace{-0.2cm}
+\caption{Funnel plot: All experiments with field experiment moderator}
+\small
+\vspace{-0.5cm}
+\label{fig: funnel_all}
+\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[label=supplemental]
+\frametitle{Funnel plot asymmetry}
+
+\begin{figure}[!hb]
+\vspace*{-3mm}
+\includegraphics[scale = 0.45]{../figs/funnel_re_field.pdf}
+\vspace{-0.2cm}
+\caption{Funnel plot: Field experiments}
+\small
+\vspace{-0.5cm}
+\label{fig: funnel_all}
+\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[label=supplemental]
+\frametitle{Funnel plot asymmetry}
+
+\begin{figure}[!hb]
+\vspace*{-3mm}
+\includegraphics[scale = 0.45]{../figs/funnel_re_survey.pdf}
+\vspace{-0.2cm}
+\caption{Funnel plot: Survey experiments}
+\small
+\vspace{-0.5cm}
+\label{fig: funnel_all}
+\end{figure}
+\end{frame}
 
 \bibliography{bibliography}
 \end{document}
