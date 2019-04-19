@@ -15,7 +15,7 @@ wsw13 = read.dta('data/WintersWeitzShapiro_2013_Replication.dta')
 wsw16 = read.dta('data/WintersWeitz-Shapiro_PRQ_Specificity_ReplicationData.dta')
 wsw18 = read.dta13('data/WintersWeitz-Shapiro_PSRM_Argentina_ReplicationData.dta')
 fz = read.dta('data/franchino_zucchini.dta')
-
+mv = read.dta('data/mares_visconti.dta')
 
 # Define scaling function
 scale01 <- function(x)
@@ -131,15 +131,19 @@ n.defig = 200
 ################################################################################
 # Mares and Visconti 2019
 ################################################################################
-ate.mv.inv = -.18
-ate.mv.conv = -.33
-ate.mv.avg = (ate.mv.inv + ate.mv.conv)/2
+# Pool corruption into one treatment
+mv$corrupt = with(mv, ifelse(atinte == "Sentenced" | 
+                             atinte == "Investigated", 1, 0))
 
-se.mv.inv = .016
-se.mv.conv = .017
-se.mv.avg = (se.mv.inv + se.mv.conv)/2
+# Run model
+mv_corrupt = lm(outcome ~ corrupt, data = mv)
+summary(mv_corrupt, cluster = "idnum")
 
-n.mv = 503
+# Extract point estimates
+ate.mv = summary(mv_corrupt, cluster = idnum)$coef[2, 1]
+
+# Extract standard errors
+se.mv = summary(mv_corrupt, cluster = idnum)$coef[2, 2]
 
 ################################################################################
 # Breitenstein (No replication data?)
