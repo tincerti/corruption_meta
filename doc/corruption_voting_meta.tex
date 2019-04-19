@@ -327,7 +327,7 @@ How might we overcome social desirability bias in survey experiments? One option
 
 \subsection{Survey complexity and conjoint experiments}\label{sec: conjoint}
 
-As noted in \autoref{sec: interactions} above, the fact that moderating variables may dampen the salience of corruption to voters has not been lost on previous researchers, who have attempted to capture these factors via the inclusion of multiple treatment arms that vary policy stances, quality of information, economic benefit, and partisanship. However, the meta-analysis shown above indicates that even the inclusion of these moderators does not move point estimates close to the (approximately zero) field setting, in which all of these moderating factors may be salient to the voter. By contrast, conjoint experiments allow researchers to randomize a much larger host of candidate characteristics and may help illuminate the mechanisms that lead to these small effect sizes. This may also minimize social desirability bias, as it reduces the probability that the respondent is aware of the researcher's primary experimental manipulation of interest (e.g. corruption). 
+As noted in \autoref{sec: interactions} above, the fact that moderating variables may dampen the salience of corruption to voters has not been lost on previous researchers, who have attempted to capture these factors via the inclusion of multiple treatment arms that vary policy stances, quality of information, economic benefit, and partisanship. However, the meta-analysis shown above indicates that even the inclusion of these moderators does not move point estimates close to the (approximately zero) field setting, in which all of these moderating factors may be salient to the voter. By contrast, conjoint experiments allow researchers to randomize a much larger host of candidate characteristics and may help illuminate the mechanisms that lead to these small effect sizes. This may also minimize social desirability bias, as it reduces the probability that the respondent is aware of the researcher's primary experimental manipulation of interest (e.g. corruption).\footnote{Note, however, that an experiment does not necessarily need to be a conjoint design to have this feature. Conjoint experiments encourage researchers to randomize more attributes and therefore typically contain more complex hypothetical vignettes. However, the same vignette complexity could be achieved without full randomization of these attributes. } 
 
 Researchers have thus far tended to present the results of conjoint experiments as individual average marginal component effects (AMCEs), then compare the magnitude of these effect sizes. A more appropriate method may be to calculate the average marginal effects of a vector of moderating variables. To illustrate this point, I calculate average marginal effects as a function of two policy positions - tax policy and same sex marriage - and corruption for conservative and liberal respondents using the conjoint experiment conducted in Italy by \citet{franchino2015voting}.\footnote{To my knowledge, this remains the only published conjoint experiment with a corruption treatment and publicly available replication data.} The results are presented in \autoref{fig: fz_margins_right} and \autoref{fig: fz_margins_left}, and show that even for corrupt candidates in the conjoint, the right policy platform can garner over 50\% of the predicted hypothetical vote. 
 
@@ -431,41 +431,53 @@ These findings suggest that while vote-choice survey experiments may provide inf
 
 \subsection{Publication bias}
 
+\vspace{-.8cm}
 
 \begin{figure}[!htb]
-\includegraphics{../figs/funnel_re_all.pdf}
+\begin{centering}
+\includegraphics[scale=0.54]{../figs/funnel_re_all.pdf}
 \vspace{0.2cm}
 \caption{Funnel plot: all experiments}.
 \small
 \vspace{-0.3cm}
 \label{fig: funnel_re_all}
+\end{centering}
 \end{figure}
 
+\vspace{-1.3cm}
+
 \begin{figure}[!htb]
-\includegraphics{../figs/funnel_all_mod.pdf}
+\begin{centering}
+\includegraphics[scale=0.54]{../figs/funnel_all_mod.pdf}
 \vspace{0.2cm}
 \caption{Funnel plot: all experiments with field experiment moderator}.
 \small
 \vspace{-0.3cm}
 \label{fig: funnel_all_mod}
+\end{centering}
 \end{figure}
 
 \begin{figure}[!htb]
-\includegraphics{../figs/funnel_re_field.pdf}
+\begin{centering}
+
+\includegraphics[scale=0.54]{../figs/funnel_re_field.pdf}
 \vspace{0.2cm}
 \caption{Funnel plot: field experiments}.
 \small
 \vspace{-0.3cm}
 \label{fig: funnel_re_field}
+\end{centering}
 \end{figure}
 
 \begin{figure}[!htb]
-\includegraphics{../figs/funnel_re_survey.pdf}
+\begin{centering}
+\includegraphics[scale=0.54]{../figs/funnel_re_survey.pdf}
 \vspace{0.2cm}
 \caption{Funnel plot: survey experiments}.
 \small
 \vspace{-0.3cm}
 \label{fig: funnel_re_survey}
+\end{centering}
 \end{figure}
 
 \begin{table}[ht] \centering 
