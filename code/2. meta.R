@@ -62,6 +62,12 @@ mean(field$ate_vote)
 ################################################################################
 meta$field = with(meta, ifelse(type == "Field" | type == "Natural", 1, 0))
 
+# Save lab experiments
+lab = meta %>% 
+  filter(type == "Lab") %>%
+  arrange(ate_vote) %>%
+  mutate(author_reduced = reorder(author_reduced, -ate_vote))
+
 # Remove lab experiments
 meta = meta %>% 
   filter(type == "Field" | type == "Natural" | type == "Survey") %>%
@@ -86,5 +92,6 @@ pred = predict(me_mod, newmods = cbind(seq(from = 0, to = 1, by = 1), 0), addx =
 ################################################################################
 # Save information for plotting
 ################################################################################
-save(meta, field, survey, fe, re, me_mod, fe_field, fe_survey, re_field, re_survey, 
+save(meta, field, survey, lab, 
+     fe, re, me_mod, fe_field, fe_survey, re_field, re_survey, 
      file = "data/meta_results.RData")

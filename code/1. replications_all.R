@@ -197,6 +197,14 @@ se.evw = summary(evw_corrupt, cluster = id)$coef[2, 2]
 n.evw = 1962
 
 ################################################################################
+# Azfar and Nelson (lab)
+################################################################################
+ate.an = -.252
+t.stat.an = 2.57
+se.an = ate.an/t.stat.an
+n.an = 132
+
+################################################################################
 # Add to meta analysis dataframe
 ################################################################################
 # Winters/Weitz-Shapiro 2017
@@ -265,9 +273,15 @@ evw = data.frame(type="Survey", year=2017 , author = "Eggers, Vivyan, and Wagner
                    ate_vote = ate.evw, se_vote = se.evw, ci_upper = NA, 
                    ci_lower = NA, N = n.evw, published = 1, Notes = NA)
 
+# Azfar and Nelson 2007
+an = data.frame(type="Lab", year=2007 , author = "Azfar and Nelson", 
+                   author_reduced = "Azfar and Nelson", country = "USA", 
+                   ate_vote = ate.an, se_vote = se.an, ci_upper = NA, 
+                   ci_lower = NA, N = n.an, published = 1, Notes = NA)
+
 # Combine dataframes
 meta = rbind(results, wsw17, wsw13, wsw15, wsw18, kt_sweden, kt_moldova,
-             mv, b, fz, evw) 
+             mv, b, fz, evw, an) 
 #            defig, wsw13comp, wsw13nocomp, wsw13noinfo)
 
 # Save combined dataframe

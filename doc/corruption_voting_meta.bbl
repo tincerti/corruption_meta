@@ -375,6 +375,31 @@ Buntaine, M\BPBI T.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Camerer%
+}{%
+Camerer%
+}{%
+{\protect \APACyear {2011}}%
+}]{%
+camerer2011promise}
+\APACinsertmetastar {%
+camerer2011promise}%
+\begin{APACrefauthors}%
+Camerer, C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The promise and success of lab-field generalizability in
+  experimental economics: A critical reply to Levitt and List} {The promise and
+  success of lab-field generalizability in experimental economics: A critical
+  reply to levitt and list}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Available at SSRN 1977749}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Chauchard%
 , Klasnja%
 \BCBL {}\ \BBA {} Harish%
@@ -434,6 +459,35 @@ Chong, A.%
   identification}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{The Journal of Politics}{77}{1}{55--71}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Coppock%
+\ \BBA {} Green%
+}{%
+Coppock%
+\ \BBA {} Green%
+}{%
+{\protect \APACyear {2015}}%
+}]{%
+coppock2015assessing}
+\APACinsertmetastar {%
+coppock2015assessing}%
+\begin{APACrefauthors}%
+Coppock, A.%
+\BCBT {}\ \BBA {} Green, D\BPBI P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Assessing the correspondence between experimental
+  results obtained in the lab and field: A review of recent social science
+  research} {Assessing the correspondence between experimental results obtained
+  in the lab and field: A review of recent social science research}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Political Science Research and
+  Methods}{3}{1}{113--131}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
