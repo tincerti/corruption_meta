@@ -256,7 +256,7 @@ kt_moldova = data.frame(type="Survey", year=2013 , author = "Klasna & Tucker",
 # Mares and Visconti 2019
 mv = data.frame(type="Survey", year=2019 , author = "Mares & Visconti", 
                    author_reduced = "Mares & Visconti", country = "Romania", 
-                   ate_vote = ate.mv.avg, se_vote = se.mv.avg, ci_upper = NA, 
+                   ate_vote = ate.mv, se_vote = se.mv, ci_upper = NA, 
                    ci_lower = NA, N = n.mv, published = 1, Notes = NA)
 
 # Breitenstein 2019

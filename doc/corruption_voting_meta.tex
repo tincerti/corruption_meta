@@ -180,9 +180,13 @@ Survey experiments paint a much more optimistic picture, consistently showing la
 Lab experiments that reveal corrupt actions to fellow players appear to have a similar bias to survey experiments, and also show large negative treatment effects (see \autoref{fig: lab}). While there are not enough lab experiments examining whether the provision of corruption information impacts vote choice to conduct a formal meta-analysis \citep{arvate2017condemning, azfar2007transparency, solaz2018group, rundquist1977corrupt}, this discrepancy is worth noting as previous examinations of lab-field correspondence have found evidence of general replicability \citep{camerer2011promise, coppock2015assessing}.
 
 
-\section{Moderating effects of other candidate characteristics}\label{sec: interactions}
+\section{Moderating factors}\label{sec: moderators}
 
-Even if voters generally find corruption distasteful, other positive candidate attributes or policies may outweigh the negative effects of corruption to voters, mitigating the effects of information provision on vote-share.\footnote{See \citet{de2017electoral} for an excellent overview.} These mitigating factors will naturally arise in a field setting, but may only be salient to respondents if specifically manipulated by researchers in a survey setting. A number of survey experiments have therefore added additional factors in addition to corruption as mitigating variables, some of which are described below. 
+Even if voters generally find corruption distasteful, the quality of the information provided or positive candidate attributes and policies may outweigh the negative effects of corruption to voters, mitigating the effects of information provision on vote-share.\footnote{See \citet{de2017electoral} for an excellent overview.} These mitigating factors will naturally arise in a field setting, but may only be salient to respondents if specifically manipulated by researchers in a survey setting. A number of survey experiments have therefore added factors other than corruption as mitigating variables, some of which are described below. 
+
+\subsection{Quality of information}
+
+Corruption accusations can come from a variety of sources, some more credible than others. For example, accusations from an independent anti-corruption authority may be deemed more credible than those from an opposition party. A number of studies have therefore attempted to randomize the quality of information provided to voters in order to capture how the electoral penalty varies in response to information quality \citep{botero2015says, breitenstein2019choosing, mares2019voting, banerjee2014poor, weitz2017can, winters2018information}. 
 
 \subsection{Policy stances}
 
@@ -190,7 +194,7 @@ Response to favorable policy stances has been shown to potentially mitigate the 
 
 \subsection{Economic benefit}
 
-Economic benefit has been argued to act as a similar mitigating factor.  \citet{klavsnja2017voters} randomize party, economic performance, and whether or not the politician's corrupt act itself brought benefits to their constituents in Argentina, Chile, and Uruguay, finding evidence that voters are more forgiving of corruption when it benefits them personally. By contrast, \citet{winters2013lacking} use a survey experiment in Brazil to show that voters punish corrupt politicians at the polls, including those with strong records of past performance as measured by public goods  provision.
+Economic benefit has been argued to act as a similar mitigating factor.  \citet{klavsnja2017voters} randomize party, economic performance, and whether or not the politician's corrupt act itself brought benefits to their constituents in Argentina, Chile, and Uruguay, finding evidence that voters are more forgiving of corruption when it benefits them personally. By contrast, \citet{winters2013lacking} use a survey experiment in Brazil to show that voters punish corrupt politicians at the polls, including those with strong records of past performance as measured by public goods provision.
 
 \subsection{Partisanship and in-group attachments}
 
@@ -329,7 +333,7 @@ How might we overcome social desirability bias in survey experiments? One option
 
 As noted in \autoref{sec: interactions} above, the fact that moderating variables may dampen the salience of corruption to voters has not been lost on previous researchers, who have attempted to capture these factors via the inclusion of multiple treatment arms that vary policy stances, quality of information, economic benefit, and partisanship. However, the meta-analysis shown above indicates that even the inclusion of these moderators does not move point estimates close to the (approximately zero) field setting, in which all of these moderating factors may be salient to the voter. By contrast, conjoint experiments allow researchers to randomize a much larger host of candidate characteristics and may help illuminate the mechanisms that lead to these small effect sizes. This may also minimize social desirability bias, as it reduces the probability that the respondent is aware of the researcher's primary experimental manipulation of interest (e.g. corruption).\footnote{Note, however, that an experiment does not necessarily need to be a conjoint design to have this feature. Conjoint experiments encourage researchers to randomize more attributes and therefore typically contain more complex hypothetical vignettes. However, the same vignette complexity could be achieved without full randomization of these attributes. } 
 
-Researchers have thus far tended to present the results of conjoint experiments as individual average marginal component effects (AMCEs), then compare the magnitude of these effect sizes. A more appropriate method may be to calculate the average marginal effects of a vector of moderating variables. To illustrate this point, I calculate average marginal effects as a function of two policy positions - tax policy and same sex marriage - and corruption for conservative and liberal respondents using the conjoint experiment conducted in Italy by \citet{franchino2015voting}.\footnote{To my knowledge, this remains the only published conjoint experiment with a corruption treatment and publicly available replication data.} The results are presented in \autoref{fig: fz_margins_right} and \autoref{fig: fz_margins_left}, and show that even for corrupt candidates in the conjoint, the right policy platform can garner over 50\% of the predicted hypothetical vote. 
+Researchers have thus far tended to present the results of conjoint experiments as individual average marginal component effects (AMCEs), then compare the magnitude of these effect sizes. A more appropriate method may be to calculate the average marginal effects of a vector of moderating variables. This method has been utilized by \citet{teele2018ties} to examine the probability of voting for a female candidate holding other candidate attributes constant, and is discussed in more detail by \citet{leeper2018measuring}. To illustrate this point, I calculate average marginal effects as a function of two policy positions - tax policy and same sex marriage - and corruption for conservative and liberal respondents using the conjoint experiment conducted in Italy by \citet{franchino2015voting}.\footnote{To my knowledge, this remains the only published conjoint experiment with a corruption treatment and publicly available replication data.} The results are presented in \autoref{fig: fz_margins_right} and \autoref{fig: fz_margins_left}, and show that even for corrupt candidates in the conjoint, the right policy platform can garner over 50\% of the predicted hypothetical vote. 
 
 \begin{figure}[!hb]
 \includegraphics{../figs/fz_margins_right.pdf}
@@ -390,14 +394,18 @@ These findings suggest that while vote-choice survey experiments may provide inf
  \hline \\[-1.8ex] 
 \citet{arvate2017condemning} & Brazil & Negative \\
 \citet{azfar2007transparency} & USA & Negative \\
-\citet{rundquist1977corrupt} & USA & Negative \\
+\citet{rundquist1977corrupt}\textsuperscript{1} & USA & Negative \\
 \citet{solaz2018group} & UK & Negative \\
 \hline \\[-1.8ex] 
 \end{tabular} 
+ \begin{tablenotes}
+\footnotesize
+\item \textsuperscript{1} The candidate is always corrupt in the \citet{rundquist1977corrupt} experiment. A ``corruption'' point estimate is therefore not provided in the coefficient plot below.
+    \end{tablenotes}
 \end{table} 
 \FloatBarrier
 
-\vspace{3cm}
+\vspace{2cm}
 
 \begin{figure}[!htb]
 \includegraphics[scale=0.93]{../figs/lab.pdf}
