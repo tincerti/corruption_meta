@@ -186,7 +186,7 @@ Even if voters generally find corruption distasteful, the quality of the informa
 
 \subsection{Quality of information}
 
-Corruption accusations can come from a variety of sources, some more credible than others. For example, accusations from an independent anti-corruption authority may be deemed more credible than those from an opposition party. A number of studies have therefore attempted to randomize the quality of information provided to voters in order to capture how the electoral penalty varies in response to information quality \citep{botero2015says, breitenstein2019choosing, mares2019voting, banerjee2014poor, weitz2017can, winters2018information}. 
+Corruption accusations can come from a variety of sources, some more credible than others. For example, accusations from an independent anti-corruption authority may be deemed more credible than those from an opposition party, and accusations may be deemed less credible than a conviction. A number of studies have therefore attempted to randomize the quality of information provided to voters in order to capture how the electoral penalty varies in response to information quality \citep{botero2015says, breitenstein2019choosing, mares2019voting, banerjee2014poor, weitz2017can, winters2018information}. As expected, higher quality information produces larger negative treatment effects in these experiments (see \autoref{fig: quality}). 
 
 \subsection{Policy stances}
 
@@ -331,7 +331,7 @@ How might we overcome social desirability bias in survey experiments? One option
 
 \subsection{Survey complexity and conjoint experiments}\label{sec: conjoint}
 
-As noted in \autoref{sec: interactions} above, the fact that moderating variables may dampen the salience of corruption to voters has not been lost on previous researchers, who have attempted to capture these factors via the inclusion of multiple treatment arms that vary policy stances, quality of information, economic benefit, and partisanship. However, the meta-analysis shown above indicates that even the inclusion of these moderators does not move point estimates close to the (approximately zero) field setting, in which all of these moderating factors may be salient to the voter. By contrast, conjoint experiments allow researchers to randomize a much larger host of candidate characteristics and may help illuminate the mechanisms that lead to these small effect sizes. This may also minimize social desirability bias, as it reduces the probability that the respondent is aware of the researcher's primary experimental manipulation of interest (e.g. corruption).\footnote{Note, however, that an experiment does not necessarily need to be a conjoint design to have this feature. Conjoint experiments encourage researchers to randomize more attributes and therefore typically contain more complex hypothetical vignettes. However, the same vignette complexity could be achieved without full randomization of these attributes. } 
+As noted in \autoref{sec: moderators} above, the fact that moderating variables may dampen the salience of corruption to voters has not been lost on previous researchers, who have attempted to capture these factors via the inclusion of multiple treatment arms that vary factors such as policy stances, quality of information, economic benefit, and partisanship. However, the meta-analysis shown above indicates that even the inclusion of these moderators does not move point estimates close to the (approximately zero) field setting, in which all of these moderating factors may be salient to the voter. By contrast, conjoint experiments allow researchers to randomize a much larger host of candidate characteristics and may help illuminate the mechanisms that lead to these small effect sizes. This may also minimize social desirability bias, as it reduces the probability that the respondent is aware of the researcher's primary experimental manipulation of interest (e.g. corruption).\footnote{Note, however, that an experiment does not necessarily need to be a conjoint design to have this feature. Conjoint experiments encourage researchers to randomize more attributes and therefore typically contain more complex hypothetical vignettes. However, the same vignette complexity could be achieved without full randomization of these attributes. } 
 
 Researchers have thus far tended to present the results of conjoint experiments as individual average marginal component effects (AMCEs), then compare the magnitude of these effect sizes. A more appropriate method may be to calculate the average marginal effects of a vector of moderating variables. This method has been utilized by \citet{teele2018ties} to examine the probability of voting for a female candidate holding other candidate attributes constant, and is discussed in more detail by \citet{leeper2018measuring}. To illustrate this point, I calculate average marginal effects as a function of two policy positions - tax policy and same sex marriage - and corruption for conservative and liberal respondents using the conjoint experiment conducted in Italy by \citet{franchino2015voting}.\footnote{To my knowledge, this remains the only published conjoint experiment with a corruption treatment and publicly available replication data.} The results are presented in \autoref{fig: fz_margins_right} and \autoref{fig: fz_margins_left}, and show that even for corrupt candidates in the conjoint, the right policy platform can garner over 50\% of the predicted hypothetical vote. 
 
@@ -415,6 +415,19 @@ These findings suggest that while vote-choice survey experiments may provide inf
 \vspace{-0.3cm}
 \label{fig: lab}
 \end{figure}
+
+\pagebreak
+\subsection{Information quality}
+
+\begin{figure}[!htb]
+\includegraphics[scale=0.93]{../figs/quality.pdf}
+\vspace{0.2cm}
+\caption{Survey experiments by information quality: Average treatment effect of corruption information on vote share}.
+\small
+\vspace{-0.3cm}
+\label{fig: quality}
+\end{figure}
+
 
 \pagebreak
 \subsection{Robustness checks}

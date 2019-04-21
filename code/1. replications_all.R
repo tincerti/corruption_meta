@@ -77,7 +77,7 @@ n.wsw15 = 1974
 # Winters/Weitz-Shapiro PRQ
 ################################################################################
 # Rescale outcome variable
-wsw16$vote_vig_cont <- scale01(wsw17$voteintent)
+wsw16$vote_vig_cont <- scale01(wsw16$voteintent)
 
 # Create all variable
 wsw16$corrupt = with(wsw16, ifelse(vinheta != "VINHETA 1" & vinheta != "VINHETA 2",
@@ -99,7 +99,7 @@ wsw18$corrupt = with(wsw18, ifelse(vignette <= 3 | vignette >= 10, 0, 1))
 wsw18$vote = with(wsw18, ifelse(voteintent > 2, 1, 0))
 
 # Run model
-reg.wsw18 = lm(vote ~ corrupt, data = wsw18) # Same experiment
+reg.wsw18 = lm(vote ~ corrupt, data = wsw18)
 
 # Extract point estimates
 ate.wsw18 = summary(reg.wsw18)$coef[2, 1]
@@ -144,6 +144,9 @@ ate.mv = summary(mv_corrupt, cluster = idnum)$coef[2, 1]
 
 # Extract standard errors
 se.mv = summary(mv_corrupt, cluster = idnum)$coef[2, 2]
+
+# Extract number of observations
+n.mv = 502
 
 ################################################################################
 # Breitenstein (No replication data?)
