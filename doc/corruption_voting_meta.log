@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  21 APR 2019 16:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  26 APR 2019 14:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -733,13 +733,13 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <7> not available
 File: ../figs/field.pdf Graphic file (type pdf)
 
 <use ../figs/field.pdf>
-Package pdftex.def Info: ../figs/field.pdf used on input line 286.
+Package pdftex.def Info: ../figs/field.pdf used on input line 288.
 (pdftex.def)             Requested size: 433.61894pt x 252.94438pt.
  <../figs/survey.pdf, id=399, 433.62pt x 289.08pt>
 File: ../figs/survey.pdf Graphic file (type pdf)
 
 <use ../figs/survey.pdf>
-Package pdftex.def Info: ../figs/survey.pdf used on input line 295.
+Package pdftex.def Info: ../figs/survey.pdf used on input line 297.
 (pdftex.def)             Requested size: 433.61894pt x 289.07928pt.
  [10
 
@@ -750,10 +750,10 @@ Package pdftex.def Info: ../figs/survey.pdf used on input line 295.
 File: ../figs/fz_margins_right.pdf Graphic file (type pdf)
 
 <use ../figs/fz_margins_right.pdf>
-Package pdftex.def Info: ../figs/fz_margins_right.pdf used on input line 339.
+Package pdftex.def Info: ../figs/fz_margins_right.pdf used on input line 341.
 (pdftex.def)             Requested size: 476.98083pt x 216.80946pt.
 
-Overfull \hbox (7.22581pt too wide) in paragraph at lines 339--341
+Overfull \hbox (7.22581pt too wide) in paragraph at lines 341--343
 [][]
  []
 
@@ -761,10 +761,10 @@ Overfull \hbox (7.22581pt too wide) in paragraph at lines 339--341
 File: ../figs/fz_margins_left.pdf Graphic file (type pdf)
 
 <use ../figs/fz_margins_left.pdf>
-Package pdftex.def Info: ../figs/fz_margins_left.pdf used on input line 348.
+Package pdftex.def Info: ../figs/fz_margins_left.pdf used on input line 350.
 (pdftex.def)             Requested size: 476.98083pt x 216.80946pt.
 
-Overfull \hbox (7.22581pt too wide) in paragraph at lines 348--350
+Overfull \hbox (7.22581pt too wide) in paragraph at lines 350--352
 [][]
  []
 
@@ -775,75 +775,79 @@ Overfull \hbox (7.22581pt too wide) in paragraph at lines 348--350
 <../figs/lab.pdf, id=579, 433.62pt x 289.08pt>
 File: ../figs/lab.pdf Graphic file (type pdf)
  <use ../figs/lab.pdf>
-Package pdftex.def Info: ../figs/lab.pdf used on input line 411.
+Package pdftex.def Info: ../figs/lab.pdf used on input line 413.
 (pdftex.def)             Requested size: 403.26244pt x 268.84161pt.
  [24 <../figs/lab.pdf>] <../figs/quality.pdf, id=595, 433.62pt x 361.35pt>
 File: ../figs/quality.pdf Graphic file (type pdf)
 
 <use ../figs/quality.pdf>
-Package pdftex.def Info: ../figs/quality.pdf used on input line 423.
+Package pdftex.def Info: ../figs/quality.pdf used on input line 425.
 (pdftex.def)             Requested size: 403.26244pt x 336.05203pt.
  [25 <../figs/quality.pdf>]
 <../figs/field_no_banerjee.pdf, id=611, 433.62pt x 252.945pt>
 File: ../figs/field_no_banerjee.pdf Graphic file (type pdf)
 
 <use ../figs/field_no_banerjee.pdf>
-Package pdftex.def Info: ../figs/field_no_banerjee.pdf used on input line 436.
+Package pdftex.def Info: ../figs/field_no_banerjee.pdf used on input line 438.
 (pdftex.def)             Requested size: 403.26244pt x 235.23642pt.
 
 <../figs/survey_defig.pdf, id=620, 433.62pt x 289.08pt>
 File: ../figs/survey_defig.pdf Graphic file (type pdf)
 
 <use ../figs/survey_defig.pdf>
-Package pdftex.def Info: ../figs/survey_defig.pdf used on input line 443.
+Package pdftex.def Info: ../figs/survey_defig.pdf used on input line 445.
 (pdftex.def)             Requested size: 403.26244pt x 268.84161pt.
  [26 <../figs/field_no_banerjee.pdf> <../figs/survey_defig.pdf>] <../figs/funne
 l_re_all.pdf, id=649, 505.89pt x 505.89pt>
 File: ../figs/funnel_re_all.pdf Graphic file (type pdf)
 
 <use ../figs/funnel_re_all.pdf>
-Package pdftex.def Info: ../figs/funnel_re_all.pdf used on input line 459.
+Package pdftex.def Info: ../figs/funnel_re_all.pdf used on input line 461.
 (pdftex.def)             Requested size: 273.17651pt x 273.17651pt.
 
 <../figs/funnel_all_mod.pdf, id=650, 505.89pt x 505.89pt>
 File: ../figs/funnel_all_mod.pdf Graphic file (type pdf)
 
 <use ../figs/funnel_all_mod.pdf>
-Package pdftex.def Info: ../figs/funnel_all_mod.pdf used on input line 472.
+Package pdftex.def Info: ../figs/funnel_all_mod.pdf used on input line 474.
 (pdftex.def)             Requested size: 273.17651pt x 273.17651pt.
 
 <../figs/funnel_re_field.pdf, id=651, 505.89pt x 505.89pt>
 File: ../figs/funnel_re_field.pdf Graphic file (type pdf)
 
 <use ../figs/funnel_re_field.pdf>
-Package pdftex.def Info: ../figs/funnel_re_field.pdf used on input line 484.
+Package pdftex.def Info: ../figs/funnel_re_field.pdf used on input line 486.
 (pdftex.def)             Requested size: 273.17651pt x 273.17651pt.
 
 <../figs/funnel_re_survey.pdf, id=652, 505.89pt x 505.89pt>
 File: ../figs/funnel_re_survey.pdf Graphic file (type pdf)
 
 <use ../figs/funnel_re_survey.pdf>
-Package pdftex.def Info: ../figs/funnel_re_survey.pdf used on input line 495.
+Package pdftex.def Info: ../figs/funnel_re_survey.pdf used on input line 497.
 (pdftex.def)             Requested size: 273.17651pt x 273.17651pt.
 
 
-LaTeX Warning: Float too large for page by 8739.51128pt on input line 521.
+LaTeX Warning: Float too large for page by 8739.51128pt on input line 523.
 
 [27 <../figs/funnel_re_all.pdf> <../figs/funnel_all_mod.pdf>]
 
 LaTeX Warning: Text page 28 contains only floats.
 
 [28 <../figs/funnel_re_field.pdf> <../figs/funnel_re_survey.pdf>] [29]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 526.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 526.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 528.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 528.
 
 (./corruption_voting_meta.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 526.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 526.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 528.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 528.
 Package rerunfilecheck Info: File `corruption_voting_meta.out' has not changed.
 
 (rerunfilecheck)             Checksum: 29F53A0CB63FA1CED3D6251FA7C2BF1B;430.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 526.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 528.
  )
 (\end occurred inside a group at level 1)
 
@@ -852,7 +856,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 526.
 Here is how much of TeX's memory you used:
  11863 strings out of 492995
  175429 string characters out of 6132704
- 378520 words of memory out of 5000000
+ 378519 words of memory out of 5000000
  15044 multiletter control sequences out of 15000+600000
  25164 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -867,7 +871,7 @@ pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
 fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
 
-Output written on corruption_voting_meta.pdf (29 pages, 332469 bytes).
+Output written on corruption_voting_meta.pdf (29 pages, 332517 bytes).
 PDF statistics:
  749 PDF objects out of 1000 (max. 8388607)
  666 compressed objects within 7 object streams
