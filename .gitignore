@@ -1,6 +1,31 @@
+# R files
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
+
+# Folders
 notes/
 literature/
+
+# LaTeX intermediary files - core
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+
+# LaTeX intermediary files - bibliography
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
