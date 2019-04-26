@@ -23,7 +23,6 @@ literature/
 .*.lb
 
 # LaTeX intermediary files - bibliography
-*.bbl
 *.bcf
 *.blg
 *-blx.aux
