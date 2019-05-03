@@ -140,7 +140,7 @@
 
 \begin{document}
 \singlespace
-\title{\textbf{Does providing corruption information reduce vote share? A meta-analysis}\vspace{-1ex}\thanks{}}
+\title{\textbf{Corruption information and vote share: A meta-analysis and lessons for survey experiments}\vspace{-1ex}\thanks{}}
 % I would like to thank Alex Coppock, Josh Kalla, Dan Mattingly, Frances Rosenbluth, Radha Sarkar, and Fredrik Sävje for exceptionally helpful feedback and suggestions. Any and all errors are my own. 
 \author{Trevor Incerti\thanks{trevor.incerti@yale.edu}\vspace{-1ex}}
 \affil{\textit{Yale University}\vspace{-2.5ex}}
@@ -335,9 +335,20 @@ How might we overcome social desirability bias in survey experiments? One option
 
 As noted in \autoref{sec: moderators} above, the fact that moderating variables may dampen the salience of corruption to voters has not been lost on previous researchers, who have attempted to capture these factors via the inclusion of multiple treatment arms that vary factors such as policy stances, quality of information, economic benefit, and partisanship. However, the meta-analysis shown above indicates that even the inclusion of these moderators does not move point estimates close to the (approximately zero) field setting, in which all of these moderating factors may be salient to the voter. By contrast, conjoint experiments allow researchers to randomize a much larger host of candidate characteristics and may help illuminate the mechanisms that lead to these small effect sizes. This may also minimize social desirability bias, as it reduces the probability that the respondent is aware of the researcher's primary experimental manipulation of interest (e.g. corruption).\footnote{Note, however, that an experiment does not necessarily need to be a conjoint design to have this feature. Conjoint experiments encourage researchers to randomize more attributes and therefore typically contain more complex hypothetical vignettes. However, the same vignette complexity could be achieved without full randomization of these attributes. } 
 
-Researchers have thus far tended to present the results of conjoint experiments as individual average marginal component effects (AMCEs), then compare the magnitude of these effect sizes. A more appropriate method may be to calculate average marginal effects across a vector of moderating variables. This method is utilized by \citet{teele2018ties} to examine the probability of voting female or male candidates holding other candidate attributes constant, and is discussed in more detail by \citet{leeper2018measuring}. To illustrate this point, I calculate average marginal effects as a function of two policy positions - tax policy and same sex marriage - and corruption for conservative and liberal respondents using the conjoint experiment conducted in Italy by \citet{franchino2015voting}.\footnote{To my knowledge, this remains the only published conjoint experiment with a corruption treatment and publicly available replication data.} The results are presented in \autoref{fig: fz_margins_right} and \autoref{fig: fz_margins_left}, and show that even for corrupt candidates in the conjoint, the right policy platform can garner over 50\% of the predicted hypothetical vote. 
+Researchers have thus far tended to present the results of conjoint experiments as individual average marginal component effects (AMCEs), then compare the magnitude of these effect sizes. A more appropriate method may be to calculate average marginal effects across a vector of moderating variables.\footnote{This method is utilized by \citet{teele2018ties} to examine the probability of voting female or male candidates holding other candidate attributes constant, and is discussed in more detail by \citet{leeper2018measuring}} In a conjoint experiment including corruption information, this can be interpreted as the probability of voting for a candidate that is both corrupt and possesses other particular feature levels (e.g. party membership or policy positions), marginalizing across all other features in the experiment.
 
-\begin{figure}[!hb]
+To illustrate this point, I calculate average marginal effects as a function of two policy positions - tax policy and same sex marriage - and corruption for conservative and liberal respondents using the conjoint experiment conducted in Italy by \citet{franchino2015voting}.\footnote{To my knowledge, this remains the only published conjoint experiment with a corruption treatment and publicly available replication data.} Note that the authors correctly conclude that their typical ``respondent prefers a corrupt but socially and economically progressive candidate to a clean but conservative one.'' While I therefore illustrate how average marginal effects can be used to draw conclusions that may be masked by examination of AMCEs alone, the authors themselves do not make this mistake. 
+
+A replication of \citet{franchino2015voting} using both AMCE and average marginal effects is presented below.\footnote{Note that I group the ``investigated for corruption'' and ``convicted of corruption'' levels into a single ``corrupt'' attribute in my replications.} A casual interpretation of the traditional AMCE plot presented in \autoref{fig: fz_amce} suggests that it is very unlikely a corrupt candidate would be chosen by a respondent. By contrast, the average marginal effect plots presented in \autoref{fig: fz_margins_right} and \autoref{fig: fz_margins_left} show that even for corrupt candidates in the conjoint, the right policy platform can garner over 50\% of the predicted hypothetical vote. 
+
+\begin{figure}[!htb]
+\includegraphics{../figs/fz_amce.pdf}
+\caption{\citet{franchino2015voting} conjoint: average marginal component effects}
+\label{fig: fz_amce}
+\end{figure}
+
+
+\begin{figure}[!htb]
 \includegraphics{../figs/fz_margins_right.pdf}
 \vspace{0.2cm}
 \caption{\citet{franchino2015voting} conjoint: can policy positions overcome corruption (conservative respondents)?}
