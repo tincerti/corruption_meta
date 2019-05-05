@@ -719,6 +719,35 @@ Green, D\BPBI P.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Hainmueller%
+, Hopkins%
+\BCBL {}\ \BBA {} Yamamoto%
+}{%
+Hainmueller%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2014}}%
+}]{%
+hainmueller2014causal}
+\APACinsertmetastar {%
+hainmueller2014causal}%
+\begin{APACrefauthors}%
+Hainmueller, J.%
+, Hopkins, D\BPBI J.%
+\BCBL {}\ \BBA {} Yamamoto, T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Causal inference in conjoint analysis: Understanding
+  multidimensional choices via stated preference experiments} {Causal inference
+  in conjoint analysis: Understanding multidimensional choices via stated
+  preference experiments}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Political Analysis}{22}{1}{1--30}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Kla{\v{s}}nja%
 , Lupu%
 \BCBL {}\ \BBA {} Tucker%
