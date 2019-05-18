@@ -61,6 +61,7 @@ mean(field$ate_vote)
 # Conduct moderator analysis with type of study as moderator
 ################################################################################
 meta$field = with(meta, ifelse(type == "Field" | type == "Natural", 1, 0))
+meta$survey = with(meta, ifelse(type == "Survey", 1, 0))
 
 # Save lab experiments
 lab = meta %>% 
@@ -82,7 +83,7 @@ re = rma(yi = ate_vote, sei = se_vote, data = meta)
 het_all = re$tau2
 
 # Mixed effects model with moderators
-me_mod = rma(yi = ate_vote, sei = se_vote, mods = field, data = meta)
+me_mod = rma(yi = ate_vote, sei = se_vote, mods = survey, data = meta)
 het_mod = me_mod$tau2
 
 # Calculate residual heterogeneity
