@@ -184,27 +184,6 @@ By contrast, survey experiments consistently show large negative effects from in
 
 Lab experiments that reveal corrupt actions to fellow players appear to be similar to survey experiments, and also show large negative treatment effects (see \autoref{fig: lab}). While there are not enough lab experiments examining whether the provision of corruption information impacts vote choice to conduct a formal meta-analysis \citep{arvate2017condemning, azfar2007transparency, solaz2018group, rundquist1977corrupt}, this discrepancy is worth noting as previous examinations of lab-field correspondence have found evidence of general replicability \citep{camerer2011promise, coppock2015assessing}.
 
-
-\section{Moderating factors}\label{sec: moderators}
-
-Even if voters generally find corruption distasteful, the quality of the information provided or positive candidate attributes and policies may outweigh the negative effects of corruption to voters, mitigating the effects of information provision on vote-share.\footnote{See \citet{de2017electoral} for a comprehensive overview.} These mitigating factors will naturally arise in a field setting, but may only be salient to respondents if specifically manipulated by researchers in a survey setting. A number of survey experiments have therefore added factors other than corruption as mitigating variables, some of which are described below. 
-
-\subsection{Quality of information}
-
-Corruption accusations can come from a variety of sources, some more credible than others. For example, accusations from an independent anti-corruption authority may be deemed more credible than those from an opposition party, and accusations may be deemed less credible than a conviction. Multiple studies have therefore attempted to randomize the quality of information provided to voters in order to capture how the electoral penalties vary in response to information quality \citep{botero2015says, breitenstein2019choosing, mares2019voting, banerjee2014poor, weitz2017can, winters2018information}. As expected, higher quality information produces larger negative treatment effects in these experiments (see \autoref{fig: quality}). 
-
-\subsection{Policy stances}
-
-Response to favorable policy stances has been shown to potentially mitigate the impact of corruption to voters. \citet{rundquist1977corrupt} use a survey experiment to show that a candidate's position on the Vietnam War could significantly increase the likelihood of voting for a ``corrupt'' candidate in the United States. \citet{franchino2015voting} examine corruption in relation to a candidate's education, income, tax policy, and same-sex marriage beliefs in Italy, and show that respondents prefer corrupt but socially and economically progressive candidates to clean but conservative candidates.
-
-\subsection{Economic benefit}
-
-Economic benefit has been argued to act as a similar mitigating factor.  \citet{klavsnja2017voters} randomize party, economic performance, and whether or not the politician's corrupt act itself brought benefits to their constituents in Argentina, Chile, and Uruguay, finding evidence that voters are more forgiving of corruption when it benefits them personally. By contrast, \citet{winters2013lacking} use a survey experiment in Brazil to show that voters punish corrupt politicians at the polls, including those with strong records of past performance as measured by public goods provision.
-
-\subsection{Partisanship and in-group attachments}
-
-Evidence of co-partisanship as a limiting factor to corruption deterrence is mixed. \citet{anduiza2013turning} and \citet{breitenstein2019choosing} both show that co-partisanship decreases the importance of corruption to Spanish voters using survey experiments. \citet{solaz2018group} induce in-group attachment in a lab-experiment of UK subjects, finding that in-group membership reduces sanction of ``corrupt'' participants. However, \citet{klavsnja2017voters} find relatively small effects of co-partisanship in Argentina, Chile, and Uruguay, and \citet{rundquist1977corrupt} find null effects in the US in the 1970s. \citet{konstantinidis2013sources} also find that partisanship does not moderate electoral punishment of corruption in a survey experiment in Greece. This evidence suggests that strong partisan effects occur where partisan attachments are strongest. Likewise, if co-ethnicity mitigates punishment of corrupt behavior, we may see these effects in highly fractionalized societies.
-
 \section{Research Design and Methods} \label{sec: Methods}
 
 \subsection{Selection criteria}\label{sec: criteria}
@@ -311,9 +290,9 @@ By contrast, corrupt candidates are punished by respondents by approximately 35 
 
 Examining all studies together, a test for heterogeneity by type of experiment (field or survey) reveals that up to 66\% of the total heterogeneity across studies can be accounted for by a dummy variable for type of experiment (0 = field, 1 = survey). This dummy variable has a significant association with the effectiveness of the information treatment at the 1\% significance level. In fact, with this dummy variable included, the overall estimate across studies is approximately 0, while the point estimate of the dummy variable is equal to -0.32.\footnote{Using a mixed effects model with a field experiment moderator.} This implies that the predicted treatment effect across experiments is not significantly different from zero when an indicator for type of experiment is included in the model. 
 
-\section{Discussion} \label{sec: discussion}
+\section{Exploring the discrepancy} \label{sec: discussion}
 
-What accounts for the large difference in treatment effects between field and survey experiments? Three possibilities are publication bias, social desirability bias, and the nature of the survey designs. Null results may be less likely to be published than significant results, particularly in a survey setting. Respondents in survey experiments may also behave in a normatively desirable manner according to the perceived norms of society and/or the researcher. It is also possible that more complex factorial designs - such as conjoint experiments - may more successfully approximate real-world settings, and by extension field experiments.  
+What accounts for the large difference in treatment effects between field and survey experiments? Three possibilities are publication bias, social desirability bias,  and the nature of the experimental designs. Null results may be less likely to be published than significant results, particularly in a survey setting. Respondents in survey experiments may also behave in a normatively desirable manner according to the perceived norms of society and/or the researcher. The experimental design of surveys may not mirror real-world voting decisions. It is possible that more complex factorial designs - such as conjoint experiments - may more successfully approximate real-world settings, and by extension field experiments. However, common methods of analysis of survey experiments may not capture all theoretical quantities of interest.
 
 \subsection{Publication bias and p-hacking}\label{sec: publication}
 
@@ -334,9 +313,52 @@ A related explanation may be the selection of the socially desirable option when
 
 How might we overcome social desirability bias in survey experiments? One option is to eschew hypothetical candidates in favor of real candidates in experiments conducted during the timing of actual elections. Of course, for ethical reasons this likely limits researchers to having actual information regarding the corrupt actions of candidates. A second option is the use of list experiments or experiments which ask about the expected behavior of other individuals in response to new information. List experiments are surprisingly uncommon in corruption experiments (none of the survey experiments included here use this method), but a vote buying\footnote{Typically considered a form of corruption.} experiment in Nicaragua estimated that only 2\% of respondents admitted directly to being offered compensation in exchange for their vote, but 24\% of respondents admitted to the practice in a list experiment \citep{gonzalez2012vote}. A third option, which I turn to next, is the use of more complex factorial designs such as conjoint experiments. 
 
-\subsection{Survey complexity and conjoint experiments}\label{sec: conjoint}
+\subsection{Do surveys mirror real-world voting decisions?}\label{sec: conjoint}
 
-As noted in \autoref{sec: moderators} above, the fact that moderating variables may dampen the salience of corruption to voters has not been lost on previous researchers, who have attempted to capture these factors via the inclusion of multiple treatment arms that vary factors such as policy stances, quality of information, economic benefit, and partisanship. However, the meta-analysis shown above indicates that even the inclusion of these moderators does not move point estimates close to the (approximately zero) field setting, in which all of these moderating factors may be salient to the voter. By contrast, conjoint experiments allow researchers to randomize a much larger host of candidate characteristics and may help illuminate the mechanisms that lead to these small effect sizes. This may also minimize social desirability bias, as it reduces the probability that the respondent is aware of the researcher's primary experimental manipulation of interest (e.g. corruption).\footnote{This is explicitly mentioned by \citet{hainmueller2014causal}, who argue that conjoint experiments give respondents ``various attributes and thus [they] can often find multiple justifications for a given choice.'' Note, however, that an experiment does not necessarily need to be a conjoint design to have this feature. Conjoint experiments encourage researchers to randomize more attributes and therefore typically contain more complex hypothetical vignettes. However, the same vignette complexity could be achieved without full randomization of these attributes. } 
+Previous researchers have noted that even if voters generally find corruption distasteful, the quality of the information provided or positive candidate attributes and policies may outweigh the negative effects of corruption to voters, mitigating the effects of information provision on vote-share.\footnote{See \citet{de2017electoral} for a comprehensive overview.} These mitigating factors will naturally arise in a field setting, but may only be salient to respondents if specifically manipulated in a survey setting. A number of survey experiments have therefore added factors other than corruption as mitigating variables.
+
+Corruption accusations can come from a variety of sources, some more credible than others.\footnote{For example, accusations from an independent anti-corruption authority may be deemed more credible than those from an opposition party, and accusations may be deemed less credible than a conviction.} Multiple studies have therefore attempted to randomize the quality of information provided to voters in order to capture how the electoral penalties vary in response to information quality \citep{botero2015says, breitenstein2019choosing, mares2019voting, banerjee2014poor, weitz2017can, winters2018information}. As expected, higher quality information produces larger negative treatment effects in these experiments (see \autoref{fig: quality}). 
+
+Response to favorable policy stances has been shown to potentially mitigate the impact of corruption to voters. \citet{rundquist1977corrupt} use a survey experiment to show that a candidate's position on the Vietnam War could significantly increase the likelihood of voting for a ``corrupt'' candidate in the United States. \citet{franchino2015voting} similarly show that respondents prefer corrupt but socially and economically progressive candidates to clean but conservative candidates.
+
+Economic benefit has been argued to act as a similar mitigating factor.  \citet{klavsnja2017voters} find evidence that respondents are more forgiving of corruption when it benefits them personally. By contrast, \citet{winters2013lacking} show that respondents punish corrupt politicians, even those with strong records of past performance.
+
+Evidence of co-partisanship as a limiting factor to corruption deterrence is mixed. \citet{anduiza2013turning} and \citet{breitenstein2019choosing} both show that co-partisanship decreases the importance of corruption to Spanish voters in survey experiments. \citet{solaz2018group} induce in-group attachment in a lab-experiment of UK subjects, finding that in-group membership reduces sanction of ``corrupt'' participants. However, \citet{klavsnja2017voters} find relatively small effects of co-partisanship in Argentina, Chile, and Uruguay, and \citet{rundquist1977corrupt} find null effects in the US in the 1970s. \citet{konstantinidis2013sources} also find that partisanship does not moderate electoral punishment of corruption in a survey experiment in Greece. This evidence suggests that strong partisan effects occur where partisan attachments are strongest.
+
+Yet while the experiments described above capture the tradeoffs voters make between corruption and other electoral factors, they may be measuring a different causal estimand than field experiments. For example, consider a voter's choice between two candidates in a field experimental setting (i.e. an actual election), where a candidate is revealed to be corrupt to voters in a treatment group, but not to voters in control. The treated voter can cast a ballot for the corrupt candidate A, or candidate B, who is clean. The control voter can cast a ballot for candidate A or candidate B, and has no corruption information. Now consider a survey experiment with a vignette in which the randomized treatment is whether the corrupt actions of a politician are revealed or not. The treated voter can vote for the corrupt candidate A or not, but no challenger exists. Likewise, the control voter can vote for clean candidate A or not, and no challenger exists. The average treatment effect as measured by a difference in mean voting outcome between the revealed corruption treatment and no information control may be different in these two scenarios.  
+
+%\autoref{tab:po} provides a tabular depiction, where Y represents potential outcomes, subscript A represents a candidate, and parenthetical 0 and 1 represent control (clean) and treatment (corrupt), respectively. $\tau_{field_{AB}}$ represent the treatment effects from the field experimental comparison of corrupt candidate A and clean candidate B. $\tau_{survey_{AA}}$ represents the treatment effects from the survey experimental comparisons of corrupt candidate A and clean candidate A. The table depicts a systematically stronger candidate A, and shows that the treatment effects of a comparison within candidates is not necessarily the same as a comparison across candidates. 
+%
+%\begin{table}[!htbp] \centering 
+%  \caption{Hypothetical schedule of potential outcomes}
+%  \label{tab:po} 
+%  \small
+%\begin{tabular}{@{\extracolsep{5pt}} cccccccc} 
+%\\[-1.8ex]\hline 
+%\hline \\[-1.8ex] 
+% $Y_A(0)$ & $Y_A(1)$ & $Y_B(0)$ & $Y_B(1)$ & $\tau_{field_{AB}}$ & $\tau_{survey_{AA}}$ \\ 
+% \hline \\[-1.8ex] 
+%1 & 1 & 1 & 1 & 0 & 0 \\
+%1 & 1 & 1 & 1 & 0 & 0 \\
+%1 & 1 & 1 & 1 & 0 & 0 \\
+%1 & 1 & 1 & 0 & 0 & 0 \\
+%1 & 1 & 0 & 0 & 1 & 0 \\
+%1 & 0 & 0 & 0 & 0 & -1 \\
+%1 & 0 & 0 & 0 & 0 & -1 \\
+%0 & 0 & 0 & 0 & 0 & 0 \\
+%0 & 0 & 0 & 0 & 0 & 0 \\
+%0 & 0 & 0 & 0 & 0 & 0 \\
+% \hline \\[-1.8ex] 
+%0.7 & 0.5 & 0.4 & 0.3 & 0.1 & -0.2 \\
+%\hline \\[-1.8ex] 
+%\end{tabular} 
+%\end{table} 
+
+
+
+\subsection{Suggestions for analysis of conjoint experiments}\label{sec: conjoint}
+
+The fact that moderating variables may dampen the salience of corruption to voters has clearly not been lost on previous researchers. However, the meta-analysis indicates that even the inclusion of these moderators does not move point estimates close to the (approximately zero) field setting, in which all of these moderating factors may be salient to the voter. By contrast, conjoint experiments allow researchers to randomize a much larger host of candidate characteristics and may help illuminate the mechanisms that lead to these small effect sizes. In addition, conjoints force respondents to pick between two candidates, better emulating the choice required in an election. Finally, conjoints may minimize social desirability bias as they reduce the probability that the respondent is aware of the researcher's primary experimental manipulation of interest (e.g. corruption).\footnote{This is explicitly mentioned by \citet{hainmueller2014causal}, who argue that conjoint experiments give respondents ``various attributes and thus [they] can often find multiple justifications for a given choice.'' Note, however, that an experiment does not necessarily need to be a conjoint design to have this feature. Conjoint experiments encourage researchers to randomize more attributes and therefore typically contain more complex hypothetical vignettes. However, the same vignette complexity could be achieved without full randomization of these attributes. } 
 
 Researchers have thus far tended to present the results of conjoint experiments as individual average marginal component effects (AMCEs), then compare the magnitude of these effect sizes. A more appropriate method in some cases may be to calculate average marginal effects in order to present predicted probabilities of voting for a candidate with contextually plausable properties.\footnote{This method is utilized by \citet{teele2018ties} to examine the probability of voting female or male candidates holding other candidate attributes constant, and is discussed in more detail by \citet{leeper2018measuring}.} For example, in a conjoint experiment including corruption information, this might be interpreted as the probability of voting for a candidate that is both corrupt and possesses other particular feature levels (e.g. party membership or policy positions), marginalizing across all other features in the experiment.
 
