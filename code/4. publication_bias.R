@@ -66,7 +66,7 @@ regtest_re_survey = regtest(re_survey, model = "lm", predictor = "sei")
 regtest_re_field = regtest(re_field, model = "lm", predictor = "sei")
 
 ################################################################################
-# P-curve
+# P-curve: field experiments
 ################################################################################
 # Calculate p-values from point estimates and standard errors
 meta$p = with(meta, pnorm(ate_vote/se_vote))
