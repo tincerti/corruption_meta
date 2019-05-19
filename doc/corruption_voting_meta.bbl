@@ -748,6 +748,34 @@ Hainmueller, J.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Humphreys%
+\ \BBA {} Weinstein%
+}{%
+Humphreys%
+\ \BBA {} Weinstein%
+}{%
+{\protect \APACyear {2012}}%
+}]{%
+humphreys2012policing}
+\APACinsertmetastar {%
+humphreys2012policing}%
+\begin{APACrefauthors}%
+Humphreys, M.%
+\BCBT {}\ \BBA {} Weinstein, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2012}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Policing politicians: citizen empowerment and political
+  accountability in Uganda preliminary analysis} {Policing politicians: citizen
+  empowerment and political accountability in uganda preliminary
+  analysis}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Columbia Universities. Unpublished manuscript}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Kla{\v{s}}nja%
 , Lupu%
 \BCBL {}\ \BBA {} Tucker%

@@ -169,7 +169,7 @@ Competitive elections create a system whereby voters can hold policy makers acco
 
 Numerous experiments have examined whether providing voters with information about the corrupt acts of politicians decreases their re-election rates. These papers  often suggest that there is little consensus on how voters respond to information about corrupt politicians \citep{botero2015says, buntaine2018sms, arias2018priors, klavsnja2017voters, solaz2018group, de2017electoral}. Others indicate that experiments have provided us with evidence that voters strongly punish individual politicians involved in malfeasance \citep{chong2014does, winters2015political, winters2016s, weitz2017can}.
 
-By contrast, this meta-analysis suggests that: (1) In aggregate, the effect of providing information about incumbent corruption on incumbent vote share in field experiments is approximately zero, and (2) corrupt candidates are punished by respondents by approximately 33-35 percentage points across survey experiments. I also examine the mechanisms that may give rise to this discrepancy. I do not find systematic evidence of publication bias. Social desirability bias may lead survey experiments to capture anti-corruption norms rather than realistic voter behavior. Field and survey experiments also may be measuring different causal estimands, as field experiments possess the option of voting for alternative candidates or abstaining. Conjoint experiments attempt to alleviate this issue, but are often analyzed in ways that may fail to illuminate the most substantively important comparisons.  
+By contrast, this meta-analysis suggests that: (1) In aggregate, the effect of providing information about incumbent corruption on incumbent vote share in field experiments is approximately zero, and (2) corrupt candidates are punished by respondents by approximately 33-35 percentage points across survey experiments. I also examine mechanisms that may give rise to this discrepancy. I do not find systematic evidence of publication bias. Social desirability bias may lead survey experiments to capture anti-corruption norms rather than realistic voter behavior. Field and survey experiments also may be measuring different causal estimands, as field experiments possess the option of voting for alternative candidates or abstaining. Conjoint experiments attempt to alleviate this issue, but are often analyzed in ways that may fail to illuminate the most substantively important comparisons.  
 
 %A future draft of this paper explores the mechanisms behind these effects, testing for social desirability bias, publication bias, etc. 
 
@@ -196,7 +196,7 @@ For survey experiments, studies must test a no-information control group versus 
 
 \subsection{Included studies}\label{sec: included}
 
-A full list of all papers - disaggregated by field and survey experiments - that meet the criteria outlined above are provided in \autoref{tab:field} and \autoref{tab:survey}. A list of lab experiments (4 total) can also be found in and \autoref{tab:lab}, although these studies are not included in the meta-analysis. 
+A full list of all papers - disaggregated by field and survey experiments - that meet the criteria outlined above are provided in \autoref{tab:field} and \autoref{tab:survey}. A list of lab experiments (4 total) can also be found in and \autoref{tab:lab}, although these studies are not included in the meta-analysis. A full list of excluded studies with justification for their exclusion can be found in \autoref{tab:excluded}.
 
 \begin{table}[!htbp] \centering 
   \caption{Field experiments}
@@ -231,12 +231,10 @@ A full list of all papers - disaggregated by field and survey experiments - that
  Study & Country & Type of survey \\ 
 \hline \\[-1.8ex] 
 \citet{avenburg2016corruption} & Brazil & Vignette  \\
-%\citet{anduiza2013turning} & Spain & Information\\
 \citet{banerjee2014poor} & India & Vignette \\
 \citet{breitenstein2019choosing} & Spain & Conjoint \\
 \citet{boas2018norms} & Brazil & Vignette \\
 \citet{chauchard2017limited} & India & Conjoint \\
-%\citet{de2011voters} & Brazil & Fliers \\
 \citet{eggers2018corruption} & UK & Conjoint \\
 \citet{franchino2015voting} & Italy & Conjoint \\
 \citet{klavsnja2013economy} & Sweden & Vignette \\
@@ -455,17 +453,29 @@ These findings suggest that while vote-choice survey experiments may provide inf
 \end{figure}
 
 \pagebreak
-\subsection{Information quality}
+\subsection{Excluded studies}
 
-\begin{figure}[!htb]
-\includegraphics[scale=0.93]{../figs/quality.pdf}
-\vspace{0.2cm}
-\caption{Survey experiments by information quality: Average treatment effect of corruption information on vote share}.
-\small
-\vspace{-0.3cm}
-\label{fig: quality}
-\end{figure}
-
+\begin{table}[!htbp] \centering 
+  \caption{Excluded experiments}
+  \label{tab:excluded} 
+  \small
+\begin{tabular}{@{\extracolsep{0pt}} cccccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ Study & Type & Reason for exclusion \\ 
+\hline \\[-1.8ex] 
+\citet{anduiza2013turning} & Survey & Lack of no-corruption control group \\
+\citet{botero2015says} & Survey & Lack of no-corruption control group \\
+\citet{de2011voters} & Survey & Outcome is hypothetically changing actual vote \\
+\citet{konstantinidis2013sources} & Survey & Lack of no-corruption control group \\
+\citet{munoz2012voters} & Survey & Lack of no-corruption control group \\
+\citet{rundquist1977corrupt} & Lab & Lack of no-corruption control group \\
+\citet{weitz2017can} & Survey & Data identical to \citet{winters2016s} \\
+\citet{weschle2016punishing} & Survey & Lack of no-corruption control group \\
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+\FloatBarrier
 
 \pagebreak
 \subsection{Robustness checks}
@@ -558,6 +568,18 @@ Survey & 0.3159  \\
 \end{tabular} 
 \end{table} 
 \FloatBarrier
+
+\pagebreak
+\subsection{Information quality}
+
+\begin{figure}[!htb]
+\includegraphics[scale=0.93]{../figs/quality.pdf}
+\vspace{0.2cm}
+\caption{Survey experiments by information quality: Average treatment effect of corruption information on vote share}.
+\small
+\vspace{-0.3cm}
+\label{fig: quality}
+\end{figure}
 
 
 
