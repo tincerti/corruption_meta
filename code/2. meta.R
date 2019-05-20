@@ -17,7 +17,7 @@ load(file="data/meta.RData")
 ################################################################################
 # Calculate confidence intervals for studies with SEs only
 meta$ci_lower = with(meta, ifelse(is.na(ci_lower), ate_vote - 1.96*se_vote, ci_lower))
-meta$ci_upper = with(meta, ifelse(is.na(ci_upper), ate_vote - 1.96*se_vote, ci_upper))
+meta$ci_upper = with(meta, ifelse(is.na(ci_upper), ate_vote + 1.96*se_vote, ci_upper))
 
 # Keep field experiments only
 field = meta %>% 
