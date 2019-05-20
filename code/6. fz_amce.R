@@ -69,13 +69,16 @@ reg_all <- amce(formula = Y ~ `Corrupt` + `Education` + `Income` +
 ################################################################################
 # Create conjoint plot
 plot(reg_all,
+     group.order = c("Corrupt", "Education", "Income", 
+                     "Same sex marriage", "Tax policy"),
      xlab = "Change in prob. of voting",
-     size = 0.2,
+     point.size = 0.25,
      colors = c("firebrick1", "black", "grey60", "black", "grey60"),
      plot.theme = theme_bw() + 
      theme(panel.grid.major = element_line(colour = "grey98")) + 
      theme(legend.position="none") +
      theme(axis.title.x = element_text(size = 10)) +
+     theme(axis.ticks = element_blank()) + 
      theme(plot.title = element_text(size=12)) +
      theme(plot.title = element_text(hjust = 0.5)),
      text.color = "black",
