@@ -66,11 +66,30 @@ regtest_re_survey = regtest(re_survey, model = "lm", predictor = "sei")
 regtest_re_field = regtest(re_field, model = "lm", predictor = "sei")
 
 ################################################################################
-# P-curve: field experiments
+# Plot of p-values
 ################################################################################
 # Calculate p-values from point estimates and standard errors
 meta$p = with(meta, pnorm(ate_vote/se_vote))
+meta$z = meta$ate_vote/meta$se_vote
+meta$p2 = with(meta, 2*pnorm(-abs(z)))
 
+# Plot p values
+ggplot(meta) +
+  geom_point(aes(p2, author_reduced, group = 1), 
+             color = "steelblue2", size = 1.5) + 
+  xlab("P-values") + 
+  ylab("") + 
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme(axis.text=element_text(size = 8)) +
+  theme(axis.text.x = element_text(size = 8)) +
+  theme(legend.position = "none")
+
+ggsave("figs/pcurve.pdf", height = 4, width = 6)
+
+################################################################################
+# P-curve: field experiments
+################################################################################
 # Calculate percentage of p-values below value
 meta$p_threshold = with(meta, ifelse(p < 0.05, .05, NA))
 meta$p_threshold = with(meta, ifelse(p < 0.04, .04, p_threshold))
