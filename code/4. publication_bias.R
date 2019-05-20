@@ -85,7 +85,7 @@ ggplot(meta) +
   theme(axis.text.x = element_text(size = 8)) +
   theme(legend.position = "none")
 
-ggsave("figs/pcurve.pdf", height = 4, width = 6)
+#ggsave("figs/pvalues.pdf", height = 4, width = 6)
 
 ################################################################################
 # P-curve: field experiments
