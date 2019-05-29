@@ -35,6 +35,10 @@ field = rbind(field, meta_fe, meta_re)
 field$author_reduced = fct_relevel(field$author_reduced, "Fixed effects model", after = 0)
 field$author_reduced = fct_relevel(field$author_reduced, "Random effects model", after = 0)
 
+# Mutliply effect size by 100
+field$ate_vote = field$ate_vote*100
+field$se_vote = field$se_vote*100
+
 # Plot field results
 ggplot(field, aes(ate_vote, author_reduced)) +
   geom_point(color = "seagreen3", size = 1.5) + 
@@ -46,11 +50,11 @@ ggplot(field, aes(ate_vote, author_reduced)) +
                      xmin = ate_vote - 1.96*se_vote, 
                      xmax = ate_vote + 1.96*se_vote),
                 color="grey30", size=0.5, alpha = 0.5, height = 0.2) +
-  geom_text(aes(label = country, x = 0.25, y = author_reduced), size = 3) +
+  geom_text(aes(label = country, x = 25, y = author_reduced), size = 3) +
   geom_vline(xintercept = 0, linetype = "dashed") +
   geom_hline(yintercept = 2.5, linetype = "solid") +
   xlab("Change in vote share (percentage points)") + 
-  scale_x_continuous(limits = c(-.9, 0.3), breaks=seq(-.9,0.3, .1)) +
+  scale_x_continuous(limits = c(-90, 30), breaks=seq(-90,30, 10)) +
   theme_classic() +
   theme(axis.title.y=element_blank()) +
   theme(plot.title = element_text(hjust = 0.5)) +
@@ -91,6 +95,10 @@ survey = rbind(survey, meta_fe, meta_re)
 survey$author_reduced = fct_relevel(survey$author_reduced, "Fixed effects model", after = 0)
 survey$author_reduced = fct_relevel(survey$author_reduced, "Random effects model", after = 0)
 
+# Mutliply effect size by 100
+survey$ate_vote = survey$ate_vote*100
+survey$se_vote = survey$se_vote*100
+
 # Plot survey results
 ggplot(survey, aes(ate_vote, author_reduced)) +
   geom_point(color = "steelblue2", size = 1.5) + 
@@ -104,9 +112,9 @@ ggplot(survey, aes(ate_vote, author_reduced)) +
                 color="grey30", size=0.5, alpha = 0.5, height = 0.2) +
   geom_vline(xintercept = 0, linetype = "dashed") +
   geom_hline(yintercept = 2.5, linetype = "solid") +
-  geom_text(aes(label = country, x = 0.25, y = author_reduced), size = 3) +
+  geom_text(aes(label = country, x = 25, y = author_reduced), size = 3) +
   xlab("Change in vote share (percentage points)") + 
-  scale_x_continuous(limits = c(-.9, 0.3), breaks=seq(-.9,0.3, .1)) +
+  scale_x_continuous(limits = c(-90, 30), breaks=seq(-90,30, 10)) +
   theme_classic() +
   theme(axis.title.y=element_blank()) +
   theme(plot.title = element_text(hjust = 0.5)) +
