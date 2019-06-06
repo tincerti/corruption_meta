@@ -748,6 +748,34 @@ Hainmueller, J.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Kalla%
+\ \BBA {} Broockman%
+}{%
+Kalla%
+\ \BBA {} Broockman%
+}{%
+{\protect \APACyear {2018}}%
+}]{%
+kalla2018minimal}
+\APACinsertmetastar {%
+kalla2018minimal}%
+\begin{APACrefauthors}%
+Kalla, J\BPBI L.%
+\BCBT {}\ \BBA {} Broockman, D\BPBI E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The minimal persuasive effects of campaign contact in
+  general elections: Evidence from 49 field experiments} {The minimal
+  persuasive effects of campaign contact in general elections: Evidence from 49
+  field experiments}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{American Political Science Review}{112}{1}{148--166}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Kla{\v{s}}nja%
 , Lupu%
 \BCBL {}\ \BBA {} Tucker%

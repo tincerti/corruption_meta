@@ -10,6 +10,9 @@ library(stargazer)
 library(gridExtra)
 library(ggplotify)
 
+# Do not display numeric values scientific notation
+options(scipen = 999)
+
 # Data import
 load(file="data/meta_results.RData")
 
@@ -69,9 +72,10 @@ regtest_re_field = regtest(re_field, model = "lm", predictor = "sei")
 # Plot of p-values
 ################################################################################
 # Calculate p-values from point estimates and standard errors
-meta$p = with(meta, pnorm(ate_vote/se_vote))
 meta$z = meta$ate_vote/meta$se_vote
-meta$p2 = with(meta, 2*pnorm(-abs(z)))
+meta$p = with(meta, 2*pnorm(-abs(z)))
+
+# Add p-value reported in study (do this in replications file)
 
 # Plot p values
 ggplot(meta) +
@@ -86,6 +90,12 @@ ggplot(meta) +
   theme(legend.position = "none")
 
 #ggsave("figs/pvalues.pdf", height = 4, width = 6)
+
+################################################################################
+# Test if publication predicts reported p-values
+################################################################################
+
+
 
 ################################################################################
 # P-curve: field experiments
