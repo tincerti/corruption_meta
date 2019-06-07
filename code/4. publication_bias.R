@@ -9,6 +9,7 @@ library(metafor)
 library(stargazer)
 library(gridExtra)
 library(ggplotify)
+library(glmnet)
 
 # Do not display numeric values scientific notation
 options(scipen = 999)
@@ -75,11 +76,9 @@ regtest_re_field = regtest(re_field, model = "lm", predictor = "sei")
 meta$z = meta$ate_vote/meta$se_vote
 meta$p = with(meta, 2*pnorm(-abs(z)))
 
-# Add p-value reported in study (do this in replications file)
-
 # Plot p values
 ggplot(meta) +
-  geom_point(aes(p2, author_reduced, group = 1), 
+  geom_point(aes(p, author_reduced, group = 1), 
              color = "steelblue2", size = 1.5) + 
   xlab("P-values") + 
   ylab("") + 
@@ -94,8 +93,26 @@ ggplot(meta) +
 ################################################################################
 # Test if publication predicts reported p-values
 ################################################################################
+# Converted reported p_values to numeric
+meta$p = gsub("<", '', meta$p_reported)
+meta$p = gsub(">", '', meta$p)
+meta$p = as.character(meta$p)
 
+# OLS
+p_ols = lm(published ~ p, data = meta)
+summary(p_ols)
 
+# Logit
+p_logit = glm(published ~ p, data = meta)
+summary(p_logit)
+
+# Cross validated elastic net
+cv = meta %>% select(-Notes)
+x = model.matrix(published ~ ., cv)[, -1]
+y = meta$published
+
+cv_ridge_fit <- cv.glmnet(x, y, alpha = 0.5)
+coef(cv_ridge_fit)
 
 ################################################################################
 # P-curve: field experiments

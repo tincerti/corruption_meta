@@ -46,6 +46,9 @@ se.wsw17 = summary(reg.wsw17.all)$coef[2, 2]
 # Extract number of observations
 n.wsw17 = nobs(reg.wsw17.all)
 
+# Reported p-value
+p.wsw17 = "<0.01"
+
 ################################################################################
 # Winters/Weitz-Shapiro CP
 ################################################################################
@@ -65,6 +68,9 @@ se.wsw13 = summary(reg.wsw13)$coef[2, 2]
 # Extract number of observations
 n.wsw13 = nobs(reg.wsw13)
 
+# Reported p-value
+p.wsw13 = "<0.01"
+
 ################################################################################
 # Winters/Weitz-Shapiro 2015
 ################################################################################
@@ -72,6 +78,7 @@ ate.wsw15 = -1.53/3
 t_val = qt(0.01/2, df = 1974) # Calculating the t-value using quantile function
 se.wsw15 = abs(ate.wsw15)/abs(t_val) # Calculating standard error
 n.wsw15 = 1974
+p.wsw15 = "<0.01"
 
 ################################################################################
 # Winters/Weitz-Shapiro PRQ
@@ -88,6 +95,9 @@ wsw16$vote = with(wsw16, ifelse(voteintent > 2, 1, 0))
 
 # Run models
 reg.wsw16.all = lm(vote ~ corrupt, data = wsw16) # Same experiment
+
+# Reported p-value
+p.wsw16 = "<0.01"
 
 ################################################################################
 # Winters/Weitz-Shapiro PSRM
@@ -110,16 +120,21 @@ se.wsw18 = summary(reg.wsw18)$coef[2, 2]
 # Extract number of observations
 n.wsw18 = nobs(reg.wsw18)
 
+# Reported p-value
+p.wsw18 = "<0.01"
+
 ################################################################################
 # Klasnja & Tucker
 ################################################################################
 ate.sweden = ((-0.768/4 + -.814/4))/2
 se.sweden = ((.090/4 + .097/4))/2
 n.sweden = 1852
+p.sweden = "<0.01"
 
 ate.moldova = ((0.031/4) + (-.503/4))/2
 se.moldova = ((.165/4 + .166/4))/2
 n.moldova = 459
+p.moldova = "<0.01"
 
 ################################################################################
 # De Figuerido working paper survey experiment
@@ -127,6 +142,7 @@ n.moldova = 459
 ate.defig = .01
 se.defig = (.07 - .01)/1.96 # estimate standard error from confidence interval
 n.defig = 200
+p.defig = ">0.1"
 
 ################################################################################
 # Mares and Visconti 2019
@@ -148,6 +164,9 @@ se.mv = summary(mv_corrupt, cluster = idnum)$coef[2, 2]
 # Extract number of observations
 n.mv = 502
 
+# Reported p-value
+p.mv = "<0.01"
+
 ################################################################################
 # Breitenstein (No replication data?)
 ################################################################################
@@ -161,6 +180,7 @@ se.b.judge = 0.00793
 se.b.avg = (se.b.party + se.b.judge)/2
 
 n.b = 2275
+p.b = "<0.01"
 
 ################################################################################
 # Franchino and Zucchini 2014
@@ -185,6 +205,9 @@ se.fz = summary(fz_corrupt, cluster = IDContatto)$coef[2, 2]
 # Extract number of observations
 n.fz = 347
 
+# Reported p-value
+p.fz = "<0.01"
+
 ################################################################################
 # Eggers, Vivyan, and Wagner 2017
 ################################################################################
@@ -203,6 +226,9 @@ se.evw = summary(evw_corrupt, cluster = id)$coef[2, 2]
 # Extract number of observations
 n.evw = 1962
 
+# Reported p-value
+p.evw = "<0.01"
+
 ################################################################################
 # Azfar and Nelson (lab)
 ################################################################################
@@ -210,6 +236,7 @@ ate.an = -.252
 t.stat.an = 2.57
 se.an = ate.an/t.stat.an
 n.an = 132
+p.an = "<0.01"
 
 ################################################################################
 # Add to meta analysis dataframe
@@ -217,37 +244,43 @@ n.an = 132
 # Winters/Weitz-Shapiro 2017
 wsw17 = data.frame(type="Survey", year=2016 , author = "Winters & Weitz-Shapiro", 
                    author_reduced = "Winters & Weitz-Shapiro 2017", country = "Brazil", 
-                   ate_vote = ate.wsw17, se_vote = se.wsw17, ci_upper = NA, 
-                   ci_lower = NA, N = n.wsw17, published = 1, Notes = NA)
+                   ate_vote = ate.wsw17, se_vote = se.wsw17, ci_upper = NA,
+                   p_reported = p.wsw17, ci_lower = NA, N = n.wsw17, 
+                   published = 1, Notes = NA)
 
 # Winters/Weitz-Shapiro 2013
 wsw13 = data.frame(type="Survey", year=2013 , author = "Winters & Weitz-Shapiro", 
                    author_reduced = "Winters & Weitz-Shapiro 2013", country = "Brazil", 
-                   ate_vote = ate.wsw13, se_vote = se.wsw13, ci_upper = NA, 
+                   ate_vote = ate.wsw13, se_vote = se.wsw13, ci_upper = NA,
+                   p_reported = p.wsw13,
                    ci_lower = NA,N = n.wsw13, published = 1, Notes = NA)
 
 # Winters/Weitz-Shapiro 2015
 wsw15 = data.frame(type="Survey", year=2015 , author = "Winters & Weitz-Shapiro", 
                    author_reduced = "Winters & Weitz-Shapiro 2015", country = "Brazil", 
-                   ate_vote = ate.wsw15, se_vote = se.wsw15, ci_upper = NA, 
-                   ci_lower = NA,N = n.wsw15, published = 1, Notes = NA)
+                   ate_vote = ate.wsw15, se_vote = se.wsw15, ci_upper = NA,
+                   p_reported = p.wsw15, ci_lower = NA,N = n.wsw15, 
+                   published = 1, Notes = NA)
 
 # Winters/Weitz-Shapiro 2018
 wsw18 = data.frame(type="Survey", year=2018 , author = "Winters & Weitz-Shapiro", 
                    author_reduced = "Winters & Weitz-Shapiro 2018", country = "Argentina", 
                    ate_vote = ate.wsw18, se_vote = se.wsw18, ci_upper = NA, 
-                   ci_lower = NA,N = n.wsw18, published = 1, Notes = NA)
+                   p_reported = p.wsw18, ci_lower = NA,N = n.wsw18, 
+                   published = 1, Notes = NA)
 
 # Klasna and Tucker Sweden
 kt_sweden = data.frame(type="Survey", year=2013 , author = "Klasna & Tucker", 
                    author_reduced = "Klasna & Tucker (Sweden)", country = "Sweden", 
-                   ate_vote = ate.sweden, se_vote = se.wsw13, ci_upper = NA, 
-                   ci_lower = NA, N = n.sweden, published = 1, Notes = NA)
+                   ate_vote = ate.sweden, se_vote = se.wsw13, ci_upper = NA,
+                   p_reported = p.sweden, ci_lower = NA, N = n.sweden, 
+                   published = 1, Notes = NA)
 
 # Klasna and Tucker Moldova
 kt_moldova = data.frame(type="Survey", year=2013 , author = "Klasna & Tucker", 
                    author_reduced = "Klasna & Tucker (Moldova)", country = "Moldova", 
                    ate_vote = ate.moldova, se_vote = se.moldova, ci_upper = NA, 
+                   p_reported = p.moldova,
                    ci_lower = NA, published = 1, N = n.moldova, Notes = NA)
 
 # De Figuerido et al. Brazil 2011
@@ -260,31 +293,36 @@ kt_moldova = data.frame(type="Survey", year=2013 , author = "Klasna & Tucker",
 mv = data.frame(type="Survey", year=2019 , author = "Mares & Visconti", 
                    author_reduced = "Mares & Visconti", country = "Romania", 
                    ate_vote = ate.mv, se_vote = se.mv, ci_upper = NA, 
-                   ci_lower = NA, N = n.mv, published = 1, Notes = NA)
+                   p_reported = p.mv, ci_lower = NA, N = n.mv, published = 1, 
+                   Notes = NA)
 
 # Breitenstein 2019
 b = data.frame(type="Survey", year=2019 , author = "Breitenstein", 
                    author_reduced = "Breitenstein", country = "Spain", 
-                   ate_vote = ate.b.avg, se_vote = se.b.avg, ci_upper = NA, 
-                   ci_lower = NA, N = n.b, published = 1, Notes = NA)
+                   ate_vote = ate.b.avg, se_vote = se.b.avg, ci_upper = NA,
+                   p_reported = p.b, ci_lower = NA, N = n.b, published = 1, 
+                   Notes = NA)
 
 # Franchino and Zucchini 2014
 fz = data.frame(type="Survey", year=2014 , author = "Franchino and Zucchini", 
                    author_reduced = "Franchino and Zucchini", country = "Italy", 
                    ate_vote = ate.fz, se_vote = se.fz, ci_upper = NA, 
-                   ci_lower = NA, N = n.fz, published = 1, Notes = NA)
+                   ci_lower = NA, N = n.fz,  p_reported = p.fz, 
+                   published = 1, Notes = NA)
 
 # Eggers, Vivyan, and Wagner 2017
 evw = data.frame(type="Survey", year=2017 , author = "Eggers, Vivyan, and Wagner", 
                    author_reduced = "Eggers et al.", country = "UK", 
                    ate_vote = ate.evw, se_vote = se.evw, ci_upper = NA, 
-                   ci_lower = NA, N = n.evw, published = 1, Notes = NA)
+                   p_reported = p.evw, ci_lower = NA, N = n.evw, 
+                   published = 1, Notes = NA)
 
 # Azfar and Nelson 2007
 an = data.frame(type="Lab", year=2007 , author = "Azfar and Nelson", 
                    author_reduced = "Azfar and Nelson", country = "USA", 
                    ate_vote = ate.an, se_vote = se.an, ci_upper = NA, 
-                   ci_lower = NA, N = n.an, published = 1, Notes = NA)
+                   ci_lower = NA, N = n.an,  p_reported = p.an,
+                   published = 1, Notes = NA)
 
 # Combine dataframes
 meta = rbind(results, wsw17, wsw13, wsw15, wsw18, kt_sweden, kt_moldova,
