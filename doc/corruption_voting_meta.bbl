@@ -1,6 +1,30 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
+Agerberg%
+}{%
+Agerberg%
+}{%
+{\protect \APACyear {2019}}%
+}]{%
+agerberg2019lesser}
+\APACinsertmetastar {%
+agerberg2019lesser}%
+\begin{APACrefauthors}%
+Agerberg, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The Lesser Evil? Corruption Voting and the Importance of
+  Clean Alternatives} {The lesser evil? corruption voting and the importance of
+  clean alternatives}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Comparative Political Studies}{}{}{0010414019852697}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Anduiza%
 , Gallego%
 \BCBL {}\ \BBA {} Mu{\~n}oz%
@@ -1127,6 +1151,36 @@ Solaz, H.%
   {In-group loyalty and the punishment of corruption}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{Comparative Political Studies}{}{}{0010414018797951}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Stokes%
+, Dunning%
+, Nazareno%
+\BCBL {}\ \BBA {} Brusco%
+}{%
+Stokes%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2013}}%
+}]{%
+stokes2013brokers}
+\APACinsertmetastar {%
+stokes2013brokers}%
+\begin{APACrefauthors}%
+Stokes, S\BPBI C.%
+, Dunning, T.%
+, Nazareno, M.%
+\BCBL {}\ \BBA {} Brusco, V.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2013}.
+\newblock
+\APACrefbtitle {Brokers, voters, and clientelism: The puzzle of distributive
+  politics} {Brokers, voters, and clientelism: The puzzle of distributive
+  politics}.
+\newblock
+\APACaddressPublisher{}{Cambridge University Press}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

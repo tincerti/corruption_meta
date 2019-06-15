@@ -230,6 +230,14 @@ n.evw = 1962
 p.evw = "<0.01"
 
 ################################################################################
+# Agerberg (2019)
+################################################################################
+ate.ager = (-.33 + -.32)/2 # Average of two corruption treatments
+se.ager = 0.011 # SE identical across two corruption treatments
+n.ager = 2017
+p.ager = "<0.01"
+
+################################################################################
 # Azfar and Nelson (lab)
 ################################################################################
 ate.an = -.252
@@ -317,6 +325,13 @@ evw = data.frame(type="Survey", year=2017 , author = "Eggers, Vivyan, and Wagner
                    p_reported = p.evw, ci_lower = NA, N = n.evw, 
                    published = 1, Notes = NA)
 
+# Agerberg 2019
+ager = data.frame(type="Survey", year=2019 , author = "Agerberg", 
+                   author_reduced = "Agerberg", country = "Spain", 
+                   ate_vote = ate.ager, se_vote = se.ager, ci_upper = NA, 
+                   ci_lower = NA, N = n.ager,  p_reported = p.ager,
+                   published = 1, Notes = NA)
+
 # Azfar and Nelson 2007
 an = data.frame(type="Lab", year=2007 , author = "Azfar and Nelson", 
                    author_reduced = "Azfar and Nelson", country = "USA", 
@@ -326,7 +341,7 @@ an = data.frame(type="Lab", year=2007 , author = "Azfar and Nelson",
 
 # Combine dataframes
 meta = rbind(results, wsw17, wsw13, wsw15, wsw18, kt_sweden, kt_moldova,
-             mv, b, fz, evw, an) 
+             mv, b, fz, evw, ager, an) 
 #            defig, wsw13comp, wsw13nocomp, wsw13noinfo)
 
 # Save combined dataframe

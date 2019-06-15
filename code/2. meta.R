@@ -82,7 +82,7 @@ fe = rma.uni(yi = ate_vote, sei = se_vote, data = meta, method = "FE")
 re = rma(yi = ate_vote, sei = se_vote, data = meta)
 het_all = re$tau2
 
-# Mixed effects model with moderators
+# Mixed effects model with survey moderator
 me_mod = rma(yi = ate_vote, sei = se_vote, mods = survey, data = meta)
 het_mod = me_mod$tau2
 
