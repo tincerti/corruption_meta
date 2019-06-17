@@ -147,7 +147,7 @@
 \author{Trevor Incerti\thanks{PhD Student in the Department of Political Science, Yale University. trevor.incerti@yale.edu}\vspace{-2ex}}
 %\affil{\textit{Yale University}\vspace{-2.5ex}}
 %\date{\today}
-\date{\today}
+\date{June 15, 2019}
 \maketitle
 
 \begin{abstract}
@@ -157,8 +157,11 @@ Do voters hold politicians accountable for corruption? Field experiments that pr
 
 \doublespace
 
+\vspace{1cm}
 \begin{center}
-\textcolor{red}{[PRELIMINARY DRAFT: ADDITIONAL STUDIES TO BE ADDED AND POINT ESTIMATES REFINED. PLEASE DO NOT CITE OR CIRCULATE WITHOUT AUTHOR'S PERMISSION.]}
+DRAFT: \\ 
+Additional studies may be added or point estimates refined. \\
+Please do not cite without author's permission.
 \end{center}
 
 \pagebreak
@@ -293,9 +296,9 @@ What accounts for the large difference in treatment effects between field and su
 
 \subsection{Publication bias and p-hacking}\label{sec: publication}
 
-Of the ten field experiments I located, only six are published. By contrast, for survey experiments only three of the 15 papers remain unpublished, and these are recent drafts. This may reflect that the null results from field experiments are less likely to be published than their survey counterparts with large and highly significant negative treatment effects, even when standard errors are relatively small. While recognizing that the sample size of studies is small, OLS and multinomial logistic regression do not indicate that reported p-value is a significant predictor of publication status, although the directionality of coefficients is consistent with lower p-values being more likely to be published. 
+Of the ten field experiments I located, only six are published. By contrast, for survey experiments only three of the 15 papers remain unpublished, and these are recent drafts. This may reflect that the null results from field experiments are less likely to be published than their survey counterparts with large and highly significant negative treatment effects, even when standard errors are relatively small. While recognizing that the sample size of studies is small, OLS and logistic regression do not indicate that reported p-value is a significant predictor of publication status, although the directionality of coefficients is consistent with lower p-values being more likely to be published (\autoref{p_publication}). However, this simple analysis is complicated by the fact that the p-value associated with the average treatment effect across all subjects may not be the primary p-value of interest in the paper. 
 
-In order to more formally test for publication bias, I first use the p-curve developed in \citet{simonsohn2014p1, simonsohn2014p2} and \citet{simonsohn2015better}. The p-curve is based on the premise that only ``significant'' results are typically published, and depicts the distribution of statistically significant p-values for a set of published studies. The shape of the p-curve is indicative of whether or not the results of a set of studies are derived from true effects, or from publication bias. If effect sizes are clustered around 0.05 (i.e. the p-curve is ``left skewed''), this may be evidence of p-hacking, indicating that studies with p-values just below 0.05 are ``selectively reported.'' If the p-curve is ``right skewed'' and there are more low p-values (0.01), this is evidence of true effects. All significant survey experimental results included in the meta-analysis are significant at the 1\% level (making construction of a ``curve'' with bins of width 0.01 impossible), implying that publication bias likely does not explain the large negative treatment effects in survey experiments.\footnote{There is also no indication of publication bias at the 1\% level using this method.} For field experiments, there is not a large enough number of published experiments to make the p-curve viable. Only six studies are published, and of these only four are significant at at least the 5\% level.
+In order to more formally test for publication bias, I first use the p-curve \citep{simonsohn2014p1, simonsohn2014p2, simonsohn2015better}. The p-curve is based on the premise that only ``significant'' results are typically published, and depicts the distribution of statistically significant p-values for a set of published studies. The shape of the p-curve is indicative of whether or not the results of a set of studies are derived from true effects, or from publication bias. If effect sizes are clustered around 0.05 (i.e. the p-curve is ``left skewed''), this may be evidence of p-hacking, indicating that studies with p-values just below 0.05 are ``selectively reported.'' If the p-curve is ``right skewed'' and there are more low p-values (0.01), this is evidence of true effects. All significant survey experimental results included in the meta-analysis are significant at the 1\% level (making construction of a ``curve'' with bins of width 0.01 impossible), implying that publication bias likely does not explain the large negative treatment effects in survey experiments.\footnote{There is also no indication of publication bias at the 1\% level using this method.} For field experiments, there is not a large enough number of published experiments to make the p-curve viable. Only six studies are published, and of these only four are significant at at least the 5\% level.
 
 Next, I test for publication bias by examining funnel plot asymmetry. A funnel plot depicts the outcomes from each study on the x-axis and their corresponding standard errors on the y-axis. The chart is overlaid with an inverted triangular confidence interval region (i.e. the ``funnel"), which should contain 95\% of the studies if there is no bias or between study heterogeneity. If studies with insignificant results remain unpublished the funnel plot may be asymmetric. Both visual inspection and regression tests of funnel plot asymmetry reveal an asymmetric funnel plot when survey and field experiments are grouped together (see \autoref{fig: funnel_re_all} and \autoref{tab: funnel}). However, this asymmetry disappears when accounting for heterogeneity by type of experiment, either with the inclusion of a field experiment moderator (dummy) variable or by analyzing field and survey experiments separately (see \autoref{fig: funnel_all_mod}, \autoref{fig: funnel_re_field}, \autoref{fig: funnel_re_survey}, and \autoref{tab: funnel}). 
 
@@ -477,7 +480,28 @@ These findings suggest that while vote-choice survey experiments may provide inf
 
 \subsection{Publication bias}
 
-\vspace{-.8cm}
+\input{../figs/published.tex}
+
+\vspace{1cm}
+
+\begin{table}[!htb] \centering 
+  \caption{Regression tests for funnel plot asymmetry}
+  \label{tab: funnel} 
+  \small
+  \vspace{0.5cm}
+\begin{tabular}{@{\extracolsep{88pt}} cccccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ Studies included & p-value \\ 
+ \hline \\[-1.8ex] 
+All & 0.0011  \\
+All with moderator & 0.5022  \\
+Field &  0.8403  \\
+Survey & 0.3688  \\
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+\FloatBarrier
 
 \begin{figure}[!htb]
 \begin{centering}
@@ -526,33 +550,26 @@ These findings suggest that while vote-choice survey experiments may provide inf
 \end{centering}
 \end{figure}
 
-\begin{table}[ht] \centering 
-  \caption{Regression tests for funnel plot asymmetry}
-  \label{tab: funnel} 
-  \small
-  \vspace{0.5cm}
-\begin{tabular}{@{\extracolsep{88pt}} cccccccc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- Studies included & p-value \\ 
- \hline \\[-1.8ex] 
-All & 0.0016  \\
-All with moderator & 0.4512  \\
-Field &  0.8403  \\
-Survey & 0.3159  \\
-\hline \\[-1.8ex] 
-\vspace{128in}
-\end{tabular} 
-\end{table} 
-\FloatBarrier
+\begin{figure}[!htb]
+\begin{centering}
+\includegraphics[scale=1]{../figs/published.pdf}
+\vspace{0.2cm}
+\caption{All experiments by publication status: Average treatment effect of corruption information on vote share and 95\% confidence intervals}.
+\small
+\vspace{-0.3cm}
+\label{fig: funnel_re_survey}
+\end{centering}
+\end{figure}
 
+\clearpage
 \pagebreak
+
 \subsection{Information quality}
 
 \begin{figure}[!htb]
 \includegraphics[scale=0.93]{../figs/quality.pdf}
 \vspace{0.2cm}
-\caption{Survey experiments by information quality: Average treatment effect of corruption information on vote share}.
+\caption{Survey experiments by information quality: Average treatment effect of corruption information on vote share and 95\% confidence intervals}.
 \small
 \vspace{-0.3cm}
 \label{fig: quality}

@@ -99,12 +99,30 @@ meta$p = gsub(">", '', meta$p)
 meta$p = as.character(meta$p)
 
 # OLS
-p_ols = lm(published ~ p, data = meta)
-summary(p_ols)
+p_ols = lm(published ~ p_reported, data = meta)
 
 # Logit
-p_logit = glm(published ~ p, data = meta)
-summary(p_logit)
+p_logit = glm(published ~ p_reported, data = meta, family = "binomial")
+
+# Output regression table
+stargazer(p_ols, p_logit,
+          out = "figs/published.tex", 
+          title= "Do p-values predict publication status?",
+          label = "p_publication",
+          align=TRUE, 
+          dep.var.caption = NULL,
+          model.names = FALSE,
+          model.numbers = FALSE, 
+          multicolumn = TRUE,
+          intercept.bottom = FALSE,
+          #intercept.top = TRUE,
+          column.labels = c("OLS", "Logit"),
+          covariate.labels = c("Reference: P less than 0.01", "P less than 0.05", 
+                               "P less than 0.1", "P greater than 0.1"),
+          dep.var.labels = c("Published", "Published"), 
+          digits = 2,
+          no.space=TRUE,
+          keep.stat = c("n"))
 
 # Cross validated elastic net
 cv = meta %>% select(-Notes)
