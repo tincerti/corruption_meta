@@ -43,6 +43,7 @@ ggplot(meta, aes(ate_vote, author_reduced, label = published)) +
   scale_color_manual(values = c("Yes" = "seagreen2", 
                                 "No" = "firebrick2")) +
   labs(color='Published', fill = 'Published')  +
+  geom_text(aes(label = type, x = 30, y = author_reduced), size = 3) +
   scale_y_discrete(breaks=meta$author_reduced, 
                    labels = meta$author_reduced) +
   theme_classic() +
@@ -54,4 +55,4 @@ ggplot(meta, aes(ate_vote, author_reduced, label = published)) +
   theme(legend.text=element_text(size=12)) +
   guides(colour = guide_legend(override.aes = list(size=5)))
 
-ggsave("figs/published.pdf", height = 5, width = 6)
+ggsave("figs/published.pdf", height = 7, width = 6.5)
