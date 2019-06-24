@@ -1184,6 +1184,33 @@ Stokes, S\BPBI C.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Sulitzeanu-Kenan%
+, Dotan%
+\BCBL {}\ \BBA {} Yair%
+}{%
+Sulitzeanu-Kenan%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+sulitzeanu2019judicial}
+\APACinsertmetastar {%
+sulitzeanu2019judicial}%
+\begin{APACrefauthors}%
+Sulitzeanu-Kenan, R.%
+, Dotan, Y.%
+\BCBL {}\ \BBA {} Yair, O.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Can Institutions Make Voters Care about Corruption?}
+  {Can institutions make voters care about corruption?}{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Journal of Politics}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Teele%
 , Kalla%
 \BCBL {}\ \BBA {} Rosenbluth%
