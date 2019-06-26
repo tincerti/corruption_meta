@@ -125,7 +125,7 @@ nlow.b = 2275
 # Mares and Visconti 2019
 ################################################################################
 # Run model
-mv_model = lm(outcome ~ atinte, data = mv)
+mv_model = lm_robust(outcome ~ atinte, data = mv, clusters = idnum)
 
 # Extract point estimates
 atehigh.mv = summary(mv_model, cluster = idnum)$coef[3, 1]
@@ -146,7 +146,7 @@ nlow.mv = 502
 fz = fz %>% filter(!is.na(Y))
 
 # Run model
-fz_corrupt = lm(Y ~ corruption, data = fz)
+fz_corrupt = lm_robust(Y ~ corruption, data = fz, clusters = IDContatto)
 
 # Extract point estimates
 atehigh.fz = summary(fz_corrupt, cluster = IDContatto)$coef[3, 1]

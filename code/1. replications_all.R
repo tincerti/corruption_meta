@@ -154,8 +154,7 @@ mv$corrupt = with(mv, ifelse(atinte == "Sentenced" |
                              atinte == "Investigated", 1, 0))
 
 # Run model
-mv_corrupt = lm(outcome ~ corrupt, data = mv)
-summary(mv_corrupt, cluster = "idnum")
+mv_corrupt = lm_robust(outcome ~ corrupt, data = mv, clusters = idnum)
 
 # Extract point estimates
 ate.mv = summary(mv_corrupt, cluster = idnum)$coef[2, 1]
@@ -201,7 +200,7 @@ fz$corrupt = with(fz, ifelse(corruption == "Convicted of corruption" |
                              corruption == "Investigated for corruption", 1, 0))
 
 # Run model
-fz_corrupt = lm(Y ~ corrupt, data = fz)
+fz_corrupt = lm_robust(Y ~ corrupt, data = fz, clusters = IDContatto)
 summary(fz_corrupt, cluster = "IDContatto")
 
 # Extract point estimates
@@ -222,7 +221,7 @@ p.fz = "<0.01"
 eggers = readRDS("data/experiment_data_eggers.Rds", refhook = NULL)
 
 # Run model
-evw_corrupt <- lm(voteinc ~ mp.misconduct, data = eggers)
+evw_corrupt <- lm_robust(voteinc ~ mp.misconduct, data = eggers, clusters = id)
 summary(evw_corrupt, cluster = "id")
 
 # Extract point estimates
