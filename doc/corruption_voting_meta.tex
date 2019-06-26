@@ -286,7 +286,7 @@ Survey experiments demonstrate much larger negative treatment effects of providi
 
 By contrast, corrupt candidates are punished by respondents by approximately 35 percentage points in survey experiments based on fixed effects meta-analysis and 33 percentage points using random effects meta-analysis. Of the 19 survey experiments, only one shows a null effect \citep{klavsnja2013economy}, while all others are negative and significantly different from zero at conventional levels. 
 
-Examining all studies together, a test for heterogeneity by type of experiment (field or survey) reveals that up to 67\% of the total heterogeneity across studies can be accounted for by a dummy variable for type of experiment (0 = field, 1 = survey). This dummy variable has a significant association with the effectiveness of the information treatment at the 1\% significance level. In fact, with this dummy variable included, the overall estimate across studies is approximately 0, while the point estimate of the survey dummy is -0.32.\footnote{Using a mixed effects model with a field experiment moderator.} This implies that the predicted treatment effect across experiments is not significantly different from zero when an indicator for type of experiment is included in the model. 
+Examining all studies together, a test for heterogeneity by type of experiment (field or survey) reveals that up to 68\% of the total heterogeneity across studies can be accounted for by a dummy variable for type of experiment (0 = field, 1 = survey). This dummy variable has a significant association with the effectiveness of the information treatment at the 1\% significance level. In fact, with this dummy variable included, the overall estimate across studies is approximately 0, while the point estimate of the survey dummy is -0.33.\footnote{Using a mixed effects model with a field experiment moderator.} This implies that the predicted treatment effect across experiments is not significantly different from zero when an indicator for type of experiment is included in the model. 
 
 \section{Exploring the discrepancy} \label{sec: discussion}
 
@@ -337,38 +337,26 @@ The fact that moderating variables may dampen the salience of corruption to vote
 
 However, researchers have thus far tended to present the results of conjoint experiments as average marginal component effects (AMCEs), then compare the magnitude of these effect sizes. AMCEs represents the unconditional marginal effect of an attribute (e.g. corruption) averaged over all possible values of the other attributes. However, this may or may not be a measure of substantive interest to the researcher. When researchers have strong theories about the conditions that shape voter decision-making, a more appropriate method may be to calculate average marginal effects in order to present predicted probabilities of voting for a candidate under these conditions.\footnote{This method is utilized by \citet{teele2018ties} to examine the probability of voting female or male candidates holding other candidate attributes constant, and is discussed in more detail by \citet{leeper2018measuring}.} For example, in a conjoint experiment including corruption information, this might be interpreted as the probability of voting for a candidate that is both corrupt and possesses other particular feature levels (e.g. party membership and/or policy positions), marginalizing across all other features in the experiment.
 
-To illustrate this point, I replicate the conjoint experiment conducted in Italy by \citet{franchino2015voting} and present both AMCEs and predicted probabilities. Note that I group the ``investigated for corruption'' and ``convicted of corruption'' levels into a single ``corrupt'' level in my replications. The predicted probabilities are presented as a function of corruption and two policy positions - tax policy and same sex marriage - for conservative and liberal respondents. The charts therefore show the probability of preferring a profile that has particular levels of tax policy, same sex marriage policy, and corruption, marginalizing across all other features in the experiment.\footnote{Note that the authors correctly conclude that their typical ``respondent prefers a corrupt but socially and economically progressive candidate to a clean but conservative one.'' While I therefore illustrate how predicted probabilities can be used to draw conclusions that may be masked by examination of AMCEs alone, the authors themselves do not make this mistake.} 
+To illustrate this point, I replicate the conjoint experiments conducted in Spain by \citet{breitenstein2019choosing} and in Italy by \citet{franchino2015voting}, and present both AMCEs and predicted probabilities. The \citet{breitenstein2019choosing} re-analysis is presented in the main text, while the re-analysis of \citet{franchino2015voting} is in the appendix.  Note that I group all corruption accusation levels into a single ``corrupt'' level in my replications. The \citet{breitenstein2019choosing} predicted probabilities are presented as a function of corruption, co-partisanship, political experience, and economic performance. The charts therefore show the probability of preferring a candidate who is always corrupt, but is a co-partisan or not, has low or high experience, and whose district experienced good or bad economic performance, marginalizing across all other features in the experiment. For \citet{franchino2015voting}, the predicted probabilities are presented as a function of corruption and two policy positions - tax policy and same sex marriage - separately for conservative and liberal respondents. The charts therefore show the probability of preferring a candidate who is corrupt, but has particular levels of tax policy, same sex marriage policy, and corruption, marginalizing across all other features in the experiment.\footnote{Note that \citet{franchino2015voting} correctly conclude that their typical ``respondent prefers a corrupt but socially and economically progressive candidate to a clean but conservative one.'' While I therefore illustrate how predicted probabilities can be used to draw conclusions that may be masked by examination of AMCEs alone, the authors themselves do not make this mistake.} 
 
-A casual interpretation of the traditional AMCE plot presented in \autoref{fig: fz_amce} suggests that it is very unlikely a corrupt candidate would be chosen by a respondent. By contrast, the predicted probabilities plots presented in \autoref{fig: fz_margins_right} and \autoref{fig: fz_margins_left} show that even for corrupt candidates in the conjoint, the right policy platform presented to the right respondents can garner over 50\% of the predicted hypothetical vote. In other words, respondents find it costly to abandon their policy preferences, even if it forces them to select a corrupt candidate. 
-
-\begin{figure}[!htb]
-\includegraphics{../figs/fz_amce.pdf}
-\caption{\citet{franchino2015voting} conjoint: average marginal component effects}
-\label{fig: fz_amce}
-\end{figure}
-
+A casual interpretation of the traditional AMCE plots presented in \autoref{fig: b_amce} and \autoref{fig: fz_amce} suggests that it is very unlikely a corrupt candidate would be chosen by a respondent. By contrast, the predicted probabilities plots presented in \autoref{fig: b_margins}, \autoref{fig: fz_margins_right}, and \autoref{fig: fz_margins_left} show that even for corrupt candidates in the conjoint, the right candidate or policy platform presented to the right respondents can garner over 50\% of the predicted hypothetical vote. In other words, respondents find it costly to abandon their preferences, even if it forces them to select a corrupt candidate. 
 
 \begin{figure}[!htb]
-\includegraphics{../figs/fz_margins_right.pdf}
-\vspace{0.2cm}
-\caption{\citet{franchino2015voting} conjoint: can policy positions overcome corruption (conservative respondents)?}
-\small
-\vspace{-0.3cm}
-\label{fig: fz_margins_right}
-
-\vspace{1cm}
-
-\includegraphics{../figs/fz_margins_left.pdf}
-\vspace{0.2cm}
-\caption{\citet{franchino2015voting} conjoint: can policy positions overcome corruption (liberal respondents)?}
-\small
-\vspace{-0.3cm}
-\label{fig: fz_margins_left}
+\includegraphics{../figs/b_amce.pdf}
+\caption{\citet{breitenstein2019choosing} conjoint: average marginal component effects}
+\label{fig: b_amce}
 \end{figure}
 
-Policy profiles that result in over 50\% of voters selecting a corrupt candidate may not be outliers in real-world scenarios. Unlike in conjoint experiments, real-world candidates' policy profiles are not selected randomly, but rather represent choices designed to appeal to voters. It may therefore be preferable to analyze conjoint experiments as above, comparing outlier characteristics (e.g. corruption) to realistic candidate profiles rather than fully randomized candidate profiles. For example, in the US context, perhaps the relevant metric of interest would be to look at the impact of corruption on vote choice for a Democratic respondent examining a Democratic candidate who espouses their preferred policy positions and attributes, rather than looking at the magnitude of the corruption AMCE versus each individual policy AMCE.
+\begin{figure}[!htb]
+\includegraphics{../figs/b_margins.pdf}
+\vspace{0.2cm}
+\caption{\citet{breitenstein2019choosing} conjoint: can the right candidate overcome corruption?}
+\small
+\vspace{-0.3cm}
+\label{fig: b_margins}
+\end{figure}
 
-%[Test by comparing AMCE and ATE in survey experiments?] \\
+Candidate or policy profiles that result in over 50\% of voters selecting a corrupt candidate may not be outliers in real-world scenarios. Unlike in conjoint experiments, real-world candidates' attributes and policy profiles are not selected randomly, but rather represent choices designed to appeal to voters. It may therefore be preferable to analyze conjoint experiments as above, comparing outlier characteristics (e.g. corruption) to realistic candidate profiles rather than fully randomized candidate profiles. For example, in the US context, perhaps the relevant metric of interest would be to look at the impact of corruption on vote choice for a Democratic respondent examining a Democratic candidate who espouses their preferred policy positions and attributes, rather than looking at the magnitude of the corruption AMCE versus each individual policy AMCE.
 
 \section{Conclusion} \label{sec: conclusion}
 
@@ -571,6 +559,36 @@ Survey & 0.3688  \\
 \small
 \vspace{-0.3cm}
 \label{fig: quality}
+\end{figure}
+
+\clearpage
+\pagebreak
+
+\subsection{Additional conjoint replications using predicted probabilities: \\\citet{franchino2015voting}}
+
+\begin{figure}[!htb]
+\includegraphics{../figs/fz_amce.pdf}
+\caption{\citet{franchino2015voting} conjoint: average marginal component effects}
+\label{fig: fz_amce}
+\end{figure}
+
+
+\begin{figure}[!htb]
+\includegraphics{../figs/fz_margins_right.pdf}
+\vspace{0.2cm}
+\caption{\citet{franchino2015voting} conjoint: can policy positions overcome corruption (conservative respondents)?}
+\small
+\vspace{-0.3cm}
+\label{fig: fz_margins_right}
+
+\vspace{1cm}
+
+\includegraphics{../figs/fz_margins_left.pdf}
+\vspace{0.2cm}
+\caption{\citet{franchino2015voting} conjoint: can policy positions overcome corruption (liberal respondents)?}
+\small
+\vspace{-0.3cm}
+\label{fig: fz_margins_left}
 \end{figure}
 
 

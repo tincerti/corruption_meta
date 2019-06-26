@@ -7,6 +7,7 @@ library(foreign)
 library(readxl)
 library(readstata13)
 library(cjoint)
+library(estimatr)
 
 # Data imports
 results = read_excel("data/study_results.xlsx")
@@ -16,6 +17,7 @@ wsw16 = read.dta('data/WintersWeitz-Shapiro_PRQ_Specificity_ReplicationData.dta'
 wsw18 = read.dta13('data/WintersWeitz-Shapiro_PSRM_Argentina_ReplicationData.dta')
 fz = read.dta('data/franchino_zucchini.dta')
 mv = read.dta('data/mares_visconti.dta')
+b = read.dta13('data/choosing_crook_clean.dta')
 
 # Define scaling function
 scale01 <- function(x)
@@ -170,16 +172,22 @@ p.mv = "<0.01"
 ################################################################################
 # Breitenstein (No replication data?)
 ################################################################################
-# Average treatment effects of judge and partisan accusations
-ate.b.judge = -.266
-ate.b.party = -.222
-ate.b.avg = (ate.b.judge + ate.b.party)/2
+# Pool corruption into one treatment
+b$corrupt = with(b, ifelse(corruption == "Honest", 0, 1))
+# Run model
+reg.b = lm_robust(Y ~ corrupt, data = b, clusters = id)
+summary(reg.b)
 
-se.b.party = 0.00769
-se.b.judge = 0.00793
-se.b.avg = (se.b.party + se.b.judge)/2
+# Extract point estimates
+ate.b = summary(reg.b, cluster = idnum)$coef[2, 1]
 
+# Extract standard errors
+se.b = summary(reg.b, cluster = idnum)$coef[2, 2]
+
+# Extract number of observations
 n.b = 2275
+
+# Reported p-value
 p.b = "<0.01"
 
 ################################################################################
@@ -307,7 +315,7 @@ mv = data.frame(type="Survey", year=2019 , author = "Mares & Visconti",
 # Breitenstein 2019
 b = data.frame(type="Survey", year=2019 , author = "Breitenstein", 
                    author_reduced = "Breitenstein", country = "Spain", 
-                   ate_vote = ate.b.avg, se_vote = se.b.avg, ci_upper = NA,
+                   ate_vote = ate.b, se_vote = se.b, ci_upper = NA,
                    p_reported = p.b, ci_lower = NA, N = n.b, published = 1, 
                    Notes = NA)
 

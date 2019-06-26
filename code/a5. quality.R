@@ -8,6 +8,7 @@ library(foreign)
 library(readxl)
 library(readstata13)
 library(cjoint)
+library(estimatr)
 
 # Data imports
 results = read_excel("data/study_results.xlsx")
@@ -17,6 +18,7 @@ wsw16 = read.dta('data/WintersWeitz-Shapiro_PRQ_Specificity_ReplicationData.dta'
 wsw18 = read.dta13('data/WintersWeitz-Shapiro_PSRM_Argentina_ReplicationData.dta')
 fz = read.dta('data/franchino_zucchini.dta')
 mv = read.dta('data/mares_visconti.dta')
+b = read.dta13('data/choosing_crook_clean.dta')
 
 # Define scaling function
 scale01 <- function(x)
@@ -98,17 +100,26 @@ nhigh.wsw18 = nobs(reg.wsw18.high)
 nlow.wsw18 = nobs(reg.wsw18.low)
 
 ################################################################################
-# Breitenstein (No replication data?)
+# Breitenstein
 ################################################################################
-# Average treatment effects of judge and partisan accusations
-atehigh.b = -.266
-atelow.b = -.222
+# Change reference level of corruption variable to clean
+b$corruption <- relevel(b$corruption, ref="Honest")
 
-sehigh.b = 0.00769
-selow.b = 0.00793
+# Run model
+b_model = lm_robust(Y ~ corruption, data = b, clusters = id)
+summary(b_model)
 
-nhigh.b = 2275/2
-nlow.b = 2275/2
+# Extract point estimates
+atehigh.b = summary(b_model, cluster = id)$coef[3, 1]
+atelow.b = summary(b_model, cluster = id)$coef[2, 1]
+
+# Extract standard errors
+sehigh.b = summary(b_model, cluster = id)$coef[3, 2]
+selow.b = summary(b_model, cluster = id)$coef[2, 2]
+
+# Extract number of observations
+nhigh.b = 2275
+nlow.b = 2275
 
 ################################################################################
 # Mares and Visconti 2019
