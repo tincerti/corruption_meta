@@ -73,6 +73,42 @@ coefplot (matrix(plot[1,])), ci((plot[5,] plot[6,])) ///
 graph export "${export}/b_margins.pdf", replace
 
 ********************************************************************************
+* Repeat analyis with clean alternative only
+******************************************************************************** 
+gen alternative = "clean" if corrupt == 1 & corrupt[_n+1] == 0 & candidate == 1 & candidate[_n+1] == 2
+replace alternative = "clean" if corrupt == 0 & corrupt[_n-1] == 1 & candidate == 2 & candidate[_n-1] == 1
+replace alternative = "clean" if corrupt == 0 & corrupt[_n+1] == 1 & candidate == 1 & candidate[_n+1] == 2
+replace alternative = "clean" if corrupt == 1 & corrupt[_n-1] == 0 & candidate == 2 & candidate[_n-1] == 1
+keep if alternative == "clean"
+
+* Calculate predicted probabilities
+reg Y i.category, cl(id)
+margins category
+
+* Sort results
+matrix plot = r(table)'
+
+matsort plot 1 "up"
+
+matrix plot = plot'
+
+* Create plot
+mylabels 0(25)100, myscale(@/100) local(myla) 
+
+coefplot (matrix(plot[1,])), ci((plot[5,] plot[6,])) ///
+	vertical scheme(s1color) ylabel(`myla') ///
+	ytitle("Probability of voting for corrupt candidate (%)" " ") ///
+	xtitle(" " "Candidate profile") ///
+	yline(.5, lstyle(grid)) ///
+	xlabel(, labsize(small)) ///
+	xsize(6.6) ysize(3) ///
+	color(midblue) ciopts(lcolor(gs10))
+
+* Export plot
+graph export "${export}/b_margins_clean.pdf", replace
+
+
+********************************************************************************
 * Define categories: Franchino and Zucchini
 ********************************************************************************
 use "${import}/franchino_zucchini.dta", replace
@@ -161,5 +197,52 @@ graph export "${export}/fz_margins_`i'.pdf", replace
 
 restore
 }
+
+********************************************************************************
+* Repeat analyis with clean alternative only
+******************************************************************************** 
+gen alternative = "clean" if corrupt == 1 & corrupt[_n+1] == 0 & n_vote == n_vote[_n+1]
+replace alternative = "clean" if corrupt == 0 & corrupt[_n-1] == 1 & n_vote == n_vote[_n-1]
+replace alternative = "clean" if corrupt == 0 & corrupt[_n+1] == 1 & n_vote == n_vote[_n+1]
+replace alternative = "clean" if corrupt == 1 & corrupt[_n-1] == 0 & n_vote == n_vote[_n-1]
+keep if alternative == "clean"
+
+* Calculate predicted probabilies
+foreach i in left right {
+preserve
+
+keep if `i' == 1
+
+reg Y i.category, cl(IDContatto)
+margins category
+
+
+* Sort results
+matrix plot = r(table)'
+
+matsort plot 1 "up"
+
+matrix plot = plot'
+
+* Create plot
+mylabels 0(25)100, myscale(@/100) local(myla) 
+
+coefplot (matrix(plot[1,])), ci((plot[5,] plot[6,])) ///
+	vertical scheme(s1color) ylabel(`myla') ///
+	ytitle("Probability of voting for corrupt candidate (%)" " ") ///
+	xtitle(" " "Policy platform") ///
+	yline(.5, lstyle(grid)) ///
+	xlabel(, labsize(medsmall)) ///
+	xsize(6.6) ysize(3) ///
+	color(midblue) ciopts(lcolor(gs10))
+
+* Export plot
+graph export "${export}/fz_margins_`i'_clean.pdf", replace
+
+restore
+}
+
+
+
 
 
