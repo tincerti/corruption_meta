@@ -7,6 +7,7 @@ rm(list=ls())
 library(tidyverse)
 library(cjoint)
 library(foreign)
+library(readstata13)
 
 # Import data
 fz = read.dta('data/franchino_zucchini.dta')
