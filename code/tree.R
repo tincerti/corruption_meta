@@ -14,14 +14,13 @@ library(rpart.plot)
 library(caTools)
 library(caret)
 
-
 # Import all conjoint experiments
 fz = read.dta('data/franchino_zucchini.dta')
 mv = read.dta('data/mares_visconti.dta')
 b = read.dta13('data/choosing_crook_clean.dta')
 
 ################################################################################
-# Data setup
+# Data setup: Breitenstein
 ################################################################################
 # Reduce to one corruption measure
 b$Corrupt = with(b, ifelse(corrupt == "Corrupt", "Yes", "No"))
@@ -57,8 +56,27 @@ b$Gender <- factor(b$ngender,
        labels = c("Male", 
                   "Female"))
 
+b$candidate2 = b$candidate
+
+# Add clean challenger variable
+b$Challenger = with(b, ifelse(lead(Corrupt, 1) == "No" &
+                       candidate == 1 & lead(candidate, 1) == 2,
+                       "Clean", NA))
+
+b$Challenger = with(b, ifelse(lag(Corrupt, 1) == "No" &
+                       candidate == 2 & lag(candidate, 1) == 1,
+                       "Clean", Challenger))
+
+b$Challenger = with(b, ifelse(lead(Corrupt, 1) == "Yes" &
+                       candidate == 1 & lead(candidate, 1) == 2,
+                       "Corrupt", Challenger))
+
+b$Challenger = with(b, ifelse(lag(Corrupt, 1) == "Yes" &
+                       candidate == 2 & lag(candidate, 1) == 1,
+                       "Corrupt", Challenger))
+
 ################################################################################
-# Predictions
+# Predictions: Breitenstein
 ################################################################################
 b$Y = as.factor(b$Y)
 
@@ -68,57 +86,24 @@ train = subset(b, sample == TRUE)
 test  = subset(b, sample == FALSE)
 
 # rpart
-rpart_tree <- rpart(Y ~ `Corrupt` + `Party` + `Economy` + `Experience` + `Gender`,
-                    data = train, 
-                    cp = 0.002,
+clean = train %>% filter((Corrupt == "Yes" & Challenger == "Clean") |
+                          Corrupt == "No" & Challenger == "Corrupt")
+clean = clean %>% filter(Corrupt == "Yes")
+
+rpart_tree <- rpart(Y ~ Corrupt + Party + Economy + Experience + Gender,
+                    data = clean, 
+                    cp = -10,
                     method = 'class')
 
 plotcp(rpart_tree)
 printcp(rpart_tree)
 
-rpart.plot(rpart_tree, extra = 7, type = 3)
-
-#tree_plot = last_plot()
-
-# Save plot
-dev.copy(pdf,'figs/tree.pdf')
-
-# Calculate correct classification rate
-test$Y_pred = predict(rpart_tree, newdata = test, type = "class")
-mean(test$Y == test$Y_pred)
-
-# Caret
-train.rpart <- caret::train(Y ~ `Corrupt` + `Party` + `Economy` + `Experience` 
-                            + `Gender`,
-                     method = "rpart",
-                     tuneLength = 50,
-                     trControl = tc,
-                     tuneGrid = trgrid)
-train.rpart
-
-trctrl <- trainControl(method = "repeatedcv", number = 10, repeats = 3)
-
-dtree_fit <- caret::train(Y ~ `Corrupt` + `Party` + `Economy` + `Experience` 
-                            + `Gender`,
-                   data = b, 
-                   method = "rpart",
-                   #parms = list(split = "information"),
-                   trControl = trctrl,
-                   tuneLength = 10)
-
-rpart.plot(dtree_fit$finalModel,
-           type = 3,
-           extra = 8,
-           faclen = 1,
-           clip.facs = TRUE,
-           clip.right.labs = TRUE)
-
-
-
-
+rpart.plot(rpart_tree, 
+           extra = 7, 
+           type = 5)
 
 # Boosted tree
-boost_fit = gbm(Y ~ `Corrupt` + `Party` + `Economy` + `Experience` + `Gender`,
+boost_fit = gbm(Y ~ `Corrupt` + as.factor(Challenger) + `Party` + `Economy` + `Experience` + `Gender`,
                 data = train, distribution= "gaussian", n.trees = 5000, 
                 interaction.depth = 4)
 
@@ -130,3 +115,74 @@ summary(
   method = relative.influence, # also can use permutation.test.gbm
   las = 2
   )
+
+################################################################################
+# Data setup: Franchino and Zucchini
+################################################################################
+# Remove NA outcome values - not sure why these are here
+fz = fz %>% filter(!is.na(Y))
+
+# Reduce to one corruption measure
+fz$Corrupt = with(fz, ifelse(corruption == "Convicted of corruption" |
+                             corruption == "Investigated for corruption", 
+                             "Yes", "No"))
+
+# Define attribute lists: Corruption
+fz$Corrupt <- factor(fz$Corrupt,
+       levels = c("No", "Yes"), 
+       labels = c("No", "Yes"))
+
+# Define attribute lists: Education
+fz$Education <- factor(fz$education,
+       levels = c("Licenza media", "Diploma superiore", "Laurea"), 
+       labels = c("Junior high", "High School", "College"))
+
+# Define attribute lists: Income
+fz$Income <- factor(fz$income,
+       levels = c("Less than 900 euro a month", 
+                  "Between 900 and 3000 euro a month", 
+                  "More than 3000 euro a month"), 
+       labels = c("Less than 900 euros", 
+                  "900 to 3000 euros", 
+                  "Greater than 3000 euros"))
+
+# Define attribute lists: tax policy
+fz$`Tax policy` <- factor(fz$taxspend,
+       levels = c("Maintain level of provision", 
+                  "Cut taxes", 
+                  "More social services"), 
+       labels = c("Maintain level of provision", 
+                  "Cut taxes", 
+                  "More social services"))
+
+# Define attribute lists: same sex marriage
+fz$`Same sex marriage` <- factor(fz$samesex,
+       levels = c("Some rights", 
+                  "No rights", 
+                  "Same rights"), 
+       labels = c("Some rights", 
+                  "No rights", 
+                  "Same rights"))
+
+################################################################################
+# Predictions: Breitenstein
+################################################################################
+fz$Y = as.factor(fz$Y)
+
+# Split data into training and test
+sample = sample.split(fz, SplitRatio = .9)
+train = subset(fz, sample == TRUE)
+test  = subset(fz, sample == FALSE)
+
+# rpart prediction
+rpart_tree <- rpart(Y ~ `Corrupt` + `Education` + `Income` + 
+                    `Tax policy` + `Same sex marriage`,
+                    data = train, 
+                    cp = 0,
+                    method = 'class')
+
+plotcp(rpart_tree)
+
+rpart.plot(rpart_tree, 
+           extra = 7, 
+           type = 5)
