@@ -597,6 +597,35 @@ De~Vries, C\BPBI E.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Dunning%
+\ \protect \BOthers {.}}{%
+Dunning%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+dunning2018metaketa}
+\APACinsertmetastar {%
+dunning2018metaketa}%
+\begin{APACrefauthors}%
+Dunning, T.%
+, Grossman, G.%
+, Humphreys, M.%
+, Hyde, S\BPBI D.%
+, McIntosh, C.%
+\BCBL {}\ \BBA {} Nellis, G.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+\APACrefbtitle {Metaketa I: Information, accountability, and cumulative
+  learning.} {Metaketa i: Information, accountability, and cumulative
+  learning.}
+\newblock
+\APACaddressPublisher{}{Cambridge University Press}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Eggers%
 , Vivyan%
 \BCBL {}\ \BBA {} Wagner%

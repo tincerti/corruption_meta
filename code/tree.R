@@ -18,6 +18,7 @@ library(caret)
 fz = read.dta('data/franchino_zucchini.dta')
 mv = read.dta('data/mares_visconti.dta')
 b = read.dta13('data/choosing_crook_clean.dta')
+eggers = readRDS("data/experiment_data_eggers.Rds", refhook = NULL)
 
 ################################################################################
 # Data setup: Breitenstein
@@ -91,16 +92,21 @@ clean = train %>% filter((Corrupt == "Yes" & Challenger == "Clean") |
 clean = clean %>% filter(Corrupt == "Yes")
 
 rpart_tree <- rpart(Y ~ Corrupt + Party + Economy + Experience + Gender,
-                    data = clean, 
-                    cp = -10,
+                    data = train, 
+                    cp = 0,
                     method = 'class')
 
 plotcp(rpart_tree)
 printcp(rpart_tree)
+rpart_tree$cptable[which.min(rpart_tree$cptable[,"xerror"]),"CP"]
 
 rpart.plot(rpart_tree, 
            extra = 7, 
            type = 5)
+
+train$indicator = with(train, ifelse(Corrupt == "Yes" & Party == "Different", 1, 0))
+fit = lm(as.numeric(Y) ~ indicator, data = train)
+summary(fit)
 
 # Boosted tree
 boost_fit = gbm(Y ~ `Corrupt` + as.factor(Challenger) + `Party` + `Economy` + `Experience` + `Gender`,
@@ -108,13 +114,7 @@ boost_fit = gbm(Y ~ `Corrupt` + as.factor(Challenger) + `Party` + `Economy` + `E
                 interaction.depth = 4)
 
 # Importance plot
-par(mar = c(5, 8, 1, 1))
-summary(
-  boost_fit, 
-  cBars = 5,
-  method = relative.influence, # also can use permutation.test.gbm
-  las = 2
-  )
+f
 
 ################################################################################
 # Data setup: Franchino and Zucchini
