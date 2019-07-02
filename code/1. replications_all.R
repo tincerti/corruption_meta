@@ -19,16 +19,9 @@ fz = read.dta('data/franchino_zucchini.dta')
 mv = read.dta('data/mares_visconti.dta')
 b = read.dta13('data/choosing_crook_clean.dta')
 
-# Define scaling function
-scale01 <- function(x)
-  (x - min(x, na.rm = T)) / diff(range(x, na.rm = T))
-
 ################################################################################
 # Winters/Weitz-Shapiro JOP
 ################################################################################
-# Rescale outcome variable
-wsw17$vote_vig_cont <- scale01(wsw17$voteintent)
-
 # Create all variable
 wsw17$corrupt = with(wsw17, ifelse(vinheta != "VINHETA 1" & vinheta != "VINHETA 2",
                                    1, 0))
@@ -54,9 +47,6 @@ p.wsw17 = "<0.01"
 ################################################################################
 # Winters/Weitz-Shapiro CP
 ################################################################################
-# Rescale outcome variable
-wsw13$vote_vig_cont <- scale01(wsw13$votescale)
-
 # All corrupt vignettes
 wsw13$vote_vig_cont <- ifelse(wsw13$votescale > 2, 1, 0)
 reg.wsw13 = lm(vote_vig_cont ~ corruptvignette, data = wsw13)
@@ -85,9 +75,6 @@ p.wsw15 = "<0.01"
 ################################################################################
 # Winters/Weitz-Shapiro PRQ
 ################################################################################
-# Rescale outcome variable
-wsw16$vote_vig_cont <- scale01(wsw16$voteintent)
-
 # Create all variable
 wsw16$corrupt = with(wsw16, ifelse(vinheta != "VINHETA 1" & vinheta != "VINHETA 2",
                                    1, 0))
@@ -245,6 +232,22 @@ n.ager = 2017
 p.ager = "<0.01"
 
 ################################################################################
+# Avenberg
+################################################################################
+ate.aven = -3.37/6
+se.aven = 0.2/6
+n.aven = 744
+p.aven = "<0.05"
+
+################################################################################
+# Vera Rojas
+################################################################################
+ate.vera = -1.18/6
+se.vera = 0.11/6
+n.vera = 1308
+p.vera = "<0.01"
+
+################################################################################
 # Azfar and Nelson (lab)
 ################################################################################
 ate.an = -.252
@@ -298,12 +301,6 @@ kt_moldova = data.frame(type="Survey", year=2013 , author = "Klasna & Tucker",
                    p_reported = p.moldova,
                    ci_lower = NA, published = 1, N = n.moldova, Notes = NA)
 
-# De Figuerido et al. Brazil 2011
-# defig = data.frame(type="Survey", year=2011 , author = "De Figueiredo, Hidalgo, & Kasahara",
-#                    author_reduced = "De Figueiredo et al.", country = "Brazil",
-#                    ate_vote = ate.defig, se_vote = se.defig, ci_upper = NA,
-#                    ci_lower = NA, published = 0, N = n.defig, Notes = NA)
-
 # Mares and Visconti 2019
 mv = data.frame(type="Survey", year=2019 , author = "Mares & Visconti", 
                    author_reduced = "Mares & Visconti", country = "Romania", 
@@ -346,51 +343,22 @@ an = data.frame(type="Lab", year=2007 , author = "Azfar and Nelson",
                    ci_lower = NA, N = n.an,  p_reported = p.an,
                    published = 1, Notes = NA)
 
+# Avenberg
+aven = data.frame(type="Survey", year=2016 , author = "Avenberg", 
+                   author_reduced = "Avenberg", country = "Brazil", 
+                   ate_vote = ate.aven, se_vote = se.aven, ci_upper = NA, 
+                   ci_lower = NA, N = n.aven,  p_reported = p.aven,
+                   published = 0, Notes = NA)
+
+vera = data.frame(type="Survey", year=2016 , author = "Vera Rojas", 
+                   author_reduced = "Vera Rojas", country = "Peru", 
+                   ate_vote = ate.vera, se_vote = se.vera, ci_upper = NA, 
+                   ci_lower = NA, N = n.vera,  p_reported = p.vera,
+                   published = 0, Notes = NA)
+
 # Combine dataframes
 meta = rbind(results, wsw17, wsw13, wsw15, wsw18, kt_sweden, kt_moldova,
-             mv, b, fz, evw, ager, an) 
-#            defig, wsw13comp, wsw13nocomp, wsw13noinfo)
+             mv, b, fz, evw, ager, an, aven, vera) 
 
 # Save combined dataframe
 save(meta, file = "data/meta.RData")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-################################################################################
-# Avenburg dissertation
-################################################################################
-# Avenburg dissertation. Coefficient from paper; 1-7 scale, rescaled 0-1
-point.est.av <- -3.37/6
-ci.av <- c(point.est.av - qt(0.975, (774 - 6)) * 0.2/6, 
-           point.est.av + qt(0.975, (774 - 6)) * 0.2/6)
-
-################################################################################
-# Vera Rojas working paper
-################################################################################
-
-point.est.vr.comp <- -16.59/100
-point.est.vr.nocomp <- -22.89/100
-ci.vr.comp <- c(-22.23, -10.94)/100
-ci.vr.nocomp <- c(-27.84, -17.93)/100
-
-ci = est - 1.96*se
-ci - est = - 1.96*se
-ci - est/-1.96
-
-se = -.35/-.3 - 1.96
-
