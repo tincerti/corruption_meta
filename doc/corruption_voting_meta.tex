@@ -362,8 +362,9 @@ Candidate or policy profiles that result in over 50\% of voters selecting a corr
 When the most theoretically relevant tradeoffs are unclear, we may be able to illuminate voter decision making processes through the use of  decision trees. The decision tree in \autoref{fig: b_tree} was trained using all randomized variables in the \citet{breitenstein2019choosing} conjoint, and the tree was pruned to minimize cross-validated classification error rate.  \autoref{fig: b_tree} draws similar conclusions as the predicted probabilities chart shown in \autoref{fig: b_margins} with respect to what factors matter most to voters. A similar figure depicting corrupt candidates facing clean challengers only can be found in \autoref{fig: b_tree_clean}. 
 
 \begin{figure}[!htb]
-\includegraphics[scale=0.9]{../figs/b_tree.pdf}
-\caption{\citet{breitenstein2019choosing} conjoint decision tree: predicted probabilities of voting}
+\centering
+\includegraphics{../figs/b_tree.pdf}
+\caption{\citet{breitenstein2019choosing} conjoint decision tree: predicted probabilities of voting for candidate}
 \small
 \vspace{-0.3cm}
 \label{fig: b_tree}
@@ -585,14 +586,14 @@ Survey & 0.3688  \\
 
 \begin{figure}[!htb]
 \includegraphics{../figs/b_margins_clean.pdf}
-\vspace{0.2cm}
+\vspace{0.05cm}
 \caption{\citet{breitenstein2019choosing} conjoint: can the right candidate overcome corruption (clean challenger)?}
 \small
-\vspace{-0.3cm}
+\vspace{-0.5cm}
 \label{fig: b_margins_clean}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[!ht]
 \includegraphics{../figs/b_tree_clean.pdf}
 \vspace{-0.5cm}
 \caption{\citet{breitenstein2019choosing} conjoint decision tree: predicted probabilities of voting for corrupt politician with clean challenger}
