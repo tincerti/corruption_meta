@@ -1,18 +1,19 @@
 ################################################################################
 # Libraries and Import
 ################################################################################
+rm(list=ls())
+
+# Set seed
+set.seed(300) # Estimates will vary slightly with change in seed
+
+# Libraries
 library(foreign)
 library(readstata13)
-library(estimatr)
 library(tidyverse)
-
-library(randomForest)
 library(gbm)
-library(ISLR)
 library(rpart)
 library(rpart.plot)
 library(caTools)
-library(caret)
 
 # Import all conjoint experiments
 fz = read.dta('data/franchino_zucchini.dta')
@@ -76,45 +77,76 @@ b$Challenger = with(b, ifelse(lag(Corrupt, 1) == "Yes" &
                        candidate == 2 & lag(candidate, 1) == 1,
                        "Corrupt", Challenger))
 
+# Create datasets consisting of corrupt candidate and clean challenger only
+clean = b %>% 
+  filter((Corrupt == "Yes" & Challenger == "Clean") |
+          Corrupt == "No" & Challenger == "Corrupt")
+
 ################################################################################
 # Predictions: Breitenstein
 ################################################################################
+# Convert outcome variable to binary for classification
 b$Y = as.factor(b$Y)
 
 # Split data into training and test
-sample = sample.split(b, SplitRatio = .9)
+sample = sample.split(b, SplitRatio = .9) # From caTools package
 train = subset(b, sample == TRUE)
 test  = subset(b, sample == FALSE)
 
-# rpart
-clean = train %>% filter((Corrupt == "Yes" & Challenger == "Clean") |
-                          Corrupt == "No" & Challenger == "Corrupt")
-clean = clean %>% filter(Corrupt == "Yes")
-
-rpart_tree <- rpart(Y ~ Corrupt + Party + Economy + Experience + Gender,
+# Run classification tree (uses package rpart)
+b_tree <- rpart(Y ~ Corrupt + Party + Economy + Experience + Gender,
                     data = train, 
                     cp = 0,
                     method = 'class')
 
-plotcp(rpart_tree)
-printcp(rpart_tree)
-rpart_tree$cptable[which.min(rpart_tree$cptable[,"xerror"]),"CP"]
+# Pick tree size that minimizes classification error rate and prune tree
+bestcp <- b_tree$cptable[which.min(b_tree$cptable[,"xerror"]),"CP"]
+plotcp(b_tree)
+b_tree_pruned <- prune(b_tree, cp = bestcp)
 
-rpart.plot(rpart_tree, 
-           extra = 7, 
-           type = 5)
+# Plot classification tree
+rpart.plot(b_tree_pruned, extra = 7, type = 5, cex = 0.6)
 
-train$indicator = with(train, ifelse(Corrupt == "Yes" & Party == "Different", 1, 0))
-fit = lm(as.numeric(Y) ~ indicator, data = train)
-summary(fit)
+# Save plot
+dev.copy(pdf,'figs/b_tree.pdf', width = 7, height = 3.5)
+dev.off()
 
+################################################################################
+# Figure A12: Analysis with clean challenger only 
+################################################################################
+# Reduce clean dataframe to corrupt candidate only
+clean_reduced = clean %>% filter(Corrupt == "Yes")
+
+# Split data into training and test
+sample = sample.split(clean_reduced, SplitRatio = .9) # From caTools package
+train = subset(clean_reduced, sample == TRUE)
+test  = subset(clean_reduced, sample == FALSE)
+
+# Run classification tree (uses package rpart)
+b_tree_clean <- rpart(Y ~ Corrupt + Party + Economy + Experience + Gender,
+                      data = train, 
+                      cp = -0.01,
+                      method = 'class')
+
+# Pick tree size that minimizes classification error rate and prune tree
+bestcp <- b_tree_clean$cptable[which.min(b_tree_clean$cptable[,"xerror"]),"CP"]
+plotcp(b_tree_clean)
+printcp(b_tree_clean)
+b_tree_clean_pruned <- prune(b_tree_clean, cp = -0.01)
+
+# Plot classification tree
+rpart.plot(b_tree_clean_pruned, extra = 7, type = 5, cex = 0.55)
+
+# Save plot
+dev.copy(pdf,'figs/b_tree_clean.pdf', width = 7, height = 3.5)
+dev.off()
+
+################################################################################
 # Boosted tree
+################################################################################
 boost_fit = gbm(Y ~ `Corrupt` + as.factor(Challenger) + `Party` + `Economy` + `Experience` + `Gender`,
                 data = train, distribution= "gaussian", n.trees = 5000, 
                 interaction.depth = 4)
-
-# Importance plot
-f
 
 ################################################################################
 # Data setup: Franchino and Zucchini
@@ -163,26 +195,3 @@ fz$`Same sex marriage` <- factor(fz$samesex,
        labels = c("Some rights", 
                   "No rights", 
                   "Same rights"))
-
-################################################################################
-# Predictions: Breitenstein
-################################################################################
-fz$Y = as.factor(fz$Y)
-
-# Split data into training and test
-sample = sample.split(fz, SplitRatio = .9)
-train = subset(fz, sample == TRUE)
-test  = subset(fz, sample == FALSE)
-
-# rpart prediction
-rpart_tree <- rpart(Y ~ `Corrupt` + `Education` + `Income` + 
-                    `Tax policy` + `Same sex marriage`,
-                    data = train, 
-                    cp = 0,
-                    method = 'class')
-
-plotcp(rpart_tree)
-
-rpart.plot(rpart_tree, 
-           extra = 7, 
-           type = 5)
