@@ -15,8 +15,11 @@ library(rpart)
 library(rpart.plot)
 library(caTools)
 
-# Import conjoint experiment
+# Import all conjoint experiments
+fz = read.dta('data/franchino_zucchini.dta')
+mv = read.dta('data/mares_visconti.dta')
 b = read.dta13('data/choosing_crook_clean.dta')
+eggers = readRDS("data/experiment_data_eggers.Rds", refhook = NULL)
 
 ################################################################################
 # Data setup: Breitenstein
@@ -144,3 +147,51 @@ dev.off()
 boost_fit = gbm(Y ~ `Corrupt` + as.factor(Challenger) + `Party` + `Economy` + `Experience` + `Gender`,
                 data = train, distribution= "gaussian", n.trees = 5000, 
                 interaction.depth = 4)
+
+################################################################################
+# Data setup: Franchino and Zucchini
+################################################################################
+# Remove NA outcome values - not sure why these are here
+fz = fz %>% filter(!is.na(Y))
+
+# Reduce to one corruption measure
+fz$Corrupt = with(fz, ifelse(corruption == "Convicted of corruption" |
+                             corruption == "Investigated for corruption", 
+                             "Yes", "No"))
+
+# Define attribute lists: Corruption
+fz$Corrupt <- factor(fz$Corrupt,
+       levels = c("No", "Yes"), 
+       labels = c("No", "Yes"))
+
+# Define attribute lists: Education
+fz$Education <- factor(fz$education,
+       levels = c("Licenza media", "Diploma superiore", "Laurea"), 
+       labels = c("Junior high", "High School", "College"))
+
+# Define attribute lists: Income
+fz$Income <- factor(fz$income,
+       levels = c("Less than 900 euro a month", 
+                  "Between 900 and 3000 euro a month", 
+                  "More than 3000 euro a month"), 
+       labels = c("Less than 900 euros", 
+                  "900 to 3000 euros", 
+                  "Greater than 3000 euros"))
+
+# Define attribute lists: tax policy
+fz$`Tax policy` <- factor(fz$taxspend,
+       levels = c("Maintain level of provision", 
+                  "Cut taxes", 
+                  "More social services"), 
+       labels = c("Maintain level of provision", 
+                  "Cut taxes", 
+                  "More social services"))
+
+# Define attribute lists: same sex marriage
+fz$`Same sex marriage` <- factor(fz$samesex,
+       levels = c("Some rights", 
+                  "No rights", 
+                  "Same rights"), 
+       labels = c("Some rights", 
+                  "No rights", 
+                  "Same rights"))
