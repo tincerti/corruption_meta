@@ -1,1454 +1,318 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{xx}
 
-\bibitem [\protect \citeauthoryear {%
-Agerberg%
-}{%
-Agerberg%
-}{%
-{\protect \APACyear {2019}}%
-}]{%
-agerberg2019lesser}
-\APACinsertmetastar {%
-agerberg2019lesser}%
-\begin{APACrefauthors}%
-Agerberg, M.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2019}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {The Lesser Evil? Corruption Voting and the Importance of
-  Clean Alternatives} {The lesser evil? corruption voting and the importance of
-  clean alternatives}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Comparative Political Studies}{}{}{0010414019852697}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem{Agerberg}{2019}{agerberg2019lesser}
+Agerberg, Mattias. 2019.
+\newblock ``The Lesser Evil? Corruption Voting and the Importance of Clean
+  Alternatives.'' {\em Comparative Political Studies} p.~0010414019852697.
 
-\bibitem [\protect \citeauthoryear {%
-Anduiza%
-, Gallego%
-\BCBL {}\ \BBA {} Mu{\~n}oz%
-}{%
-Anduiza%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2013}}%
-}]{%
-anduiza2013turning}
-\APACinsertmetastar {%
-anduiza2013turning}%
-\begin{APACrefauthors}%
-Anduiza, E.%
-, Gallego, A.%
-\BCBL {}\ \BBA {} Mu{\~n}oz, J.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2013}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Turning a blind eye: Experimental evidence of partisan
-  bias in attitudes toward corruption} {Turning a blind eye: Experimental
-  evidence of partisan bias in attitudes toward corruption}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Comparative Political Studies}{46}{12}{1664--1692}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem[Anduiza, Gallego \harvardand\ Mu{\~n}oz]{Anduiza, Gallego
+  \harvardand\ Mu{\~n}oz}{2013}{anduiza2013turning}
+Anduiza, Eva, Aina Gallego \harvardand\ Jordi Mu{\~n}oz. 2013.
+\newblock ``Turning a blind eye: Experimental evidence of partisan bias in
+  attitudes toward corruption.'' {\em Comparative Political Studies}
+  46(12):1664--1692.
 
-\bibitem [\protect \citeauthoryear {%
-Arias%
-, Larreguy%
-, Marshall%
-\BCBL {}\ \BBA {} Querubin%
-}{%
-Arias%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2018}}%
-}]{%
-arias2018priors}
-\APACinsertmetastar {%
-arias2018priors}%
-\begin{APACrefauthors}%
-Arias, E.%
-, Larreguy, H.%
-, Marshall, J.%
-\BCBL {}\ \BBA {} Querubin, P.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2018}{}{}.
-\newblock
-\APACrefbtitle {Priors Rule: When do Malfeasance Revelations Help or Hurt
-  Incumbent Parties?} {Priors rule: When do malfeasance revelations help or
-  hurt incumbent parties?}\ \APACbVolEdTR{}{\BTR{}}.
-\newblock
-\APACaddressInstitution{}{National Bureau of Economic Research}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem[Arias et~al.]{Arias, Larreguy, Marshall \harvardand\
+  Querubin}{2018}{arias2018priors}
+Arias, Eric, Horacio Larreguy, John Marshall \harvardand\ Pablo Querubin. 2018.
+\newblock Priors Rule: When do Malfeasance Revelations Help or Hurt Incumbent
+  Parties? Technical report National Bureau of Economic Research.
 
-\bibitem [\protect \citeauthoryear {%
-Arias%
-, Larreguy%
-, Marshall%
-\BCBL {}\ \BBA {} Querubin%
-}{%
-Arias%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2019}}%
-}]{%
-arias2019information}
-\APACinsertmetastar {%
-arias2019information}%
-\begin{APACrefauthors}%
-Arias, E.%
-, Larreguy, H.%
-, Marshall, J.%
-\BCBL {}\ \BBA {} Querubin, P.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2019}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Information Provision, Voter Coordination, and Electoral
-  Accountability: Evidence from Mexican Social Networks} {Information
-  provision, voter coordination, and electoral accountability: Evidence from
-  mexican social networks}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{American Political Science Review}{}{}{}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem[Arias et~al.]{Arias, Larreguy, Marshall \harvardand\
+  Querubin}{2019}{arias2019information}
+Arias, Eric, Horacio Larreguy, John Marshall \harvardand\ Pablo Querubin. 2019.
+\newblock ``Information Provision, Voter Coordination, and Electoral
+  Accountability: Evidence from Mexican Social Networks.'' {\em American
+  Political Science Review} .
 
-\bibitem [\protect \citeauthoryear {%
-Arvate%
-\ \BBA {} Mittlaender%
-}{%
-Arvate%
-\ \BBA {} Mittlaender%
-}{%
-{\protect \APACyear {2017}}%
-}]{%
-arvate2017condemning}
-\APACinsertmetastar {%
-arvate2017condemning}%
-\begin{APACrefauthors}%
-Arvate, P.%
-\BCBT {}\ \BBA {} Mittlaender, S.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2017}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Condemning corruption while condoning inefficiency: an
-  experimental investigation into voting behavior} {Condemning corruption while
-  condoning inefficiency: an experimental investigation into voting
-  behavior}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Public Choice}{172}{3-4}{399--419}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem{Arvate \harvardand\ Mittlaender}{2017}{arvate2017condemning}
+Arvate, Paulo \harvardand\ Sergio Mittlaender. 2017.
+\newblock ``Condemning corruption while condoning inefficiency: an experimental
+  investigation into voting behavior.'' {\em Public Choice} 172(3-4):399--419.
 
-\bibitem [\protect \citeauthoryear {%
-Avenburg%
-}{%
-Avenburg%
-}{%
-{\protect \APACyear {2016}}%
-}]{%
-avenburg2016corruption}
-\APACinsertmetastar {%
-avenburg2016corruption}%
-\begin{APACrefauthors}%
-Avenburg, A.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYear{2016}.
-\unskip\
-\newblock
-\APACrefbtitle {Corruption and electoral accountability in Brazil} {Corruption
-  and electoral accountability in brazil}\ \APACtypeAddressSchool {\BUPhD}{}{}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem{Avenburg}{2016}{avenburg2016corruption}
+Avenburg, Alejandro. 2016.
+\newblock Corruption and electoral accountability in Brazil PhD thesis.
 
-\bibitem [\protect \citeauthoryear {%
-Azfar%
-\ \BBA {} Nelson%
-}{%
-Azfar%
-\ \BBA {} Nelson%
-}{%
-{\protect \APACyear {2007}}%
-}]{%
-azfar2007transparency}
-\APACinsertmetastar {%
-azfar2007transparency}%
-\begin{APACrefauthors}%
-Azfar, O.%
-\BCBT {}\ \BBA {} Nelson, W\BPBI R.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2007}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Transparency, wages, and the separation of powers: An
-  experimental analysis of corruption} {Transparency, wages, and the separation
-  of powers: An experimental analysis of corruption}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Public Choice}{130}{3-4}{471--493}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem{Azfar \harvardand\ Nelson}{2007}{azfar2007transparency}
+Azfar, Omar \harvardand\ William~Robert Nelson. 2007.
+\newblock ``Transparency, wages, and the separation of powers: An experimental
+  analysis of corruption.'' {\em Public Choice} 130(3-4):471--493.
 
-\bibitem [\protect \citeauthoryear {%
-Banerjee%
-, Green%
-, Green%
-\BCBL {}\ \BBA {} Pande%
-}{%
-Banerjee%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2010}}%
-}]{%
-banerjee2010can}
-\APACinsertmetastar {%
-banerjee2010can}%
-\begin{APACrefauthors}%
-Banerjee, A.%
-, Green, D.%
-, Green, J.%
-\BCBL {}\ \BBA {} Pande, R.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2010}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Can voters be primed to choose better legislators?
-  Experimental evidence from rural India} {Can voters be primed to choose
-  better legislators? experimental evidence from rural india}.{\BBCQ}
-\newblock
-\BIn{} \APACrefbtitle {Presented and the Political Economics Seminar, Stanford
-  University.} {Presented and the political economics seminar, stanford
-  university.}
-\PrintBackRefs{\CurrentBib}
+\harvarditem[Banerjee et~al.]{Banerjee, Green, Green \harvardand\
+  Pande}{2010}{banerjee2010can}
+Banerjee, Abhijit, Donald Green, Jennifer Green \harvardand\ Rohini Pande.
+  2010.
+\newblock Can voters be primed to choose better legislators? Experimental
+  evidence from rural India.  In {\em Presented and the Political Economics
+  Seminar, Stanford University}.
+\newblock Citeseer.
 
-\bibitem [\protect \citeauthoryear {%
-Banerjee%
-, Green%
-, McManus%
-\BCBL {}\ \BBA {} Pande%
-}{%
-Banerjee%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2014}}%
-}]{%
-banerjee2014poor}
-\APACinsertmetastar {%
-banerjee2014poor}%
-\begin{APACrefauthors}%
-Banerjee, A.%
-, Green, D\BPBI P.%
-, McManus, J.%
-\BCBL {}\ \BBA {} Pande, R.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2014}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Are poor voters indifferent to whether elected leaders
-  are criminal or corrupt? A vignette experiment in rural India} {Are poor
-  voters indifferent to whether elected leaders are criminal or corrupt? a
-  vignette experiment in rural india}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Political Communication}{31}{3}{391--407}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem[Banerjee et~al.]{Banerjee, Green, McManus \harvardand\
+  Pande}{2014}{banerjee2014poor}
+Banerjee, Abhijit, Donald~P Green, Jeffery McManus \harvardand\ Rohini Pande.
+  2014.
+\newblock ``Are poor voters indifferent to whether elected leaders are criminal
+  or corrupt? A vignette experiment in rural India.'' {\em Political
+  Communication} 31(3):391--407.
 
-\bibitem [\protect \citeauthoryear {%
-Banerjee%
-, Kumar%
-, Pande%
-\BCBL {}\ \BBA {} Su%
-}{%
-Banerjee%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2011}}%
-}]{%
-banerjee2011informed}
-\APACinsertmetastar {%
-banerjee2011informed}%
-\begin{APACrefauthors}%
-Banerjee, A.%
-, Kumar, S.%
-, Pande, R.%
-\BCBL {}\ \BBA {} Su, F.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2011}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Do informed voters make better choices? Experimental
-  evidence from urban India} {Do informed voters make better choices?
-  experimental evidence from urban india}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Unpublished manuscript}{}{}{}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem[Banerjee et~al.]{Banerjee, Kumar, Pande \harvardand\
+  Su}{2011}{banerjee2011informed}
+Banerjee, Abhijit, Selvan Kumar, Rohini Pande \harvardand\ Felix Su. 2011.
+\newblock ``Do informed voters make better choices? Experimental evidence from
+  urban India.'' {\em Unpublished manuscript} .
 
-\bibitem [\protect \citeauthoryear {%
-Blair%
-, Coppock%
-\BCBL {}\ \BBA {} Moor%
-}{%
-Blair%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2018}}%
-}]{%
-blair2018worry}
-\APACinsertmetastar {%
-blair2018worry}%
-\begin{APACrefauthors}%
-Blair, G.%
-, Coppock, A.%
-\BCBL {}\ \BBA {} Moor, M.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2018}{}{}.
-\newblock
-\APACrefbtitle {When to Worry About Sensitivity Bias: Evidence from 30 Years of
-  List Experiments} {When to worry about sensitivity bias: Evidence from 30
-  years of list experiments}\ \APACbVolEdTR{}{\BTR{}}.
-\newblock
-\APACaddressInstitution{}{Working Paper}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem[Blair, Coppock \harvardand\ Moor]{Blair, Coppock \harvardand\
+  Moor}{2018}{blair2018worry}
+Blair, Graeme, Alexander Coppock \harvardand\ Margaret Moor. 2018.
+\newblock When to Worry About Sensitivity Bias: Evidence from 30 Years of List
+  Experiments. Technical report Working Paper.
 
-\bibitem [\protect \citeauthoryear {%
-Boas%
-, Hidalgo%
-\BCBL {}\ \BBA {} Melo%
-}{%
-Boas%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2018}}%
-}]{%
-boas2018norms}
-\APACinsertmetastar {%
-boas2018norms}%
-\begin{APACrefauthors}%
-Boas, T\BPBI C.%
-, Hidalgo, F\BPBI D.%
-\BCBL {}\ \BBA {} Melo, M\BPBI A.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2018}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Norms versus Action: Why Voters Fail to Sanction
-  Malfeasance in Brazil} {Norms versus action: Why voters fail to sanction
-  malfeasance in brazil}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{American Journal of Political Science}{}{}{}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem[Boas, Hidalgo \harvardand\ Melo]{Boas, Hidalgo \harvardand\
+  Melo}{2018}{boas2018norms}
+Boas, Taylor~C, F~Daniel Hidalgo \harvardand\ Marcus~Andr{\'e} Melo. 2018.
+\newblock ``Norms versus Action: Why Voters Fail to Sanction Malfeasance in
+  Brazil.'' {\em American Journal of Political Science} .
 
-\bibitem [\protect \citeauthoryear {%
-Botero%
-, Cornejo%
-, Gamboa%
-, Pavao%
-\BCBL {}\ \BBA {} Nickerson%
-}{%
-Botero%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2015}}%
-}]{%
-botero2015says}
-\APACinsertmetastar {%
-botero2015says}%
-\begin{APACrefauthors}%
-Botero, S.%
-, Cornejo, R\BPBI C.%
-, Gamboa, L.%
-, Pavao, N.%
-\BCBL {}\ \BBA {} Nickerson, D\BPBI W.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2015}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Says who? An experiment on allegations of corruption and
-  credibility of sources} {Says who? an experiment on allegations of corruption
-  and credibility of sources}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Political Research Quarterly}{68}{3}{493--504}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem[Botero et~al.]{Botero, Cornejo, Gamboa, Pavao \harvardand\
+  Nickerson}{2015}{botero2015says}
+Botero, Sandra, Rodrigo~Castro Cornejo, Laura Gamboa, Nara Pavao \harvardand\
+  David~W Nickerson. 2015.
+\newblock ``Says who? An experiment on allegations of corruption and
+  credibility of sources.'' {\em Political Research Quarterly} 68(3):493--504.
 
-\bibitem [\protect \citeauthoryear {%
-Breitenstein%
-}{%
-Breitenstein%
-}{%
-{\protect \APACyear {2019}}%
-}]{%
-breitenstein2019choosing}
-\APACinsertmetastar {%
-breitenstein2019choosing}%
-\begin{APACrefauthors}%
-Breitenstein, S.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2019}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Choosing the crook: A conjoint experiment on voting for
-  corrupt politicians} {Choosing the crook: A conjoint experiment on voting for
-  corrupt politicians}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Research \& Politics}{6}{1}{2053168019832230}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem{Breitenstein}{2019}{breitenstein2019choosing}
+Breitenstein, Sofia. 2019.
+\newblock ``Choosing the crook: A conjoint experiment on voting for corrupt
+  politicians.'' {\em Research \& Politics} 6(1):2053168019832230.
 
-\bibitem [\protect \citeauthoryear {%
-Buntaine%
-, Jablonski%
-, Nielson%
-\BCBL {}\ \BBA {} Pickering%
-}{%
-Buntaine%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2018}}%
-}]{%
-buntaine2018sms}
-\APACinsertmetastar {%
-buntaine2018sms}%
-\begin{APACrefauthors}%
-Buntaine, M\BPBI T.%
-, Jablonski, R.%
-, Nielson, D\BPBI L.%
-\BCBL {}\ \BBA {} Pickering, P\BPBI M.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2018}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {SMS texts on corruption help Ugandan voters hold elected
-  councillors accountable at the polls} {Sms texts on corruption help ugandan
-  voters hold elected councillors accountable at the polls}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Proceedings of the National Academy of
-  Sciences}{115}{26}{6668--6673}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem[Buntaine et~al.]{Buntaine, Jablonski, Nielson \harvardand\
+  Pickering}{2018}{buntaine2018sms}
+Buntaine, Mark~T, Ryan Jablonski, Daniel~L Nielson \harvardand\ Paula~M
+  Pickering. 2018.
+\newblock ``SMS texts on corruption help Ugandan voters hold elected
+  councillors accountable at the polls.'' {\em Proceedings of the National
+  Academy of Sciences} 115(26):6668--6673.
 
-\bibitem [\protect \citeauthoryear {%
-Camerer%
-}{%
-Camerer%
-}{%
-{\protect \APACyear {2011}}%
-}]{%
-camerer2011promise}
-\APACinsertmetastar {%
-camerer2011promise}%
-\begin{APACrefauthors}%
-Camerer, C.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2011}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {The promise and success of lab-field generalizability in
-  experimental economics: A critical reply to Levitt and List} {The promise and
-  success of lab-field generalizability in experimental economics: A critical
-  reply to levitt and list}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Available at SSRN 1977749}{}{}{}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem{Camerer}{2011}{camerer2011promise}
+Camerer, Colin. 2011.
+\newblock ``The promise and success of lab-field generalizability in
+  experimental economics: A critical reply to Levitt and List.'' {\em Available
+  at SSRN 1977749} .
 
-\bibitem [\protect \citeauthoryear {%
-Chauchard%
-, Klasnja%
-\BCBL {}\ \BBA {} Harish%
-}{%
-Chauchard%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2017}}%
-}]{%
-chauchard2017limited}
-\APACinsertmetastar {%
-chauchard2017limited}%
-\begin{APACrefauthors}%
-Chauchard, S.%
-, Klasnja, M.%
-\BCBL {}\ \BBA {} Harish, S.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2017}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {The limited impact of information on political
-  accountability: An experiment on financial disclosures in India} {The limited
-  impact of information on political accountability: An experiment on financial
-  disclosures in india}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Unpublished manuscript). Dartmouth College, Hanover,
-  NH}{}{}{}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem[Chauchard, Klasnja \harvardand\ Harish]{Chauchard, Klasnja
+  \harvardand\ Harish}{2017}{chauchard2017limited}
+Chauchard, Simon, M Klasnja \harvardand\ SP Harish. 2017.
+\newblock ``The limited impact of information on political accountability: An
+  experiment on financial disclosures in India.'' {\em Unpublished manuscript).
+  Dartmouth College, Hanover, NH} .
 
-\bibitem [\protect \citeauthoryear {%
-Chong%
-, De~La~O%
-, Karlan%
-\BCBL {}\ \BBA {} Wantchekon%
-}{%
-Chong%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2014}}%
-}]{%
-chong2014does}
-\APACinsertmetastar {%
-chong2014does}%
-\begin{APACrefauthors}%
-Chong, A.%
-, De~La~O, A\BPBI L.%
-, Karlan, D.%
-\BCBL {}\ \BBA {} Wantchekon, L.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2014}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Does corruption information inspire the fight or quash
-  the hope? A field experiment in Mexico on voter turnout, choice, and party
-  identification} {Does corruption information inspire the fight or quash the
-  hope? a field experiment in mexico on voter turnout, choice, and party
-  identification}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Journal of Politics}{77}{1}{55--71}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem[Chong et~al.]{Chong, De~La~O, Karlan \harvardand\
+  Wantchekon}{2014}{chong2014does}
+Chong, Alberto, Ana~L De~La~O, Dean Karlan \harvardand\ Leonard Wantchekon.
+  2014.
+\newblock ``Does corruption information inspire the fight or quash the hope? A
+  field experiment in Mexico on voter turnout, choice, and party
+  identification.'' {\em The Journal of Politics} 77(1):55--71.
 
-\bibitem [\protect \citeauthoryear {%
-Coppock%
-\ \BBA {} Green%
-}{%
-Coppock%
-\ \BBA {} Green%
-}{%
-{\protect \APACyear {2015}}%
-}]{%
-coppock2015assessing}
-\APACinsertmetastar {%
-coppock2015assessing}%
-\begin{APACrefauthors}%
-Coppock, A.%
-\BCBT {}\ \BBA {} Green, D\BPBI P.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2015}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Assessing the correspondence between experimental
-  results obtained in the lab and field: A review of recent social science
-  research} {Assessing the correspondence between experimental results obtained
-  in the lab and field: A review of recent social science research}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Political Science Research and
-  Methods}{3}{1}{113--131}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem{Coppock \harvardand\ Green}{2015}{coppock2015assessing}
+Coppock, Alexander \harvardand\ Donald~P Green. 2015.
+\newblock ``Assessing the correspondence between experimental results obtained
+  in the lab and field: A review of recent social science research.'' {\em
+  Political Science Research and Methods} 3(1):113--131.
 
-\bibitem [\protect \citeauthoryear {%
-De~Figueiredo%
-, Hidalgo%
-\BCBL {}\ \BBA {} Kasahara%
-}{%
-De~Figueiredo%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2011}}%
-}]{%
-de2011voters}
-\APACinsertmetastar {%
-de2011voters}%
-\begin{APACrefauthors}%
-De~Figueiredo, M\BPBI F.%
-, Hidalgo, F\BPBI D.%
-\BCBL {}\ \BBA {} Kasahara, Y.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2011}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {When do voters punish corrupt politicians? Experimental
-  evidence from Brazil} {When do voters punish corrupt politicians?
-  experimental evidence from brazil}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Unpublished manuscript, UC Berkeley}{}{}{}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem[De~Figueiredo, Hidalgo \harvardand\ Kasahara]{De~Figueiredo,
+  Hidalgo \harvardand\ Kasahara}{2011}{de2011voters}
+De~Figueiredo, Miguel~FP, F~Daniel Hidalgo \harvardand\ Yuri Kasahara. 2011.
+\newblock ``When do voters punish corrupt politicians? Experimental evidence
+  from Brazil.'' {\em Unpublished manuscript, UC Berkeley} .
 
-\bibitem [\protect \citeauthoryear {%
-De~Vries%
-\ \BBA {} Solaz%
-}{%
-De~Vries%
-\ \BBA {} Solaz%
-}{%
-{\protect \APACyear {2017}}%
-}]{%
-de2017electoral}
-\APACinsertmetastar {%
-de2017electoral}%
-\begin{APACrefauthors}%
-De~Vries, C\BPBI E.%
-\BCBT {}\ \BBA {} Solaz, H.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2017}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {The electoral consequences of corruption} {The electoral
-  consequences of corruption}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Annual Review of Political Science}{20}{}{391--408}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem{De~Vries \harvardand\ Solaz}{2017}{de2017electoral}
+De~Vries, Catherine~E \harvardand\ Hector Solaz. 2017.
+\newblock ``The electoral consequences of corruption.'' {\em Annual Review of
+  Political Science} 20:391--408.
 
-\bibitem [\protect \citeauthoryear {%
-Dunning%
-\ \protect \BOthers {.}}{%
-Dunning%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2018}}%
-}]{%
-dunning2018metaketa}
-\APACinsertmetastar {%
-dunning2018metaketa}%
-\begin{APACrefauthors}%
-Dunning, T.%
-, Grossman, G.%
-, Humphreys, M.%
-, Hyde, S\BPBI D.%
-, McIntosh, C.%
-\BCBL {}\ \BBA {} Nellis, G.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2018}{}{}.
-\newblock
-\APACrefbtitle {Metaketa I: Information, accountability, and cumulative
-  learning.} {Metaketa i: Information, accountability, and cumulative
-  learning.}
-\newblock
-\APACaddressPublisher{}{Cambridge University Press}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem[Dunning et~al.]{Dunning, Grossman, Humphreys, Hyde, McIntosh
+  \harvardand\ Nellis}{2018}{dunning2018metaketa}
+Dunning, Thad, Guy Grossman, Macartan Humphreys, Susan~D Hyde, Craig McIntosh
+  \harvardand\ Gareth Nellis. 2018.
+\newblock ``Metaketa I: Information, accountability, and cumulative
+  learning.''.
 
-\bibitem [\protect \citeauthoryear {%
-Eggers%
-, Vivyan%
-\BCBL {}\ \BBA {} Wagner%
-}{%
-Eggers%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2018}}%
-}]{%
-eggers2018corruption}
-\APACinsertmetastar {%
-eggers2018corruption}%
-\begin{APACrefauthors}%
-Eggers, A\BPBI C.%
-, Vivyan, N.%
-\BCBL {}\ \BBA {} Wagner, M.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2018}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Corruption, accountability, and gender: do female
-  politicians face higher standards in public life?} {Corruption,
-  accountability, and gender: do female politicians face higher standards in
-  public life?}{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Journal of Politics}{80}{1}{321--326}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem[Eggers, Vivyan \harvardand\ Wagner]{Eggers, Vivyan \harvardand\
+  Wagner}{2018}{eggers2018corruption}
+Eggers, Andrew~C, Nick Vivyan \harvardand\ Markus Wagner. 2018.
+\newblock ``Corruption, accountability, and gender: do female politicians face
+  higher standards in public life?'' {\em The Journal of Politics}
+  80(1):321--326.
 
-\bibitem [\protect \citeauthoryear {%
-Ferraz%
-\ \BBA {} Finan%
-}{%
-Ferraz%
-\ \BBA {} Finan%
-}{%
-{\protect \APACyear {2008}}%
-}]{%
-ferraz2008exposing}
-\APACinsertmetastar {%
-ferraz2008exposing}%
-\begin{APACrefauthors}%
-Ferraz, C.%
-\BCBT {}\ \BBA {} Finan, F.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2008}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Exposing corrupt politicians: the effects of Brazil's
-  publicly released audits on electoral outcomes} {Exposing corrupt
-  politicians: the effects of brazil's publicly released audits on electoral
-  outcomes}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Quarterly Journal of Economics}{123}{2}{703--745}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem{Ferraz \harvardand\ Finan}{2008}{ferraz2008exposing}
+Ferraz, Claudio \harvardand\ Frederico Finan. 2008.
+\newblock ``Exposing corrupt politicians: the effects of Brazil's publicly
+  released audits on electoral outcomes.'' {\em The Quarterly Journal of
+  Economics} 123(2):703--745.
 
-\bibitem [\protect \citeauthoryear {%
-Franchino%
-\ \BBA {} Zucchini%
-}{%
-Franchino%
-\ \BBA {} Zucchini%
-}{%
-{\protect \APACyear {2015}}%
-}]{%
-franchino2015voting}
-\APACinsertmetastar {%
-franchino2015voting}%
-\begin{APACrefauthors}%
-Franchino, F.%
-\BCBT {}\ \BBA {} Zucchini, F.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2015}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Voting in a multi-dimensional space: a conjoint analysis
-  employing valence and ideology attributes of candidates} {Voting in a
-  multi-dimensional space: a conjoint analysis employing valence and ideology
-  attributes of candidates}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Political Science Research and
-  Methods}{3}{2}{221--241}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem{Franchino \harvardand\ Zucchini}{2015}{franchino2015voting}
+Franchino, Fabio \harvardand\ Francesco Zucchini. 2015.
+\newblock ``Voting in a multi-dimensional space: a conjoint analysis employing
+  valence and ideology attributes of candidates.'' {\em Political Science
+  Research and Methods} 3(2):221--241.
 
-\bibitem [\protect \citeauthoryear {%
-Gray%
-\ \BBA {} Kaufman%
-}{%
-Gray%
-\ \BBA {} Kaufman%
-}{%
-{\protect \APACyear {1998}}%
-}]{%
-gray1998corruption}
-\APACinsertmetastar {%
-gray1998corruption}%
-\begin{APACrefauthors}%
-Gray, C\BPBI W.%
-\BCBT {}\ \BBA {} Kaufman, D.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1998}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Corruption and development} {Corruption and
-  development}.{\BBCQ}
-\newblock
+\harvarditem{Gray \harvardand\ Kaufman}{1998}{gray1998corruption}
+Gray, Cheryl~W \harvardand\ Daniel Kaufman. 1998.
+\newblock ``Corruption and development.''.
 
-\PrintBackRefs{\CurrentBib}
+\harvarditem[Green et~al.]{Green, Zelizer, Kirby
+  et~al.}{2018}{green2018publicizing}
+Green, Donald~P, Adam Zelizer, David Kirby et~al. 2018.
+\newblock ``Publicizing Scandal: Results from Five Field Experiments.'' {\em
+  Quarterly Journal of Political Science} 13(3):237--261.
 
-\bibitem [\protect \citeauthoryear {%
-Green%
-, Zelizer%
-, Kirby%
-\BCBL {}\ \protect \BOthers {.}}{%
-Green%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2018}}%
-}]{%
-green2018publicizing}
-\APACinsertmetastar {%
-green2018publicizing}%
-\begin{APACrefauthors}%
-Green, D\BPBI P.%
-, Zelizer, A.%
-, Kirby, D.%
-\BCBL {}\ \BOthersPeriod {.}\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2018}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Publicizing Scandal: Results from Five Field
-  Experiments} {Publicizing scandal: Results from five field
-  experiments}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Quarterly Journal of Political
-  Science}{13}{3}{237--261}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem[Hainmueller, Hopkins \harvardand\ Yamamoto]{Hainmueller, Hopkins
+  \harvardand\ Yamamoto}{2014}{hainmueller2014causal}
+Hainmueller, Jens, Daniel~J Hopkins \harvardand\ Teppei Yamamoto. 2014.
+\newblock ``Causal inference in conjoint analysis: Understanding
+  multidimensional choices via stated preference experiments.'' {\em Political
+  Analysis} 22(1):1--30.
 
-\bibitem [\protect \citeauthoryear {%
-Hainmueller%
-, Hopkins%
-\BCBL {}\ \BBA {} Yamamoto%
-}{%
-Hainmueller%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2014}}%
-}]{%
-hainmueller2014causal}
-\APACinsertmetastar {%
-hainmueller2014causal}%
-\begin{APACrefauthors}%
-Hainmueller, J.%
-, Hopkins, D\BPBI J.%
-\BCBL {}\ \BBA {} Yamamoto, T.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2014}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Causal inference in conjoint analysis: Understanding
-  multidimensional choices via stated preference experiments} {Causal inference
-  in conjoint analysis: Understanding multidimensional choices via stated
-  preference experiments}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Political Analysis}{22}{1}{1--30}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem{Kalla \harvardand\ Broockman}{2018}{kalla2018minimal}
+Kalla, Joshua~L \harvardand\ David~E Broockman. 2018.
+\newblock ``The minimal persuasive effects of campaign contact in general
+  elections: Evidence from 49 field experiments.'' {\em American Political
+  Science Review} 112(1):148--166.
 
-\bibitem [\protect \citeauthoryear {%
-Kalla%
-\ \BBA {} Broockman%
-}{%
-Kalla%
-\ \BBA {} Broockman%
-}{%
-{\protect \APACyear {2018}}%
-}]{%
-kalla2018minimal}
-\APACinsertmetastar {%
-kalla2018minimal}%
-\begin{APACrefauthors}%
-Kalla, J\BPBI L.%
-\BCBT {}\ \BBA {} Broockman, D\BPBI E.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2018}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {The minimal persuasive effects of campaign contact in
-  general elections: Evidence from 49 field experiments} {The minimal
-  persuasive effects of campaign contact in general elections: Evidence from 49
-  field experiments}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{American Political Science Review}{112}{1}{148--166}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem{Kla{\v{s}}nja \harvardand\ Tucker}{2013}{klavsnja2013economy}
+Kla{\v{s}}nja, Marko \harvardand\ Joshua~A Tucker. 2013.
+\newblock ``The economy, corruption, and the vote: Evidence from experiments in
+  Sweden and Moldova.'' {\em Electoral Studies} 32(3):536--543.
 
-\bibitem [\protect \citeauthoryear {%
-Kla{\v{s}}nja%
-, Lupu%
-\BCBL {}\ \BBA {} Tucker%
-}{%
-Kla{\v{s}}nja%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2017}}%
-}]{%
-klavsnja2017voters}
-\APACinsertmetastar {%
-klavsnja2017voters}%
-\begin{APACrefauthors}%
-Kla{\v{s}}nja, M.%
-, Lupu, N.%
-\BCBL {}\ \BBA {} Tucker, J\BPBI A.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2017}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {When Do Voters Sanction Corrupt Politicians?} {When do
-  voters sanction corrupt politicians?}{\BBCQ}
-\newblock
+\harvarditem[Kla{\v{s}}nja, Lupu \harvardand\ Tucker]{Kla{\v{s}}nja, Lupu
+  \harvardand\ Tucker}{2017}{klavsnja2017voters}
+Kla{\v{s}}nja, Marko, Noam Lupu \harvardand\ Joshua~A Tucker. 2017.
+\newblock ``When Do Voters Sanction Corrupt Politicians?''.
 
-\PrintBackRefs{\CurrentBib}
+\harvarditem{Kolstad \harvardand\ Wiig}{2009}{kolstad2009transparency}
+Kolstad, Ivar \harvardand\ Arne Wiig. 2009.
+\newblock ``Is transparency the key to reducing corruption in resource-rich
+  countries?'' {\em World development} 37(3):521--532.
 
-\bibitem [\protect \citeauthoryear {%
-Kla{\v{s}}nja%
-\ \BBA {} Tucker%
-}{%
-Kla{\v{s}}nja%
-\ \BBA {} Tucker%
-}{%
-{\protect \APACyear {2013}}%
-}]{%
-klavsnja2013economy}
-\APACinsertmetastar {%
-klavsnja2013economy}%
-\begin{APACrefauthors}%
-Kla{\v{s}}nja, M.%
-\BCBT {}\ \BBA {} Tucker, J\BPBI A.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2013}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {The economy, corruption, and the vote: Evidence from
-  experiments in Sweden and Moldova} {The economy, corruption, and the vote:
-  Evidence from experiments in sweden and moldova}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Electoral Studies}{32}{3}{536--543}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem{Konstantinidis \harvardand\
+  Xezonakis}{2013}{konstantinidis2013sources}
+Konstantinidis, Iannis \harvardand\ Georgios Xezonakis. 2013.
+\newblock ``Sources of tolerance towards corrupted politicians in Greece: The
+  role of trade offs and individual benefits.'' {\em Crime, Law and Social
+  Change} 60(5):549--563.
 
-\bibitem [\protect \citeauthoryear {%
-Kolstad%
-\ \BBA {} Wiig%
-}{%
-Kolstad%
-\ \BBA {} Wiig%
-}{%
-{\protect \APACyear {2009}}%
-}]{%
-kolstad2009transparency}
-\APACinsertmetastar {%
-kolstad2009transparency}%
-\begin{APACrefauthors}%
-Kolstad, I.%
-\BCBT {}\ \BBA {} Wiig, A.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2009}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Is transparency the key to reducing corruption in
-  resource-rich countries?} {Is transparency the key to reducing corruption in
-  resource-rich countries?}{\BBCQ}
-\newblock
-\APACjournalVolNumPages{World development}{37}{3}{521--532}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem[Leeper, Hobolt \harvardand\ Tilley]{Leeper, Hobolt \harvardand\
+  Tilley}{2018}{leeper2018measuring}
+Leeper, Thomas~J, Sara~B Hobolt \harvardand\ James Tilley. 2018.
+\newblock ``Measuring Subgroup Preferences in Conjoint Experiments.''.
 
-\bibitem [\protect \citeauthoryear {%
-Konstantinidis%
-\ \BBA {} Xezonakis%
-}{%
-Konstantinidis%
-\ \BBA {} Xezonakis%
-}{%
-{\protect \APACyear {2013}}%
-}]{%
-konstantinidis2013sources}
-\APACinsertmetastar {%
-konstantinidis2013sources}%
-\begin{APACrefauthors}%
-Konstantinidis, I.%
-\BCBT {}\ \BBA {} Xezonakis, G.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2013}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Sources of tolerance towards corrupted politicians in
-  Greece: The role of trade offs and individual benefits} {Sources of tolerance
-  towards corrupted politicians in greece: The role of trade offs and
-  individual benefits}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Crime, Law and Social Change}{60}{5}{549--563}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem{Mares \harvardand\ Visconti}{2019}{mares2019voting}
+Mares, Isabela \harvardand\ Giancarlo Visconti. 2019.
+\newblock ``Voting for the lesser evil: Evidence from a conjoint experiment in
+  Romania.'' {\em Political Science Research and Methods} .
 
-\bibitem [\protect \citeauthoryear {%
-Leeper%
-, Hobolt%
-\BCBL {}\ \BBA {} Tilley%
-}{%
-Leeper%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2018}}%
-}]{%
-leeper2018measuring}
-\APACinsertmetastar {%
-leeper2018measuring}%
-\begin{APACrefauthors}%
-Leeper, T\BPBI J.%
-, Hobolt, S\BPBI B.%
-\BCBL {}\ \BBA {} Tilley, J.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2018}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Measuring Subgroup Preferences in Conjoint Experiments}
-  {Measuring subgroup preferences in conjoint experiments}.{\BBCQ}
-\newblock
+\harvarditem[Mu{\~n}oz, Anduiza \harvardand\ Gallego]{Mu{\~n}oz, Anduiza
+  \harvardand\ Gallego}{2012}{munoz2012voters}
+Mu{\~n}oz, Jordi, Eva Anduiza \harvardand\ Aina Gallego. 2012.
+\newblock Why do voters forgive corrupt politicians? Cynicism, noise and
+  implicit exchange.  In {\em International Political Science Association
+  Conference. Madrid, Spain}.
 
-\PrintBackRefs{\CurrentBib}
+\harvarditem{Rose-Ackerman \harvardand\ Palifka}{2016}{rose2016corruption}
+Rose-Ackerman, Susan \harvardand\ Bonnie~J Palifka. 2016.
+\newblock {\em Corruption and government: Causes, consequences, and reform}.
+\newblock Cambridge university press.
 
-\bibitem [\protect \citeauthoryear {%
-Mares%
-\ \BBA {} Visconti%
-}{%
-Mares%
-\ \BBA {} Visconti%
-}{%
-{\protect \APACyear {2019}}%
-}]{%
-mares2019voting}
-\APACinsertmetastar {%
-mares2019voting}%
-\begin{APACrefauthors}%
-Mares, I.%
-\BCBT {}\ \BBA {} Visconti, G.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2019}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Voting for the lesser evil: Evidence from a conjoint
-  experiment in Romania} {Voting for the lesser evil: Evidence from a conjoint
-  experiment in romania}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Political Science Research and Methods}{}{}{}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem[Rundquist, Strom \harvardand\ Peters]{Rundquist, Strom
+  \harvardand\ Peters}{1977}{rundquist1977corrupt}
+Rundquist, Barry~S, Gerald~S Strom \harvardand\ John~G Peters. 1977.
+\newblock ``Corrupt politicians and their electoral support: some experimental
+  observations.'' {\em American Political Science Review} 71(3):954--963.
 
-\bibitem [\protect \citeauthoryear {%
-Mu{\~n}oz%
-, Anduiza%
-\BCBL {}\ \BBA {} Gallego%
-}{%
-Mu{\~n}oz%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2012}}%
-}]{%
-munoz2012voters}
-\APACinsertmetastar {%
-munoz2012voters}%
-\begin{APACrefauthors}%
-Mu{\~n}oz, J.%
-, Anduiza, E.%
-\BCBL {}\ \BBA {} Gallego, A.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2012}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Why do voters forgive corrupt politicians? Cynicism,
-  noise and implicit exchange} {Why do voters forgive corrupt politicians?
-  cynicism, noise and implicit exchange}.{\BBCQ}
-\newblock
-\BIn{} \APACrefbtitle {International Political Science Association Conference.
-  Madrid, Spain.} {International political science association conference.
-  madrid, spain.}
-\PrintBackRefs{\CurrentBib}
+\harvarditem[Simonsohn, Simmons \harvardand\ Nelson]{Simonsohn, Simmons
+  \harvardand\ Nelson}{2015}{simonsohn2015better}
+Simonsohn, Uri, Joseph~P Simmons \harvardand\ Leif~D Nelson. 2015.
+\newblock ``Better P-curves: Making P-curve analysis more robust to errors,
+  fraud, and ambitious P-hacking, a Reply to Ulrich and Miller (2015).''.
 
-\bibitem [\protect \citeauthoryear {%
-Rose-Ackerman%
-\ \BBA {} Palifka%
-}{%
-Rose-Ackerman%
-\ \BBA {} Palifka%
-}{%
-{\protect \APACyear {2016}}%
-}]{%
-rose2016corruption}
-\APACinsertmetastar {%
-rose2016corruption}%
-\begin{APACrefauthors}%
-Rose-Ackerman, S.%
-\BCBT {}\ \BBA {} Palifka, B\BPBI J.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYear{2016}.
-\newblock
-\APACrefbtitle {Corruption and government: Causes, consequences, and reform}
-  {Corruption and government: Causes, consequences, and reform}.
-\newblock
-\APACaddressPublisher{}{Cambridge university press}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem[Simonsohn, Nelson \harvardand\ Simmons]{Simonsohn, Nelson
+  \harvardand\ Simmons}{2014{\em a}}{simonsohn2014p1}
+Simonsohn, Uri, Leif~D Nelson \harvardand\ Joseph~P Simmons. 2014{\em a}.
+\newblock ``P-curve: a key to the file-drawer.'' {\em Journal of Experimental
+  Psychology: General} 143(2):534.
 
-\bibitem [\protect \citeauthoryear {%
-Rundquist%
-, Strom%
-\BCBL {}\ \BBA {} Peters%
-}{%
-Rundquist%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {1977}}%
-}]{%
-rundquist1977corrupt}
-\APACinsertmetastar {%
-rundquist1977corrupt}%
-\begin{APACrefauthors}%
-Rundquist, B\BPBI S.%
-, Strom, G\BPBI S.%
-\BCBL {}\ \BBA {} Peters, J\BPBI G.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1977}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Corrupt politicians and their electoral support: some
-  experimental observations} {Corrupt politicians and their electoral support:
-  some experimental observations}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{American Political Science Review}{71}{3}{954--963}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem[Simonsohn, Nelson \harvardand\ Simmons]{Simonsohn, Nelson
+  \harvardand\ Simmons}{2014{\em b}}{simonsohn2014p2}
+Simonsohn, Uri, Leif~D Nelson \harvardand\ Joseph~P Simmons. 2014{\em b}.
+\newblock ``p-curve and effect size: Correcting for publication bias using only
+  significant results.'' {\em Perspectives on Psychological Science}
+  9(6):666--681.
 
-\bibitem [\protect \citeauthoryear {%
-Simonsohn%
-, Nelson%
-\BCBL {}\ \BBA {} Simmons%
-}{%
-Simonsohn%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2014}}%
-{\protect \APACexlab {{\protect \BCnt {1}}}}}]{%
-simonsohn2014p1}
-\APACinsertmetastar {%
-simonsohn2014p1}%
-\begin{APACrefauthors}%
-Simonsohn, U.%
-, Nelson, L\BPBI D.%
-\BCBL {}\ \BBA {} Simmons, J\BPBI P.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2014{\protect \BCnt {1}}}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {P-curve: a key to the file-drawer.} {P-curve: a key to
-  the file-drawer.}{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Journal of Experimental Psychology:
-  General}{143}{2}{534}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem[Solaz, De~Vries \harvardand\ de~Geus]{Solaz, De~Vries \harvardand\
+  de~Geus}{2018}{solaz2018group}
+Solaz, Hector, Catherine~E De~Vries \harvardand\ Roosmarijn~A de~Geus. 2018.
+\newblock ``In-Group Loyalty and the Punishment of Corruption.'' {\em
+  Comparative Political Studies} p.~0010414018797951.
 
-\bibitem [\protect \citeauthoryear {%
-Simonsohn%
-, Nelson%
-\BCBL {}\ \BBA {} Simmons%
-}{%
-Simonsohn%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2014}}%
-{\protect \APACexlab {{\protect \BCnt {2}}}}}]{%
-simonsohn2014p2}
-\APACinsertmetastar {%
-simonsohn2014p2}%
-\begin{APACrefauthors}%
-Simonsohn, U.%
-, Nelson, L\BPBI D.%
-\BCBL {}\ \BBA {} Simmons, J\BPBI P.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2014{\protect \BCnt {2}}}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {p-curve and effect size: Correcting for publication bias
-  using only significant results} {p-curve and effect size: Correcting for
-  publication bias using only significant results}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Perspectives on Psychological Science}{9}{6}{666--681}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Simonsohn%
-, Simmons%
-\BCBL {}\ \BBA {} Nelson%
-}{%
-Simonsohn%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2015}}%
-}]{%
-simonsohn2015better}
-\APACinsertmetastar {%
-simonsohn2015better}%
-\begin{APACrefauthors}%
-Simonsohn, U.%
-, Simmons, J\BPBI P.%
-\BCBL {}\ \BBA {} Nelson, L\BPBI D.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2015}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Better P-curves: Making P-curve analysis more robust to
-  errors, fraud, and ambitious P-hacking, a Reply to Ulrich and Miller (2015).}
-  {Better p-curves: Making p-curve analysis more robust to errors, fraud, and
-  ambitious p-hacking, a reply to ulrich and miller (2015).}{\BBCQ}
-\newblock
-
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Solaz%
-, De~Vries%
-\BCBL {}\ \BBA {} de Geus%
-}{%
-Solaz%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2018}}%
-}]{%
-solaz2018group}
-\APACinsertmetastar {%
-solaz2018group}%
-\begin{APACrefauthors}%
-Solaz, H.%
-, De~Vries, C\BPBI E.%
-\BCBL {}\ \BBA {} de Geus, R\BPBI A.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2018}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {In-Group Loyalty and the Punishment of Corruption}
-  {In-group loyalty and the punishment of corruption}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Comparative Political Studies}{}{}{0010414018797951}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Stokes%
-, Dunning%
-, Nazareno%
-\BCBL {}\ \BBA {} Brusco%
-}{%
-Stokes%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2013}}%
-}]{%
-stokes2013brokers}
-\APACinsertmetastar {%
-stokes2013brokers}%
-\begin{APACrefauthors}%
-Stokes, S\BPBI C.%
-, Dunning, T.%
-, Nazareno, M.%
-\BCBL {}\ \BBA {} Brusco, V.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYear{2013}.
-\newblock
-\APACrefbtitle {Brokers, voters, and clientelism: The puzzle of distributive
-  politics} {Brokers, voters, and clientelism: The puzzle of distributive
+\harvarditem[Stokes et~al.]{Stokes, Dunning, Nazareno \harvardand\
+  Brusco}{2013}{stokes2013brokers}
+Stokes, Susan~C, Thad Dunning, Marcelo Nazareno \harvardand\ Valeria Brusco.
+  2013.
+\newblock {\em Brokers, voters, and clientelism: The puzzle of distributive
   politics}.
-\newblock
-\APACaddressPublisher{}{Cambridge University Press}.
-\PrintBackRefs{\CurrentBib}
+\newblock Cambridge University Press.
 
-\bibitem [\protect \citeauthoryear {%
-Sulitzeanu-Kenan%
-, Dotan%
-\BCBL {}\ \BBA {} Yair%
-}{%
-Sulitzeanu-Kenan%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2019}}%
-}]{%
-sulitzeanu2019judicial}
-\APACinsertmetastar {%
-sulitzeanu2019judicial}%
-\begin{APACrefauthors}%
-Sulitzeanu-Kenan, R.%
-, Dotan, Y.%
-\BCBL {}\ \BBA {} Yair, O.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2019}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Can Institutions Make Voters Care about Corruption?}
-  {Can institutions make voters care about corruption?}{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Journal of Politics}{}{}{}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem[Sulitzeanu-Kenan, Dotan \harvardand\ Yair]{Sulitzeanu-Kenan, Dotan
+  \harvardand\ Yair}{2019}{sulitzeanu2019judicial}
+Sulitzeanu-Kenan, Raanan, Yoav Dotan \harvardand\ Omer Yair. 2019.
+\newblock ``Can Institutions Make Voters Care about Corruption?'' {\em The
+  Journal of Politics} .
 
-\bibitem [\protect \citeauthoryear {%
-Teele%
-, Kalla%
-\BCBL {}\ \BBA {} Rosenbluth%
-}{%
-Teele%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2018}}%
-}]{%
-teele2018ties}
-\APACinsertmetastar {%
-teele2018ties}%
-\begin{APACrefauthors}%
-Teele, D\BPBI L.%
-, Kalla, J.%
-\BCBL {}\ \BBA {} Rosenbluth, F.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2018}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {The Ties That Double Bind: Social Roles and Women's
-  Underrepresentation in Politics} {The ties that double bind: Social roles and
-  women's underrepresentation in politics}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{American Political Science Review}{112}{3}{525--541}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem[Teele, Kalla \harvardand\ Rosenbluth]{Teele, Kalla \harvardand\
+  Rosenbluth}{2018}{teele2018ties}
+Teele, Dawn~Langan, Joshua Kalla \harvardand\ Frances Rosenbluth. 2018.
+\newblock ``The Ties That Double Bind: Social Roles and Women's
+  Underrepresentation in Politics.'' {\em American Political Science Review}
+  112(3):525--541.
 
-\bibitem [\protect \citeauthoryear {%
-Vera~Rojas%
-}{%
-Vera~Rojas%
-}{%
-{\protect \APACyear {2017}}%
-}]{%
-vera2017heterogeneous}
-\APACinsertmetastar {%
-vera2017heterogeneous}%
-\begin{APACrefauthors}%
-Vera~Rojas, S\BPBI B.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2017}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {The Heterogeneous Effects of Corruption: Experimental
-  Evidence from Peru} {The heterogeneous effects of corruption: Experimental
-  evidence from peru}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Manuscript, University of Pittsburgh}{}{}{}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem{Vera~Rojas}{2017}{vera2017heterogeneous}
+Vera~Rojas, Sof{\'\i}a~Beatriz. 2017.
+\newblock ``The Heterogeneous Effects of Corruption: Experimental Evidence from
+  Peru.'' {\em Manuscript, University of Pittsburgh} .
 
-\bibitem [\protect \citeauthoryear {%
-Weitz-Shapiro%
-\ \BBA {} Winters%
-}{%
-Weitz-Shapiro%
-\ \BBA {} Winters%
-}{%
-{\protect \APACyear {2017}}%
-}]{%
-weitz2017can}
-\APACinsertmetastar {%
-weitz2017can}%
-\begin{APACrefauthors}%
-Weitz-Shapiro, R.%
-\BCBT {}\ \BBA {} Winters, M\BPBI S.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2017}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Can citizens discern? Information credibility, political
-  sophistication, and the punishment of corruption in Brazil} {Can citizens
-  discern? information credibility, political sophistication, and the
-  punishment of corruption in brazil}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Journal of Politics}{79}{1}{60--74}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem{Weitz-Shapiro \harvardand\ Winters}{2017}{weitz2017can}
+Weitz-Shapiro, Rebecca \harvardand\ Matthew~S Winters. 2017.
+\newblock ``Can citizens discern? Information credibility, political
+  sophistication, and the punishment of corruption in Brazil.'' {\em The
+  Journal of Politics} 79(1):60--74.
 
-\bibitem [\protect \citeauthoryear {%
-Weschle%
-}{%
-Weschle%
-}{%
-{\protect \APACyear {2016}}%
-}]{%
-weschle2016punishing}
-\APACinsertmetastar {%
-weschle2016punishing}%
-\begin{APACrefauthors}%
-Weschle, S.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2016}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Punishing personal and electoral corruption:
-  Experimental evidence from India} {Punishing personal and electoral
-  corruption: Experimental evidence from india}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Research \& Politics}{3}{2}{2053168016645136}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem{Weschle}{2016}{weschle2016punishing}
+Weschle, Simon. 2016.
+\newblock ``Punishing personal and electoral corruption: Experimental evidence
+  from India.'' {\em Research \& Politics} 3(2):2053168016645136.
 
-\bibitem [\protect \citeauthoryear {%
-Winters%
-\ \BBA {} Weitz-Shapiro%
-}{%
-Winters%
-\ \BBA {} Weitz-Shapiro%
-}{%
-{\protect \APACyear {2013}}%
-}]{%
-winters2013lacking}
-\APACinsertmetastar {%
-winters2013lacking}%
-\begin{APACrefauthors}%
-Winters, M\BPBI S.%
-\BCBT {}\ \BBA {} Weitz-Shapiro, R.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2013}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Lacking information or condoning corruption: When do
-  voters support corrupt politicians?} {Lacking information or condoning
-  corruption: When do voters support corrupt politicians?}{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Comparative Politics}{45}{4}{418--436}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem{Winters \harvardand\ Weitz-Shapiro}{2013}{winters2013lacking}
+Winters, Matthew~S \harvardand\ Rebecca Weitz-Shapiro. 2013.
+\newblock ``Lacking information or condoning corruption: When do voters support
+  corrupt politicians?'' {\em Comparative Politics} 45(4):418--436.
 
-\bibitem [\protect \citeauthoryear {%
-Winters%
-\ \BBA {} Weitz-Shapiro%
-}{%
-Winters%
-\ \BBA {} Weitz-Shapiro%
-}{%
-{\protect \APACyear {2015}}%
-}]{%
-winters2015political}
-\APACinsertmetastar {%
-winters2015political}%
-\begin{APACrefauthors}%
-Winters, M\BPBI S.%
-\BCBT {}\ \BBA {} Weitz-Shapiro, R.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2015}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Political corruption and partisan engagement: evidence
-  from Brazil} {Political corruption and partisan engagement: evidence from
-  brazil}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Journal of Politics in Latin America}{7}{1}{45--81}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem{Winters \harvardand\ Weitz-Shapiro}{2015}{winters2015political}
+Winters, Matthew~S \harvardand\ Rebecca Weitz-Shapiro. 2015.
+\newblock ``Political corruption and partisan engagement: evidence from
+  Brazil.'' {\em Journal of Politics in Latin America} 7(1):45--81.
 
-\bibitem [\protect \citeauthoryear {%
-Winters%
-\ \BBA {} Weitz-Shapiro%
-}{%
-Winters%
-\ \BBA {} Weitz-Shapiro%
-}{%
-{\protect \APACyear {2016}}%
-}]{%
-winters2016s}
-\APACinsertmetastar {%
-winters2016s}%
-\begin{APACrefauthors}%
-Winters, M\BPBI S.%
-\BCBT {}\ \BBA {} Weitz-Shapiro, R.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2016}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Who?s in charge here? Direct and indirect accusations
-  and voter punishment of corruption} {Who?s in charge here? direct and
-  indirect accusations and voter punishment of corruption}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Political Research Quarterly}{69}{2}{207--219}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem{Winters \harvardand\ Weitz-Shapiro}{2016}{winters2016s}
+Winters, Matthew~S \harvardand\ Rebecca Weitz-Shapiro. 2016.
+\newblock ``Who?s in charge here? Direct and indirect accusations and voter
+  punishment of corruption.'' {\em Political Research Quarterly}
+  69(2):207--219.
 
-\bibitem [\protect \citeauthoryear {%
-Winters%
-\ \BBA {} Weitz-Shapiro%
-}{%
-Winters%
-\ \BBA {} Weitz-Shapiro%
-}{%
-{\protect \APACyear {2018}}%
-}]{%
-winters2018information}
-\APACinsertmetastar {%
-winters2018information}%
-\begin{APACrefauthors}%
-Winters, M\BPBI S.%
-\BCBT {}\ \BBA {} Weitz-Shapiro, R.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2018}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Information credibility and responses to corruption: a
-  replication and extension in Argentina} {Information credibility and
-  responses to corruption: a replication and extension in argentina}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Political Science Research and Methods}{}{}{1--9}.
-\PrintBackRefs{\CurrentBib}
+\harvarditem{Winters \harvardand\ Weitz-Shapiro}{2018}{winters2018information}
+Winters, Matthew~S \harvardand\ Rebecca Weitz-Shapiro. 2018.
+\newblock ``Information credibility and responses to corruption: a replication
+  and extension in Argentina.'' {\em Political Science Research and Methods}
+  pp.~1--9.
 
 \end{thebibliography}

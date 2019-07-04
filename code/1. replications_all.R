@@ -67,8 +67,8 @@ p.wsw13 = "<0.01"
 # Winters/Weitz-Shapiro 2015
 ################################################################################
 ate.wsw15 = -1.53/3
-t_val = qt(0.01/2, df = 1974) # Calculating the t-value using quantile function
-se.wsw15 = abs(ate.wsw15)/abs(t_val) # Calculating standard error
+t_val = qt(0.01/2, df = 1974)
+se.wsw15 = abs(ate.wsw15)/abs(t_val)
 n.wsw15 = 1974
 p.wsw15 = "<0.01"
 
