@@ -25,10 +25,6 @@ field = meta %>%
   arrange(ate_vote) %>%
   mutate(author_reduced = reorder(author_reduced, -ate_vote))
 
-# Remove Banarjee papers
-#field = field %>% filter(author_reduced != "Banerjee et al. (2011)" & 
-#                         author_reduced != "Banerjee et al. (2010)")
-
 # Keep survey experiments only
 survey = meta %>% 
   filter(type == "Survey") %>%
@@ -39,23 +35,12 @@ survey = meta %>%
 re_field = rma.uni(yi = ate_vote, sei = se_vote, data = field)
 re_survey = rma.uni(yi = ate_vote, sei = se_vote, data = survey)
 
-# Fixed effects model: unweighted
-fe_field = rma.uni(yi = ate_vote, sei = se_vote, weighted = "FALSE",
-                   method = "FE", data = field)
-
-fe_survey = rma.uni(yi = ate_vote, sei = se_vote, weighted = "FALSE",
-                   method = "FE", data = survey)
-
-# Fixed effects model: weighted
+# Fixed effects model
 fe_field = rma.uni(yi = ate_vote, sei = se_vote, weights = N,
                    method = "FE", data = field)
 
 fe_survey = rma.uni(yi = ate_vote, sei = se_vote, weights = N,
                    method = "FE", data = survey)
-
-# Normality test
-shapiro.test(field$ate_vote) 
-mean(field$ate_vote)
 
 ################################################################################
 # Conduct moderator analysis with type of study as moderator
@@ -80,15 +65,14 @@ fe = rma.uni(yi = ate_vote, sei = se_vote, data = meta, method = "FE")
 
 # Random effects model without moderators
 re = rma(yi = ate_vote, sei = se_vote, data = meta)
-het_all = re$tau2
+het_total = re$tau2 # Estimate of total amount of heterogeneity
 
 # Mixed effects model with survey moderator
 me_mod = rma(yi = ate_vote, sei = se_vote, mods = survey, data = meta)
-het_mod = me_mod$tau2
+res_het = me_mod$tau2 # Estimate of residual heterogeneity with moderator
 
-# Calculate residual heterogeneity
-res_het = (het_all - het_mod)/het_all
-pred = predict(me_mod, newmods = cbind(seq(from = 0, to = 1, by = 1), 0), addx = TRUE)
+# Calculate total heterogeneity accounted for by survey moderator
+het_accounted = (het_total - res_het)/het_total
 
 ################################################################################
 # Save information for plotting
