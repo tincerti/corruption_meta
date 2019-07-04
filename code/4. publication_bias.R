@@ -11,11 +11,45 @@ library(gridExtra)
 library(ggplotify)
 library(glmnet)
 
-# Do not display numeric values scientific notation
+# Do not display numeric values in scientific notation
 options(scipen = 999)
 
 # Data import
 load(file="data/meta_results.RData")
+
+################################################################################
+# Test if publication predicts reported p-values
+################################################################################
+# Converted reported p_values to numeric
+meta$p = gsub("<", '', meta$p_reported)
+meta$p = gsub(">", '', meta$p)
+meta$p = as.character(meta$p)
+
+# OLS
+p_ols = lm(published ~ p_reported, data = meta)
+
+# Logit
+p_logit = glm(published ~ p_reported, data = meta, family = "binomial")
+
+# Output regression table
+stargazer(p_ols, p_logit,
+          out = "figs/published.tex", 
+          title= "Do p-values predict publication status?",
+          label = "p_publication",
+          align=TRUE, 
+          dep.var.caption = NULL,
+          model.names = FALSE,
+          model.numbers = FALSE, 
+          multicolumn = TRUE,
+          intercept.bottom = FALSE,
+          #intercept.top = TRUE,
+          column.labels = c("OLS", "Logit"),
+          covariate.labels = c("Reference: P less than 0.01", "P less than 0.05", 
+                               "P less than 0.1", "P greater than 0.1"),
+          dep.var.labels = c("Published", "Published"), 
+          digits = 2,
+          no.space=TRUE,
+          keep.stat = c("n"))
 
 ################################################################################
 # Funnel Plot Analysis
@@ -62,99 +96,43 @@ funnel(me_mod,
 dev.copy(pdf,'figs/funnel_all_mod.pdf')
 dev.off()
 
-# Regression test for funnel plot asymmetry
+# Regression tests for funnel plot asymmetry
 regtest_re = regtest(re, model = "lm", predictor = "sei")
 regtest_mod = regtest(me_mod, model = "lm", predictor = "sei")
-
 regtest_re_survey = regtest(re_survey, model = "lm", predictor = "sei")
 regtest_re_field = regtest(re_field, model = "lm", predictor = "sei")
 
-################################################################################
-# Plot of p-values
-################################################################################
-# Calculate p-values from point estimates and standard errors
-meta$z = meta$ate_vote/meta$se_vote
-meta$p = with(meta, 2*pnorm(-abs(z)))
+# Regression tests for funnel plot asymmetry: export table
+studies = c("All", "All with moderator", "Field", "Survey")
+pvalue = c(regtest_re$pval, regtest_mod$pval, regtest_re_field$pval,
+                       regtest_re_survey$pval)
 
-# Plot p values
-ggplot(meta) +
-  geom_point(aes(p, author_reduced, group = 1), 
-             color = "steelblue2", size = 1.5) + 
-  xlab("P-values") + 
-  ylab("") + 
-  theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5)) +
-  theme(axis.text=element_text(size = 8)) +
-  theme(axis.text.x = element_text(size = 8)) +
-  theme(legend.position = "none")
+regtest = data.frame(studies, pvalue)
+regtest = regtest %>% rename("Studies included" = studies, "p value" = pvalue)
 
-#ggsave("figs/pvalues.pdf", height = 4, width = 6)
+stargazer(regtest, summary = FALSE, rownames = FALSE,
+          out = "figs/regtest_funnel.tex", 
+          title= "Regression tests for funnel plot asymmetry",
+          label = "tab: funnel",
+          column.sep.width = "5cm")
 
 ################################################################################
-# Test if publication predicts reported p-values
+# P-curve: survey experiments
 ################################################################################
-# Converted reported p_values to numeric
-meta$p = gsub("<", '', meta$p_reported)
-meta$p = gsub(">", '', meta$p)
-meta$p = as.character(meta$p)
-
-# OLS
-p_ols = lm(published ~ p_reported, data = meta)
-
-# Logit
-p_logit = glm(published ~ p_reported, data = meta, family = "binomial")
-
-# Output regression table
-stargazer(p_ols, p_logit,
-          out = "figs/published.tex", 
-          title= "Do p-values predict publication status?",
-          label = "p_publication",
-          align=TRUE, 
-          dep.var.caption = NULL,
-          model.names = FALSE,
-          model.numbers = FALSE, 
-          multicolumn = TRUE,
-          intercept.bottom = FALSE,
-          #intercept.top = TRUE,
-          column.labels = c("OLS", "Logit"),
-          covariate.labels = c("Reference: P less than 0.01", "P less than 0.05", 
-                               "P less than 0.1", "P greater than 0.1"),
-          dep.var.labels = c("Published", "Published"), 
-          digits = 2,
-          no.space=TRUE,
-          keep.stat = c("n"))
-
-# Cross validated elastic net
-cv = meta %>% select(-Notes)
-x = model.matrix(published ~ ., cv)[, -1]
-y = meta$published
-
-cv_ridge_fit <- cv.glmnet(x, y, alpha = 0.5)
-coef(cv_ridge_fit)
-
-################################################################################
-# P-curve: field experiments
-################################################################################
-# Calculate percentage of p-values below value
-meta$p_threshold = with(meta, ifelse(p < 0.05, .05, NA))
-meta$p_threshold = with(meta, ifelse(p < 0.04, .04, p_threshold))
-meta$p_threshold = with(meta, ifelse(p < 0.03, .03, p_threshold))
-meta$p_threshold = with(meta, ifelse(p < 0.02, .02, p_threshold))
-meta$p_threshold = with(meta, ifelse(p < 0.01, .01, p_threshold))
-
-# Keep below 0.05 only
-p_curve = meta %>% filter(!is.na(p_threshold) & field == 1)
+# Keep p values below 0.05 only
+meta$p_curve = with(meta, ifelse(grepl(">", meta$p_reported) == TRUE, NA, p))
+p_curve = meta %>% filter(!is.na(p_curve) & field == 0)
 
 # Calculate percentages of p-values under values
-p_curve = p_curve %>% group_by(p_threshold) %>% summarize(count=n())
-p_curve$p_threshold = as.factor(p_curve$p_threshold)
+p_curve = p_curve %>% group_by(p_curve) %>% summarize(count=n())
+p_curve$p = as.factor(p_curve$p_curve)
 p_curve$percent = p_curve$count / sum(p_curve$count)
 
 # Plot p values
 ggplot(p_curve) +
-  geom_point(aes(p_threshold, percent, group = 1), 
+  geom_point(aes(p_curve, percent, group = 1), 
              color = "steelblue2", size = 1.5) + 
-  geom_line(aes(p_threshold, percent, group = 1), color = "grey70") +
+  geom_line(aes(p, percent, group = 1), color = "grey70") +
   xlab("P-values") + 
   ylab("Share of studies below p-value (%)") + 
   scale_y_continuous(labels = scales::percent, limits = c(0, 1), breaks=seq(0,1,.1)) +
@@ -164,5 +142,26 @@ ggplot(p_curve) +
   theme(axis.text.x = element_text(size = 8)) +
   theme(legend.position = "none")
 
-ggsave("figs/pcurve.pdf", height = 4, width = 6)
+################################################################################
+# P-curve: field experiments
+################################################################################
+p_curve = meta %>% filter(!is.na(p_curve) & field == 1)
 
+# Calculate percentages of p-values under values
+p_curve = p_curve %>% group_by(p_curve) %>% summarize(count=n())
+p_curve$p = as.factor(p_curve$p_curve)
+p_curve$percent = p_curve$count / sum(p_curve$count)
+
+# Plot p values
+ggplot(p_curve) +
+  geom_point(aes(p_curve, percent, group = 1), 
+             color = "steelblue2", size = 1.5) + 
+  geom_line(aes(p, percent, group = 1), color = "grey70") +
+  xlab("P-values") + 
+  ylab("Share of studies below p-value (%)") + 
+  scale_y_continuous(labels = scales::percent, limits = c(0, 1), breaks=seq(0,1,.1)) +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme(axis.text=element_text(size = 8)) +
+  theme(axis.text.x = element_text(size = 8)) +
+  theme(legend.position = "none")

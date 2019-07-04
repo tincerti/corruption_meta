@@ -63,7 +63,6 @@ ggplot(field, aes(ate_vote, author_reduced)) +
   theme(legend.position = "none")
 
 ggsave("figs/field.pdf", height = 3.5, width = 6)
-#ggsave("figs/field_no_banerjee.pdf", height = 3.5, width = 6)
 
 ################################################################################
 # Plot survey results
