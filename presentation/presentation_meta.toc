@@ -2,5 +2,5 @@
 \beamer@sectionintoc {2}{Methods}{8}{0}{2}
 \beamer@sectionintoc {3}{Results}{15}{0}{3}
 \beamer@sectionintoc {4}{Discussion}{23}{0}{4}
-\beamer@sectionintoc {5}{Conclusion}{48}{0}{5}
-\beamer@sectionintoc {6}{Supplemental material}{59}{1}{6}
+\beamer@sectionintoc {5}{Conclusion}{45}{0}{5}
+\beamer@sectionintoc {6}{Supplemental material}{55}{1}{6}

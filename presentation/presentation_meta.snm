@@ -1,26 +1,60 @@
-\beamer@slide {fig: fz_amce}{44}
-\beamer@slide {fig: fz_margins_right}{46}
-\beamer@slide {fig: fz_margins_left}{47}
-\beamer@slide {details<1>}{60}
-\beamer@slide {details}{60}
-\beamer@slide {details<2>}{61}
-\beamer@slide {details<3>}{62}
-\beamer@slide {details<4>}{63}
+\beamer@slide {methods<1>}{9}
+\beamer@slide {methods}{9}
+\beamer@slide {methods<2>}{10}
+\beamer@slide {methods<3>}{11}
+\beamer@slide {methods<4>}{12}
+\beamer@slide {methods<5>}{13}
+\beamer@slide {methods<6>}{14}
+\beamer@slide {results<1>}{18}
+\beamer@slide {results}{18}
+\beamer@slide {results<2>}{19}
+\beamer@slide {results<3>}{20}
+\beamer@slide {results<4>}{21}
+\beamer@slide {results<5>}{22}
+\beamer@slide {pub_bias<1>}{28}
+\beamer@slide {pub_bias}{28}
+\beamer@slide {pub_bias<2>}{29}
+\beamer@slide {pub_bias<3>}{30}
+\beamer@slide {pub_bias<4>}{31}
+\beamer@slide {fig: b_amce}{41}
+\beamer@slide {conjoint<1>}{42}
+\beamer@slide {conjoint}{42}
+\beamer@slide {b_conjoint<1>}{43}
+\beamer@slide {b_conjoint}{43}
+\beamer@slide {fig: b_margins}{43}
+\beamer@slide {fig: b_tree}{44}
+\beamer@slide {details<1>}{56}
+\beamer@slide {details}{56}
+\beamer@slide {details<2>}{57}
+\beamer@slide {details<3>}{58}
+\beamer@slide {details<4>}{59}
+\beamer@slide {lab<1>}{60}
+\beamer@slide {lab}{60}
+\beamer@slide {fig: lab}{60}
+\beamer@slide {supplemental<1>}{61}
+\beamer@slide {supplemental}{61}
+\beamer@slide {fig: field_no_banerjee}{61}
+\beamer@slide {funnel<1>}{62}
+\beamer@slide {funnel}{62}
+\beamer@slide {tab: funnel}{62}
+\beamer@slide {supplemental<1>}{63}
+\beamer@slide {supplemental}{63}
+\beamer@slide {fig: funnel_all}{63}
 \beamer@slide {supplemental<1>}{64}
 \beamer@slide {supplemental}{64}
-\beamer@slide {fig: field_no_banerjee}{64}
-\beamer@slide {funnel<1>}{65}
-\beamer@slide {funnel}{65}
-\beamer@slide {tab: funnel}{65}
-\beamer@slide {supplemental<1>}{66}
-\beamer@slide {supplemental}{66}
-\beamer@slide {fig: funnel_all}{66}
-\beamer@slide {supplemental<1>}{67}
-\beamer@slide {supplemental}{67}
-\beamer@slide {fig: funnel_all}{67}
-\beamer@slide {supplemental<1>}{68}
-\beamer@slide {supplemental}{68}
-\beamer@slide {fig: funnel_all}{68}
-\beamer@slide {supplemental<1>}{69}
-\beamer@slide {supplemental}{69}
-\beamer@slide {fig: funnel_all}{69}
+\beamer@slide {fig: funnel_all}{64}
+\beamer@slide {supplemental<1>}{65}
+\beamer@slide {supplemental}{65}
+\beamer@slide {fig: funnel_all}{65}
+\beamer@slide {p_ols_logit<1>}{66}
+\beamer@slide {p_ols_logit}{66}
+\beamer@slide {p_publication}{66}
+\beamer@slide {all_published<1>}{67}
+\beamer@slide {all_published}{67}
+\beamer@slide {fig: funnel_re_survey}{67}
+\beamer@slide {fz_conjoint1<1>}{68}
+\beamer@slide {fz_conjoint1}{68}
+\beamer@slide {fig: funnel_re_survey}{68}
+\beamer@slide {fz_conjoint2<1>}{69}
+\beamer@slide {fz_conjoint2}{69}
+\beamer@slide {fig: funnel_re_survey}{69}

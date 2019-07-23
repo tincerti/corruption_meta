@@ -9,6 +9,8 @@
 \usepackage{CJKutf8} 
 \usepackage{tcolorbox}
 \usepackage[textfont={small}]{caption}
+\usepackage{dcolumn}
+
 
     \setbeamercovered{invisible}
     \usepackage{tikz}   
@@ -82,10 +84,11 @@
 %\setbeamercovered{white}
     %\usepackage{bm} % For typesetting bold math (not \mathbold)
     %\logo{\includegraphics[height=0.6cm]{yourlogo.eps}}
-\title{Does providing corruption information reduce vote share? A meta-analysis}
-\date{April 12, 2019} 
+\title{Corruption information and vote share: \\ A meta-analysis and lessons for survey
+experiments}
+\date{23 July 2019} 
 \author{Trevor Incerti}
-%\institute{Yale University}
+\institute{Yale University}
 
 \begin{document}
 \maketitle
@@ -113,14 +116,14 @@
 
 \section{Methods}
 
-\begin{frame}
+\begin{frame}[label = methods]
 \frametitle{Meta-Analysis}
 Meta-analysis of all \textcolor{Cerulean}{experimental} studies conducted to date. 
 \pause
 \begin{itemize}
 \item \textcolor{Cerulean}{Treatment}: corruption information provision. 
 \pause
-\item \textcolor{Cerulean}{Outcome}: (incumbent) vote-share.
+\item \textcolor{Cerulean}{Outcome}: vote-share of corrupt politician.
 \pause
 \item Random assignment of corruption information $\rightarrow$ measurement of voting outcomes.
 \pause
@@ -163,21 +166,21 @@ Meta-analysis of all \textcolor{Cerulean}{experimental} studies conducted to dat
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}
+\begin{frame}[label = results]
 \frametitle{Results}
 \begin{itemize}
-\item Survey experiments overestimate the negative effect of providing information to voters relative to field experiments.
+\item Survey experiments estimate much larger negative treatment effects relative to field experiments. \hyperlink{lab}{\beamerbutton{Lab experiments similar to survey}}
 \pause
 \begin{itemize}
 \item Corrupt candidates punished by approximately \textcolor{Cerulean}{zero percentage points} in field experiments.
 \pause
-\item Corrupt candidates punished by respondents by between \textcolor{Cerulean}{33 percentage points} (random effects) and \textcolor{Cerulean}{35 percentage points} (fixed effects) in survey experiments.
+\item Punished by between \textcolor{Cerulean}{33 percentage points} (random effects) and \textcolor{Cerulean}{35 percentage points} (fixed effects) in survey experiments.
 \pause
-\item 66\% of the total heterogeneity across studies can be accounted for by including a dummy variable for type of experiment.
+\item 68\% of the total heterogeneity across studies can be accounted for by including a dummy variable for type of experiment.
 \begin{itemize}
 \item Mixed effects meta-analysis with moderator. 
 \pause
-\item Point estimate of this dummy variable (0 = survey, 1 = field) is equal to +0.32 (significant at 1\% level), while the overall estimate across studies is -0.33. 
+\item Point estimate of this dummy variable (0 = field, 1 = survey) is equal to -0.33 (significant at 1\% level), the same as the overall estimate across all studies. 
 \end{itemize}
 \end{itemize}
 \end{itemize}
@@ -195,33 +198,34 @@ What might account for the discrepancy between field and survey experiments?
 \pause
 \item Social desirability bias
 \pause
-\item Lack of complexity in survey experiments.
-\pause
-\item Analyzing/interpreting results of survey experiments incorrectly. 
+\item Survey context does not mirror real-world settings:
+\begin{itemize}
+\item Non-compliance
+\item Differences in outcome choices
+\item Costliness/decision complexity
+\end{itemize}
 \end{itemize}
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}
+\begin{frame}[label=pub_bias]
 \frametitle{Publication bias and p-hacking}
-\textcolor{Cerulean}{Little evidence of publication bias} within survey experiments:
+\textcolor{Cerulean}{No clear evidence of publication bias} within survey experiments:
 \pause
 \begin{itemize}
-\item P-curve - virtually all results significant at 1\% level (not clustered around 0.05).
-\pause
+\item P-curve - virtually all results significant at 1\% level (not clustered around 0.05 or 0.01).
 \item Tests for funnel plot asymmetry. \hyperlink{funnel}{\beamerbutton{Figures}}
+\item P-value not a significant predictor of publication status. \hyperlink{p_ols_logit}{\beamerbutton{Table}}
 \end{itemize}
 \pause
 Unclear with field experiments
 \begin{itemize}
-\item Five of eight papers published. Three unpublished papers all have null findings. 
+\item Five of eight papers published. Three unpublished papers all have null findings. \hyperlink{all_published}{\beamerbutton{Figure}}
 \pause
 \item Not enough data for formal tests. 
 \end{itemize}
-\pause
-But, \textcolor{Cerulean}{differences in experimental design} likely account for the difference in the magnitude of treatment effects.
 
 \end{frame}
 
@@ -231,19 +235,26 @@ But, \textcolor{Cerulean}{differences in experimental design} likely account for
 \begin{itemize}
 \pause
 \item Anti-corruption norms exist in most countries.
-\begin{itemize}
 \pause
 \item No costs to selecting the socially desirable option in hypothetical vignette. 
 \pause
+\item Voting against corruption in the abstract may therefore reflect the respondents’ actual preferences.
+\pause
 \item In actual election voters may discount information, or have strong material/ideological incentives to stick with candidate.
 \end{itemize}
-\pause
-\item How to overcome social desirability bias in survey experiments?
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Differences in experimental context: non compliance}
+
+Treatments are weak and easily missed in field experiments. 
 \begin{itemize}
-\pause
-\item Perform experiments during \textcolor{Cerulean}{actual elections} using real candidates.
-\pause
-\item Use \textcolor{Cerulean}{list experiments}, which have been shown to make a difference in admission to vote-buying \citep{gonzalez2012vote}.
+\item In survey experiments ITT = ATE = CACE (LATE)
+\item Field experiments measure ITT as they do not know the non compliance rate. Non compliance necessarily reduces the ITT.
+\begin{itemize}
+\item $ITT = CACE \times \pi_C$
 \end{itemize}
 \end{itemize}
 
@@ -251,7 +262,29 @@ But, \textcolor{Cerulean}{differences in experimental design} likely account for
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-\frametitle{Survey complexity and conjoint experiments}
+\frametitle{Differences in experimental context: outcome choice}
+Choice set offered to voters is not necessarily identical across experiments. Example:
+
+\begin{itemize}
+\item Field: Candidate A is revealed to be corrupt to voters in a treatment group, but not to voters in control.
+\begin{itemize}
+\item Treated voter can cast a ballot for corrupt candidate A, or candidate B, who may be clean or corrupt. 
+\item Control voter can cast a ballot for candidate A or candidate B, and has no corruption information.
+\end{itemize}
+
+\item Survey: Corrupt actions of politician A are revealed or not. 
+\begin{itemize}
+\item Treated voter can vote for  corrupt candidate A or not, but no challenger exists. 
+\item Control voter can vote for clean candidate A or not, but no challenger exists.
+\end{itemize}
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Differences in experimental context: complexity, costliness and conjoint experiments}
 \textcolor{Cerulean}{Conjoint experiments}: Randomizing more candidate characteristics may capture variety of moderating factors and reduce social desirability bias.
 \begin{itemize}
 \pause
@@ -262,61 +295,63 @@ But, \textcolor{Cerulean}{differences in experimental design} likely account for
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-\frametitle{Survey complexity and conjoint experiments}
+\frametitle{Differences in experimental context: complexity, costliness and conjoint experiments}
 
 \begin{figure}[!hb]
 \hspace*{-11mm}
-\includegraphics[scale = 0.6]{fz_conjoint.png}
-\vspace{0.2cm}
-\caption{\citet{franchino2015voting} conjoint: AMCE plot}
+\includegraphics[scale = 0.7]{../figs/b_amce.pdf}
+\caption{\citet{breitenstein2019choosing} conjoint: average marginal component effects}
 \small
-\vspace{-0.3cm}
-\label{fig: fz_amce}
+\vspace{-0.5cm}
+\label{fig: b_amce}
 \end{figure}
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-\frametitle{Survey complexity and conjoint experiments}
-\textcolor{Cerulean}{Proposal}: Compare the probability of voting for a \textcolor{Cerulean}{realistic candidate} with outlier characteristics such as corruption to the probability of voting for a \textcolor{Cerulean}{realistic candidate} without this characteristic.
+\begin{frame}[label=conjoint]
+\frametitle{Differences in experimental context: complexity, costliness and conjoint experiments}
+
+\textcolor{Cerulean}{Proposal}: When researchers have strong theories about the \textcolor{Cerulean}{conditions that shape voter decision-making}, a more appropriate method may be to calculate average marginal effects in order to present predicted probabilities of voting for a candidate under these conditions.
 \begin{itemize}
-\item E.g. What is the probability of a Democratic voter voting for a typical Democratic candidate who is corrupt?
+\item E.g. Compare the probability of voting for a \textcolor{Cerulean}{realistic candidate} with outlier characteristics such as corruption to the probability of voting for a realistic candidate without this characteristic. \hyperlink{b_conjoint}{\beamerbutton{Example 1}}  \hyperlink{fz_conjoint1}{\beamerbutton{Example 2}} \hyperlink{fz_conjoint1}{\beamerbutton{Example 3}}
 \end{itemize}
 
 \end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-\frametitle{Survey complexity and conjoint experiments}
+\begin{frame}[label=b_conjoint]
+\frametitle{Differences in experimental context: complexity, costliness and conjoint experiments}
 
 \begin{figure}[!hb]
+\centering
+\vspace*{-7mm}
 \hspace*{-11mm}
-\includegraphics[scale = 0.77]{../figs/fz_margins_right.pdf}
-\vspace{0.2cm}
-\caption{\citet{franchino2015voting} conjoint: can policy positions overcome corruption (conservative respondents)?}
+\includegraphics[scale = 0.77]{../figs/b_margins.pdf}
+\caption{\citet{breitenstein2019choosing} conjoint: can the right candidate overcome corruption?}
 \small
-\vspace{-0.3cm}
-\label{fig: fz_margins_right}
+\label{fig: b_margins}
 \end{figure}
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
-\frametitle{Survey complexity and conjoint experiments}
+\frametitle{Differences in experimental context: complexity, costliness and conjoint experiments}
 
+\small
+\textcolor{Cerulean}{Proposal}: When we do not have strong theories about the conditions that shape voter decision-making, we can use regression trees to illuminate them. 
 
 \begin{figure}[!hb]
-\hspace*{-11mm}
-\includegraphics[scale = 0.77]{../figs/fz_margins_left.pdf}
-\vspace{0.2cm}
-\caption{\citet{franchino2015voting} conjoint: can policy positions overcome corruption (liberal respondents)?}
-\small
-\vspace{-0.5cm}
-\label{fig: fz_margins_left}
+\centering
+\vspace*{-3mm}
+\includegraphics[scale = 0.54]{../figs/b_tree.pdf}
+\vspace{-0.2cm}
+\caption{\citet{breitenstein2019choosing} conjoint decision tree: predicted probabilities of voting for candidate}
+\label{fig: b_tree}
 \end{figure}
+
 
 \end{frame}
 
@@ -342,9 +377,12 @@ But, \textcolor{Cerulean}{differences in experimental design} likely account for
 \pause
 \item Social desirability bias
 \pause
-\item Lack of realism of hypothetical vignettes 
-\pause
-\item Misinterpretation of results from conjoint experiments.
+\item Survey context failing to mirror real-world settings:
+\begin{itemize}
+\item Non-compliance
+\item Differences in outcome choices
+\item Costliness/decision complexity
+\end{itemize}
 \end{itemize}
 \end{itemize}
 \end{frame}
@@ -354,9 +392,9 @@ But, \textcolor{Cerulean}{differences in experimental design} likely account for
 \begin{frame}
 \frametitle{Conclusion}
 \begin{itemize}
-\item Vote-choice survey experiments may provide information on the directionality of informational treatments, but point estimates they provide may not be representative of real-world voting behavior. 
+\item Vote-choice \textcolor{Cerulean}{survey experiments} may provide information on the directionality of informational treatments in hypothetical scenarios, but point estimates they provide \textcolor{Cerulean}{may not be representative of real-world voting behavior}. 
 \pause
-\item Researchers should exercise caution when interpreting actions taken in hypothetical vignettes as indicative of real world behavior such as voting. 
+\item Researchers should \textcolor{Cerulean}{exercise caution} when interpreting actions taken in hypothetical vignettes as indicative of real world behavior such as voting. 
 \end{itemize}
 
 \end{frame}
@@ -367,7 +405,7 @@ But, \textcolor{Cerulean}{differences in experimental design} likely account for
 \section{Supplemental material}
 
 \begin{frame}[label=details]
-\frametitle{Analytical details}
+\frametitle{Analytical details \hyperlink{methods}{\beamerbutton{Back}}}
 \begin{itemize}
 \item Where there are multiple corruption treatments (e.g. varying source of information), I replicate the studies and code corruption as a binary treatment (0 = clean, 1 = corrupt).
 \pause
@@ -378,6 +416,22 @@ But, \textcolor{Cerulean}{differences in experimental design} likely account for
 \item Two field experiments include general anti-corruption treatments not specific to candidates. Robustness check excludes these studies. 
 \end{itemize}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[label=lab]
+\frametitle{Lab experiments \hyperlink{results}{\beamerbutton{Back}}}
+
+\begin{figure}[!htb]
+\includegraphics[scale=0.65]{../figs/lab.pdf}
+\vspace{0.2cm}
+\caption{Lab experiments: Average treatment effect of corruption information on vote share}.
+\small
+\vspace{-0.3cm}
+\label{fig: lab}
+\end{figure}
+\end{frame}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -398,32 +452,16 @@ But, \textcolor{Cerulean}{differences in experimental design} likely account for
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[label=funnel]
-\frametitle{Funnel plot asymmetry}
+\frametitle{Funnel plot asymmetry \hyperlink{pub_bias}{\beamerbutton{Back}}}
 
-\begin{table}[ht] \centering 
-  \caption{Regression tests for funnel plot asymmetry}
-  \label{tab: funnel} 
-  \small
-  \vspace{0.5cm}
-\begin{tabular}{@{\extracolsep{50pt}} cccccccc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- Studies included & p-value \\ 
- \hline \\[-1.8ex] 
-All & 0.0016  \\
-All with moderator & 0.4512  \\
-Field &  0.8403  \\
-Survey & 0.3159  \\
-\hline \\[-1.8ex] 
-\vspace{128in}
-\end{tabular} 
-\end{table} 
+\input{../figs/regtest_funnel.tex}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[label=supplemental]
-\frametitle{Funnel plot asymmetry}
+\frametitle{Funnel plot asymmetry \hyperlink{pub_bias}{\beamerbutton{Back}}}
 
 \begin{figure}[!hb]
 \vspace*{-3mm}
@@ -439,7 +477,7 @@ Survey & 0.3159  \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[label=supplemental]
-\frametitle{Funnel plot asymmetry}
+\frametitle{Funnel plot asymmetry \hyperlink{pub_bias}{\beamerbutton{Back}}}
 
 \begin{figure}[!hb]
 \vspace*{-3mm}
@@ -455,7 +493,7 @@ Survey & 0.3159  \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[label=supplemental]
-\frametitle{Funnel plot asymmetry}
+\frametitle{Funnel plot asymmetry \hyperlink{pub_bias}{\beamerbutton{Back}}}
 
 \begin{figure}[!hb]
 \vspace*{-3mm}
@@ -470,19 +508,61 @@ Survey & 0.3159  \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[label=supplemental]
-\frametitle{Funnel plot asymmetry}
+\begin{frame}[label=p_ols_logit]
+\frametitle{Does p-value predict publication status? \hyperlink{pub_bias}{\beamerbutton{Back}}}
 
-\begin{figure}[!hb]
-\vspace*{-3mm}
-\includegraphics[scale = 0.45]{../figs/funnel_re_survey.pdf}
-\vspace{-0.2cm}
-\caption{Funnel plot: Survey experiments}
-\small
-\vspace{-0.5cm}
-\label{fig: funnel_all}
-\end{figure}
+\footnotesize
+\input{../figs/published.tex}
+
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[label=all_published]
+\frametitle{All experiments by publication status \hyperlink{pub_bias}{\beamerbutton{Back}}}
+
+\begin{figure}[!htb]
+\begin{centering}
+\vspace{-0.2cm}
+\includegraphics[scale=0.51]{../figs/published.pdf}
+\caption{All experiments by publication status: Average treatment effect of corruption information on vote share and 95\% confidence intervals}.
+\label{fig: funnel_re_survey}
+\end{centering}
+\end{figure}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[label=fz_conjoint1]
+\frametitle{Additional conjoint replications: \citet{franchino2015voting} \hyperlink{conjoint}{\beamerbutton{Back}}}
+
+\begin{figure}[!htb]
+\begin{centering}
+\includegraphics[scale=0.7]{../figs/fz_margins_right.pdf}
+\caption{\citet{franchino2015voting} conjoint: can policy positions overcome corruption (conservative respondents)?}
+\label{fig: funnel_re_survey}
+\end{centering}
+\end{figure}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[label=fz_conjoint2]
+\frametitle{Additional conjoint replications: \citet{franchino2015voting} \hyperlink{conjoint}{\beamerbutton{Back}}}
+
+\begin{figure}[!htb]
+\begin{centering}
+\includegraphics[scale=0.7]{../figs/fz_margins_left.pdf}
+\caption{\citet{franchino2015voting} conjoint: can policy positions overcome corruption (liberal respondents)?}
+\label{fig: funnel_re_survey}
+\end{centering}
+\end{figure}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \bibliography{bibliography}
 \end{document}
