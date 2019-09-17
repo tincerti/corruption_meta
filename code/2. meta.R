@@ -7,6 +7,7 @@ rm(list=ls())
 library(tidyverse)
 library(readxl)
 library(metafor)
+library(stargazer)
 
 # Data import - Gallup
 meta = read_excel("data/study_results.xlsx")
@@ -70,6 +71,22 @@ het_total = re$tau2 # Estimate of total amount of heterogeneity
 # Mixed effects model with survey moderator
 me_mod = rma(yi = ate_vote, sei = se_vote, mods = survey, data = meta)
 res_het = me_mod$tau2 # Estimate of residual heterogeneity with moderator
+
+# Export results of moderated model
+Value = c("Constant", "" ,"Survey experiment moderator", "")
+se = paste0("(", format(unlist(round(me_mod$se, 3))),")")
+Estimate = c(round(me_mod$beta[1], 3), se[1], round(me_mod$beta[2], 3), se[2])
+me_mod_out = data.frame(Value, Estimate)
+
+stargazer(me_mod_out,
+          out = "figs/me_mod_out.tex",
+          title= "Mixed effects meta-analysis with survey experiment moderator",
+          label = "me_mod",
+          digits = 3,
+          rownames = FALSE, 
+          summary = FALSE,
+          notes = "\\parbox[t]{\\textwidth}{\\footnotesize \\textit{Note:} Standard errors in parenthesis.}"
+          )
 
 # Calculate total heterogeneity accounted for by survey moderator
 het_accounted = (het_total - res_het)/het_total
