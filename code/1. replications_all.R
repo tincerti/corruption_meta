@@ -354,7 +354,7 @@ vera = data.frame(type="Survey", year=2016 , author = "Vera Rojas",
                    author_reduced = "Vera Rojas", country = "Peru", 
                    ate_vote = ate.vera, se_vote = se.vera, ci_upper = NA, 
                    ci_lower = NA, N = n.vera,  p_reported = p.vera,
-                   published = 0, Notes = NA)
+                   published = 1, Notes = NA)
 
 # Combine dataframes
 meta = rbind(results, wsw17, wsw13, wsw15, wsw18, kt_sweden, kt_moldova,
