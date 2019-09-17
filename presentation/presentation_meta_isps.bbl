@@ -1,0 +1,144 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Banerjee%
+, Green%
+, Green%
+\BCBL {}\ \BBA {} Pande%
+}{%
+Banerjee%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2010}}%
+}]{%
+banerjee2010can}
+\APACinsertmetastar {%
+banerjee2010can}%
+\begin{APACrefauthors}%
+Banerjee, A.%
+, Green, D.%
+, Green, J.%
+\BCBL {}\ \BBA {} Pande, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2010}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Can voters be primed to choose better legislators?
+  Experimental evidence from rural India} {Can voters be primed to choose
+  better legislators? experimental evidence from rural india}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Presented and the Political Economics Seminar, Stanford
+  University.} {Presented and the political economics seminar, stanford
+  university.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Banerjee%
+, Kumar%
+, Pande%
+\BCBL {}\ \BBA {} Su%
+}{%
+Banerjee%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2011}}%
+}]{%
+banerjee2011informed}
+\APACinsertmetastar {%
+banerjee2011informed}%
+\begin{APACrefauthors}%
+Banerjee, A.%
+, Kumar, S.%
+, Pande, R.%
+\BCBL {}\ \BBA {} Su, F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Do informed voters make better choices? Experimental
+  evidence from urban India} {Do informed voters make better choices?
+  experimental evidence from urban india}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Unpublished manuscript}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Breitenstein%
+}{%
+Breitenstein%
+}{%
+{\protect \APACyear {2019}}%
+}]{%
+breitenstein2019choosing}
+\APACinsertmetastar {%
+breitenstein2019choosing}%
+\begin{APACrefauthors}%
+Breitenstein, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Choosing the crook: A conjoint experiment on voting for
+  corrupt politicians} {Choosing the crook: A conjoint experiment on voting for
+  corrupt politicians}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Research \& Politics}{6}{1}{2053168019832230}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+De~Vries%
+\ \BBA {} Solaz%
+}{%
+De~Vries%
+\ \BBA {} Solaz%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+de2017electoral}
+\APACinsertmetastar {%
+de2017electoral}%
+\begin{APACrefauthors}%
+De~Vries, C\BPBI E.%
+\BCBT {}\ \BBA {} Solaz, H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The electoral consequences of corruption} {The electoral
+  consequences of corruption}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Annual Review of Political Science}{20}{}{391--408}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Franchino%
+\ \BBA {} Zucchini%
+}{%
+Franchino%
+\ \BBA {} Zucchini%
+}{%
+{\protect \APACyear {2015}}%
+}]{%
+franchino2015voting}
+\APACinsertmetastar {%
+franchino2015voting}%
+\begin{APACrefauthors}%
+Franchino, F.%
+\BCBT {}\ \BBA {} Zucchini, F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Voting in a multi-dimensional space: a conjoint analysis
+  employing valence and ideology attributes of candidates} {Voting in a
+  multi-dimensional space: a conjoint analysis employing valence and ideology
+  attributes of candidates}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Political Science Research and
+  Methods}{3}{2}{221--241}.
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

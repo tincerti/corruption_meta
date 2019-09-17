@@ -86,13 +86,13 @@
     %\logo{\includegraphics[height=0.6cm]{yourlogo.eps}}
 \title{Corruption information and vote share: \\ A meta-analysis and lessons for survey
 experiments}
-\author{Trevor Incerti (Yale University)}
-\date{30 August 2019 \\
+\author{Trevor Incerti}
+\date{6 September 2019 \\
 
 
 \vspace{0.5cm}
 \scriptsize
-Prepared for the 2019 APSA Annual Meeting Corruption and Electoral Behavior Panel 
+Prepared for the Yale ISPS Experiments Workshop
 }
 
 \begin{document}
@@ -140,6 +140,25 @@ Meta-analysis of all \textcolor{Cerulean}{experimental} studies conducted to dat
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}[label = methods_2]
+\frametitle{Meta-Analysis}
+I use \textcolor{Cerulean}{fixed effects} and \textcolor{Cerulean}{random effects} estimation. 
+\vspace{0.25cm}
+\pause
+\begin{itemize}
+\item Random effects likely more appropriate in this case. 
+\begin{itemize}
+\item Fixed effects assumes one true effect size across all studies, with differences in effects due to sampling error.  \hyperlink{fixed_random}{\beamerbutton{Details}}
+\item Random effects assumes effect sizes vary due to population heterogeneity, differences in treatment, etc.
+\item In random effects, effect sizes are therefore assumed to represent a random sample of a distribution of effect sizes.
+\end{itemize}
+\vspace{0.25cm}
+\item In this case, differences in estimated effect size between the two methods are minor. 
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Results}
 
 \begin{frame}
@@ -176,19 +195,30 @@ Meta-analysis of all \textcolor{Cerulean}{experimental} studies conducted to dat
 \begin{itemize}
 \item Survey experiments estimate much larger negative treatment effects relative to field experiments. \hyperlink{lab}{\beamerbutton{Lab experiments similar to survey}}
 \pause
-\begin{itemize}
 \item Corrupt candidates punished by approximately \textcolor{Cerulean}{zero percentage points} in field experiments.
 \pause
 \item Punished by between \textcolor{Cerulean}{33 percentage points} (random effects) and \textcolor{Cerulean}{35 percentage points} (fixed effects) in survey experiments.
-\pause
 \vspace{0.05cm}
-\item 68\% of the total heterogeneity across studies can be accounted for by including a dummy variable for type of experiment.
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[label = heterogeneity]
+\frametitle{Assessing within study heterogeneity}
+How much heterogeneity across studies is accounted for by type of experiment?
 \begin{itemize}
-\item Mixed effects meta-analysis with moderator. 
+\item First estimate total amount of heterogeneity across all studies with random effects model.  
 \pause
-\item Point estimate of this dummy variable (0 = field, 1 = survey) is equal to -0.33 (significant at 1\% level), the same as the overall estimate across all studies (with no moderator). \\\hyperlink{me_mod}{\beamerbutton{Results}}
+\item Next, estimate residual heterogeneity after including a categorical indicator for experiment type in the model. 
+\pause
+\begin{itemize}
+\item Point estimate of this dummy (0 = field, 1 = survey) is equal to -0.33 (significant at 1\% level), the same as the overall estimate across all studies (with no moderator). \hyperlink{me_mod}{\beamerbutton{Results}}
 \end{itemize}
-\end{itemize}
+\pause
+\item Subtract residual heterogeneity from total heterogeneity and divide by total heterogeneity. 
+\pause
+\item 68\% of the total heterogeneity across studies accounted for by including a dummy variable for type of experiment.
 \end{itemize}
 \end{frame}
 
@@ -398,6 +428,22 @@ Choice set offered to voters is not necessarily identical across experiments. Ex
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Feedback}
+\begin{itemize}
+\item Other possible reasons behind the discrepancy?
+\pause
+\vspace{0.25cm}
+\item Are empirical tests of the reasons I have already identified necessary?
+\pause
+\vspace{0.25cm}
+\item If so, what tests would you find convincing? 
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
 
 \section{Supplemental material}
@@ -413,6 +459,29 @@ Choice set offered to voters is not necessarily identical across experiments. Ex
 \pause
 \item Two field experiments include general anti-corruption treatments not specific to candidates. Robustness check excludes these studies. 
 \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[label=fixed_random, noframenumbering]
+\frametitle{Fixed versus random effects estimation \hyperlink{methods_2}{\beamerbutton{Back}}}
+
+Fixed effects: \\
+\vspace{0.25cm}
+
+$\hat{\theta} = \frac{\sum w_i \theta_i}{\sum w_i}$ where $w_i = \frac{1}{var_i}$ \\
+
+\vspace{0.5cm}
+
+Random effects: \\
+\vspace{0.25cm}
+
+$\hat{\theta} = u + u_i$ where $u_i \sim N(0, \tau^2)$ and: \\
+
+\vspace{0.25cm}
+
+$u$ is equal to the average ``true effect'', and $\tau^2$ is the heterogeneity amongst true effects. 
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -450,7 +519,7 @@ Choice set offered to voters is not necessarily identical across experiments. Ex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[label = me_mod, noframenumbering]
-\frametitle{Mixed effects meta-analysis with survey experiment moderator \hyperlink{results}{\beamerbutton{Back}}}
+\frametitle{Mixed effects meta-analysis with survey experiment moderator \hyperlink{heterogeneity}{\beamerbutton{Back}}}
 
 \input{../figs/me_mod_out.tex}
 
