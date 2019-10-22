@@ -242,6 +242,10 @@ addline_format <- function(x,...){
 quality = quality %>% arrange(ate_vote) %>%
     mutate(author_quality = reorder(author_quality, -ate_vote))
 
+# Mutliply effect size by 100
+quality$ate_vote = quality$ate_vote*100
+quality$se_vote = quality$se_vote*100
+
 # Plot
 ggplot(quality, aes(ate_vote, author_quality, label = type)) +
   geom_point(aes(color = type, fill = type), size = 1.5) +
@@ -249,10 +253,10 @@ ggplot(quality, aes(ate_vote, author_quality, label = type)) +
                      xmin = ate_vote - 1.96*se_vote, 
                      xmax = ate_vote + 1.96*se_vote),
                 color="grey30", size=0.5, alpha = 0.5, height = 0.2) +
-  geom_text(aes(label = country, x = 0.25, y = author_quality), size = 3) +
+  geom_text(aes(label = country, x = 25, y = author_quality), size = 4) +
   geom_vline(xintercept = 0, linetype = "dashed") +
   xlab("Change in vote share (percentage points)") + 
-  scale_x_continuous(limits = c(-.9, 0.3), breaks=seq(-.9,0.3, .1)) +
+  scale_x_continuous(limits = c(-70, 30), breaks=seq(-70,30, 10)) +
   scale_color_manual(values = c("High quality" = "seagreen2", 
                                 "Low quality" = "firebrick2")) +
   labs(color='Information', fill = 'Information')  +
