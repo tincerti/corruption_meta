@@ -39,7 +39,7 @@ ggplot(meta, aes(ate_vote, author_reduced, label = published)) +
                 color="grey30", size=0.5, alpha = 0.5, height = 0.2) +
   geom_vline(xintercept = 0, linetype = "dashed") +
   xlab("Change in vote share (percentage points)") + 
-  scale_x_continuous(limits = c(-90, 30), breaks=seq(-90, 30, 10)) +
+  scale_x_continuous(limits = c(-70, 30), breaks=seq(-70, 30, 10)) +
   scale_color_manual(values = c("Yes" = "seagreen2", 
                                 "No" = "firebrick2")) +
   labs(color='Published', fill = 'Published')  +

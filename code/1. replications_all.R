@@ -327,13 +327,13 @@ an = data.frame(type="Lab", year=2007 , author = "Azfar and Nelson",
                    published = 1, Notes = NA)
 
 # Avenberg
-aven = data.frame(type="Survey", year=2016 , author = "Avenberg", 
+aven = data.frame(type="Survey", year=2019 , author = "Avenberg", 
                    author_reduced = "Avenberg", country = "Brazil", 
                    ate_vote = ate.aven, se_vote = se.aven, ci_upper = NA, 
                    ci_lower = NA, N = n.aven,  p_reported = p.aven,
-                   published = 0, Notes = NA)
+                   published = 1, Notes = NA)
 
-vera = data.frame(type="Survey", year=2016 , author = "Vera Rojas", 
+vera = data.frame(type="Survey", year=2019 , author = "Vera Rojas", 
                    author_reduced = "Vera Rojas", country = "Peru", 
                    ate_vote = ate.vera, se_vote = se.vera, ci_upper = NA, 
                    ci_lower = NA, N = n.vera,  p_reported = p.vera,
