@@ -159,13 +159,13 @@ Do voters hold politicians accountable for corruption? Field experiments that pr
 
 \doublespace
 
-\vspace{0.5cm}
-\begin{center}
-
-DRAFT: \\ 
-Additional studies may be added or point estimates refined. \\
-Please do not cite without author's permission.
-\end{center}
+%\vspace{0.5cm}
+%\begin{center}
+%
+%DRAFT: \\ 
+%Additional studies may be added or point estimates refined. \\
+%Please do not cite without author's permission.
+%\end{center}
 
 \pagebreak
 
@@ -192,7 +192,7 @@ Lab experiments that reveal corrupt actions of politicians to fellow players, th
 
 \subsection{Selection criteria}\label{sec: criteria}
 
-I followed standard practices to locate the experiments included in the meta-analysis. This included following citation chains and searches of data bases using a variety of relevant terms (``corruption experiment,'' ``corruption field experiment,'' ``corruption survey experiment,'' ``corruption factorial'', ``corruption candidate choice'', ``corruption conjoint'', ``corruption, vote, experiment'', and ``corruption vignette''). Papers from any discipline are eligible for inclusion, but in practice stem only from economics and political science. Both published articles and working papers are included so as to ensure the meta-analysis is not biased towards published results. In total, I located 10 field experiments from 8 papers, and 19 survey experiments from 17 papers.
+I followed standard practices to locate the experiments included in the meta-analysis. This included following citation chains and searches of data bases using a variety of relevant terms (``corruption experiment,'' ``corruption field experiment,'' ``corruption survey experiment,'' ``corruption factorial'', ``corruption candidate choice'', ``corruption conjoint'', ``corruption, vote, experiment'', and ``corruption vignette''). Papers from any discipline are eligible for inclusion, but in practice stem only from economics and political science. Both published articles and working papers are included so as to ensure the meta-analysis is not biased towards published results. In total, I located 10 field experiments from 8 papers, and 18 survey experiments from 16 papers.
 
 Field experiments are included if researchers randomly assigned information regarding incumbent corruption to voters, then measured corresponding voting outcomes. This therefore excludes experiments that randomly assign corruption information, but use favorability ratings or other metrics rather than actual vote share as their dependent variable. I include one natural experiment, \citet{ferraz2008exposing}, as random assignment was conducted by the Brazilian government. Effects reported in the meta-analysis come from information treatments on the entire sample of study only, not subgroup or interactive effects that reveal the largest treatment effects.
 
@@ -250,7 +250,6 @@ A list of all papers - disaggregated by field and survey experiments - that meet
 \citet{mares2019voting} & Romania & Conjoint \\
 \citet{vera2019accepting} & Peru & Vignette \\
 \citet{winters2013lacking} & Brazil & Vignette \\
-\citet{winters2015political} & Brazil & Vignette \\
 \citet{winters2016s} & Brazil & Vignette \\
 \citet{weitz2017can} & Brazil & Vignette \\
 \citet{winters2018information} & Argentina & Vignette \\
@@ -263,7 +262,7 @@ A list of all papers - disaggregated by field and survey experiments - that meet
 
 Additional justification for the inclusion or exclusion of certain studies, as well as coding and/or replication choices may be warranted in some cases. Despite often being considered a form of corruption \citep{rose2016corruption}, I exclude electoral fraud experiments as whether vote buying constitutes clientelism or corruption is a matter of debate \citep{stokes2013brokers}. The field experiment conducted by \citet{banerjee2010can} is included. However, the authors treated voters with a campaign not to vote for corrupt candidates in general, but did not provide voters with information on which candidates were corrupt. Similarly, the field experiment conducted by \citet{banerjee2011informed} is included, but their treatment provided information on politicians' spending discrepancies, which may imply corruption but is not as direct as other types of information provision. The results are not sensitive to the inclusion of these studies (see \autoref{fig: meta-field_no_banerjee}). The point estimates remain approximately zero percentage points using random effects estimation, and are approximately -1 percentage point using fixed effects estimation. 
 
-With respect to survey experiments, \citet{chauchard2017limited} include two treatments, wealth accumulation and whether the wealth accumulation was illegal. The effect reported here is the illegal treatment only. This is likely a conservative estimate, as the true effect is a combination of illegality and wealth accumulation. \citet{winters2016s} and \citet{weitz2017can} report results from the same survey experiment. The results are therefore only reported once. The survey experiment in \citet{de2011voters} is excluded from the analysis as it does not use hypothetical candidates, but instead asks voters if they would have changed their actual voting behavior in response to receiving corruption information. This study has a slightly positive and null finding. The overall results are not sensitive to the inclusion of this estimate (see \autoref{fig: meta-field_defig}). 
+With respect to survey experiments, \citet{chauchard2017limited} include two treatments, wealth accumulation and whether the wealth accumulation was illegal. The effect reported here is the illegal treatment only. This is likely a conservative estimate, as the true effect is a combination of illegality and wealth accumulation. \citet{winters2016s} and \citet{weitz2017can} report results from the same survey experiment, as do \citet{winters2013lacking} and \citet{winters2015political}. Each of these results are therefore only reported once. The survey experiment in \citet{de2011voters} is excluded from the analysis as it does not use hypothetical candidates, but instead asks voters if they would have changed their actual voting behavior in response to receiving corruption information. This study has a slightly positive and null finding. The overall results are not sensitive to the inclusion of this estimate (see \autoref{fig: meta-field_defig}). 
 
 \pagebreak
 
@@ -287,11 +286,11 @@ With respect to survey experiments, \citet{chauchard2017limited} include two tre
 \label{fig: meta-survey}
 \end{figure}
 
-Survey experiments estimate much larger negative treatment effects of providing information about corruption to voters relative to field experiments. In fact, the field-experimental results in \autoref{fig: meta-field} reveal a point estimate of approximately zero and suggest that we cannot reject the null hypothesis of no treatment effect. By contrast, \autoref{fig: meta-survey} shows that corrupt candidates are punished by respondents by approximately 35 percentage points in survey experiments based on fixed effects meta-analysis and 33 percentage points using random effects meta-analysis. Of the 19 survey experiments, only one shows a null effect \citep{klavsnja2013economy}, while all others are negative and significantly different from zero at conventional levels. 
+Survey experiments estimate much larger negative treatment effects of providing information about corruption to voters relative to field experiments. In fact, the field-experimental results in \autoref{fig: meta-field} reveal a point estimate of approximately zero and suggest that we cannot reject the null hypothesis of no treatment effect. By contrast, \autoref{fig: meta-survey} shows that corrupt candidates are punished by respondents by approximately 35 percentage points in survey experiments based on fixed effects meta-analysis and 33 percentage points using random effects meta-analysis. Of the 18 survey experiments, only one shows a null effect \citep{klavsnja2013economy}, while all others are negative and significantly different from zero at conventional levels. 
 
 %While recognizing the power constraints inherent in such a small sample size, a univariate Shapiro-Wilk test of normality suggests that we cannot reject the null hypothesis that the point estimates are distributed normally around a mean of approximately zero percentage points.
 
-Examining all studies together, a test for heterogeneity by type of experiment (field or survey) reveals that up to 68\% of the total heterogeneity across studies can be accounted for by a dummy variable for type of experiment (0 = field, 1 = survey). This dummy variable has a significant association with the effectiveness of the information treatment at the 1\% significance level. In fact, with this dummy variable included, the overall estimate across studies is approximately 0, while the point estimate of the survey dummy is -0.33.\footnote{Using a mixed effects model with a survey experiment moderator.} This implies that the predicted treatment effect across experiments is not significantly different from zero when an indicator for type of experiment is included in the model. In other words, the majority of the heterogeneity in findings is accounted for by the type of experiment conducted. 
+Examining all studies together, a test for heterogeneity by type of experiment (field or survey) reveals that up to 68\% of the total heterogeneity across studies can be accounted for by a dummy variable for type of experiment (0 = field, 1 = survey). This dummy variable has a significant association with the effectiveness of the information treatment at the 1\% significance level. In fact, with this dummy variable included, the overall estimate across studies is approximately 0, while the point estimate of the survey dummy is -0.32.\footnote{Using a mixed effects model with a survey experiment moderator.} This implies that the predicted treatment effect across experiments is not significantly different from zero when an indicator for type of experiment is included in the model. In other words, the majority of the heterogeneity in findings is accounted for by the type of experiment conducted. 
 
 \section{Exploring the discrepancy} \label{sec: discussion}
 
@@ -299,7 +298,7 @@ What accounts for the large difference in treatment effects between field and su
 
 \subsection{Publication bias and p-hacking}\label{sec: publication}
 
-Of the ten field experiments I located, only six are published. By contrast, for survey experiments only three of the 17 papers remain unpublished, and these are recent drafts. This may reflect that the null results from field experiments are less likely to be published than their survey counterparts with large and highly significant negative treatment effects, even when standard errors are relatively small. While recognizing that the sample size of studies is small, OLS and logistic regression do not indicate that reported p-value is a significant predictor of publication status, although the directionality of coefficients is consistent with lower p-values being more likely to be published (\autoref{p_publication}). However, this simple analysis is complicated by the fact that the p-value associated with the average treatment effect across all subjects may not be the primary p-value of interest in the paper. 
+Of the ten field experiments I located, only six are published. By contrast, for survey experiments only three of the 16 papers remain unpublished, and these are recent drafts. This may reflect that the null results from field experiments are less likely to be published than their survey counterparts with large and highly significant negative treatment effects, even when standard errors are relatively small. While recognizing that the sample size of studies is small, OLS and logistic regression do not indicate that reported p-value is a significant predictor of publication status, although the directionality of coefficients is consistent with lower p-values being more likely to be published (\autoref{p_publication}). However, this simple analysis is complicated by the fact that the p-value associated with the average treatment effect across all subjects may not be the primary p-value of interest in the paper. 
 
 In order to more formally test for publication bias, I first use the p-curve \citep{simonsohn2014p1, simonsohn2014p2, simonsohn2015better}. The p-curve is based on the premise that only ``significant'' results are typically published, and depicts the distribution of statistically significant p-values for a set of published studies. The shape of the p-curve is indicative of whether or not the results of a set of studies are derived from true effects, or from publication bias. If effect sizes are clustered around 0.05 (i.e. the p-curve is ``left skewed''), this may be evidence of p-hacking, indicating that studies with p-values just below 0.05 are ``selectively reported.'' If the p-curve is ``right skewed'' and there are more low p-values (0.01), this is evidence of true effects. All significant survey experimental results included in the meta-analysis are significant at the 1\% level (making construction of a ``curve'' with bins of width 0.01 impossible), implying that publication bias likely does not explain the large negative treatment effects in survey experiments.\footnote{There is also no indication of publication bias at the 1\% level using this method.} For field experiments, there is not a large enough number of published experiments to make the p-curve viable. Only six studies are published, and of these only four are significant at at least the 5\% level.
 
@@ -467,6 +466,7 @@ Nevertheless, these findings suggest that while vote-choice survey experiments m
 \citet{munoz2012voters} & Survey & Lack of no-corruption control group \\
 \citet{rundquist1977corrupt} & Lab & Lack of no-corruption control group \\
 \citet{weitz2017can} & Survey & Data identical to \citet{winters2016s} \\
+\citet{winters2015political} & Survey & Data identical to \citet{winters2013lacking} \\
 \citet{weschle2016punishing} & Survey & Lack of no-corruption control group \\
 \hline \\[-1.8ex] 
 \end{tabular} 

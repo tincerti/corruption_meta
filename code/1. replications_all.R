@@ -6,7 +6,6 @@ library(huxtable)
 library(foreign)
 library(readxl)
 library(readstata13)
-library(cjoint)
 library(estimatr)
 
 # Data imports
@@ -62,15 +61,6 @@ n.wsw13 = nobs(reg.wsw13)
 
 # Reported p-value
 p.wsw13 = "<0.01"
-
-################################################################################
-# Winters/Weitz-Shapiro 2015
-################################################################################
-ate.wsw15 = -1.53/3
-t_val = qt(0.01/2, df = 1974)
-se.wsw15 = abs(ate.wsw15)/abs(t_val)
-n.wsw15 = 1974
-p.wsw15 = "<0.01"
 
 ################################################################################
 # Winters/Weitz-Shapiro PRQ
@@ -273,13 +263,6 @@ wsw13 = data.frame(type="Survey", year=2013 , author = "Winters & Weitz-Shapiro"
                    p_reported = p.wsw13,
                    ci_lower = NA,N = n.wsw13, published = 1, Notes = NA)
 
-# Winters/Weitz-Shapiro 2015
-wsw15 = data.frame(type="Survey", year=2015 , author = "Winters & Weitz-Shapiro", 
-                   author_reduced = "Winters & Weitz-Shapiro 2015", country = "Brazil", 
-                   ate_vote = ate.wsw15, se_vote = se.wsw15, ci_upper = NA,
-                   p_reported = p.wsw15, ci_lower = NA,N = n.wsw15, 
-                   published = 1, Notes = NA)
-
 # Winters/Weitz-Shapiro 2018
 wsw18 = data.frame(type="Survey", year=2018 , author = "Winters & Weitz-Shapiro", 
                    author_reduced = "Winters & Weitz-Shapiro 2018", country = "Argentina", 
@@ -357,7 +340,7 @@ vera = data.frame(type="Survey", year=2016 , author = "Vera Rojas",
                    published = 1, Notes = NA)
 
 # Combine dataframes
-meta = rbind(results, wsw17, wsw13, wsw15, wsw18, kt_sweden, kt_moldova,
+meta = rbind(results, wsw17, wsw13, wsw18, kt_sweden, kt_moldova,
              mv, b, fz, evw, ager, an, aven, vera) 
 
 # Save combined dataframe
