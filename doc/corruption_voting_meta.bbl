@@ -1,5 +1,13 @@
 \begin{thebibliography}{xx}
 
+\harvarditem[Adida et~al.]{Adida, Gottlieb, Kramon \harvardand\
+  McClendon}{2019}{adidaunder}
+Adida, Claire, Jessica Gottlieb, Eric Kramon \harvardand\ Gwyneth McClendon.
+  2019.
+\newblock ``Under what conditions does performance information influence voting
+  behavior? Lessons from Benin.'' {\em Metaketa I: The Limits of Electoral
+  Accountability} .
+
 \harvarditem{Agerberg}{2019}{agerberg2019lesser}
 Agerberg, Mattias. 2019.
 \newblock ``The Lesser Evil? Corruption Voting and the Importance of Clean
@@ -146,6 +154,15 @@ Dunning, Thad, Guy Grossman, Macartan Humphreys, Susan~D Hyde, Craig McIntosh
 \newblock ``Metaketa I: Information, accountability, and cumulative
   learning.''.
 
+\harvarditem[Dunning et~al.]{Dunning, Grossman, Humphreys, Hyde, McIntosh,
+  Nellis, Adida, Arias, Bicalho, Boas et~al.}{2019}{dunning2019voter}
+Dunning, Thad, Guy Grossman, Macartan Humphreys, Susan~D Hyde, Craig McIntosh,
+  Gareth Nellis, Claire~L Adida, Eric Arias, Clara Bicalho, Taylor~C Boas
+  et~al. 2019.
+\newblock ``Voter information campaigns and political accountability:
+  Cumulative findings from a preregistered meta-analysis of coordinated
+  trials.'' {\em Science advances} 5(7):eaaw2612.
+
 \harvarditem[Eggers, Vivyan \harvardand\ Wagner]{Eggers, Vivyan \harvardand\
   Wagner}{2018}{eggers2018corruption}
 Eggers, Andrew~C, Nick Vivyan \harvardand\ Markus Wagner. 2018.
@@ -165,6 +182,12 @@ Franchino, Fabio \harvardand\ Francesco Zucchini. 2015.
   valence and ideology attributes of candidates.'' {\em Political Science
   Research and Methods} 3(2):221--241.
 
+\harvarditem{Gerber \harvardand\ Green}{2000}{gerber2000effects}
+Gerber, Alan~S \harvardand\ Donald~P Green. 2000.
+\newblock ``The effects of canvassing, telephone calls, and direct mail on
+  voter turnout: A field experiment.'' {\em American political science review}
+  94(3):653--663.
+
 \harvarditem{Gray \harvardand\ Kaufman}{1998}{gray1998corruption}
 Gray, Cheryl~W \harvardand\ Daniel Kaufman. 1998.
 \newblock ``Corruption and development.''.
@@ -174,6 +197,18 @@ Gray, Cheryl~W \harvardand\ Daniel Kaufman. 1998.
 Green, Donald~P, Adam Zelizer, David Kirby et~al. 2018.
 \newblock ``Publicizing Scandal: Results from Five Field Experiments.'' {\em
   Quarterly Journal of Political Science} 13(3):237--261.
+
+\harvarditem{Green \harvardand\ Gerber}{2019}{green2019get}
+Green, Donald~P \harvardand\ Alan~S Gerber. 2019.
+\newblock {\em Get out the vote: How to increase voter turnout}.
+\newblock Brookings Institution Press.
+
+\harvarditem[Green, Gerber \harvardand\ Nickerson]{Green, Gerber \harvardand\
+  Nickerson}{2003}{green2003getting}
+Green, Donald~P, Alan~S Gerber \harvardand\ David~W Nickerson. 2003.
+\newblock ``Getting out the vote in local elections: Results from six
+  door-to-door canvassing experiments.'' {\em Journal of Politics}
+  65(4):1083--1096.
 
 \harvarditem[Hainmueller, Hopkins \harvardand\ Yamamoto]{Hainmueller, Hopkins
   \harvardand\ Yamamoto}{2014}{hainmueller2014causal}
@@ -227,6 +262,11 @@ Mu{\~n}oz, Jordi, Eva Anduiza \harvardand\ Aina Gallego. 2012.
 \newblock Why do voters forgive corrupt politicians? Cynicism, noise and
   implicit exchange.  In {\em International Political Science Association
   Conference, Madrid, Spain}.
+
+\harvarditem{Rogers \harvardand\ Nickerson}{2013}{rogers2013can}
+Rogers, Todd \harvardand\ David Nickerson. 2013.
+\newblock ``Can Inaccurate Beliefs About Incumbents be Changed? And Can
+  Reframing Change Votes?''.
 
 \harvarditem{Rose-Ackerman \harvardand\ Palifka}{2016}{rose2016corruption}
 Rose-Ackerman, Susan \harvardand\ Bonnie~J Palifka. 2016.
