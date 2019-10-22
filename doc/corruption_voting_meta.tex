@@ -290,7 +290,7 @@ Survey experiments estimate much larger negative treatment effects of providing 
 
 %While recognizing the power constraints inherent in such a small sample size, a univariate Shapiro-Wilk test of normality suggests that we cannot reject the null hypothesis that the point estimates are distributed normally around a mean of approximately zero percentage points.
 
-Examining all studies together, a test for heterogeneity by type of experiment (field or survey) reveals that up to 68\% of the total heterogeneity across studies can be accounted for by a dummy variable for type of experiment (0 = field, 1 = survey). This dummy variable has a significant association with the effectiveness of the information treatment at the 1\% significance level. In fact, with this dummy variable included, the overall estimate across studies is approximately 0, while the point estimate of the survey dummy is -0.32.\footnote{Using a mixed effects model with a survey experiment moderator.} This implies that the predicted treatment effect across experiments is not significantly different from zero when an indicator for type of experiment is included in the model. In other words, the majority of the heterogeneity in findings is accounted for by the type of experiment conducted. 
+Examining all studies together, a test for heterogeneity by type of experiment (field or survey) reveals that up to 68\% of the total heterogeneity across studies can be accounted for by a dummy variable for type of experiment (0 = field, 1 = survey). This dummy variable has a significant association with the effectiveness of the information treatment at the 1\% significance level. In fact, with this dummy variable included, the overall estimate across studies is approximately 0, while the point estimate of the survey dummy is -0.32.\footnote{Using a mixed effects model with a survey experiment moderator. See \autoref{me_mod}.} This implies that the predicted treatment effect across experiments is not significantly different from zero when an indicator for type of experiment is included in the model. In other words, the majority of the heterogeneity in findings is accounted for by the type of experiment conducted. 
 
 \section{Exploring the discrepancy} \label{sec: discussion}
 
@@ -497,7 +497,14 @@ Nevertheless, these findings suggest that while vote-choice survey experiments m
 
 \subsection{Heterogeneity by type of experiment}
 
+\input{../figs/re_out.tex}
+
 \input{../figs/me_mod_out.tex}
+
+\vspace{1cm}
+
+\noindent
+``Heterogeneity accounted for'' is calculated as: $\dfrac{(\text{Total heterogeneity} - \text{Residual heterogeneity})}{(\text{Total heterogeneity})}$
 
 \pagebreak
 
