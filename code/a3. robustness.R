@@ -100,7 +100,7 @@ ggplot(field, aes(ate_vote, author_reduced)) +
   geom_vline(xintercept = 0, linetype = "dashed") +
   geom_hline(yintercept = 2.5, linetype = "solid") +
   xlab("Change in vote share (percentage points)") + 
-  scale_x_continuous(limits = c(-90, 30), breaks=seq(-90,30, 10)) +
+  scale_x_continuous(limits = c(-70, 30), breaks=seq(-70,30, 10)) +
   theme_classic() +
   theme(axis.title.y=element_blank()) +
   theme(plot.title = element_text(hjust = 0.5)) +
@@ -156,7 +156,7 @@ ggplot(survey, aes(ate_vote, author_reduced)) +
   geom_hline(yintercept = 2.5, linetype = "solid") +
   geom_text(aes(label = country, x = 25, y = author_reduced), size = 3) +
   xlab("Change in vote share (percentage points)") + 
-  scale_x_continuous(limits = c(-90, 30), breaks=seq(-90,30, 10)) +
+  scale_x_continuous(limits = c(-70, 30), breaks=seq(-70,30, 10)) +
   theme_classic() +
   theme(axis.title.y=element_blank()) +
   theme(plot.title = element_text(hjust = 0.5)) +
