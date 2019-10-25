@@ -143,6 +143,12 @@ De~Figueiredo, Miguel~FP, F~Daniel Hidalgo \harvardand\ Yuri Kasahara. 2011.
   from Brazil.'' {\em Unpublished manuscript, UC Berkeley} .
 \newline\harvardurl{\url{https://law.utexas.edu/wp-content/uploads/sites/25/figueiredo_when_do_voters_punish.pdf}}
 
+\harvarditem[de~la Cuesta, Egami \harvardand\ Imai]{de~la Cuesta, Egami
+  \harvardand\ Imai}{2019}{de2019improving}
+de~la Cuesta, Brandon, Naoki Egami \harvardand\ Kosuke Imai. 2019.
+\newblock ``Improving the External Validity of Conjoint Analysis: The Essential
+  Role of Profile Distribution.'' {\em Working Paper} .
+
 \harvarditem{De~Vries \harvardand\ Solaz}{2017}{de2017electoral}
 De~Vries, Catherine~E \harvardand\ Hector Solaz. 2017.
 \newblock ``The electoral consequences of corruption.'' {\em Annual Review of
@@ -154,15 +160,6 @@ Dunning, Thad, Guy Grossman, Macartan Humphreys, Susan~D Hyde, Craig McIntosh
   \harvardand\ Gareth Nellis. 2018.
 \newblock ``Metaketa I: Information, accountability, and cumulative
   learning.''.
-
-\harvarditem[Dunning et~al.]{Dunning, Grossman, Humphreys, Hyde, McIntosh,
-  Nellis, Adida, Arias, Bicalho, Boas et~al.}{2019}{dunning2019voter}
-Dunning, Thad, Guy Grossman, Macartan Humphreys, Susan~D Hyde, Craig McIntosh,
-  Gareth Nellis, Claire~L Adida, Eric Arias, Clara Bicalho, Taylor~C Boas
-  et~al. 2019.
-\newblock ``Voter information campaigns and political accountability:
-  Cumulative findings from a preregistered meta-analysis of coordinated
-  trials.'' {\em Science advances} 5(7):eaaw2612.
 
 \harvarditem[Eggers, Vivyan \harvardand\ Wagner]{Eggers, Vivyan \harvardand\
   Wagner}{2018}{eggers2018corruption}
@@ -217,6 +214,18 @@ Hainmueller, Jens, Daniel~J Hopkins \harvardand\ Teppei Yamamoto. 2014.
 \newblock ``Causal inference in conjoint analysis: Understanding
   multidimensional choices via stated preference experiments.'' {\em Political
   Analysis} 22(1):1--30.
+
+\harvarditem[Hainmueller, Hangartner \harvardand\ Yamamoto]{Hainmueller,
+  Hangartner \harvardand\ Yamamoto}{2015}{hainmueller2015validating}
+Hainmueller, Jens, Dominik Hangartner \harvardand\ Teppei Yamamoto. 2015.
+\newblock ``Validating vignette and conjoint survey experiments against
+  real-world behavior.'' {\em Proceedings of the National Academy of Sciences}
+  112(8):2395--2400.
+
+\harvarditem[Horiuchi, Markovich \harvardand\ Yamamoto]{Horiuchi, Markovich
+  \harvardand\ Yamamoto}{2018}{horiuchi2018can}
+Horiuchi, Yusaku, Zachary~D Markovich \harvardand\ Teppei Yamamoto. 2018.
+\newblock ``Can Conjoint Analysis Mitigate Social Desirability Bias?''.
 
 \harvarditem{Kalla \harvardand\ Broockman}{2018}{kalla2018minimal}
 Kalla, Joshua~L \harvardand\ David~E Broockman. 2018.
