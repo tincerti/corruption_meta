@@ -74,6 +74,8 @@ res_het = me_mod$tau2 # Estimate of residual heterogeneity with moderator
 
 # Calculate total heterogeneity accounted for by survey moderator
 het_accounted = (het_total - res_het)/het_total
+het_accounted = sapply(het_accounted, 
+                       function(x)paste0(round(x*100, 3),"%",collapse="%"))
 
 ################################################################################
 # Export models
@@ -112,7 +114,7 @@ se.tau2 = paste0("(", format(unlist(round(me_mod$se.tau2, 3))),")")
 Estimate = c(round(me_mod$beta[1], 3), se[1], 
              round(me_mod$beta[2], 3), se[2],
              round(me_mod$tau2[1], 3), se.tau2,
-             round(me_mod$R2, 3), "")
+             het_accounted, "")
 me_mod_out = data.frame(Value, Estimate)
 
 stargazer(me_mod_out,

@@ -7,6 +7,7 @@ rm(list=ls())
 library(tidyverse)
 library(readxl)
 library(metafor)
+library(stargazer)
 
 # Data import - Gallup
 meta = read_excel("data/study_results.xlsx")
@@ -42,7 +43,7 @@ survey = rbind(survey, defig)
 survey = survey %>% arrange(ate_vote) %>%
   mutate(author_reduced = reorder(author_reduced, -ate_vote))
 
-# Calculate SE intervals for De Figueiredo et al. 
+# Calculate SEs for De Figueiredo et al. 
 survey$se_vote = with(survey, ifelse(is.na(se_vote), (ate_vote - ci_lower)/1.96, se_vote))
 
 # Random effects model
@@ -55,6 +56,86 @@ fe_field = rma.uni(yi = ate_vote, sei = se_vote, weights = N,
 
 fe_survey = rma.uni(yi = ate_vote, sei = se_vote, weights = N,
                    method = "FE", data = survey)
+
+################################################################################
+# Conduct moderator analysis excluding Banarjee et. al studies
+################################################################################
+meta$field = with(meta, ifelse(type == "Field" | type == "Natural", 1, 0))
+meta$survey = with(meta, ifelse(type == "Survey", 1, 0))
+
+# Remove lab experiments and Banarjee studies
+meta = meta %>% 
+  filter(type == "Field" | type == "Natural" | type == "Survey") %>%
+  filter(author_reduced != "Banerjee et al. (2011)" & 
+         author_reduced != "Banerjee et al. (2010)") %>%
+  arrange(ate_vote) %>%
+  mutate(author_reduced = reorder(author_reduced, -ate_vote))
+
+# Fixed effects model without moderators
+fe = rma.uni(yi = ate_vote, sei = se_vote, data = meta, method = "FE")
+
+# Random effects model without moderators
+re = rma(yi = ate_vote, sei = se_vote, data = meta)
+het_total = re$tau2 # Estimate of total amount of heterogeneity
+
+# Mixed effects model with survey moderator
+me_mod = rma(yi = ate_vote, sei = se_vote, mods = survey, data = meta)
+res_het = me_mod$tau2 # Estimate of residual heterogeneity with moderator
+
+# Calculate total heterogeneity accounted for by survey moderator
+het_accounted = (het_total - res_het)/het_total
+het_accounted = sapply(het_accounted, 
+                       function(x)paste0(round(x*100, 3),"%",collapse="%"))
+
+################################################################################
+# Export models
+################################################################################
+# Export results of random effects model without moderator
+Value = c("Estimate", "" ,
+          "Estimated total heterogeneity", "")
+
+se = paste0("(", format(unlist(round(re$se, 3))),")")
+se.tau2 = paste0("(", format(unlist(round(re$se.tau2, 3))),")")
+
+Estimate = c(round(re$beta[1], 3), se[1], 
+             round(re$tau2[1], 3), se.tau2)
+
+re_out = data.frame(Value, Estimate)
+
+stargazer(re_out,
+          out = "figs/re_out_no_banerjee.tex",
+          title= "Random effects meta-analysis (all studies excluding \\citet{banerjee2010can} and \\citet{banerjee2011informed})",
+          label = "re_model_no_banerjee",
+          digits = 3,
+          rownames = FALSE, 
+          summary = FALSE,
+          notes = "\\parbox[t]{\\textwidth}{\\footnotesize \\textit{Note:} Standard errors in parenthesis. Figures rounded to nearest thousandth decimal place.}"
+          )
+
+# Export results of moderated model
+Value = c("Constant", "" ,
+          "Survey experiment moderator", "",
+          "Residual heterogenity with moderator", "",
+          "Heterogenity accounted for", "")
+
+se = paste0("(", format(unlist(round(me_mod$se, 3))),")")
+se.tau2 = paste0("(", format(unlist(round(me_mod$se.tau2, 3))),")")
+
+Estimate = c(round(me_mod$beta[1], 3), se[1], 
+             round(me_mod$beta[2], 3), se[2],
+             round(me_mod$tau2[1], 3), se.tau2,
+             het_accounted, "")
+me_mod_out = data.frame(Value, Estimate)
+
+stargazer(me_mod_out,
+          out = "figs/me_mod_out_no_banerjee.tex",
+          title= "Mixed effects meta-analysis with survey experiment moderator (excluding \\citet{banerjee2010can} and \\citet{banerjee2011informed})",
+          label = "me_mod_no_banerjee",
+          digits = 3,
+          rownames = FALSE, 
+          summary = FALSE,
+          notes = "\\parbox[t]{\\textwidth}{\\footnotesize \\textit{Note:} Standard errors in parenthesis. Figures rounded to nearest thousandth decimal place.}"
+          )
 
 ################################################################################
 # Plot field results
