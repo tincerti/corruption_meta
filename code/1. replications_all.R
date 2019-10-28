@@ -17,6 +17,7 @@ wsw18 = read.dta13('data/WintersWeitz-Shapiro_PSRM_Argentina_ReplicationData.dta
 fz = read.dta('data/franchino_zucchini.dta')
 mv = read.dta('data/mares_visconti.dta')
 b = read.dta13('data/choosing_crook_clean.dta')
+klt = read.dta('data/analysis-data.dta')
 
 ################################################################################
 # Winters/Weitz-Shapiro JOP
@@ -146,7 +147,7 @@ n.mv = 502
 p.mv = "<0.01"
 
 ################################################################################
-# Breitenstein (No replication data?)
+# Breitenstein
 ################################################################################
 # Pool corruption into one treatment
 b$corrupt = with(b, ifelse(corruption == "Honest", 0, 1))
@@ -212,6 +213,42 @@ n.evw = 1962
 
 # Reported p-value
 p.evw = "<0.01"
+
+################################################################################
+# Klasnja, Lupu, and Tucker
+################################################################################
+# Pool corruption into one treatment
+klt$corrupt = with(klt, ifelse(corrupttreat == "No bribes", 0, 1))
+
+# Split dataset into individual countries
+klt_arg = klt %>% filter(country == "Argentina")
+klt_chile = klt %>% filter(country == "Chile")
+klt_uru = klt %>% filter(country == "Uruguay")
+
+# Run models
+klt_corrupt_arg = lm_robust(vote ~ corrupt, data = klt_arg, clusters = uniq_id)
+klt_corrupt_chile = lm_robust(vote ~ corrupt, data = klt_chile, clusters = uniq_id)
+klt_corrupt_uru = lm_robust(vote ~ corrupt, data = klt_uru, clusters = uniq_id)
+
+# Extract point estimates
+ate.klt_arg = summary(klt_corrupt_arg, cluster = uniq_id)$coef[2, 1]
+ate.klt_chile = summary(klt_corrupt_chile, cluster = uniq_id)$coef[2, 1]
+ate.klt_uru = summary(klt_corrupt_uru, cluster = uniq_id)$coef[2, 1]
+
+# Extract standard errors
+se.klt_arg = summary(klt_corrupt_arg, cluster = idnum)$coef[2, 2]
+se.klt_chile = summary(klt_corrupt_chile, cluster = idnum)$coef[2, 2]
+se.klt_uru = summary(klt_corrupt_uru, cluster = idnum)$coef[2, 2]
+
+# Extract number of observations
+n.klt_arg = 502
+n.klt_chile = 502
+n.klt_uru = 502
+
+# Reported p-value
+p.klt_arg = "<0.01"
+p.klt_chile = "<0.01"
+p.klt_uru = "<0.01"
 
 ################################################################################
 # Agerberg (2019)
@@ -312,6 +349,27 @@ evw = data.frame(type="Survey", year=2017 , author = "Eggers, Vivyan, and Wagner
                    p_reported = p.evw, ci_lower = NA, N = n.evw, 
                    published = 1, Notes = NA)
 
+# Klasnja, Lupu, Tucker 2017 - Argentina
+klt_arg = data.frame(type="Survey", year=2017 , author = "Klasna, Lupu, and Tucker", 
+                   author_reduced = "Klasna et al. (Argentina)", country = "Argentina", 
+                   ate_vote = ate.klt_arg, se_vote = se.klt_arg, ci_upper = NA, 
+                   p_reported = p.klt_arg, ci_lower = NA, N = n.klt_arg, 
+                   published = 0, Notes = NA)
+
+# Klasnja, Lupu, Tucker 2017 - Chile
+klt_chile = data.frame(type="Survey", year=2017 , author = "Klasna, Lupu, and Tucker", 
+                   author_reduced = "Klasna et al. (Chile)", country = "Chile", 
+                   ate_vote = ate.klt_chile, se_vote = se.klt_chile, ci_upper = NA, 
+                   p_reported = p.klt_chile, ci_lower = NA, N = n.klt_chile, 
+                   published = 0, Notes = NA)
+
+# Klasnja, Lupu, Tucker 2017 - Uruguay
+klt_uru = data.frame(type="Survey", year=2017 , author = "Klasna, Lupu, and Tucker", 
+                   author_reduced = "Klasna et al. (Uruguay)", country = "Uruguay", 
+                   ate_vote = ate.klt_uru, se_vote = se.klt_uru, ci_upper = NA, 
+                   p_reported = p.klt_uru, ci_lower = NA, N = n.klt_uru, 
+                   published = 0, Notes = NA)
+
 # Agerberg 2019
 ager = data.frame(type="Survey", year=2019 , author = "Agerberg", 
                    author_reduced = "Agerberg", country = "Spain", 
@@ -341,7 +399,7 @@ vera = data.frame(type="Survey", year=2019 , author = "Vera Rojas",
 
 # Combine dataframes
 meta = rbind(results, wsw17, wsw13, wsw18, kt_sweden, kt_moldova,
-             mv, b, fz, evw, ager, an, aven, vera) 
+             mv, b, fz, evw, klt_arg, klt_chile, klt_uru, ager, an, aven, vera) 
 
 # Save combined dataframe
 save(meta, file = "data/meta.RData")
