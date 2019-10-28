@@ -1,6 +1,9 @@
 ################################################################################
 # Libraries and Import
 ################################################################################
+rm(list=ls())
+
+# Libraries
 library(survey)
 library(huxtable)
 library(foreign)
@@ -18,13 +21,33 @@ fz = read.dta('data/franchino_zucchini.dta')
 mv = read.dta('data/mares_visconti.dta')
 b = read.dta13('data/choosing_crook_clean.dta')
 klt = read.dta('data/analysis-data.dta')
+bhm = read.csv('data/panel_cleaned.csv')
+
+################################################################################
+# Boas, Hidalgo, and Melo 2018
+################################################################################
+# Run model
+bhm_model = lm_robust(vote_vig ~ vig_treatment, data = bhm)
+
+# Extract point estimates
+ate.bhm = summary(bhm_model)$coef[2, 1]
+
+# Extract standard errors
+se.bhm = summary(bhm_model)$coef[2, 2]
+
+# Extract number of observations
+n.bhm = nobs(bhm_model)
+
+# Reported p-value
+p.bhm = "<0.01"
 
 ################################################################################
 # Winters/Weitz-Shapiro JOP
 ################################################################################
 # Create all variable
-wsw17$corrupt = with(wsw17, ifelse(vinheta != "VINHETA 1" & vinheta != "VINHETA 2",
-                                   1, 0))
+wsw17$corrupt = with(wsw17, ifelse(vinheta != "VINHETA 1" & 
+                            vinheta != "VINHETA 2",
+                            1, 0))
 
 # Create vote dummy
 wsw17$vote = with(wsw17, ifelse(voteintent > 2, 1, 0))
@@ -241,9 +264,9 @@ se.klt_chile = summary(klt_corrupt_chile, cluster = idnum)$coef[2, 2]
 se.klt_uru = summary(klt_corrupt_uru, cluster = idnum)$coef[2, 2]
 
 # Extract number of observations
-n.klt_arg = 502
-n.klt_chile = 502
-n.klt_uru = 502
+n.klt_arg = 1528
+n.klt_chile = 1625
+n.klt_uru = 1514
 
 # Reported p-value
 p.klt_arg = "<0.01"
@@ -286,6 +309,13 @@ p.an = "<0.01"
 ################################################################################
 # Add to meta analysis dataframe
 ################################################################################
+# Boas, Hidalgo, and Melo
+bhm = data.frame(type="Survey", year=2018 , author = "Boas, Hidalgo, and Melo", 
+                   author_reduced = "Boas et al.", country = "Brazil", 
+                   ate_vote = ate.bhm, se_vote = se.bhm, ci_upper = NA,
+                   p_reported = p.bhm, ci_lower = NA, N = n.bhm, 
+                   published = 1, Notes = NA)
+
 # Winters/Weitz-Shapiro 2017
 wsw17 = data.frame(type="Survey", year=2016 , author = "Winters & Weitz-Shapiro", 
                    author_reduced = "Winters & Weitz-Shapiro 2017", country = "Brazil", 
@@ -391,6 +421,7 @@ aven = data.frame(type="Survey", year=2019 , author = "Avenberg",
                    ci_lower = NA, N = n.aven,  p_reported = p.aven,
                    published = 1, Notes = NA)
 
+# Vera Rojas
 vera = data.frame(type="Survey", year=2019 , author = "Vera Rojas", 
                    author_reduced = "Vera Rojas", country = "Peru", 
                    ate_vote = ate.vera, se_vote = se.vera, ci_upper = NA, 
@@ -398,7 +429,7 @@ vera = data.frame(type="Survey", year=2019 , author = "Vera Rojas",
                    published = 1, Notes = NA)
 
 # Combine dataframes
-meta = rbind(results, wsw17, wsw13, wsw18, kt_sweden, kt_moldova,
+meta = rbind(results, bhm, wsw17, wsw13, wsw18, kt_sweden, kt_moldova,
              mv, b, fz, evw, klt_arg, klt_chile, klt_uru, ager, an, aven, vera) 
 
 # Save combined dataframe

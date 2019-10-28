@@ -97,9 +97,7 @@ survey = meta %>% filter(type == "Survey")
 
 # Remove digitally measured studies
 survey_nodig = survey %>%
-  mutate(digital = ifelse(author == "Klasna, Lupu, and Tucker" | 
-                   author == "Boas, Hidalgo, & Melo" |
-                   author == "Chauchard, Klasnja, and Harris", 
+  mutate(digital = ifelse(author == "Chauchard, Klasnja, and Harris", 
                   1, 0)) %>%
   filter(digital != 1)
 
