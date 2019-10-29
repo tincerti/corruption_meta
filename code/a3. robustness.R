@@ -90,29 +90,6 @@ ggplot(field, aes(ate_vote, author_reduced)) +
 ggsave("figs/field_no_banerjee.pdf", height = 3.5, width = 6)
 
 ################################################################################
-# Calculate survey meta-analytic results excluding digitally measured estimates
-################################################################################
-# Keep survey experiments only
-survey = meta %>% filter(type == "Survey") 
-
-# Remove digitally measured studies
-survey_nodig = survey %>%
-  mutate(digital = ifelse(author == "Chauchard, Klasnja, and Harris", 
-                  1, 0)) %>%
-  filter(digital != 1)
-
-# Rearrange data set 
-survey_nodig = survey_nodig %>% arrange(ate_vote) %>%
-  mutate(author_reduced = reorder(author_reduced, -ate_vote))
-
-# Random effects
-re_survey_nodig = rma.uni(yi = ate_vote, sei = se_vote, data = survey_nodig)
-
-# Fixed effects model: weighted
-fe_survey_nodig = rma.uni(yi = ate_vote, sei = se_vote, weights = N,
-                   method = "FE", data = survey_nodig)
-
-################################################################################
 # Calculate survey meta-analytic results with De Figueiredo study
 ################################################################################
 # Add De Figueiredo et al. to survey experiments
@@ -195,65 +172,6 @@ ggplot(survey, aes(ate_vote, author_reduced)) +
   theme(legend.position = "none")
 
 ggsave("figs/survey_defig.pdf", height = 4, width = 6)
-
-################################################################################
-# Plot survey results without digital measurement
-################################################################################
-# Add meta-anlaysis parameters
-ate_vote_fe = coef(fe_survey_nodig)
-se_vote_fe = summary(fe_survey_nodig)$se
-ate_vote_re = coef(re_survey_nodig)
-se_vote_re = summary(re_survey_nodig)$se
-
-meta_fe_nodig = data.frame(type="Survey", year=NA, author = "Fixed effects model", 
-                     author_reduced = "Fixed effects model", country = NA, 
-                     ate_vote = ate_vote_fe, se_vote = se_vote_fe, ci_upper = NA, 
-                     ci_lower = NA, p_reported = NA, published = NA, N = NA, 
-                     Notes = NA, digital = NA)
-
-meta_re_nodig = data.frame(type="Survey", year=NA, author = "Random effects model", 
-                  author_reduced = "Random effects model", country = NA, 
-                  ate_vote = ate_vote_re, se_vote = se_vote_re, ci_upper = NA, 
-                  ci_lower = NA, p_reported = NA, published = NA, N = NA, 
-                  Notes = NA, digital = NA)
-
-survey_nodig = rbind(survey_nodig, meta_fe_nodig, meta_re_nodig)
-
-# Re-order factor levels
-survey_nodig$author_reduced = 
-  fct_relevel(survey_nodig$author_reduced, "Fixed effects model", after = 0)
-
-survey_nodig$author_reduced = 
-  fct_relevel(survey_nodig$author_reduced, "Random effects model", after = 0)
-
-# Mutliply effect size by 100
-survey_nodig$ate_vote = survey_nodig$ate_vote*100
-survey_nodig$se_vote = survey_nodig$se_vote*100
-
-# Plot survey results - no digitally measured studies
-ggplot(survey_nodig, aes(ate_vote, author_reduced)) +
-  geom_point(color = "steelblue2", size = 1.5) + 
-  geom_point(data = subset(survey_nodig, 
-             author_reduced == "Fixed effects model" | 
-             author_reduced == "Random effects model"), 
-           size = 1.5, color = "black", fill = "black") +
-  geom_errorbarh(aes(y = author_reduced, 
-                     xmin = ate_vote - 1.96*se_vote, 
-                     xmax = ate_vote + 1.96*se_vote),
-                color="grey30", size=0.5, alpha = 0.5, height = 0.2) +
-  geom_vline(xintercept = 0, linetype = "dashed") +
-  geom_hline(yintercept = 2.5, linetype = "solid") +
-  geom_text(aes(label = country, x = 25, y = author_reduced), size = 3) +
-  xlab("Change in vote share (percentage points)") + 
-  scale_x_continuous(limits = c(-70, 30), breaks=seq(-70,30, 10)) +
-  theme_classic() +
-  theme(axis.title.y=element_blank()) +
-  theme(plot.title = element_text(hjust = 0.5)) +
-  theme(axis.text=element_text(size = 8)) +
-  theme(axis.text.x = element_text(size = 8)) +
-  theme(legend.position = "none")
-
-ggsave("figs/survey_nodig.pdf", height = 4, width = 6)
 
 ################################################################################
 # Conduct moderator analysis excluding Banarjee et. al studies

@@ -10,6 +10,7 @@ library(foreign)
 library(readxl)
 library(readstata13)
 library(estimatr)
+library(tidyverse)
 
 # Data imports
 results = read_excel("data/study_results.xlsx")
@@ -22,6 +23,7 @@ mv = read.dta('data/mares_visconti.dta')
 b = read.dta13('data/choosing_crook_clean.dta')
 klt = read.dta('data/analysis-data.dta')
 bhm = read.csv('data/panel_cleaned.csv')
+ckh = read.dta13('data/chauchard_klasnja_harish.dta')
 
 ################################################################################
 # Boas, Hidalgo, and Melo 2018
@@ -274,6 +276,28 @@ p.klt_chile = "<0.01"
 p.klt_uru = "<0.01"
 
 ################################################################################
+# Chauchard, Klasnja, and Harish 2019
+################################################################################
+# Pool corruption into one treatment
+ckh = ckh %>% filter(legal != 0)
+ckh$corrupt = with(ckh, ifelse(legal == 2, 1, 0))
+
+# Run model
+ckh_corrupt = lm_robust(dv_vote ~ corrupt, data = ckh, clusters = id)
+
+# Extract point estimates
+ate.ckh = summary(ckh_corrupt, cluster = id)$coef[2, 1]
+
+# Extract standard errors
+se.ckh = summary(ckh_corrupt, cluster = id)$coef[2, 2]
+
+# Extract number of observations
+n.ckh = length(unique(ckh$id))
+
+# Reported p-value
+p.ckh = "<0.01"
+
+################################################################################
 # Agerberg (2019)
 ################################################################################
 ate.ager = (-.33 + -.32)/2 # Average of two corruption treatments
@@ -400,6 +424,13 @@ klt_uru = data.frame(type="Survey", year=2017 , author = "Klasna, Lupu, and Tuck
                    p_reported = p.klt_uru, ci_lower = NA, N = n.klt_uru, 
                    published = 0, Notes = NA)
 
+# Chauchard, Klsnja, and Harish
+ckh = data.frame(type="Survey", year=2019, author = "Chauchard, Klasnja, and Harish", 
+                   author_reduced = "Chauchard et al.", country = "India", 
+                   ate_vote = ate.ckh, se_vote = se.ckh, ci_upper = NA, 
+                   p_reported = p.ckh, ci_lower = NA, N = n.ckh, 
+                   published = 1, Notes = NA)
+
 # Agerberg 2019
 ager = data.frame(type="Survey", year=2019 , author = "Agerberg", 
                    author_reduced = "Agerberg", country = "Spain", 
@@ -429,7 +460,7 @@ vera = data.frame(type="Survey", year=2019 , author = "Vera Rojas",
                    published = 1, Notes = NA)
 
 # Combine dataframes
-meta = rbind(results, bhm, wsw17, wsw13, wsw18, kt_sweden, kt_moldova,
+meta = rbind(results, bhm, wsw17, wsw13, wsw18, kt_sweden, kt_moldova, ckh,
              mv, b, fz, evw, klt_arg, klt_chile, klt_uru, ager, an, aven, vera) 
 
 # Save combined dataframe
