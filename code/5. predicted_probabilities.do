@@ -242,7 +242,69 @@ graph export "${export}/fz_margins_`i'_clean.pdf", replace
 restore
 }
 
+********************************************************************************
+* Define categories: Mares and Visconti
+********************************************************************************
+use "${import}/mares_visconti.dta", replace
 
+* Pool corruption into one treatment
+replace corrupt = 0
+replace corrupt = 1 if atinte == 3 | atinte == 2
+
+* Pool policy offerings into one treatment
+gen policy = "None"
+replace policy = "Programmatic" if atpol == 2 | atpol == 3
+
+* Create categories
+decode atexp, gen(experience)
+
+* Create categories
+gen category = .
+replace category = 1 if corrupt == 1 & policy == "None" & experience == "Challenger"
+replace category = 2 if corrupt == 1 & policy == "None" & experience == "Incumbent"
+
+replace category = 3 if corrupt == 1 & policy == "Programmatic" & experience == "Challenger"
+replace category = 4 if corrupt == 1 & policy == "Programmatic" & experience == "Incumbent"
+
+* Name categories
+label define category ////
+		1 `" "Not programmatic" "Low experience" "' ////
+		2 `" "Not programmatic" "High experience" "' ////
+		3 `" "Programmatic" "Low experience" "' ////
+		4 `" "Programmatic" "High experience" "' ////
+
+label val category category
+
+********************************************************************************
+* Calculate marginal effects
+********************************************************************************
+reg outcome i.category, cl(idnum)
+margins category
+
+********************************************************************************
+* Plot marginal effects
+********************************************************************************
+* Sort results
+matrix plot = r(table)'
+
+matsort plot 1 "up"
+
+matrix plot = plot'
+
+* Create plot
+mylabels 0(25)100, myscale(@/100) local(myla) 
+
+coefplot (matrix(plot[1,])), ci((plot[5,] plot[6,])) ///
+	vertical scheme(s1color) ylabel(`myla') ///
+	ytitle("Probability of voting for corrupt candidate (%)" " ") ///
+	xtitle(" " "Candidate profile") ///
+	yline(.5, lstyle(grid)) ///
+	xlabel(, labsize(small)) ///
+	xsize(6.6) ysize(3) ///
+	color(midblue) ciopts(lcolor(gs10))
+
+* Export plot
+graph export "${export}/mv_margins.pdf", replace
 
 
 

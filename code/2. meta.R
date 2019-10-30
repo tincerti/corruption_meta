@@ -80,6 +80,33 @@ het_accounted = sapply(het_accounted,
 ################################################################################
 # Export models
 ################################################################################
+# Export primary results - field and survey separately
+Value = c("Field: weighted fixed effects ", "" ,
+          "Field: random effects", "" ,
+          "Survey: weighted fixed effects ", "" ,
+          "Survey: random effects", "")
+
+Estimate = c(round(fe_field$beta[1], 3), 
+             paste0("(", format(unlist(round(fe_field$se, 3))),")"), 
+             round(re_field$beta[1], 3), 
+             paste0("(", format(unlist(round(re_field$se, 3))),")"),
+             round(fe_survey$beta[1], 3), 
+             paste0("(", format(unlist(round(fe_survey$se, 3))),")"), 
+             round(re_survey$beta[1], 3), 
+             paste0("(", format(unlist(round(fe_survey$se, 3))),")"))
+
+meta_type = data.frame(Value, Estimate)
+
+stargazer(meta_type,
+          out = "figs/meta_estimates.tex",
+          title= "Meta-analysis by type of experiment",
+          label = "meta_type",
+          digits = 3,
+          rownames = FALSE, 
+          summary = FALSE,
+          notes = "\\parbox[t]{\\textwidth}{\\footnotesize \\textit{Note:} Standard errors in parenthesis. Figures rounded to nearest thousandth decimal place.}"
+          )
+
 # Export results of random effects model without moderator
 Value = c("Estimate", "" ,
           "Estimated total heterogeneity", "")
