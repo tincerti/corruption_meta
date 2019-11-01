@@ -36,6 +36,30 @@ fe_field = rma.uni(yi = ate_vote, sei = se_vote, weights = N,
                    method = "FE", data = field)
 
 ################################################################################
+# Export table
+################################################################################
+# Export primary results - field and survey separately
+Value = c("Field: weighted fixed effects ", "" ,
+          "Field: random effects", "")
+
+Estimate = c(round(fe_field$beta[1], 3), 
+             paste0("(", format(unlist(round(fe_field$se, 3))),")"), 
+             round(re_field$beta[1], 3), 
+             paste0("(", format(unlist(round(re_field$se, 3))),")"))
+
+meta_type = data.frame(Value, Estimate)
+
+stargazer(meta_type,
+          out = "figs/meta_estimates_no_banerjee.tex",
+          title= "Meta-analysis (all field experiments excluding \\citet{banerjee2010can} and \\citet{banerjee2011informed})",
+          label = "meta_no_banerjee",
+          digits = 3,
+          rownames = FALSE, 
+          summary = FALSE,
+          notes = "\\parbox[t]{\\textwidth}{\\footnotesize \\textit{Note:} Standard errors in parenthesis. Figures rounded to nearest thousandth decimal place.}"
+          )
+
+################################################################################
 # Plot field results
 ################################################################################
 # Add meta-anlaysis parameters
