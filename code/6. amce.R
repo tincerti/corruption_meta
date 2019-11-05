@@ -13,7 +13,7 @@ library(readstata13)
 fz = read.dta('data/franchino_zucchini.dta')
 b = read.dta13('data/choosing_crook_clean.dta')
 mv = read.dta('data/mares_visconti.dta')
-ckh = read.dta13('data/chauchard_klasnja_harish.dta')
+ckh = read.dta13('data/chauchard_klasnja_harish.dta', nonint.factors = TRUE)
 
 ################################################################################
 # Analysis: Franchino and Zucchini
@@ -153,57 +153,14 @@ mv$Experience <- factor(mv$atexp,
        levels = c("Incumbent", "Challenger"), 
        labels = c("High", "Low"))
 
-# Run AMCE regression and store results
-reg_mv <- amce(formula = outcome ~ `Corrupt` + `Policy` + `Negative` + 
-                              `Positive` + `Gender` + `Experience`, 
-                data = mv, cluster=TRUE, respondent.id = "idnum")
-
-################################################################################
-# Analysis: Chauchard, Klasnja, and Harish
-################################################################################
-# Reduce to one corruption measure
-mv$Corrupt = with(mv, ifelse(atinte == "Sentenced" | atinte == "Investigated", 
-                             "Yes", "No"))
-
-# Define attribute lists: Corruption
-mv$Corrupt <- factor(mv$Corrupt,
-       levels = c("No", "Yes"), 
-       labels = c("No", "Yes"))
-
-# Define attribute lists: Policy
-mv$Policy <- factor(mv$atpol,
-       levels = c("No promises", "Renovate schools", "Renovate schools and roads"), 
-       labels = c("No promises", "Renovate schools", "Renovate schools and roads"))
-
-# Define attribute lists: Negative Inducument
-mv$Negative <- factor(mv$atinti,
-       levels = c("No threat", 
-                  "Threat to non-supporters"), 
-       labels = c("No threat", 
-                  "Threat to non-supporters"))
-
-# Define attribute lists: Positive Inducument
-mv$Positive <- factor(mv$atmita,
-       levels = c("No money offer", 
-                  "100 RON", 
-                  "Social assistance"), 
-       labels = c("No offer", 
-                  "Vote buying", 
-                  "Welfare favor"))
-
-# Define attribute lists: Gender
-mv$Gender <- factor(mv$atgen,
-       levels = c("Male", "Female"), 
-       labels = c("Male", "Female"))
-
-# Define attribute lists: Experience
-mv$Experience <- factor(mv$atexp,
-       levels = c("Incumbent", "Challenger"), 
+# Define attribute lists: Income
+mv$Income <- factor(mv$atven,
+       levels = c("High income", "No high income"), 
        labels = c("High", "Low"))
 
 # Run AMCE regression and store results
 reg_mv <- amce(formula = outcome ~ `Corrupt` + `Policy` + `Negative` + 
-                              `Positive` + `Gender` + `Experience`, 
+                         `Positive` + `Gender` + `Experience` + `Income`, 
                 data = mv, cluster=TRUE, respondent.id = "idnum")
 
 ################################################################################
@@ -258,10 +215,10 @@ ggsave("figs/fz_amce.pdf", height = 4, width = 6)
 # Create conjoint plot: Mares and Visconti
 plot(reg_mv,
      group.order = c("Corrupt", "Policy", "Negative", "Positive",
-                     "Gender", "Experience"),
+                     "Gender", "Experience", "Income"),
      xlab = "Change in probability of voting",
      point.size = 0.25,
-     colors = c("firebrick1", "black", "grey60", "black", "grey60", "black"),
+     colors = c("firebrick1", "black", "grey60", "grey60", "grey60", "black", "black"),
      plot.theme = theme_bw() + 
      theme(panel.grid.major = element_line(colour = "grey98")) + 
      theme(legend.position="none") +

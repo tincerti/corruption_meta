@@ -4,7 +4,7 @@
 rm(list=ls())
 
 # Set seed
-set.seed(300) # Estimates will of course vary slightly with change in seed
+set.seed(200) # Estimates will of course vary slightly with change in seed
 
 # Libraries
 library(foreign)
@@ -17,6 +17,8 @@ library(caTools)
 
 # Import conjoint experiment
 b = read.dta13('data/choosing_crook_clean.dta')
+fz = read.dta('data/franchino_zucchini.dta')
+ckh = read.dta13('data/chauchard_klasnja_harish.dta', nonint.factors = TRUE)
 
 ################################################################################
 # Data setup: Breitenstein
@@ -99,7 +101,12 @@ b_tree <- rpart(Y ~ Corrupt + Party + Economy + Experience + Gender,
 # Pick tree size that minimizes classification error rate and prune tree
 bestcp <- b_tree$cptable[which.min(b_tree$cptable[,"xerror"]),"CP"]
 plotcp(b_tree)
+printcp(b_tree)
 b_tree_pruned <- prune(b_tree, cp = bestcp)
+
+# Examine correct classification rate
+test$t_pred = predict(b_tree_pruned, test, type = "class")
+mean(test$Y == test$t_pred)
 
 # Plot classification tree
 rpart.plot(b_tree_pruned, extra = 7, type = 5, cex = 0.6)
@@ -109,7 +116,7 @@ dev.copy(pdf,'figs/b_tree.pdf', width = 7, height = 3.5)
 dev.off()
 
 ################################################################################
-# Figure A12: Analysis with clean challenger only 
+# Analysis with clean challenger only 
 ################################################################################
 # Reduce clean dataframe to corrupt candidate only
 clean_reduced = clean %>% filter(Corrupt == "Yes")
@@ -131,16 +138,100 @@ plotcp(b_tree_clean)
 printcp(b_tree_clean)
 b_tree_clean_pruned <- prune(b_tree_clean, cp = -0.01)
 
-# Plot classification tree
-rpart.plot(b_tree_clean_pruned, extra = 7, type = 5, cex = 0.55)
-
 # Save plot
 dev.copy(pdf,'figs/b_tree_clean.pdf', width = 7, height = 3.5)
 dev.off()
 
 ################################################################################
-# Boosted tree
+# Data setup: Chauchard, Klasnja, and Harish
 ################################################################################
-boost_fit = gbm(Y ~ `Corrupt` + as.factor(Challenger) + `Party` + `Economy` + `Experience` + `Gender`,
-                data = train, distribution= "gaussian", n.trees = 5000, 
-                interaction.depth = 4)
+# Remove NA outcome values - not sure why these are here
+ckh = ckh %>% filter(!is.na(dv_vote))
+
+# Create corruption measure
+ckh$Corrupt = with(ckh, ifelse(legal == "Suspicion", "Yes", "No"))
+
+# Define attribute lists: Corruption
+ckh$Corrupt <- factor(ckh$Corrupt,
+       levels = c("No", "Yes"), 
+       labels = c("No", "Yes"))
+
+# Define attribute lists: Partisanship
+ckh$Copartisan = with(ckh, ifelse(out_party == 1, "No", "Yes"))
+ckh$Copartisan <- factor(ckh$Copartisan,
+       levels = c("No", "Yes"), 
+       labels = c("No", "Yes"))
+
+# Define attribute lists: Ethnicity
+ckh$Coethnic = with(ckh, ifelse(co_ethn_dummy == 0, "No", "Yes"))
+ckh$Coethnic <- factor(ckh$Coethnic,
+       levels = c("No", "Yes"), 
+       labels = c("No", "Yes"))
+
+# Define attribute lists: Record
+ckh$Performance <- factor(ckh$record,
+       levels = c("Good", "Disappointing"), 
+       labels = c("Good", "Bad"))
+
+# Define attribute lists: Criminality
+ckh$Criminality <- factor(ckh$crime,
+       levels = c("No crime", "Crime"), 
+       labels = c("Not a criminal", "Criminal"))
+
+# Define attribute lists: Background
+ckh$Background <- factor(ckh$family,
+       levels = c("Poor", "Middle-income", "Rich"), 
+       labels = c("Poor", "Middle income", "Rich"))
+
+# Define attribute lists: Wealth
+ckh$`2010 wealth` <- factor(ckh$w2010r,
+       levels = c("1", "2", "3"), 
+       labels = c("Low", "Medium", "High"))
+
+# Define attribute lists: Wealth increase
+ckh$`Wealth increase` <- factor(ckh$wmultr,
+       levels = c("1", "2", "3"), 
+       labels = c("None", "Low", "High"))
+
+################################################################################
+# Predictions: Chauchard, Klasnja, and Harish
+################################################################################
+# Convert outcome variable to binary for classification
+ckh$dv_vote = as.factor(ckh$dv_vote)
+ckh_corrupt = ckh %>% filter(Corrupt == "Yes")
+
+# Split data into training and test
+sample = sample.split(ckh_corrupt, SplitRatio = .9) # From caTools package
+train = subset(ckh, sample == TRUE)
+test  = subset(ckh, sample == FALSE)
+
+# Run classification tree (uses package rpart)
+ckh_tree <- rpart(dv_vote ~ `Corrupt` + `Copartisan` + `Coethnic` + 
+                          `Criminality` + `Performance` + `Background` + 
+                          `Wealth increase`,
+                    data = train, 
+                    cp = 0,
+                    method = 'class')
+
+ckh_tree <- rpart(dv_vote ~ `Copartisan` + `Coethnic` + 
+                          `Criminality` + `Performance` + 
+                          `Wealth increase`,
+                    data = train, 
+                    cp = 0,
+                    method = 'class')
+
+# Pick tree size that minimizes classification error rate and prune tree
+bestcp <- ckh_tree$cptable[which.min(ckh_tree$cptable[,"xerror"]),"CP"]
+plotcp(ckh_tree)
+ckh_tree_pruned <- prune(ckh_tree, cp = .0036)
+
+# Examine correct classification rate
+test$t_pred = predict(ckh_tree_pruned, test, type = "class")
+mean(test$dv_vote == test$t_pred)
+
+# Plot classification tree
+rpart.plot(ckh_tree_pruned, extra = 7, type = 5, cex = 0.5)
+
+# Save plot
+dev.copy(pdf,'figs/ckh_tree_corrupt.pdf', width = 7, height = 3.5)
+dev.off()

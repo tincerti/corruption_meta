@@ -116,6 +116,9 @@ ggsave("figs/field_no_banerjee.pdf", height = 3.5, width = 6)
 ################################################################################
 # Calculate survey meta-analytic results with De Figueiredo study
 ################################################################################
+# Keep survey experiments only
+survey = meta %>% filter(type == "Survey")
+
 # Add De Figueiredo et al. to survey experiments
 defig = data.frame(type="Survey", year = 2011, 
                    author = "De Figueiredo, Hidalgo, & Kasahara", 
@@ -140,6 +143,30 @@ re_survey = rma.uni(yi = ate_vote, sei = se_vote, data = survey)
 # Fixed effects model: weighted
 fe_survey = rma.uni(yi = ate_vote, sei = se_vote, weights = N,
                    method = "FE", data = survey)
+
+################################################################################
+# Export table with De Figueiredo study
+################################################################################
+# Export primary results - field and survey separately
+Value = c("Field: weighted fixed effects ", "" ,
+          "Field: random effects", "")
+
+Estimate = c(round(fe_survey$beta[1], 3), 
+             paste0("(", format(unlist(round(fe_survey$se, 3))),")"), 
+             round(re_survey$beta[1], 3), 
+             paste0("(", format(unlist(round(re_survey$se, 3))),")"))
+
+meta_type = data.frame(Value, Estimate)
+
+stargazer(meta_type,
+          out = "figs/meta_estimates_defig.tex",
+          title= "Meta-analysis (all survey experiments including \\citet{de2011voters}",
+          label = "meta_survey_defig",
+          digits = 3,
+          rownames = FALSE, 
+          summary = FALSE,
+          notes = "\\parbox[t]{\\textwidth}{\\footnotesize \\textit{Note:} Standard errors in parenthesis. Figures rounded to nearest thousandth decimal place.}"
+          )
 
 ################################################################################
 # Plot survey results with De Figeureido

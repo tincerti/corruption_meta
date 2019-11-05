@@ -255,14 +255,22 @@ replace corrupt = 1 if atinte == 3 | atinte == 2
 gen policy = "None"
 replace policy = "Programmatic" if atpol == 2 | atpol == 3
 
-* Create categories
+* Threats variable
+gen threats = "No threats"
+replace threats = "Threatens" if atinti == 2
+
+* Vote buying variable
+gen vb = "No vote buying"
+replace vb = "Vote buying" if atmita == 2 | atmita == 3
+
+
+* Create categories across all levels of illicit acitivities
 decode atexp, gen(experience)
 
 * Create categories
 gen category = .
 replace category = 1 if corrupt == 1 & policy == "None" & experience == "Challenger"
 replace category = 2 if corrupt == 1 & policy == "None" & experience == "Incumbent"
-
 replace category = 3 if corrupt == 1 & policy == "Programmatic" & experience == "Challenger"
 replace category = 4 if corrupt == 1 & policy == "Programmatic" & experience == "Incumbent"
 
@@ -271,14 +279,141 @@ label define category ////
 		1 `" "Not programmatic" "Low experience" "' ////
 		2 `" "Not programmatic" "High experience" "' ////
 		3 `" "Programmatic" "Low experience" "' ////
-		4 `" "Programmatic" "High experience" "' ////
+		4 `" "Programmatic" "High experience" "' ////	
+		
+label val category category
+
+
+********************************************************************************
+* Calculate marginal effects
+********************************************************************************
+reg outcome i.category, cl(idnum)
+margins category
+
+********************************************************************************
+* Plot marginal effects 
+********************************************************************************
+* Sort results
+matrix plot = r(table)'
+
+matsort plot 1 "up"
+
+matrix plot = plot'
+
+* Create plot
+mylabels 0(25)100, myscale(@/100) local(myla) 
+
+coefplot (matrix(plot[1,])), ci((plot[5,] plot[6,])) ///
+	vertical scheme(s1color) ylabel(`myla') ///
+	ytitle("Probability of voting for corrupt candidate (%)" " ") ///
+	xtitle(" " "Candidate profile") ///
+	yline(.5, lstyle(grid)) ///
+	xlabel(, labsize(small)) ///
+	xsize(6.6) ysize(3) ///
+	color(midblue) ciopts(lcolor(gs10))
+
+* Export plot
+graph export "${export}/mv_margins.pdf", replace
+
+********************************************************************************
+* Create categories conditional on levels of illicit acitivities
+********************************************************************************
+
+replace category = .
+replace category = 1 if corrupt == 1 & policy == "None" & experience == "Challenger" & threats == "Threatens" & vb == "Vote buying"
+replace category = 2 if corrupt == 1 & policy == "None" & experience == "Incumbent" & threats == "Threatens" & vb == "Vote buying"
+
+replace category = 3 if corrupt == 1 & policy == "Programmatic" & experience == "Challenger" & threats == "Threatens" & vb == "Vote buying"
+replace category = 4 if corrupt == 1 & policy == "Programmatic" & experience == "Incumbent" & threats == "Threatens" & vb == "Vote buying"
+
+replace category = 5 if corrupt == 1 & policy == "None" & experience == "Challenger" & threats == "No threats" & vb == "No vote buying"
+replace category = 6 if corrupt == 1 & policy == "None" & experience == "Incumbent" & threats == "No threats" & vb == "No vote buying"
+
+replace category = 7 if corrupt == 1 & policy == "Programmatic" & experience == "Challenger" & threats == "No threats" & vb == "No vote buying"
+replace category = 8 if corrupt == 1 & policy == "Programmatic" & experience == "Incumbent" & threats == "No threats" & vb == "No vote buying"
+
+* Name categories
+label drop category
+label define category ////
+		1 `" "Not programmatic" "Low experience" "Other illicit" "' ////
+		2 `" "Not programmatic" "High experience" "Other illicit" "' ////
+		3 `" "Programmatic" "Low experience" "Other illicit" "' ////
+		4 `" "Programmatic" "High experience" "Other illicit" "' ////	
+		5 `" "Not programmatic" "Low experience" "No other illicit" "' ////
+		6 `" "Not programmatic" "High experience" "No other illicit" "' ////
+		7 `" "Programmatic" "Low experience" "No other illicit" "' ////
+		8 `" "Programmatic" "High experience" "No other illicit" "' ////	
+		
+label val category category
+
+
+********************************************************************************
+* Calculate marginal effects
+********************************************************************************
+reg outcome i.category, cl(idnum)
+margins category
+
+********************************************************************************
+* Plot marginal effects 
+********************************************************************************
+* Sort results
+matrix plot = r(table)'
+
+matsort plot 1 "up"
+
+matrix plot = plot'
+
+* Create plot
+mylabels 0(25)100, myscale(@/100) local(myla) 
+
+coefplot (matrix(plot[1,])), ci((plot[5,] plot[6,])) ///
+	vertical scheme(s1color) ylabel(`myla') ///
+	ytitle("Probability of voting for corrupt candidate (%)" " ") ///
+	xtitle(" " "Candidate profile") ///
+	yline(.5, lstyle(grid)) ///
+	xlabel(, labsize(small)) ///
+	xsize(6.6) ysize(3) ///
+	color(midblue) ciopts(lcolor(gs10))
+
+* Export plot
+graph export "${export}/mv_margins_illicit.pdf", replace
+
+********************************************************************************
+* Define categories: Chauchard, Klasnja, and Harish
+********************************************************************************
+use "${import}/chauchard_klasnja_harish.dta", replace
+
+* Pool corruption into one treatment
+gen corrupt = 0
+replace corrupt = 1 if legal == 2
+keep if legal == 2 | legal == 3
+
+* Create categories
+gen category = .
+replace category = 1 if corrupt == 1 & record == 2 & out_party == 1 & co_ethn_dummy == 0
+replace category = 2 if corrupt == 1 & record == 1 & out_party == 1 & co_ethn_dummy == 0
+
+replace category = 3 if corrupt == 1 & record == 2 & out_party == 0 & co_ethn_dummy == 0
+replace category = 4 if corrupt == 1 & record == 1 & out_party == 0 & co_ethn_dummy == 0
+
+replace category = 5 if corrupt == 1 & record == 2 & out_party == 0 & co_ethn_dummy == 1
+replace category = 6 if corrupt == 1 & record == 1 & out_party == 0 & co_ethn_dummy == 1
+
+* Name categories
+label define category ////
+		1 `" "Bad performance" "Different party" "Not coethnic" "' ////
+		2 `" "Good performance" "Different party" "Not coethnic" "' ////
+		3 `" "Bad performance" "Copartisan" "Not coethnic" "' ////
+		4 `" "Good performance" "Copartisan" "Not coethnic" "' ////	
+		5 `" "Bad performance" "Copartisan" "Coethnic" "' ////
+		6 `" "Good performance" "Copartisan" "Coethnic" "' ////
 
 label val category category
 
 ********************************************************************************
 * Calculate marginal effects
 ********************************************************************************
-reg outcome i.category, cl(idnum)
+reg dv_vote i.category, cl(id)
 margins category
 
 ********************************************************************************
@@ -304,7 +439,5 @@ coefplot (matrix(plot[1,])), ci((plot[5,] plot[6,])) ///
 	color(midblue) ciopts(lcolor(gs10))
 
 * Export plot
-graph export "${export}/mv_margins.pdf", replace
-
-
+graph export "${export}/ckh_margins.pdf", replace
 
