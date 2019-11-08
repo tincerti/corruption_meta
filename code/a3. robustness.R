@@ -32,7 +32,7 @@ field = meta %>%
 re_field = rma.uni(yi = ate_vote, sei = se_vote, data = field)
 
 # Fixed effects model
-fe_field = rma.uni(yi = ate_vote, sei = se_vote, weights = N,
+fe_field = rma.uni(yi = ate_vote, sei = se_vote, weighted = TRUE,
                    method = "FE", data = field)
 
 ################################################################################
@@ -141,7 +141,7 @@ survey$se_vote = with(survey, ifelse(is.na(se_vote),
 re_survey = rma.uni(yi = ate_vote, sei = se_vote, data = survey)
 
 # Fixed effects model: weighted
-fe_survey = rma.uni(yi = ate_vote, sei = se_vote, weights = N,
+fe_survey = rma.uni(yi = ate_vote, sei = se_vote, weighted = TRUE,
                    method = "FE", data = survey)
 
 ################################################################################
@@ -225,7 +225,7 @@ ggplot(survey, aes(ate_vote, author_reduced)) +
 ggsave("figs/survey_defig.pdf", height = 4, width = 6)
 
 ################################################################################
-# Conduct moderator analysis excluding Banarjee et. al studies
+# Conduct moderator analysis excluding Banerjee et. al studies
 ################################################################################
 meta$field = with(meta, ifelse(type == "Field" | type == "Natural", 1, 0))
 meta$survey = with(meta, ifelse(type == "Survey", 1, 0))
@@ -239,7 +239,8 @@ meta = meta %>%
   mutate(author_reduced = reorder(author_reduced, -ate_vote))
 
 # Fixed effects model without moderators
-fe = rma.uni(yi = ate_vote, sei = se_vote, data = meta, method = "FE")
+fe = rma.uni(yi = ate_vote, sei = se_vote, weighted = TRUE, 
+             data = meta, method = "FE")
 
 # Random effects model without moderators
 re = rma(yi = ate_vote, sei = se_vote, data = meta)

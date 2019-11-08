@@ -37,10 +37,10 @@ re_field = rma.uni(yi = ate_vote, sei = se_vote, data = field)
 re_survey = rma.uni(yi = ate_vote, sei = se_vote, data = survey)
 
 # Fixed effects model
-fe_field = rma.uni(yi = ate_vote, sei = se_vote, weights = N,
+fe_field = rma.uni(yi = ate_vote, sei = se_vote, weighted = TRUE,
                    method = "FE", data = field)
 
-fe_survey = rma.uni(yi = ate_vote, sei = se_vote, weights = N,
+fe_survey = rma.uni(yi = ate_vote, sei = se_vote, weighted = TRUE,
                    method = "FE", data = survey)
 
 ################################################################################
@@ -93,7 +93,7 @@ Estimate = c(round(fe_field$beta[1], 3),
              round(fe_survey$beta[1], 3), 
              paste0("(", format(unlist(round(fe_survey$se, 3))),")"), 
              round(re_survey$beta[1], 3), 
-             paste0("(", format(unlist(round(fe_survey$se, 3))),")"))
+             paste0("(", format(unlist(round(re_survey$se, 3))),")"))
 
 meta_type = data.frame(Value, Estimate)
 
