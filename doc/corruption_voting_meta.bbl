@@ -117,7 +117,7 @@ Camerer, Colin. 2011.
 \harvarditem[Chauchard, Kla{\v{s}}nja \harvardand\ Harish]{Chauchard,
   Kla{\v{s}}nja \harvardand\ Harish}{2019}{chauchard2019getting}
 Chauchard, Simon, Marko Kla{\v{s}}nja \harvardand\ SP Harish. 2019.
-\newblock ``Getting Rich Too Fast? Voters? Reactions to Politicians? Wealth
+\newblock ``Getting Rich Too Fast? Voters' Reactions to Politicians' Wealth
   Accumulation.'' {\em The Journal of Politics} 81(4):1197--1209.
 
 \harvarditem[Chong et~al.]{Chong, De~La~O, Karlan \harvardand\
@@ -146,6 +146,7 @@ De~Figueiredo, Miguel~FP, F~Daniel Hidalgo \harvardand\ Yuri Kasahara. 2011.
 De~la Cuesta, Brandon, Naoki Egami \harvardand\ Kosuke Imai. 2019.
 \newblock ``Improving the External Validity of Conjoint Analysis: The Essential
   Role of Profile Distribution.'' {\em Working Paper} .
+\newline\harvardurl{\url{https://imai.fas.harvard.edu/research/files/conjoint.pdf}}
 
 \harvarditem{De~Vries \harvardand\ Solaz}{2017}{de2017electoral}
 De~Vries, Catherine~E \harvardand\ Hector Solaz. 2017.
@@ -178,16 +179,6 @@ Franchino, Fabio \harvardand\ Francesco Zucchini. 2015.
   valence and ideology attributes of candidates.'' {\em Political Science
   Research and Methods} 3(2):221--241.
 
-\harvarditem{Gerber \harvardand\ Green}{2000}{gerber2000effects}
-Gerber, Alan~S \harvardand\ Donald~P Green. 2000.
-\newblock ``The effects of canvassing, telephone calls, and direct mail on
-  voter turnout: A field experiment.'' {\em American political science review}
-  94(3):653--663.
-
-\harvarditem{Gray \harvardand\ Kaufman}{1998}{gray1998corruption}
-Gray, Cheryl~W \harvardand\ Daniel Kaufman. 1998.
-\newblock ``Corruption and development.''.
-
 \harvarditem[Green et~al.]{Green, Zelizer, Kirby
   et~al.}{2018}{green2018publicizing}
 Green, Donald~P, Adam Zelizer, David Kirby et~al. 2018.
@@ -198,13 +189,6 @@ Green, Donald~P, Adam Zelizer, David Kirby et~al. 2018.
 Green, Donald~P \harvardand\ Alan~S Gerber. 2019.
 \newblock {\em Get out the vote: How to increase voter turnout}.
 \newblock Brookings Institution Press.
-
-\harvarditem[Green, Gerber \harvardand\ Nickerson]{Green, Gerber \harvardand\
-  Nickerson}{2003}{green2003getting}
-Green, Donald~P, Alan~S Gerber \harvardand\ David~W Nickerson. 2003.
-\newblock ``Getting out the vote in local elections: Results from six
-  door-to-door canvassing experiments.'' {\em Journal of Politics}
-  65(4):1083--1096.
 
 \harvarditem[Hainmueller, Hopkins \harvardand\ Yamamoto]{Hainmueller, Hopkins
   \harvardand\ Yamamoto}{2014}{hainmueller2014causal}
@@ -224,6 +208,7 @@ Hainmueller, Jens, Dominik Hangartner \harvardand\ Teppei Yamamoto. 2015.
   \harvardand\ Yamamoto}{2018}{horiuchi2018can}
 Horiuchi, Yusaku, Zachary~D Markovich \harvardand\ Teppei Yamamoto. 2018.
 \newblock ``Can Conjoint Analysis Mitigate Social Desirability Bias?''.
+\newline\harvardurl{\url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3219323}}
 
 \harvarditem{Kalla \harvardand\ Broockman}{2018}{kalla2018minimal}
 Kalla, Joshua~L \harvardand\ David~E Broockman. 2018.
@@ -239,7 +224,9 @@ Kla{\v{s}}nja, Marko \harvardand\ Joshua~A Tucker. 2013.
 \harvarditem[Kla{\v{s}}nja, Lupu \harvardand\ Tucker]{Kla{\v{s}}nja, Lupu
   \harvardand\ Tucker}{2017}{klavsnja2017voters}
 Kla{\v{s}}nja, Marko, Noam Lupu \harvardand\ Joshua~A Tucker. 2017.
-\newblock ``When Do Voters Sanction Corrupt Politicians?''.
+\newblock ``When Do Voters Sanction Corrupt Politicians?'' {\em Working paper}
+  .
+\newline\harvardurl{\url{http://noamlupu.com/corruption_sanction.pdf}}
 
 \harvarditem{Kolstad \harvardand\ Wiig}{2009}{kolstad2009transparency}
 Kolstad, Ivar \harvardand\ Arne Wiig. 2009.
@@ -275,6 +262,7 @@ Mu{\~n}oz, Jordi, Eva Anduiza \harvardand\ Aina Gallego. 2012.
 \newblock Why do voters forgive corrupt politicians? Cynicism, noise and
   implicit exchange.  In {\em International Political Science Association
   Conference, Madrid, Spain}.
+\newline\harvardurl{\url{https://www.researchgate.net/profile/Eva_Anduiza/publication/268056601_Why_do_voters_forgive_corrupt_politicians_Cynicism_noise_and_implicit_exchange/links/54677eb30cf2f5eb18036b4d.pdf}}
 
 \harvarditem{Philp \harvardand\ David-Barrett}{2015}{philp2015realism}
 Philp, Mark \harvardand\ Elizabeth David-Barrett. 2015.
@@ -285,6 +273,7 @@ Philp, Mark \harvardand\ Elizabeth David-Barrett. 2015.
 Rogers, Todd \harvardand\ David Nickerson. 2013.
 \newblock ``Can Inaccurate Beliefs About Incumbents be Changed? And Can
   Reframing Change Votes?''.
+\newline\harvardurl{\url{https://research.hks.harvard.edu/publications/getFile.aspx?Id=941}}
 
 \harvarditem{Rose-Ackerman \harvardand\ Palifka}{2016}{rose2016corruption}
 Rose-Ackerman, Susan \harvardand\ Bonnie~J Palifka. 2016.
@@ -302,6 +291,7 @@ Rundquist, Barry~S, Gerald~S Strom \harvardand\ John~G Peters. 1977.
 Simonsohn, Uri, Joseph~P Simmons \harvardand\ Leif~D Nelson. 2015.
 \newblock ``Better P-curves: Making P-curve analysis more robust to errors,
   fraud, and ambitious P-hacking, a Reply to Ulrich and Miller (2015).''.
+\newline\harvardurl{\url{https://repository.upenn.edu/fnce_papers/62/}}
 
 \harvarditem[Simonsohn, Nelson \harvardand\ Simmons]{Simonsohn, Nelson
   \harvardand\ Simmons}{2014{\em a}}{simonsohn2014p1}
@@ -379,7 +369,7 @@ Winters, Matthew~S \harvardand\ Rebecca Weitz-Shapiro. 2015.
 
 \harvarditem{Winters \harvardand\ Weitz-Shapiro}{2016}{winters2016s}
 Winters, Matthew~S \harvardand\ Rebecca Weitz-Shapiro. 2016.
-\newblock ``Who?s in charge here? Direct and indirect accusations and voter
+\newblock ``Who's in charge here? Direct and indirect accusations and voter
   punishment of corruption.'' {\em Political Research Quarterly}
   69(2):207--219.
 
