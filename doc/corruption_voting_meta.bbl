@@ -1,5 +1,12 @@
 \begin{thebibliography}{xx}
 
+\harvarditem[Abramson, Ko{\c{c}}ak \harvardand\ Magazinnik]{Abramson,
+  Ko{\c{c}}ak \harvardand\ Magazinnik}{2019}{abramson2019what}
+Abramson, Scott~F, Korhan Ko{\c{c}}ak \harvardand\ Asya Magazinnik. 2019.
+\newblock ``What Do We Learn About Voter Preferences From Conjoint
+  Experiments?'' {\em Working paper} .
+\newline\harvardurl{\url{https://scholar.princeton.edu/sites/default/files/kkocak/files/conjoint_draft.pdf}}
+
 \harvarditem[Adida et~al.]{Adida, Gottlieb, Kramon \harvardand\
   McClendon}{2019}{adidaunder}
 Adida, Claire, Jessica Gottlieb, Eric Kramon \harvardand\ Gwyneth McClendon.
@@ -255,6 +262,12 @@ Loomis, John. 2011.
 Mares, Isabela \harvardand\ Giancarlo Visconti. 2019.
 \newblock ``Voting for the lesser evil: Evidence from a conjoint experiment in
   Romania.'' {\em Political Science Research and Methods} .
+
+\harvarditem{McDonald}{2019}{mcdonald2019avoiding}
+McDonald, Jared. 2019.
+\newblock ``Avoiding the Hypothetical: Why ?Mirror Experiments? are an
+  Essential Part of Survey Research.'' {\em International Journal of Public
+  Opinion Research} .
 
 \harvarditem[Mu{\~n}oz, Anduiza \harvardand\ Gallego]{Mu{\~n}oz, Anduiza
   \harvardand\ Gallego}{2012}{munoz2012voters}
