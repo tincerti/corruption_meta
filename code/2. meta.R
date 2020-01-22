@@ -78,25 +78,44 @@ het_accounted = sapply(het_accounted,
                        function(x)paste0(round(x*100, 3),"%",collapse="%"))
 
 ################################################################################
-# Export models
+# Export models: primary results
 ################################################################################
-# Export primary results - field and survey separately
-Value = c("Field: weighted fixed effects ", "" ,
-          "Field: random effects", "" ,
-          "Survey: weighted fixed effects ", "" ,
-          "Survey: random effects", "")
+# Create row labels
+Value = 
+  c("Field: weighted fixed effects ", 
+    "" ,
+    "Field: random effects", 
+    "" ,
+    "Survey: weighted fixed effects ", 
+    "" ,
+    "Survey: random effects", "")
 
-Estimate = c(round(fe_field$beta[1], 3), 
-             paste0("(", format(unlist(round(fe_field$se, 3))),")"), 
-             round(re_field$beta[1], 3), 
-             paste0("(", format(unlist(round(re_field$se, 3))),")"),
-             round(fe_survey$beta[1], 3), 
-             paste0("(", format(unlist(round(fe_survey$se, 3))),")"), 
-             round(re_survey$beta[1], 3), 
-             paste0("(", format(unlist(round(re_survey$se, 3))),")"))
+# Populate rows with point estimates and standard errors
+Estimate = 
+  c(round(fe_field$beta[1], 3), 
+    paste0("(", format(unlist(round(fe_field$se, 3))),")"), 
+    round(re_field$beta[1], 3), 
+    paste0("(", format(unlist(round(re_field$se, 3))),")"),
+    round(fe_survey$beta[1], 3), 
+    paste0("(", format(unlist(round(fe_survey$se, 3))),")"), 
+    round(re_survey$beta[1], 3), 
+    paste0("(", format(unlist(round(re_survey$se, 3))),")"))
 
-meta_type = data.frame(Value, Estimate)
+# Create confidence intervals
+`95% CI` = 
+  c(paste0(round(fe_field$ci.lb, 3), " to ", round(fe_field$ci.ub, 3)),
+    "", 
+    paste0(round(re_field$ci.lb, 3), " to ", round(re_field$ci.ub, 3)),
+    "",
+    paste0(round(fe_survey$ci.lb, 3), " to ", round(fe_survey$ci.ub, 3)),
+    "", 
+    paste0(round(re_survey$ci.lb, 3), " to ", round(re_survey$ci.ub, 3)),
+    "")
 
+# Combine into dataframe
+meta_type = data.frame(Value, Estimate, `95% CI`, check.names = FALSE)
+
+# Export using stargazer
 stargazer(meta_type,
           out = "figs/meta_estimates.tex",
           title= "Meta-analysis by type of experiment",
@@ -107,18 +126,33 @@ stargazer(meta_type,
           notes = "\\parbox[t]{\\textwidth}{\\footnotesize \\textit{Note:} Standard errors in parenthesis. Figures rounded to nearest thousandth decimal place.}"
           )
 
-# Export results of random effects model without moderator
-Value = c("Estimate", "" ,
-          "Estimated total heterogeneity", "")
+################################################################################
+# Export models: random effects model without moderator
+################################################################################
+# Create row labels
+Value = c("Estimate", "" , "Estimated total heterogeneity", "")
 
+# Populate rows with point estimates and standard errors
 se = paste0("(", format(unlist(round(re$se, 3))),")")
 se.tau2 = paste0("(", format(unlist(round(re$se.tau2, 3))),")")
 
-Estimate = c(round(re$beta[1], 3), se[1], 
-             round(re$tau2[1], 3), se.tau2)
+Estimate = c(round(re$beta[1], 3), 
+             se[1], 
+             round(re$tau2[1], 3), 
+             se.tau2)
 
-re_out = data.frame(Value, Estimate)
+# Create confidence intervals
+`95% CI` = 
+  c(paste0(round(re$ci.lb, 3), " to ", round(re$ci.ub, 3)),
+    "",
+    paste0(round(re$tau2 - (1.96 * re$se.tau2), 3), " to ", 
+           round(re$tau2 + (1.96 * re$se.tau2), 3)),
+    "")
 
+# Combine into dataframe
+re_out = data.frame(Value, Estimate, `95% CI`, check.names = FALSE)
+
+# Export using stargazer
 stargazer(re_out,
           out = "figs/re_out.tex",
           title= "Random effects meta-analysis (all studies)",
@@ -129,12 +163,20 @@ stargazer(re_out,
           notes = "\\parbox[t]{\\textwidth}{\\footnotesize \\textit{Note:} Standard errors in parenthesis. Figures rounded to nearest thousandth decimal place.}"
           )
 
-# Export results of moderated model
-Value = c("Constant", "" ,
-          "Survey experiment moderator", "",
-          "Residual heterogenity with moderator", "",
-          "Heterogenity accounted for", "")
+################################################################################
+# Export models: moderated model
+################################################################################
+# Create row labels
+Value = 
+  c("Constant", 
+    "" ,
+    "Survey experiment moderator", 
+    "",
+    "Residual heterogenity with moderator", 
+    "",
+    "Heterogenity accounted for", "")
 
+# Populate rows with point estimates and standard errors
 se = paste0("(", format(unlist(round(me_mod$se, 3))),")")
 se.tau2 = paste0("(", format(unlist(round(me_mod$se.tau2, 3))),")")
 
@@ -142,8 +184,23 @@ Estimate = c(round(me_mod$beta[1], 3), se[1],
              round(me_mod$beta[2], 3), se[2],
              round(me_mod$tau2[1], 3), se.tau2,
              het_accounted, "")
-me_mod_out = data.frame(Value, Estimate)
 
+# Create confidence intervals
+`95% CI` = 
+  c(paste0(round(me_mod$ci.lb[1], 3), " to ", round(me_mod$ci.ub[1], 3)),
+    "",
+    paste0(round(me_mod$ci.lb[2], 3), " to ", round(me_mod$ci.ub[2], 3)),
+    "",
+    paste0(round(me_mod$tau2 - (1.96 * me_mod$se.tau2), 3), " to ", 
+           round(me_mod$tau2 + (1.96 * me_mod$se.tau2), 3)),
+    "",
+    "",
+    "")
+
+# Combine into dataframe
+me_mod_out = data.frame(Value, Estimate, `95% CI`, check.names = FALSE)
+
+# Export using stargazer
 stargazer(me_mod_out,
           out = "figs/me_mod_out.tex",
           title= "Mixed effects meta-analysis with survey experiment moderator",
