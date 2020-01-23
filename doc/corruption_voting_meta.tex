@@ -296,11 +296,11 @@ What accounts for the large difference in treatment effects between field and su
 
 Of the eight field experimental papers located, only five are published. By contrast, for survey experiments only one of the 15 papers remains unpublished, and this is a recent draft. This may reflect that the null results from field experiments are less likely to be published than their survey counterparts with large and highly significant negative treatment effects, even when standard errors are relatively small. While recognizing that the sample size of studies is small, OLS and logistic regression do not indicate that reported p-value is a significant predictor of publication status, although the directionality of coefficients is consistent with lower p-values being more likely to be published (\autoref{p_publication}). However, this simple analysis is complicated by the fact that the p-value associated with the average treatment effect across all subjects may not be the primary p-value of interest in the paper. 
 
-In order to more formally test for publication bias, I first use the p-curve \citep{simonsohn2014p1, simonsohn2014p2, simonsohn2015better}. The p-curve is based on the premise that only ``significant'' results are typically published, and depicts the distribution of statistically significant p-values for a set of published studies. The shape of the p-curve is indicative of whether or not the results of a set of studies are derived from true effects, or from publication bias. If effect sizes are clustered around 0.05 (i.e. the p-curve is ``left skewed''), this may be evidence of p-hacking, indicating that studies with p-values just below 0.05 are ``selectively reported.'' If the p-curve is ``right skewed'' and there are more low p-values (0.01), this is evidence of true effects. All significant survey experimental results included in the meta-analysis are significant at the 1\% level (making construction of a ``curve'' with bins of width 0.01 impossible), implying that publication bias likely does not explain the large negative treatment effects in survey experiments.\footnote{There is also no indication of publication bias at the 1\% level using this method.} For field experiments, there is not a large enough number of published experiments to make the p-curve viable. Only six studies are published, and of these only four are significant at at least the 5\% level.
+In order to more formally test for publication bias, I first use the p-curve \citep{simonsohn2014p1, simonsohn2014p2, simonsohn2015better}. The p-curve is based on the premise that only ``significant'' results are typically published, and depicts the distribution of statistically significant p-values for a set of published studies. The shape of the p-curve is indicative of whether or not the results of a set of studies are derived from true effects, or from publication bias. If effect sizes are clustered around 0.05 (i.e. the p-curve is ``left skewed''), this may be evidence of p-hacking, indicating that studies with p-values just below 0.05 are ``selectively reported.'' If the p-curve is ``right skewed'' and there are more low p-values (0.01), this is evidence of true effects. All significant survey experimental results included in the meta-analysis are significant at the 1\% level (making construction of a ``curve'' with bins of width 0.01 impossible),\footnote{See \autoref{p_study} for a list of p-values associated with each study that would populate such a p-curve.} implying that publication bias likely does not explain the large negative treatment effects in survey experiments.\footnote{There is also no indication of publication bias at the 1\% level using this method.} For field experiments, there is not a large enough number of published experiments to make the p-curve viable. Only six studies are published, and of these only four are significant at at least the 5\% level.
 
 Next, I test for publication bias by examining funnel plot asymmetry. A funnel plot depicts the outcomes from each study on the x-axis and their corresponding standard errors on the y-axis. The chart is overlaid with an inverted triangular confidence interval region (i.e. the ``funnel"), which should contain 95\% of the studies if there is no bias or between study heterogeneity. If studies with insignificant results remain unpublished the funnel plot may be asymmetric. Both visual inspection and regression tests of funnel plot asymmetry reveal an asymmetric funnel plot when survey and field experiments are grouped together (see \autoref{fig: funnel_re_all} and \autoref{tab: funnel}). However, this asymmetry disappears when accounting for heterogeneity by type of experiment, either with the inclusion of a survey experiment moderator (dummy) variable or by analyzing field and survey experiments separately (see \autoref{fig: funnel_all_mod}, \autoref{fig: funnel_re_field}, \autoref{fig: funnel_re_survey}, and \autoref{tab: funnel}). 
 
-In sum, while publication bias cannot be ruled out completely--particularly with such a small sample size of field experiments---there is no smoking gun. This implies that differences in experimental design likely account for the difference in the magnitude of treatment effects in field versus survey experiments, rather than publication bias.
+In sum, while publication bias cannot be ruled out completely---particularly with such a small sample size of field experiments---there is no smoking gun. This implies that differences in experimental design likely account for the difference in the magnitude of treatment effects in field versus survey experiments, rather than publication bias.
 
 
 \subsection{Social desirability bias and hypothetical bias}\label{sec: sdb}
@@ -539,6 +539,8 @@ These findings suggest that while candidate choice survey experiments may provid
 
 \subsection{Publication bias}
 
+\input{../figs/p_values_all}
+
 \input{../figs/published.tex}
 
 \vspace{1cm}
@@ -550,15 +552,15 @@ These findings suggest that while candidate choice survey experiments may provid
 \begin{figure}[!htb]
 \begin{centering}
 \includegraphics[scale=0.57]{../figs/funnel_re_all.pdf}
-\vspace{0.2cm}
+\vspace{0.1cm}
 \caption{Funnel plot: all experiments}.
 \small
-\vspace{-0.3cm}
+\vspace{-0.8cm}
 \label{fig: funnel_re_all}
 \end{centering}
 \end{figure}
 
-\vspace{-1.3cm}
+%\vspace{-1cm}
 
 \begin{figure}[!htb]
 \begin{centering}
@@ -566,14 +568,13 @@ These findings suggest that while candidate choice survey experiments may provid
 \vspace{0.2cm}
 \caption{Funnel plot: all experiments with field experiment moderator}.
 \small
-\vspace{-0.3cm}
+\vspace{-0.5cm}
 \label{fig: funnel_all_mod}
 \end{centering}
 \end{figure}
 
 \begin{figure}[!htb]
 \begin{centering}
-
 \includegraphics[scale=0.57]{../figs/funnel_re_field.pdf}
 \vspace{0.2cm}
 \caption{Funnel plot: field experiments}.

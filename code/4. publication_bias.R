@@ -129,7 +129,8 @@ p_curve$p = as.factor(p_curve$p_curve)
 p_curve$percent = p_curve$count / sum(p_curve$count)
 
 # Plot p values
-ggplot(p_curve) +
+pcurve_survey = 
+  ggplot(p_curve) +
   geom_point(aes(p_curve, percent, group = 1), 
              color = "steelblue2", size = 1.5) + 
   geom_line(aes(p, percent, group = 1), color = "grey70") +
@@ -153,7 +154,8 @@ p_curve$p = as.factor(p_curve$p_curve)
 p_curve$percent = p_curve$count / sum(p_curve$count)
 
 # Plot p values
-ggplot(p_curve) +
+pcurve_field
+  ggplot(p_curve) +
   geom_point(aes(p_curve, percent, group = 1), 
              color = "steelblue2", size = 1.5) + 
   geom_line(aes(p, percent, group = 1), color = "grey70") +
@@ -161,6 +163,49 @@ ggplot(p_curve) +
   ylab("Share of studies below p-value (%)") + 
   scale_y_continuous(labels = scales::percent, limits = c(0, 1), breaks=seq(0,1,.1)) +
   theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme(axis.text=element_text(size = 8)) +
+  theme(axis.text.x = element_text(size = 8)) +
+  theme(legend.position = "none")
+  
+################################################################################
+# Create table of all p-values because of p-curve issues
+################################################################################
+# Clean and compile data frame
+p_table = meta %>% 
+  select(author_reduced, type, ate_vote, p_reported) %>%
+  arrange(p_reported) %>%
+  mutate(ate_vote = round(ate_vote * 100, 2)) %>%
+  mutate(author_reduced = as.character(author_reduced)) %>%
+  rename(Study = author_reduced, `Experiment Type` = type,
+         `Average Treatment Effect` = ate_vote, `P value` = p_reported)
+  
+# Clean strings for export
+p_table$Study = gsub("&", "and", p_table$Study)
+  
+# Output table using stargazer
+stargazer(p_table,
+          out = "figs/p_values_all.tex",
+          title= "P-values by study",
+          label = "p_study",
+          digits = 3,
+          #column.sep.width = "30pt",
+          rownames = FALSE, 
+          summary = FALSE
+          )
+  
+################################################################################
+# Plot all p-values because of p-curve issues
+################################################################################
+meta$p = as.numeric(meta$p)
+  
+ggplot(meta, aes(x = p, y = author_reduced)) +
+  geom_point(color = "steelblue2", size = 1) + 
+  #geom_text(aes(label = country, x = 25, y = author_reduced), size = 3) +
+  xlab("Reported p-value") + 
+  scale_x_continuous(breaks = seq(from = 0, to = 1, by = 0.01)) +
+  theme_classic() +
+  theme(axis.title.y=element_blank()) +
   theme(plot.title = element_text(hjust = 0.5)) +
   theme(axis.text=element_text(size = 8)) +
   theme(axis.text.x = element_text(size = 8)) +
