@@ -117,13 +117,13 @@ stargazer(regtest, summary = FALSE, rownames = FALSE,
 # Trim and fill
 ################################################################################
 # Perform trim and fill analysis
-trimfill = trimfill(re)
+trimfill_all = trimfill(re)
 funnel(trimfill)
-trimfill(re_field)
-trimfill(re_survey)
+trimfill_field = trimfill(re_field)
+trimfill_survey = trimfill(re_survey)
 
 # Export funnel plot with trimfill method
-funnel(trimfill, 
+funnel(trimfill_all, 
           back = "grey95", col = "steelblue2",
           digits = c(1,2))
 
@@ -133,44 +133,39 @@ dev.off()
 # Export tables of trim and fill estimates 
 # Create row labels
 Value = 
-  c("Field: weighted fixed effects ", 
-    "" ,
+  c("All experiments: random effects ", 
+    "",
     "Field: random effects", 
-    "" ,
-    "Survey: weighted fixed effects ", 
-    "" ,
-    "Survey: random effects", "")
+    "",
+    "Survey: random effects", 
+    "")
 
 # Populate rows with point estimates and standard errors
 Estimate = 
-  c(round(fe_field$beta[1], 3), 
-    paste0("(", format(unlist(round(fe_field$se, 3))),")"), 
-    round(re_field$beta[1], 3), 
-    paste0("(", format(unlist(round(re_field$se, 3))),")"),
-    round(fe_survey$beta[1], 3), 
-    paste0("(", format(unlist(round(fe_survey$se, 3))),")"), 
-    round(re_survey$beta[1], 3), 
-    paste0("(", format(unlist(round(re_survey$se, 3))),")"))
+  c(round(trimfill_all$beta[1], 3), 
+    paste0("(", format(unlist(round(trimfill_all$se, 3))),")"), 
+    round(trimfill_field$beta[1], 3), 
+    paste0("(", format(unlist(round(trimfill_field$se, 3))),")"),
+    round(trimfill_survey$beta[1], 3), 
+    paste0("(", format(unlist(round(trimfill_survey$se, 3))),")"))
 
 # Create confidence intervals
 `95% CI` = 
-  c(paste0(round(fe_field$ci.lb, 3), " to ", round(fe_field$ci.ub, 3)),
+  c(paste0(round(trimfill_all$ci.lb, 3), " to ", round(trimfill_all$ci.ub, 3)),
     "", 
-    paste0(round(re_field$ci.lb, 3), " to ", round(re_field$ci.ub, 3)),
+    paste0(round(trimfill_field$ci.lb, 3), " to ", round(trimfill_field$ci.ub, 3)),
     "",
-    paste0(round(fe_survey$ci.lb, 3), " to ", round(fe_survey$ci.ub, 3)),
-    "", 
-    paste0(round(re_survey$ci.lb, 3), " to ", round(re_survey$ci.ub, 3)),
+    paste0(round(trimfill_survey$ci.lb, 3), " to ", round(trimfill_survey$ci.ub, 3)),
     "")
 
 # Combine into dataframe
-meta_type = data.frame(Value, Estimate, `95% CI`, check.names = FALSE)
+trimfill_df = data.frame(Value, Estimate, `95% CI`, check.names = FALSE)
 
 # Export using stargazer
-stargazer(meta_type,
-          out = "figs/meta_estimates.tex",
-          title= "Meta-analysis by type of experiment",
-          label = "meta_type",
+stargazer(trimfill_df,
+          out = "figs/trimfill.tex",
+          title= "Trim and fill estimates by subgroup",
+          label = "trimfill",
           digits = 3,
           column.sep.width = "30pt",
           rownames = FALSE, 
