@@ -7,9 +7,6 @@ rm(list=ls())
 library(tidyverse)
 library(metafor)
 library(stargazer)
-library(gridExtra)
-library(ggplotify)
-library(glmnet)
 
 # Do not display numeric values in scientific notation
 options(scipen = 999)
@@ -115,6 +112,20 @@ stargazer(regtest, summary = FALSE, rownames = FALSE,
           title= "Regression tests for funnel plot asymmetry",
           label = "tab: funnel",
           column.sep.width = "5cm")
+
+# Trim and fill
+trimfill = trimfill(re)
+funnel(trimfill)
+trimfill(re_field)
+trimfill(re_survey)
+
+# Export funnel plot with trimfill method
+funnel(trimfill, 
+          back = "grey95", col = "steelblue2",
+          digits = c(1,2))
+
+dev.copy(pdf,'figs/funnel_trimfill.pdf')
+dev.off()
 
 ################################################################################
 # P-curve: survey experiments

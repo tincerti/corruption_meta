@@ -67,6 +67,8 @@ fe = rma.uni(yi = ate_vote, sei = se_vote, data = meta, method = "FE")
 # Random effects model without moderators
 re = rma(yi = ate_vote, sei = se_vote, data = meta)
 het_total = re$tau2 # Estimate of total amount of heterogeneity
+confint(re)
+leave1out(re, digits = 3)
 
 # Mixed effects model with survey moderator
 me_mod = rma(yi = ate_vote, sei = se_vote, mods = survey, data = meta)
