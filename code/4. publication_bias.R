@@ -113,7 +113,10 @@ stargazer(regtest, summary = FALSE, rownames = FALSE,
           label = "tab: funnel",
           column.sep.width = "5cm")
 
+################################################################################
 # Trim and fill
+################################################################################
+# Perform trim and fill analysis
 trimfill = trimfill(re)
 funnel(trimfill)
 trimfill(re_field)
@@ -126,6 +129,54 @@ funnel(trimfill,
 
 dev.copy(pdf,'figs/funnel_trimfill.pdf')
 dev.off()
+
+# Export tables of trim and fill estimates 
+# Create row labels
+Value = 
+  c("Field: weighted fixed effects ", 
+    "" ,
+    "Field: random effects", 
+    "" ,
+    "Survey: weighted fixed effects ", 
+    "" ,
+    "Survey: random effects", "")
+
+# Populate rows with point estimates and standard errors
+Estimate = 
+  c(round(fe_field$beta[1], 3), 
+    paste0("(", format(unlist(round(fe_field$se, 3))),")"), 
+    round(re_field$beta[1], 3), 
+    paste0("(", format(unlist(round(re_field$se, 3))),")"),
+    round(fe_survey$beta[1], 3), 
+    paste0("(", format(unlist(round(fe_survey$se, 3))),")"), 
+    round(re_survey$beta[1], 3), 
+    paste0("(", format(unlist(round(re_survey$se, 3))),")"))
+
+# Create confidence intervals
+`95% CI` = 
+  c(paste0(round(fe_field$ci.lb, 3), " to ", round(fe_field$ci.ub, 3)),
+    "", 
+    paste0(round(re_field$ci.lb, 3), " to ", round(re_field$ci.ub, 3)),
+    "",
+    paste0(round(fe_survey$ci.lb, 3), " to ", round(fe_survey$ci.ub, 3)),
+    "", 
+    paste0(round(re_survey$ci.lb, 3), " to ", round(re_survey$ci.ub, 3)),
+    "")
+
+# Combine into dataframe
+meta_type = data.frame(Value, Estimate, `95% CI`, check.names = FALSE)
+
+# Export using stargazer
+stargazer(meta_type,
+          out = "figs/meta_estimates.tex",
+          title= "Meta-analysis by type of experiment",
+          label = "meta_type",
+          digits = 3,
+          column.sep.width = "30pt",
+          rownames = FALSE, 
+          summary = FALSE,
+          notes = "\\parbox[t]{\\textwidth}{\\footnotesize \\textit{Note:} Standard errors in parenthesis. Figures rounded to nearest thousandth decimal place.}"
+          )
 
 ################################################################################
 # P-curve: survey experiments
