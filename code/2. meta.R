@@ -133,16 +133,23 @@ stargazer(meta_type,
 # Export models: random effects model without moderator
 ################################################################################
 # Create row labels
-Value = c("Estimate", "" , "Estimated total heterogeneity", "")
+Value = 
+  c("Estimate", 
+    "" ,
+    "Estimated total heterogeneity", 
+    "",
+    "$I^2$")
 
 # Populate rows with point estimates and standard errors
 se = paste0("(", format(unlist(round(re$se, 3))),")")
 se.tau2 = paste0("(", format(unlist(round(re$se.tau2, 3))),")")
+I2 = sapply(re$I2, function(x)paste0(round(x, 3),"%",collapse="%"))
 
 Estimate = c(round(re$beta[1], 3), 
              se[1], 
              round(re$tau2[1], 3), 
-             se.tau2)
+             se.tau2,
+             I2)
 
 # Create confidence intervals
 `95% CI` = 
@@ -150,14 +157,15 @@ Estimate = c(round(re$beta[1], 3),
     "",
     paste0(round(re$tau2 - (1.96 * re$se.tau2), 3), " to ", 
            round(re$tau2 + (1.96 * re$se.tau2), 3)),
+    "",
     "")
 
 # Combine into dataframe
 re_out = data.frame(Value, Estimate, `95% CI`, check.names = FALSE)
 
 # Export using stargazer
-stargazer(re_out,
-          out = "figs/re_out.tex",
+re_table = stargazer(re_out,
+          #out = "figs/re_out.tex",
           title= "Random effects meta-analysis (all studies)",
           label = "re_model",
           digits = 3,
@@ -166,6 +174,8 @@ stargazer(re_out,
           summary = FALSE,
           notes = "\\parbox[t]{\\textwidth}{\\footnotesize \\textit{Note:} Standard errors in parenthesis. Figures rounded to nearest thousandth decimal place.}"
           )
+
+cat(re_table, sep = '\n', file = 'figs/re_out.tex')
 
 ################################################################################
 # Export models: moderated model
