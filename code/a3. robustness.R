@@ -284,19 +284,16 @@ het_accounted = sapply(het_accounted,
 Value = c("Estimate",
           "",
           "Estimated total heterogeneity", 
-          "",
-          "$I^2$")
+          "")
 
 # Populate rows with point estimates and standard errors
 se = paste0("(", format(unlist(round(re$se, 3))),")")
 se.tau2 = paste0("(", format(unlist(round(re$se.tau2, 3))),")")
-I2 = sapply(re$I2, function(x)paste0(round(x, 3),"%",collapse="%"))
 
 Estimate = c(round(re$beta[1], 3), 
              se[1], 
              round(re$tau2[1], 3), 
-             se.tau2,
-             I2)
+             se.tau2)
 
 # Create confidence intervals
 `95% CI` = 
@@ -304,15 +301,14 @@ Estimate = c(round(re$beta[1], 3),
     "",
     paste0(round(re$tau2 - (1.96 * re$se.tau2), 3), " to ", 
            round(re$tau2 + (1.96 * re$se.tau2), 3)),
-    "",
     "")
 
 # Combine into dataframe
 re_out = data.frame(Value, Estimate, `95% CI`, check.names = FALSE)
 
 # Export using stargazer
-re_table = stargazer(re_out,
-          #out = "figs/re_out_no_banerjee.tex",
+stargazer(re_out,
+          out = "figs/re_out_no_banerjee.tex",
           title= "Random effects meta-analysis (all studies excluding \\citet{banerjee2010can} and \\citet{banerjee2011informed})",
           label = "re_model_no_banerjee",
           digits = 3,
@@ -321,8 +317,6 @@ re_table = stargazer(re_out,
           summary = FALSE,
           notes = "\\parbox[t]{\\textwidth}{\\footnotesize \\textit{Note:} Standard errors in parenthesis. Figures rounded to nearest thousandth decimal place.}"
           )
-
-cat(re_table, sep = '\n', file = 'figs/re_out_no_banerjee.tex')
 
 ################################################################################
 # Export models: moderated model excluding Banerjee et. al studies
