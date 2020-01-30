@@ -15,18 +15,77 @@ options(scipen = 999)
 load(file="data/meta_results.RData")
 
 ################################################################################
+# Add reported p-values for remaining studies
+################################################################################
+# Arias et al. 
+meta$p_reported = with(meta, ifelse(author_reduced == "Arias et al.",
+                       2*pt(-abs(ate_vote/se_vote), df = N-1),
+                       p_reported))
+
+# Banerjee, Green, Green, and Pande
+meta$p_reported = with(meta, ifelse(author_reduced == "Banerjee et al. (2010)",
+                       2*pt(-abs(ate_vote/se_vote), df = N-1),
+                       p_reported))
+
+# Banerjee, Green, McManus, Pande
+meta$p_reported = with(meta, ifelse(author_reduced == "Banerjee et al.",
+                       2*pt(-abs(ate_vote/se_vote), df = N-1),
+                       p_reported))
+
+# Banerjee, Kumar, Pande & Su
+meta$p_reported = with(meta, ifelse(author_reduced == "Banerjee et al. (2011)",
+                       0.268,
+                       p_reported))
+
+# Boas, Hidalgo, & Melo
+meta$p_reported = with(meta, ifelse(author_reduced == "Boas et al.",
+                       2*pt(-abs(ate_vote/se_vote), df = N-1),
+                       p_reported))
+
+# Buntaine, Jablonski, Nielson & Pickering (Councillor)
+meta$p_reported = with(meta, ifelse(author_reduced == "Buntain et al. (Councillor)",
+                       0.015,
+                       p_reported))
+
+# Buntaine, Jablonski, Nielson & Pickering (Chair)
+meta$p_reported = with(meta, ifelse(author_reduced == "Buntain et al. (Chair)",
+                       0.754,
+                       p_reported))
+
+# Chong, De La O, Karlan & Leonard Wantchekon
+meta$p_reported = with(meta, ifelse(author_reduced == "Chong et al.",
+                       2*pt(-abs(ate_vote/se_vote), df = N-1),
+                       p_reported))
+
+# De Figueiredo, Hidalgo, & Kasahara (DEM/PFL)
+meta$p_reported = with(meta, ifelse(author_reduced == "De Figueiredo et al. (DEM/PFL)",
+                       2*pt(-abs(ate_vote/se_vote), df = N-1),
+                       p_reported))
+
+# De Figueiredo, Hidalgo, & Kasahara (PT)
+meta$p_reported = with(meta, ifelse(author_reduced == "De Figueiredo et al. (PT)",
+                       2*pt(-abs(ate_vote/se_vote), df = N-1),
+                       p_reported))
+
+# Ferraz and Finan
+meta$p_reported = with(meta, ifelse(author_reduced == "Ferraz and Finan",
+                       2*pt(-abs(ate_vote/se_vote), df = N-1),
+                       p_reported))
+
+################################################################################
 # Test if publication predicts reported p-values
 ################################################################################
-# Converted reported p_values to numeric
-meta$p = gsub("<", '', meta$p_reported)
-meta$p = gsub(">", '', meta$p)
-meta$p = as.character(meta$p)
+# Group by major significance level
+meta$p_siglevel = with(meta, ifelse(p_reported > 0.10, ">0.10", NA))
+meta$p_siglevel = with(meta, ifelse(p_reported < 0.10, "<0.10", p_siglevel))
+meta$p_siglevel = with(meta, ifelse(p_reported < 0.05, "<0.05", p_siglevel))
+meta$p_siglevel = with(meta, ifelse(p_reported < 0.01, "<0.01", p_siglevel))
 
 # OLS
-p_ols = lm(published ~ p_reported, data = meta)
+p_ols = lm(published ~ p_siglevel, data = meta)
 
 # Logit
-p_logit = glm(published ~ p_reported, data = meta, family = "binomial")
+p_logit = glm(published ~ p_siglevel, data = meta, family = "binomial")
 
 # Output regression table
 stargazer(p_ols, p_logit,
@@ -176,9 +235,11 @@ stargazer(trimfill_df,
 ################################################################################
 # P-curve: survey experiments
 ################################################################################
-# Keep p values below 0.05 only
-meta$p_curve = with(meta, ifelse(grepl(">", meta$p_reported) == TRUE, NA, p))
-p_curve = meta %>% filter(!is.na(p_curve) & field == 0)
+# Keep survey experiments with p values below 0.05 only
+p_curve = meta %>% filter(p_reported < 0.05 & field == 0)
+
+# Bin p-values by 0.01
+p_curve$p_curve = with(p_curve, ifelse(p_reported < 0.01, 0.01, NA))
 
 # Calculate percentages of p-values under values
 p_curve = p_curve %>% group_by(p_curve) %>% summarize(count=n())
@@ -188,7 +249,7 @@ p_curve$percent = p_curve$count / sum(p_curve$count)
 # Plot p values
 pcurve_survey = 
   ggplot(p_curve) +
-  geom_point(aes(p_curve, percent, group = 1), 
+  geom_point(aes(p, percent, group = 1), 
              color = "steelblue2", size = 1.5) + 
   geom_line(aes(p, percent, group = 1), color = "grey70") +
   xlab("P-values") + 
@@ -203,22 +264,31 @@ pcurve_survey =
 ################################################################################
 # P-curve: field experiments
 ################################################################################
-p_curve = meta %>% filter(!is.na(p_curve) & field == 1)
+# Keep survey experiments with p values below 0.05 only
+p_curve = meta %>% filter(p_reported < 0.05 & field == 1)
+
+# Bin p-values by 0.01
+p_curve$p_curve = with(p_curve, ifelse(p_reported < 0.05, 0.05, NA))
+p_curve$p_curve = with(p_curve, ifelse(p_reported < 0.04, 0.04, p_curve))
+p_curve$p_curve = with(p_curve, ifelse(p_reported < 0.03, 0.03, p_curve))
+p_curve$p_curve = with(p_curve, ifelse(p_reported < 0.02, 0.02, p_curve))
+p_curve$p_curve = with(p_curve, ifelse(p_reported < 0.01, 0.01, p_curve))
 
 # Calculate percentages of p-values under values
 p_curve = p_curve %>% group_by(p_curve) %>% summarize(count=n())
-p_curve$p = as.factor(p_curve$p_curve)
+p_curve$p = as.numeric(p_curve$p_curve)
 p_curve$percent = p_curve$count / sum(p_curve$count)
 
 # Plot p values
-pcurve_field
+pcurve_field = 
   ggplot(p_curve) +
-  geom_point(aes(p_curve, percent, group = 1), 
+  geom_point(aes(p, percent, group = 1), 
              color = "steelblue2", size = 1.5) + 
   geom_line(aes(p, percent, group = 1), color = "grey70") +
   xlab("P-values") + 
   ylab("Share of studies below p-value (%)") + 
   scale_y_continuous(labels = scales::percent, limits = c(0, 1), breaks=seq(0,1,.1)) +
+  scale_x_continuous(breaks = seq(from = 0, to = 0.05, by = 0.01)) +
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5)) +
   theme(axis.text=element_text(size = 8)) +
@@ -226,17 +296,25 @@ pcurve_field
   theme(legend.position = "none")
   
 ################################################################################
-# Create table of all p-values because of p-curve issues
+# Create table of all p-values
 ################################################################################
 # Clean and compile data frame
+meta$p_reported = as.numeric(meta$p_reported)
+meta$p_reported = round(meta$p_reported, 3)
+meta$p_replicated = as.numeric(meta$p_replicated)
+meta$p_replicated = round(meta$p_replicated, 3)
+
+# Clean and compile data frame
 p_table = meta %>% 
-  select(author_reduced, type, ate_vote, p_reported) %>%
+  select(author_reduced, type, p_reported, p_replicated) %>%
   arrange(p_reported) %>%
-  mutate(ate_vote = round(ate_vote * 100, 2)) %>%
+  mutate(p_reported = round(p_reported, 3)) %>%
+  mutate(p_replicated = round(p_replicated, 3)) %>%
   mutate(author_reduced = as.character(author_reduced)) %>%
   rename(Study = author_reduced, `Experiment Type` = type,
-         `Average Treatment Effect` = ate_vote, `P value` = p_reported)
-  
+         `Reported p-value` = p_reported,
+         `Replicated p-value` = p_replicated)
+
 # Clean strings for export
 p_table$Study = gsub("&", "and", p_table$Study)
   
@@ -252,18 +330,58 @@ stargazer(p_table,
           )
   
 ################################################################################
-# Plot all p-values because of p-curve issues
+# Plot binned p-values in visualizable format
 ################################################################################
-meta$p = as.numeric(meta$p)
-  
-ggplot(meta, aes(x = p, y = author_reduced)) +
-  geom_point(color = "steelblue2", size = 1) + 
-  #geom_text(aes(label = country, x = 25, y = author_reduced), size = 3) +
-  xlab("Reported p-value") + 
+# Converted reported p_values to numeric
+meta$p = as.numeric(gsub("<", '', meta$p_reported))
+meta$p = with(meta, ifelse(is.na(p), as.numeric(gsub(">", '', p_reported)), p))
+
+# Clean study names
+meta$author_reduced = with(meta, 
+                           ifelse(author_reduced == "Boas, Hidalgo, & Melo" &
+                                  field == 1, "Boas, Hidalgo, & Melo (Field)",
+                                  author_reduced))
+meta$studies = 1
+meta$experiment = as.factor(meta$survey)
+meta$experiment = with(meta, ifelse(experiment == 1, "Survey", "Field"))
+
+# Univariate
+ggplot(meta, 
+       aes(x = p, y = studies, fill = experiment)) +
+  geom_bar(stat = "identity") + 
+  xlab("Reported p-value (binned by 0.01)") +
+  scale_fill_manual(values = c("Field" = "seagreen2", 
+                               "Survey" = "firebrick2")) +
+  labs(color='Experiment', fill = 'Experiment')  +
+  scale_fill_manual(values = c("seagreen3", "steelblue2")) + 
   scale_x_continuous(breaks = seq(from = 0, to = 1, by = 0.01)) +
+  scale_y_continuous(breaks = seq(from = 0, to = 20, by = 2)) +
   theme_classic() +
-  theme(axis.title.y=element_blank()) +
-  theme(plot.title = element_text(hjust = 0.5)) +
-  theme(axis.text=element_text(size = 8)) +
-  theme(axis.text.x = element_text(size = 8)) +
-  theme(legend.position = "none")
+  theme(legend.position="bottom") +
+  theme(axis.text=element_text(size=12),
+        axis.title=element_text(size=12),
+        axis.title.y=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5))
+
+# Bar chart
+ggplot(meta, 
+       aes(x = reorder(author_reduced, -p), 
+           y = p)) +
+  geom_bar(width = 0.5, stat = "identity", 
+           color = "steelblue2", fill = "steelblue2") +
+  geom_bar(data = subset(meta, field == 1), width = 0.5,
+           stat = "identity", color = "seagreen3", fill = "seagreen3") +
+  coord_flip() +
+  ylab("Reported p-value (binned by 0.01)") +
+  scale_y_continuous(breaks = seq(from = 0, to = 1, by = 0.01)) +
+  theme_classic() +
+  theme(legend.position="none") +
+  theme(axis.text=element_text(size=12),
+        axis.title=element_text(size=12),
+        axis.title.y=element_blank()) +
+  theme(plot.title = element_text(hjust = 0.5))
+
+ggsave("figs/p_bar.pdf", height = 3.5, width = 6)
+
+
+hist(meta$p)

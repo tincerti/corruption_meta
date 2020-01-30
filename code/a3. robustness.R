@@ -82,12 +82,14 @@ se_vote_re = summary(re_field)$se
 meta_fe = data.frame(type="Field", year=NA, author = "Fixed effects model", 
                      author_reduced = "Fixed effects model", country = NA, 
                      ate_vote = ate_vote_fe, se_vote = se_vote_fe, ci_upper = NA, 
-                     ci_lower = NA, p_reported = NA, published = NA, N = NA, Notes = NA)
+                     ci_lower = NA, p_reported = NA, p_replicated = NA,
+                     published = NA, N = NA, Notes = NA)
 
 meta_re = data.frame(type="Field", year=NA, author = "Random effects model", 
                      author_reduced = "Random effects model", country = NA, 
                      ate_vote = ate_vote_re, se_vote = se_vote_re, ci_upper = NA, 
-                     ci_lower = NA, p_reported = NA, published = NA, N = NA, Notes = NA)
+                     ci_lower = NA, p_reported = NA, p_replicated = NA,
+                     published = NA, N = NA, Notes = NA)
 
 field = rbind(field, meta_fe, meta_re)
 
@@ -202,14 +204,14 @@ se_vote_re = summary(re_survey)$se
 meta_fe = data.frame(type="Survey", year=NA, author = "Fixed effects model", 
                      author_reduced = "Fixed effects model", country = NA, 
                      ate_vote = ate_vote_fe, se_vote = se_vote_fe, ci_upper = NA, 
-                     ci_lower = NA, p_reported = NA, published = NA, N = NA, 
-                     Notes = NA)
+                     ci_lower = NA, p_reported = NA, p_replicated = NA,
+                     published = NA, N = NA, Notes = NA)
 
 meta_re = data.frame(type="Survey", year=NA, author = "Random effects model", 
                   author_reduced = "Random effects model", country = NA, 
                   ate_vote = ate_vote_re, se_vote = se_vote_re, ci_upper = NA, 
-                  ci_lower = NA, p_reported = NA, published = NA, N = NA, 
-                  Notes = NA)
+                  ci_lower = NA, p_reported = NA, p_replicated = NA,
+                  published = NA, N = NA,  Notes = NA)
 
 survey = rbind(survey, meta_fe, meta_re)
 
