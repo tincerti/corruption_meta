@@ -7,6 +7,7 @@ rm(list=ls())
 library(tidyverse)
 library(metafor)
 library(stargazer)
+library(dmetar)
 
 # Do not display numeric values in scientific notation
 options(scipen = 999)
@@ -42,9 +43,9 @@ meta$p_reported = with(meta, ifelse(author_reduced == "Boas et al.",
                        2*pt(-abs(ate_vote/se_vote), df = N-1),
                        p_reported))
 
-# Buntaine, Jablonski, Nielson & Pickering (Councillor)
+# Buntaine, Jablonski, Nielson & Pickering (Councillor): paper reports 1-tailed test
 meta$p_reported = with(meta, ifelse(author_reduced == "Buntain et al. (Councillor)",
-                       0.015,
+                       2*pt(-abs(ate_vote/se_vote), df = N-1),
                        p_reported))
 
 # Buntaine, Jablonski, Nielson & Pickering (Chair)
@@ -98,7 +99,6 @@ stargazer(p_ols, p_logit,
           model.numbers = FALSE, 
           multicolumn = TRUE,
           intercept.bottom = FALSE,
-          #intercept.top = TRUE,
           column.labels = c("OLS", "Logit"),
           covariate.labels = c("Reference: P less than 0.01", "P less than 0.05", 
                                "P less than 0.1", "P greater than 0.1"),
@@ -108,10 +108,81 @@ stargazer(p_ols, p_logit,
           keep.stat = c("n"))
 
 ################################################################################
+# P-curve
+################################################################################
+#### All experiments ####
+# Restimate meta-analysis with metagen: all experiments
+re_all_pcurve <- metagen(ate_vote,
+                         se_vote,
+                         data = meta,
+                         studlab = paste(author_reduced),
+                         comb.fixed = FALSE,
+                         comb.random = TRUE,
+                         method.tau = "REML",
+                         hakn = TRUE,
+                         prediction = TRUE,
+                         sm = "SMD")
+
+# Create visual p-curve
+pcurve(re_all_pcurve)
+
+dev.copy(pdf,'figs/p_curve_all.pdf', width=12, height=7)
+dev.off()
+
+# Estimate effect size using p-curve
+N = meta$N
+pcurve(re_all_pcurve, effect.estimation = TRUE, N = N)
+
+#### Survey experiments ####
+# Restimate meta-analysis with metagen: survey experiments
+re_survey_pcurve <- metagen(ate_vote,
+                       se_vote,
+                       data = survey,
+                       studlab = paste(author_reduced),
+                       comb.fixed = FALSE,
+                       comb.random = TRUE,
+                       method.tau = "REML",
+                       hakn = TRUE,
+                       prediction = TRUE,
+                       sm = "SMD")
+
+# Create p-curve 
+pcurve(re_survey_pcurve, N = N)
+
+dev.copy(pdf,'figs/p_curve_survey.pdf', width=12, height=7)
+dev.off()
+
+# Estimate effect size using p-curve
+N = survey$N
+pcurve(re_survey_pcurve, effect.estimation = TRUE, N = N)
+
+#### Field experiments ####
+# Restimate meta-analysis with metagen: field experiments
+re_field_pcurve <- metagen(ate_vote,
+                       se_vote,
+                       data = field,
+                       studlab = paste(author_reduced),
+                       comb.fixed = FALSE,
+                       comb.random = TRUE,
+                       method.tau = "REML",
+                       hakn = TRUE,
+                       prediction = TRUE,
+                       sm = "SMD")
+
+# Create p-curve 
+pcurve(re_field_pcurve, N = N)
+
+dev.copy(pdf,'figs/p_curve_field.pdf', width=12, height=7)
+dev.off()
+
+# Estimate effect size using p-curve
+N = field$N
+pcurve(re_field_pcurve, effect.estimation = TRUE, N = N)
+
+################################################################################
 # Funnel Plot Analysis
 ################################################################################
 # Examine number of published articles by field or survey
-# with  group
 sum = meta %>% 
   group_by(published, type) %>% 
   summarise (number = n())
@@ -121,7 +192,7 @@ re_funnel = funnel(re,
             back = "grey95", col = "steelblue2",
             digits = c(1,2))
 
-dev.copy(pdf,'figs/funnel_re_all.pdf')
+dev.copy(pdf,'figs/funnel_re_all.pdf', width=10, height=7)
 dev.off()
 
 # Funnel plot for field experiments
@@ -129,7 +200,7 @@ funnel(re_field,
        back = "grey95", col = "steelblue2",
        digits = c(1,2))
 
-dev.copy(pdf,'figs/funnel_re_field.pdf')
+dev.copy(pdf,'figs/funnel_re_field.pdf', width=10, height=7)
 dev.off()
 
 # Funnel plot for survey experiments
@@ -141,7 +212,7 @@ funnel(re_survey,
        back = "grey95", col = "steelblue2",
        digits = c(1,2))
 
-dev.copy(pdf,'figs/funnel_re_survey.pdf')
+dev.copy(pdf,'figs/funnel_re_survey.pdf', width=10, height=7)
 dev.off()
 
 # Funnel plot with moderator for field experiments
@@ -149,7 +220,7 @@ funnel(me_mod,
           back = "grey95", col = "steelblue2",
           digits = c(1,2))
 
-dev.copy(pdf,'figs/funnel_all_mod.pdf')
+dev.copy(pdf,'figs/funnel_all_mod.pdf', width=10, height=7)
 dev.off()
 
 # Regression tests for funnel plot asymmetry
@@ -177,7 +248,6 @@ stargazer(regtest, summary = FALSE, rownames = FALSE,
 ################################################################################
 # Perform trim and fill analysis
 trimfill_all = trimfill(re)
-funnel(trimfill)
 trimfill_field = trimfill(re_field)
 trimfill_survey = trimfill(re_survey)
 
@@ -186,7 +256,7 @@ funnel(trimfill_all,
           back = "grey95", col = "steelblue2",
           digits = c(1,2))
 
-dev.copy(pdf,'figs/funnel_trimfill.pdf')
+dev.copy(pdf,'figs/funnel_trimfill.pdf', width=10, height=7)
 dev.off()
 
 # Export tables of trim and fill estimates 
@@ -231,87 +301,26 @@ stargazer(trimfill_df,
           summary = FALSE,
           notes = "\\parbox[t]{\\textwidth}{\\footnotesize \\textit{Note:} Standard errors in parenthesis. Figures rounded to nearest thousandth decimal place.}"
           )
-
-################################################################################
-# P-curve: survey experiments
-################################################################################
-# Keep survey experiments with p values below 0.05 only
-p_curve = meta %>% filter(p_reported < 0.05 & field == 0)
-
-# Bin p-values by 0.01
-p_curve$p_curve = with(p_curve, ifelse(p_reported < 0.01, 0.01, NA))
-
-# Calculate percentages of p-values under values
-p_curve = p_curve %>% group_by(p_curve) %>% summarize(count=n())
-p_curve$p = as.factor(p_curve$p_curve)
-p_curve$percent = p_curve$count / sum(p_curve$count)
-
-# Plot p values
-pcurve_survey = 
-  ggplot(p_curve) +
-  geom_point(aes(p, percent, group = 1), 
-             color = "steelblue2", size = 1.5) + 
-  geom_line(aes(p, percent, group = 1), color = "grey70") +
-  xlab("P-values") + 
-  ylab("Share of studies below p-value (%)") + 
-  scale_y_continuous(labels = scales::percent, limits = c(0, 1), breaks=seq(0,1,.1)) +
-  theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5)) +
-  theme(axis.text=element_text(size = 8)) +
-  theme(axis.text.x = element_text(size = 8)) +
-  theme(legend.position = "none")
-
-################################################################################
-# P-curve: field experiments
-################################################################################
-# Keep survey experiments with p values below 0.05 only
-p_curve = meta %>% filter(p_reported < 0.05 & field == 1)
-
-# Bin p-values by 0.01
-p_curve$p_curve = with(p_curve, ifelse(p_reported < 0.05, 0.05, NA))
-p_curve$p_curve = with(p_curve, ifelse(p_reported < 0.04, 0.04, p_curve))
-p_curve$p_curve = with(p_curve, ifelse(p_reported < 0.03, 0.03, p_curve))
-p_curve$p_curve = with(p_curve, ifelse(p_reported < 0.02, 0.02, p_curve))
-p_curve$p_curve = with(p_curve, ifelse(p_reported < 0.01, 0.01, p_curve))
-
-# Calculate percentages of p-values under values
-p_curve = p_curve %>% group_by(p_curve) %>% summarize(count=n())
-p_curve$p = as.numeric(p_curve$p_curve)
-p_curve$percent = p_curve$count / sum(p_curve$count)
-
-# Plot p values
-pcurve_field = 
-  ggplot(p_curve) +
-  geom_point(aes(p, percent, group = 1), 
-             color = "steelblue2", size = 1.5) + 
-  geom_line(aes(p, percent, group = 1), color = "grey70") +
-  xlab("P-values") + 
-  ylab("Share of studies below p-value (%)") + 
-  scale_y_continuous(labels = scales::percent, limits = c(0, 1), breaks=seq(0,1,.1)) +
-  scale_x_continuous(breaks = seq(from = 0, to = 0.05, by = 0.01)) +
-  theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5)) +
-  theme(axis.text=element_text(size = 8)) +
-  theme(axis.text.x = element_text(size = 8)) +
-  theme(legend.position = "none")
   
 ################################################################################
 # Create table of all p-values
 ################################################################################
 # Clean and compile data frame
 meta$p_reported = as.numeric(meta$p_reported)
-meta$p_reported = round(meta$p_reported, 3)
+meta$p_reported = sprintf("%.3f", round(meta$p_reported, 3))
 meta$p_replicated = as.numeric(meta$p_replicated)
-meta$p_replicated = round(meta$p_replicated, 3)
-
+meta$p_replicated = with(meta, ifelse(!is.na(p_replicated),
+                         sprintf("%.3f", round(p_replicated, 3)),
+                         ""))
+                         
 # Clean and compile data frame
 p_table = meta %>% 
-  select(author_reduced, type, p_reported, p_replicated) %>%
+  select(author_reduced, type, published, p_reported, p_replicated) %>%
   arrange(p_reported) %>%
-  mutate(p_reported = round(p_reported, 3)) %>%
-  mutate(p_replicated = round(p_replicated, 3)) %>%
   mutate(author_reduced = as.character(author_reduced)) %>%
-  rename(Study = author_reduced, `Experiment Type` = type,
+  rename(Study = author_reduced, 
+         Published = published,
+         `Experiment Type` = type,
          `Reported p-value` = p_reported,
          `Replicated p-value` = p_replicated)
 
@@ -320,68 +329,10 @@ p_table$Study = gsub("&", "and", p_table$Study)
   
 # Output table using stargazer
 stargazer(p_table,
-          out = "figs/p_values_all.tex",
+          #out = "figs/p_values_all.tex",
           title= "P-values by study",
           label = "p_study",
           digits = 3,
-          #column.sep.width = "30pt",
           rownames = FALSE, 
           summary = FALSE
           )
-  
-################################################################################
-# Plot binned p-values in visualizable format
-################################################################################
-# Converted reported p_values to numeric
-meta$p = as.numeric(gsub("<", '', meta$p_reported))
-meta$p = with(meta, ifelse(is.na(p), as.numeric(gsub(">", '', p_reported)), p))
-
-# Clean study names
-meta$author_reduced = with(meta, 
-                           ifelse(author_reduced == "Boas, Hidalgo, & Melo" &
-                                  field == 1, "Boas, Hidalgo, & Melo (Field)",
-                                  author_reduced))
-meta$studies = 1
-meta$experiment = as.factor(meta$survey)
-meta$experiment = with(meta, ifelse(experiment == 1, "Survey", "Field"))
-
-# Univariate
-ggplot(meta, 
-       aes(x = p, y = studies, fill = experiment)) +
-  geom_bar(stat = "identity") + 
-  xlab("Reported p-value (binned by 0.01)") +
-  scale_fill_manual(values = c("Field" = "seagreen2", 
-                               "Survey" = "firebrick2")) +
-  labs(color='Experiment', fill = 'Experiment')  +
-  scale_fill_manual(values = c("seagreen3", "steelblue2")) + 
-  scale_x_continuous(breaks = seq(from = 0, to = 1, by = 0.01)) +
-  scale_y_continuous(breaks = seq(from = 0, to = 20, by = 2)) +
-  theme_classic() +
-  theme(legend.position="bottom") +
-  theme(axis.text=element_text(size=12),
-        axis.title=element_text(size=12),
-        axis.title.y=element_blank()) +
-  theme(plot.title = element_text(hjust = 0.5))
-
-# Bar chart
-ggplot(meta, 
-       aes(x = reorder(author_reduced, -p), 
-           y = p)) +
-  geom_bar(width = 0.5, stat = "identity", 
-           color = "steelblue2", fill = "steelblue2") +
-  geom_bar(data = subset(meta, field == 1), width = 0.5,
-           stat = "identity", color = "seagreen3", fill = "seagreen3") +
-  coord_flip() +
-  ylab("Reported p-value (binned by 0.01)") +
-  scale_y_continuous(breaks = seq(from = 0, to = 1, by = 0.01)) +
-  theme_classic() +
-  theme(legend.position="none") +
-  theme(axis.text=element_text(size=12),
-        axis.title=element_text(size=12),
-        axis.title.y=element_blank()) +
-  theme(plot.title = element_text(hjust = 0.5))
-
-ggsave("figs/p_bar.pdf", height = 3.5, width = 6)
-
-
-hist(meta$p)
