@@ -137,7 +137,8 @@ defig = data.frame(type="Survey", year = 2011,
                    author = "De Figueiredo, Hidalgo, & Kasahara", 
                    author_reduced = "De Figueiredo et al.", country = "Brazil", 
                    ate_vote = 0.01, se_vote = NA, ci_upper = 0.07, 
-                   ci_lower = -0.07, p_reported = 0.42, published = 0, N = 133, 
+                   ci_lower = -0.07, p_reported = 0.42, p_replicated = NA,
+                   published = 0, N = 133, 
                    Notes = NA)
 
 survey = rbind(survey, defig)

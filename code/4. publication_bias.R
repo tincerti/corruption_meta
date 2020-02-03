@@ -7,6 +7,7 @@ rm(list=ls())
 library(tidyverse)
 library(metafor)
 library(stargazer)
+library(meta)
 library(dmetar)
 
 # Do not display numeric values in scientific notation

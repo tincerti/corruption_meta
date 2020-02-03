@@ -88,11 +88,11 @@ clean = b %>%
 b$Y = as.factor(b$Y)
 
 # Split data into training and test
-sample = sample.split(b, SplitRatio = .9) # From caTools package
+sample = sample.split(b, SplitRatio = .9)
 train = subset(b, sample == TRUE)
 test  = subset(b, sample == FALSE)
 
-# Run classification tree (uses package rpart)
+# Run classification tree
 b_tree <- rpart(Y ~ Corrupt + Party + Economy + Experience + Gender,
                     data = train, 
                     cp = 0,

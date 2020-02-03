@@ -36,21 +36,6 @@
 \bibpunct{(}{)}{;}{a}{}{,}
 \renewcommand{\bibname}{References}
 
-% hyperref options
-\usepackage{color}
-\usepackage{hyperref}
-\usepackage{xcolor}
-\hypersetup{
-    colorlinks,
-    linkcolor={blue!50!black},
-    citecolor={blue!50!black},
-    urlcolor={blue!80!black}
-}
-\newcommand*{\Appendixautorefname}{Appendix}
-\renewcommand*{\sectionautorefname}{Section}
-\renewcommand*{\subsectionautorefname}{Section}
-\newcommand{\aref}[1]{\hyperref[#1]{Appendix~\ref{#1}}}
-
 % packages for tables
 \usepackage{longtable}
 \usepackage{booktabs, threeparttable}
@@ -138,6 +123,21 @@
 
 \setcounter{tocdepth}{1}
 
+% hyperref options
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={blue!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+\newcommand*{\Appendixautorefname}{Appendix}
+\renewcommand*{\sectionautorefname}{Section}
+\renewcommand*{\subsectionautorefname}{Section}
+\newcommand{\aref}[1]{\hyperref[#1]{Appendix~\ref{#1}}}
+
 %--------------------------------------------------------------------------------------
 % BEGIN DOCUMENT
 %--------------------------------------------------------------------------------------
@@ -150,7 +150,7 @@
 
 \author{Trevor Incerti\thanks{PhD Student in the Department of Political Science, Yale University. trevor.incerti@yale.edu.}\vspace{-2ex}}
 %\affil{\textit{Yale University}\vspace{-2.5ex}}
-\date{First draft: July 7, 2019 \\ This draft: November 27, 2019}
+\date{First draft: July 7, 2019 \\ This draft: \today}
 %\date{November 27, 2019}
 \maketitle
 
@@ -300,7 +300,7 @@ Of the eight field experimental papers located, only five are published. By cont
 
 In order to more formally test for publication bias, I first use the p-curve \citep{simonsohn2014p1, simonsohn2014p2, simonsohn2015better}. The p-curve is based on the premise that only ``significant'' results are typically published, and depicts the distribution of statistically significant p-values for a set of published studies. The shape of the p-curve is indicative of whether or not the results of a set of studies are derived from true effects, or from publication bias. If p-values are clustered around 0.05 (i.e. the p-curve is ``left skewed''), this may be evidence of p-hacking, indicating that studies with p-values just below 0.05 are ``selectively reported.'' If the p-curve is ``right skewed'' and there are more low p-values (0.01), this is evidence of true effects. All significant survey experimental results included in the meta-analysis are significant at the 1\% level (making construction of a ``curve'' with bins of width 0.01 impossible),\footnote{See \autoref{fig: p_curve_survey} for a visual p-curve for survey experiments, and \autoref{p_study} for a list of p-values associated with each study.} implying that publication bias likely does not explain the large negative treatment effects in survey experiments.\footnote{There is also no indication of publication bias at the 1\% level using this method.} Rather, it is relatively easier to generate large and highly significant negative treatment effects in survey experiments. For field experiments, there is not a large enough number of published experiments to make the p-curve viable. Only six studies are published, and of these only four are significant at at least the 5\% level.\footnote{See \autoref{fig: p_curve_field} for a visual p-curve for field experiments.}
 
-Next, I test for publication bias by examining funnel plot asymmetry. A funnel plot depicts the outcomes from each study on the x-axis and their corresponding standard errors on the y-axis. The chart is overlaid with an inverted triangular confidence interval region (i.e. the ``funnel"), which should contain 95\% of the studies if there is no bias or between study heterogeneity. If studies with insignificant results remain unpublished the funnel plot may be asymmetric. Both visual inspection and regression tests of funnel plot asymmetry reveal an asymmetric funnel plot when survey and field experiments are grouped together (see \autoref{fig: funnel_re_all} and \autoref{tab: funnel}). However, this asymmetry disappears when accounting for heterogeneity by type of experiment, either with the inclusion of a survey experiment moderator (dummy) variable or by analyzing field and survey experiments separately (see \autoref{fig: funnel_all_mod}, \autoref{fig: funnel_re_field}, \autoref{fig: funnel_re_survey}, and \autoref{tab: funnel}). Similarly, trim and fill analysis overestimates effect sizes and hypothesizes that three studies are missing from the analysis due to publication bias when analyzing all studies together (see \autoref{fig: funnel_trimfill} and \autoref{trimfill}). However, when trim and fill is used on survey experiments or field experiments as separate subgroups, estimates remain unchanged and no studies are hypothesized to be missing.\footnote{This is in accordance with the findings in \citet{terrin2003adjusting} and \citet{carter2019correcting}. \cite{carter2019correcting} find that both the trim and fill method and p-curve overestimate effect sizes and show high false positive rates in the presence of heterogeneity. \citet{van2016conducting} show similar findings with respect to the p-curve. \citet{carter2019correcting} recommend standard random effects meta-analysis (as performed here) if publication bias is unlikely.}
+Next, I test for publication bias by examining funnel plot asymmetry. A funnel plot depicts the outcomes from each study on the x-axis and their corresponding standard errors on the y-axis. The chart is overlaid with an inverted triangular confidence interval region (i.e. the ``funnel"), which should contain 95\% of the studies if there is no bias or between study heterogeneity. If studies with insignificant results remain unpublished the funnel plot may be asymmetric. Both visual inspection and regression tests of funnel plot asymmetry reveal an asymmetric funnel plot when survey and field experiments are grouped together (see \autoref{fig: funnel_re_all} and \autoref{tab: funnel}). However, this asymmetry disappears when accounting for heterogeneity by type of experiment, either with the inclusion of a survey experiment moderator (dummy) variable or by analyzing field and survey experiments separately (see \autoref{fig: funnel_all_mod}, \autoref{fig: funnel_re_field}, and \autoref{fig: funnel_re_survey}.). Similarly, trim and fill analysis overestimates effect sizes and hypothesizes that three studies are missing from the analysis due to publication bias when analyzing all studies together (see \autoref{fig: funnel_trimfill} and \autoref{trimfill}). However, when trim and fill is used on survey experiments or field experiments as separate subgroups, estimates remain unchanged and no studies are hypothesized to be missing.\footnote{This is in accordance with the findings in \citet{terrin2003adjusting} and \citet{carter2019correcting}. \cite{carter2019correcting} find that both the trim and fill method and p-curve overestimate effect sizes and show high false positive rates in the presence of heterogeneity. \citet{van2016conducting} show similar findings with respect to the p-curve. \citet{carter2019correcting} recommend standard random effects meta-analysis (as performed here) if publication bias is unlikely.}
 
 In sum, while publication bias cannot be ruled out completely---particularly with such a small sample size of field experiments---there is no smoking gun. This implies that differences in experimental design likely account for the difference in the magnitude of treatment effects in field versus survey experiments, rather than publication bias.
 
@@ -351,7 +351,7 @@ When researchers have strong theories about the conditions that shape voter deci
 
 To illustrate this point, I replicate the conjoint experiments conducted in Spain by \citet{breitenstein2019choosing} and in Italy by \citet{franchino2015voting}, and present both AMCEs and predicted probabilities. The \citet{breitenstein2019choosing} re-analysis is presented in the main text, while the re-analysis of \citet{franchino2015voting} is in the appendix.\footnote{Additional predicted probability replications from \citet{mares2019voting} and \citet{chauchard2019getting} can also be found in the appendix.}  Note that I group all corruption accusation levels into a single ``corrupt'' level in my replications. The \citet{breitenstein2019choosing} predicted probabilities are presented as a function of corruption, co-partisanship, political experience, and economic performance. The charts therefore show the probability of preferring a candidate who is always corrupt, but is a co-partisan or not, has low or high experience, and whose district experienced good or bad economic performance, marginalizing across all other features in the experiment. For \citet{franchino2015voting}, the predicted probabilities are presented as a function of corruption and two policy positions---tax policy and same sex marriage---separately for conservative and liberal respondents. The charts therefore show the probability of preferring a candidate who is corrupt, but has particular levels of tax and same sex marriage policy, marginalizing across all other features in the experiment. Note that \citet{franchino2015voting} correctly conclude that their typical ``respondent prefers a corrupt but socially and economically progressive candidate to a clean but conservative one,'' and \citet{breitenstein2019choosing} presents certain predicted probabilities. While I therefore illustrate how predicted probabilities can be used to draw conclusions that may be masked by examination of AMCEs alone, the authors themselves do not make this mistake. I perform the same analysis including only cases where the challenger is clean in the appendix. 
 
-A casual interpretation of the traditional AMCE plots presented in \autoref{fig: b_amce} and \autoref{fig: fz_amce} suggests that it is very unlikely a corrupt candidate would be chosen by a respondent. By contrast, the predicted probabilities plots presented in \autoref{fig: b_margins}, \autoref{fig: fz_margins_right}, and \autoref{fig: fz_margins_left} show that even for corrupt candidates in the conjoint, the right candidate or policy platform presented to the right respondents can garner over 50\% of the predicted hypothetical vote. Further, the attributes included in these conjoints surely do not represent all candidate attributes relevant to voters, and indeed differ greatly across experiments. As in \cite{agerberg2019lesser}, the level of support for corrupt candidates also varies based on whether or not the challenger is clean (\autoref{fig: b_margins_clean}, \autoref{fig: fz_margins_right_clean}, \autoref{fig: fz_margins_left}). In other words, respondents find it costly to abandon their preferences even if it forces them to select a corrupt candidate, and this costliness varies highly depending on contextual changes and choice of other attributes included in the experiments. 
+A casual interpretation of the traditional AMCE plots presented in \autoref{fig: b_amce} and \autoref{fig: fz_amce} suggests that it is very unlikely a corrupt candidate would be chosen by a respondent. By contrast, the predicted probabilities plots presented in \autoref{fig: b_margins}, \autoref{fig: fz_margins_right}, and \autoref{fig: fz_margins_left} show that even for corrupt candidates in the conjoint, the right candidate or policy platform presented to the right respondents can garner over 50\% of the predicted hypothetical vote.\footnote{Note that a negative corruption treatment effect is still present. See \autoref{fig: b_margins_corrupt_clean} for a visual depiction of predicted probabilities for both a corrupt and clean candidate. The difference between the point estimates for the corrupt and clean candidate can be interpreted as a  treatment effect. I thank an anonymous reviewer for suggesting this clarification.} Further, the attributes included in these conjoints surely do not represent all candidate attributes relevant to voters, and indeed differ greatly across experiments. As in \cite{agerberg2019lesser}, the level of support for corrupt candidates also varies based on whether or not the challenger is clean (\autoref{fig: b_margins_clean}, \autoref{fig: fz_margins_right_clean}, \autoref{fig: fz_margins_left}). In other words, respondents find it costly to abandon their preferences even if it forces them to select a corrupt candidate, and this costliness varies highly depending on contextual changes and choice of other attributes included in the experiments. 
 
 \begin{figure}[H]
 \includegraphics{../figs/b_amce.pdf}
@@ -545,6 +545,10 @@ Notes: Publication status as of November 2019. All p-values rounded to the neare
 
 \input{../figs/published.tex}
 
+\input{../figs/regtest_funnel.tex}
+
+\input{../figs/trimfill.tex}
+
 \begin{figure}[!htb]
 \begin{centering}
 \includegraphics[scale=0.57]{../figs/p_curve_all.pdf}
@@ -567,6 +571,8 @@ Notes: Publication status as of November 2019. All p-values rounded to the neare
 \end{centering}
 \end{figure}
 
+\clearpage
+
 \begin{figure}[!htb]
 \begin{centering}
 \includegraphics[scale=0.57]{../figs/p_curve_field.pdf}
@@ -577,13 +583,6 @@ Notes: Publication status as of November 2019. All p-values rounded to the neare
 \label{fig: p_curve_field}
 \end{centering}
 \end{figure}
-
-\input{../figs/regtest_funnel.tex}
-
-\input{../figs/trimfill.tex}
-
-
-\FloatBarrier
 
 \begin{figure}[!htb]
 \begin{centering}
@@ -650,7 +649,7 @@ Note: Actual studies in blue and estimated missing studies in white.
 \caption{All experiments by publication status: Average treatment effect of corruption information on vote share and 95\% confidence intervals}.
 \small
 \vspace{-0.3cm}
-\label{fig: funnel_re_survey}
+\label{fig: pub_status_chart}
 \end{centering}
 \end{figure}
 
@@ -682,6 +681,15 @@ Note: Actual studies in blue and estimated missing studies in white.
 \small
 \vspace{-0.5cm}
 \label{fig: b_margins_clean}
+\end{figure}
+
+\begin{figure}[!htb]
+\includegraphics{../figs/b_margins_corrupt_clean.pdf}
+\vspace{0.05cm}
+\caption{\citet{breitenstein2019choosing} conjoint: probability of choosing candidate (by clean or corrupt)}
+\small
+\vspace{-0.5cm}
+\label{fig: b_margins_corrupt_clean}
 \end{figure}
 
 \begin{figure}[!ht]
@@ -762,6 +770,7 @@ Note: Actual studies in blue and estimated missing studies in white.
 \end{figure}
 
 \noindent
+\normalsize	
 Note that the primary goal of \citet{mares2019voting} is to determine the degree to which respondents punish various illicit electoral activities. The experiment therefore includes a number of other negative attributes in addition to corruption, such as vote buying, clientelistic offerings, and threats of violence against political opponents.  Due to uniform randomization, calculating predicted probabilities that do not include these attributes therefore marginalizes over a number of other illicit activities that respondents view negatively and reduces overall vote probability. Conditioning on the candidate not engaging in illicit activities other than corruption reveals probabilities of voting for corrupt candidates over 50\%. 
 
 \begin{figure}[!htb]

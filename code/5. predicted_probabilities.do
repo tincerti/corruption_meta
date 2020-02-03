@@ -18,15 +18,15 @@ decode samep, gen(copartisan)
 
 * Create categories
 gen category = .
-replace category = 1 if corrupt == 1 & economy == "bad" & experience == "low" & copartisan == "Different party"
-replace category = 2 if corrupt == 1 & economy == "bad" & experience == "high" & copartisan == "Different party"
-replace category = 3 if corrupt == 1 & economy == "bad" & experience == "low" & copartisan == "Same party"
-replace category = 4 if corrupt == 1 & economy == "bad" & experience == "high" & copartisan == "Same party"
+replace category = 1 if economy == "bad" & experience == "low" & copartisan == "Different party"
+replace category = 2 if economy == "bad" & experience == "high" & copartisan == "Different party"
+replace category = 3 if economy == "bad" & experience == "low" & copartisan == "Same party"
+replace category = 4 if economy == "bad" & experience == "high" & copartisan == "Same party"
 
-replace category = 5 if corrupt == 1 & economy == "good" & experience == "low" & copartisan == "Different party"
-replace category = 6 if corrupt == 1 & economy == "good" & experience == "high" & copartisan == "Different party"
-replace category = 7 if corrupt == 1 & economy == "good" & experience == "low" & copartisan == "Same party"
-replace category = 8 if corrupt == 1 & economy == "good" & experience == "high" & copartisan == "Same party"
+replace category = 5 if economy == "good" & experience == "low" & copartisan == "Different party"
+replace category = 6 if economy == "good" & experience == "high" & copartisan == "Different party"
+replace category = 7 if economy == "good" & experience == "low" & copartisan == "Same party"
+replace category = 8 if economy == "good" & experience == "high" & copartisan == "Same party"
 
 * Name categories
 label define category ////
@@ -44,23 +44,34 @@ label val category category
 ********************************************************************************
 * Calculate marginal effects
 ********************************************************************************
-reg Y i.category, cl(id)
-margins category
+* Corrupt
+reg Y i.category if corrupt == 1, cl(id)
+margins category if corrupt == 1
+est store corrupt_plot
+
+* Store estimates for plotting
+matrix Corrupt = r(table)'
+matsort Corrupt 1 "up"
+matrix Corrupt = Corrupt'
+
+* Clean
+reg Y i.category if corrupt == 0, cl(id)
+margins category if corrupt == 0
+est store clean_plot
+
+* Store estimates for plotting
+matrix Clean = r(table)'
+matsort Clean 1 "up"
+matrix Clean = Clean'
 
 ********************************************************************************
-* Plot marginal effects
+* Plot marginal effects: Main text figure
 ********************************************************************************
-* Sort results
-matrix plot = r(table)'
-
-matsort plot 1 "up"
-
-matrix plot = plot'
 
 * Create plot
 mylabels 0(25)100, myscale(@/100) local(myla) 
 
-coefplot (matrix(plot[1,])), ci((plot[5,] plot[6,])) ///
+coefplot (matrix(Corrupt[1,])), ci((Corrupt[5,] Corrupt[6,])) ///
 	vertical scheme(s1color) ylabel(`myla') ///
 	ytitle("Probability of voting for corrupt candidate (%)" " ") ///
 	xtitle(" " "Candidate profile") ///
@@ -71,6 +82,27 @@ coefplot (matrix(plot[1,])), ci((plot[5,] plot[6,])) ///
 
 * Export plot
 graph export "${export}/b_margins.pdf", replace
+
+********************************************************************************
+* Plot marginal effects: Appendix figure showing corrupt and clean
+********************************************************************************
+
+* Create plot
+mylabels 0(25)100, myscale(@/100) local(myla) 
+
+coefplot ///
+	(matrix(Corrupt[1,]), offset(0) color(orange_red) ci((Corrupt[5,] Corrupt[6,]))) ///
+	(matrix(Clean[1,]), color(midgreen) ci((Clean[5,] Clean[6,]))), ///
+	vertical scheme(s1color) ylabel(`myla') ///
+	ytitle("Probability of voting for candidate (%)" " ") ///
+	xtitle(" " "Candidate profile") ///
+	yline(.5, lstyle(grid)) ///
+	xlabel(, labsize(small)) ///
+	xsize(6.6) ysize(3) ///
+	ciopts(lcolor(gs10))
+	
+* Export plot
+graph export "${export}/b_margins_corrupt_clean.pdf", replace
 
 ********************************************************************************
 * Repeat analyis with clean alternative only
