@@ -9,6 +9,8 @@ library(metafor)
 library(stargazer)
 library(meta)
 library(dmetar)
+library(magrittr)
+library(DeclareDesign)
 
 # Do not display numeric values in scientific notation
 options(scipen = 999)
@@ -296,6 +298,83 @@ stargazer(trimfill_df,
           out = "figs/trimfill.tex",
           title= "Trim and fill estimates by subgroup",
           label = "trimfill",
+          digits = 3,
+          column.sep.width = "30pt",
+          rownames = FALSE, 
+          summary = FALSE,
+          notes = "\\parbox[t]{\\textwidth}{\\footnotesize \\textit{Note:} Standard errors in parenthesis. Figures rounded to nearest thousandth decimal place.}"
+          )
+
+################################################################################
+# PET-PEESE
+################################################################################
+# Create variance variables
+meta$var_vote = meta$se_vote^2
+field$var_vote = field$se_vote^2
+survey$var_vote = survey$se_vote^2
+
+# All experiments
+pet_all = lm(ate_vote ~ se_vote, weight = 1/var_vote, data = meta) 
+peese_all = lm(ate_vote ~ var_vote, weight = 1/var_vote, data = meta) 
+summary(peese_all) # PET intercept significantly different from zero (use PEESE)
+
+# Field experiments: 
+pet_field = lm(ate_vote ~ se_vote, weight = 1/var_vote, data = field) 
+peese_field = lm(ate_vote ~ var_vote, weight = 1/var_vote, data = field)
+summary(pet_field) # PET intercept significantly different from zero (use PET)
+
+# Survey experiments
+pet_survey = lm(ate_vote ~ se_vote, weight = 1/var_vote, data = survey) 
+peese_survey = lm(ate_vote ~ var_vote, weight = 1/var_vote, data = survey)
+summary(peese_survey) # PET intercept significantly different from zero (use PEESE)
+
+# Export PET-PEESE estimates
+int_peese_all = summary(peese_all)$coefficients[1]
+int_pet_field = summary(pet_field)$coefficients[1]
+int_peese_survey = summary(peese_survey)$coefficients[1]
+
+se_peese_survey = summary(peese_survey)$coefficients[1,2]
+se_peese_all = summary(peese_all)$coefficients[1,2]
+se_pet_field = summary(pet_field)$coefficients[1,2]
+
+# Define categories
+Value = 
+  c("All experiments", 
+    "",
+    "Field experiments", 
+    "",
+    "Survey experiments", 
+    "")
+
+# Populate rows with point estimates and standard errors
+Estimate = 
+  c(round(int_peese_all, 3), 
+    paste0("(", round(se_peese_all, 3),")"), 
+    round(int_pet_field, 3), 
+    paste0("(", round(se_pet_field, 3),")"),
+    round(int_peese_survey, 3), 
+    paste0("(", round(se_peese_survey, 3),")"))
+
+# Create confidence intervals
+`95% CI` = 
+  c(paste0(round(int_peese_all - 1.96 * se_peese_all, 3), " to ", 
+           round(int_peese_all + 1.96 * se_peese_all, 3)), 
+    "", 
+    paste0(round(int_pet_field - 1.96 * se_pet_field, 3), " to ", 
+           round(int_pet_field + 1.96 * se_pet_field, 3)),
+    "",
+    paste0(round(int_peese_survey - 1.96 * se_peese_survey, 3), " to ", 
+           round(int_peese_survey + 1.96 * se_peese_survey, 3)),
+    "")
+
+# Combine into dataframe
+petpeese_df = data.frame(Value, Estimate, `95% CI`, check.names = FALSE)
+
+# Export using stargazer
+stargazer(petpeese_df,
+          out = "figs/petpeese.tex",
+          title= "PET-PEESE estimates by subgroup",
+          label = "petpeese",
           digits = 3,
           column.sep.width = "30pt",
           rownames = FALSE, 
