@@ -296,29 +296,27 @@ meta$var_vote = meta$se_vote^2
 field$var_vote = field$se_vote^2
 survey$var_vote = survey$se_vote^2
 
-# All experiments
-pet_all = lm(ate_vote ~ se_vote, weight = 1/var_vote, data = meta) 
-peese_all = lm(ate_vote ~ var_vote, weight = 1/var_vote, data = meta) 
-summary(peese_all) # PET intercept significantly different from zero (use PEESE)
+# Create PET-PEESE function
+petpeese <- function(dataset) {
+  pet = lm(ate_vote ~ se_vote, weight = 1/var_vote, data = dataset)
+  peese = lm(ate_vote ~ var_vote, weight = 1/var_vote, data = dataset) 
+  int_pet = pet$coefficients[1]
+  se_pet = summary(pet)$coefficients[1,2]
+  int_peese = peese$coefficients[1]
+  se_peese = summary(peese)$coefficients[1,2]
+  p_pet = summary(pet)$coefficients[1,4]
+  petpeese_int = ifelse(p_pet > .05, int_pet, int_peese)
+  petpeese_se = ifelse(p_pet > .05, se_pet, se_peese)
+  return(c(petpeese_int, petpeese_se))
+}
 
-# Field experiments: 
-pet_field = lm(ate_vote ~ se_vote, weight = 1/var_vote, data = field) 
-peese_field = lm(ate_vote ~ var_vote, weight = 1/var_vote, data = field)
-summary(pet_field) # PET intercept not significantly different from zero (use PET)
-
-# Survey experiments
-pet_survey = lm(ate_vote ~ se_vote, weight = 1/var_vote, data = survey) 
-peese_survey = lm(ate_vote ~ var_vote, weight = 1/var_vote, data = survey)
-summary(peese_survey) # PET intercept significantly different from zero (use PEESE)
-
-# Export PET-PEESE estimates
-int_peese_all = summary(peese_all)$coefficients[1]
-int_pet_field = summary(pet_field)$coefficients[1]
-int_peese_survey = summary(peese_survey)$coefficients[1]
-
-se_peese_all = summary(peese_all)$coefficients[1,2]
-se_pet_field = summary(pet_field)$coefficients[1,2]
-se_peese_survey = summary(peese_survey)$coefficients[1,2]
+# Calculate PET-PEESE estimates and standard errors
+petpeese_all_int = petpeese(meta)[1]
+petpeese_all_se = petpeese(meta)[2]
+petpeese_field_int = petpeese(field)[1]
+petpeese_field_se = petpeese(field)[2]
+petpeese_survey_int = petpeese(survey)[1]
+petpeese_survey_se = petpeese(survey)[2]
 
 # Define categories
 Value = 
@@ -331,23 +329,23 @@ Value =
 
 # Populate rows with point estimates and standard errors
 Estimate = 
-  c(round(int_peese_all, 3), 
-    paste0("(", round(se_peese_all, 3),")"), 
-    round(int_pet_field, 3), 
-    paste0("(", round(se_pet_field, 3),")"),
-    round(int_peese_survey, 3), 
-    paste0("(", round(se_peese_survey, 3),")"))
+  c(round(petpeese_all_int, 3), 
+    paste0("(", round(petpeese_all_se, 3),")"), 
+    round(petpeese_field_int, 3), 
+    paste0("(", round(petpeese_field_se, 3),")"),
+    round(petpeese_survey_int, 3), 
+    paste0("(", round(petpeese_survey_se, 3),")"))
 
 # Create confidence intervals
 `95% CI` = 
-  c(paste0(round(int_peese_all - 1.96 * se_peese_all, 3), " to ", 
-           round(int_peese_all + 1.96 * se_peese_all, 3)), 
+  c(paste0(round(petpeese_all_int - 1.96 * petpeese_all_se, 3), " to ", 
+           round(petpeese_all_int + 1.96 * petpeese_all_se, 3)), 
     "", 
-    paste0(round(int_pet_field - 1.96 * se_pet_field, 3), " to ", 
-           round(int_pet_field + 1.96 * se_pet_field, 3)),
+    paste0(round(petpeese_field_int - 1.96 * petpeese_field_se, 3), " to ", 
+           round(petpeese_field_int + 1.96 * petpeese_field_se, 3)),
     "",
-    paste0(round(int_peese_survey - 1.96 * se_peese_survey, 3), " to ", 
-           round(int_peese_survey + 1.96 * se_peese_survey, 3)),
+    paste0(round(petpeese_survey_int - 1.96 * petpeese_survey_se, 3), " to ", 
+           round(petpeese_survey_int + 1.96 * petpeese_survey_se, 3)),
     "")
 
 # Combine into dataframe
