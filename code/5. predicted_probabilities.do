@@ -114,8 +114,8 @@ replace alternative = "clean" if corrupt == 1 & corrupt[_n-1] == 0 & candidate =
 keep if alternative == "clean"
 
 * Calculate predicted probabilities
-reg Y i.category, cl(id)
-margins category
+reg Y i.category if corrupt == 1, cl(id)
+margins category if corrupt == 1
 
 * Sort results
 matrix plot = r(table)'

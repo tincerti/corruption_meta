@@ -138,6 +138,9 @@ plotcp(b_tree_clean)
 printcp(b_tree_clean)
 b_tree_clean_pruned <- prune(b_tree_clean, cp = -0.01)
 
+# Plot classification tree
+rpart.plot(b_tree_clean_pruned, extra = 7, type = 5, cex = 0.6)
+
 # Save plot
 dev.copy(pdf,'figs/b_tree_clean.pdf', width = 7, height = 3.5)
 dev.off()
