@@ -10,19 +10,21 @@ library(readstata13)
 library(estimatr)
 library(tidyverse)
 
-# Data imports
-results = read_excel("data/study_results.xlsx") # Estimates not from replications
-wsw17 = read.dta('data/Weitz-ShapiroWinters_JOP_Credibility_ReplicationData.dta')
-wsw13 = read.dta('data/WintersWeitzShapiro_2013_Replication.dta')
-wsw16 = read.dta('data/WintersWeitz-Shapiro_PRQ_Specificity_ReplicationData.dta')
-wsw18 = read.dta13('data/WintersWeitz-Shapiro_PSRM_Argentina_ReplicationData.dta')
-fz = read.dta('data/franchino_zucchini.dta')
-mv = read.dta('data/mares_visconti.dta')
+# Data imports: estimates not from replications or requiring transformation
+results = read_excel("data/study_results.xlsx")
+
+# Data imports: replication files
 b = read.dta13('data/choosing_crook_clean.dta')
-klt = read.dta('data/analysis-data.dta')
 bhm = read.csv('data/panel_cleaned.csv')
 ckh = read.dta13('data/chauchard_klasnja_harish.dta')
 eggers = readRDS("data/experiment_data_eggers.Rds", refhook = NULL)
+fz = read.dta('data/franchino_zucchini.dta')
+klt = read.dta('data/analysis-data.dta')
+mv = read.dta('data/mares_visconti.dta')
+wsw13 = read.dta('data/WintersWeitzShapiro_2013_Replication.dta')
+wsw16 = read.dta('data/WintersWeitz-Shapiro_PRQ_Specificity_ReplicationData.dta')
+wsw17 = read.dta('data/Weitz-ShapiroWinters_JOP_Credibility_ReplicationData.dta')
+wsw18 = read.dta13('data/WintersWeitz-Shapiro_PSRM_Argentina_ReplicationData.dta')
 
 ################################################################################
 # Boas, Hidalgo, and Melo: American Journal of Political Science 2018
@@ -51,7 +53,7 @@ p_rep_bhm = summary(bhm_model)$coef[2, 4]
 ################################################################################
 # Winters and Weitz-Shapiro: Comparative Politics 2013
 ################################################################################
-# All corrupt vignettes
+# Run mode: all corrupt vignettes
 wsw13$vote_vig_cont <- ifelse(wsw13$votescale > 2, 1, 0)
 reg_wsw13 = lm_robust(vote_vig_cont ~ corruptvignette, data = wsw13)
 
@@ -77,14 +79,14 @@ p_rep_wsw13 = summary(reg_wsw13)$coef[2, 4]
 # Winters and Weitz-Shapiro: Political Research Quarterly 2016
 ################################################################################
 # Create all variable
-wsw16$corrupt = with(wsw16, ifelse(vinheta != "VINHETA 1" & vinheta != "VINHETA 2",
-                                   1, 0))
-
+wsw16$corrupt = with(wsw16, 
+                     ifelse(vinheta != "VINHETA 1" & vinheta != "VINHETA 2", 
+                            1, 0))
 # Create vote dummy
 wsw16$vote = with(wsw16, ifelse(voteintent > 2, 1, 0))
 
-# Run models
-reg_wsw16_all = lm_robust(vote ~ corrupt, data = wsw16) # Same experiment as JOP 2017
+# Run models: Results indicate this is the same experiment as JOP 2017
+reg_wsw16_all = lm_robust(vote ~ corrupt, data = wsw16)
 
 # Reported p-value
 p_wsw16 = "<0.01"
@@ -99,15 +101,14 @@ p_rep_wsw16 = summary(reg_wsw16_all)$coef[2, 4]
 # Winters and Weitz-Shapiro: Journal of Politics 2017
 ################################################################################
 # Create all variable
-wsw17$corrupt = with(wsw17, ifelse(vinheta != "VINHETA 1" & 
-                            vinheta != "VINHETA 2",
+wsw17$corrupt = with(wsw17, 
+                     ifelse(vinheta != "VINHETA 1" & vinheta != "VINHETA 2",
                             1, 0))
-
 # Create vote dummy
 wsw17$vote = with(wsw17, ifelse(voteintent > 2, 1, 0))
 
-# Run models
-reg_wsw17_all = lm_robust(vote ~ corrupt, data = wsw17) # Same experiment as PRQ 2016
+# Run models: Same experiment as PRQ 2016
+reg_wsw17_all = lm_robust(vote ~ corrupt, data = wsw17)
 
 # Extract point estimates
 ate_wsw17 = summary(reg_wsw17_all)$coef[2, 1]
@@ -160,14 +161,14 @@ p_rep_wsw18 = summary(reg_wsw18)$coef[2, 4]
 ################################################################################
 # Klasnja & Tucker: Electoral Studies 2013
 ################################################################################
-ate_sweden = ((-0.768/4 + -.814/4))/2
+ate_sweden = ((-0.768/4 + -.814/4))/2 # Average of two corruption treatments
 se_sweden = ((.090/4 + .097/4))/2
 n_sweden = 1852
 p_sweden = "<0.01"
 p_report_sweden = 2*pt(-abs(ate_sweden/se_sweden), df = n_sweden-1)
 p_rep_sweden = NA
 
-ate_moldova = ((0.031/4) + (-.503/4))/2
+ate_moldova = ((0.031/4) + (-.503/4))/2 # Average of two corruption treatments
 se_moldova = ((.165/4 + .166/4))/2
 n_moldova = 459
 p_moldova = "<0.01"
@@ -188,9 +189,8 @@ p_rep.defig = NA
 # Mares and Visconti: Political Science Research and Methods 2019
 ################################################################################
 # Pool corruption into one treatment
-mv$corrupt = with(mv, ifelse(atinte == "Sentenced" | 
-                             atinte == "Investigated", 1, 0))
-
+mv$corrupt = with(mv, ifelse(atinte == "Sentenced" | atinte == "Investigated", 
+                             1, 0))
 # Run model
 mv_corrupt = lm_robust(outcome ~ corrupt, data = mv, clusters = idnum)
 
@@ -217,6 +217,7 @@ p_rep_mv = summary(mv_corrupt)$coef[2, 4]
 ################################################################################
 # Pool corruption into one treatment
 b$corrupt = with(b, ifelse(corruption == "Honest", 0, 1))
+
 # Run model
 reg_b = lm_robust(Y ~ corrupt, data = b, clusters = id)
 
@@ -246,8 +247,8 @@ fz = fz %>% filter(!is.na(Y))
 
 # Pool corruption into one treatment
 fz$corrupt = with(fz, ifelse(corruption == "Convicted of corruption" |
-                             corruption == "Investigated for corruption", 1, 0))
-
+                             corruption == "Investigated for corruption", 
+                             1, 0))
 # Run model
 fz_corrupt = lm_robust(Y ~ corrupt, data = fz, clusters = IDContatto)
 
@@ -380,7 +381,7 @@ p_rep_ager = NA
 ################################################################################
 # Avenberg: Journal of Politics in Latin America 2019
 ################################################################################
-ate_aven = -3.37/6
+ate_aven = -3.37/6 # Seven point scale: rescaled 0 to 1
 se_aven = 0.2/6
 n_aven = 744
 p_aven = "<0.01"
@@ -390,7 +391,7 @@ p_rep_aven = NA
 ################################################################################
 # Vera Rojas: Political Studies 2019
 ################################################################################
-ate_vera = -1.18/6
+ate_vera = -1.18/6 # Seven point scale: rescaled 0 to 1
 se_vera = 0.11/6
 n_vera = 1308
 p_vera = "<0.01"
@@ -412,145 +413,290 @@ p_rep_an = NA
 # Add each study to meta analysis dataframe
 ################################################################################
 # Boas, Hidalgo, and Melo: American Journal of Political Science 2018
-bhm = data.frame(type="Survey", year=2018 , author = "Boas, Hidalgo, and Melo", 
-                   author_reduced = "Boas et al.", country = "Brazil", 
-                   ate_vote = ate_bhm, se_vote = se_bhm, ci_upper = NA,
-                   p_reported = p_report_bhm, p_replicated = p_rep_bhm,
-                   ci_lower = NA, N = n_bhm, 
-                   published = 1, Notes = NA)
+bhm = data.frame(type="Survey", 
+                 year=2018 , 
+                 author = "Boas, Hidalgo, and Melo", 
+                 author_reduced = "Boas et al.", 
+                 country = "Brazil",
+                 ate_vote = ate_bhm, 
+                 se_vote = se_bhm, 
+                 ci_upper = NA,
+                 ci_lower = NA, 
+                 p_reported = p_report_bhm, 
+                 p_replicated = p_rep_bhm,
+                 N = n_bhm,
+                 published = 1, 
+                 Notes = NA)
 
 # Winters and Weitz-Shapiro: Journal of Politics 2017
-wsw17 = data.frame(type="Survey", year=2016 , author = "Winters & Weitz-Shapiro", 
-                   author_reduced = "Winters & Weitz-Shapiro 2017", country = "Brazil", 
-                   ate_vote = ate_wsw17, se_vote = se_wsw17, ci_upper = NA,
-                   p_reported = p_report_wsw17, p_replicated = p_rep_wsw17, 
-                   ci_lower = NA, N = n_wsw17, 
-                   published = 1, Notes = NA)
+wsw17 = data.frame(type="Survey", 
+                   year=2016 , 
+                   author = "Winters & Weitz-Shapiro", 
+                   author_reduced = "Winters & Weitz-Shapiro 2017", 
+                   country = "Brazil", 
+                   ate_vote = ate_wsw17, 
+                   se_vote = se_wsw17, 
+                   ci_upper = NA,
+                   ci_lower = NA, 
+                   p_reported = p_report_wsw17, 
+                   p_replicated = p_rep_wsw17, 
+                   N = n_wsw17, 
+                   published = 1, 
+                   Notes = NA)
 
 # Winters and Weitz-Shapiro: Comparative Politics 2013
-wsw13 = data.frame(type="Survey", year=2013 , author = "Winters & Weitz-Shapiro", 
-                   author_reduced = "Winters & Weitz-Shapiro 2013", country = "Brazil", 
-                   ate_vote = ate_wsw13, se_vote = se_wsw13, ci_upper = NA,
-                   p_reported = p_report_wsw13, p_replicated = p_rep_wsw13,
-                   ci_lower = NA,N = n_wsw13, published = 1, Notes = NA)
+wsw13 = data.frame(type="Survey", 
+                   year=2013 , 
+                   author = "Winters & Weitz-Shapiro", 
+                   author_reduced = "Winters & Weitz-Shapiro 2013", 
+                   country = "Brazil", 
+                   ate_vote = ate_wsw13, 
+                   se_vote = se_wsw13, 
+                   ci_upper = NA, 
+                   ci_lower = NA,
+                   p_reported = p_report_wsw13, 
+                   p_replicated = p_rep_wsw13, 
+                   N = n_wsw13, 
+                   published = 1, 
+                   Notes = NA)
 
 # Winters and Weitz-Shapiro: Politial Science Research and Methods 2018
-wsw18 = data.frame(type="Survey", year=2018 , author = "Winters & Weitz-Shapiro", 
-                   author_reduced = "Winters & Weitz-Shapiro 2018", country = "Argentina", 
-                   ate_vote = ate_wsw18, se_vote = se_wsw18, ci_upper = NA, 
-                   p_reported = p_report_wsw18, p_replicated = p_rep_wsw18, 
-                   ci_lower = NA, N = n_wsw18, 
-                   published = 1, Notes = NA)
+wsw18 = data.frame(type="Survey", 
+                   year=2018 , 
+                   author = "Winters & Weitz-Shapiro", 
+                   author_reduced = "Winters & Weitz-Shapiro 2018", 
+                   country = "Argentina", 
+                   ate_vote = ate_wsw18, 
+                   se_vote = se_wsw18, 
+                   ci_upper = NA, 
+                   ci_lower = NA, 
+                   p_reported = p_report_wsw18, 
+                   p_replicated = p_rep_wsw18, 
+                   N = n_wsw18, 
+                   published = 1, 
+                   Notes = NA)
 
 # Klasnja & Tucker: Electoral Studies 2013 -  Sweden
-kt_sweden = data.frame(type="Survey", year=2013 , author = "Klasna & Tucker", 
-                   author_reduced = "Klasna & Tucker (Sweden)", country = "Sweden", 
-                   ate_vote = ate_sweden, se_vote = se_sweden, ci_upper = NA,
-                   p_reported = p_report_sweden, p_replicated = p_rep_sweden,
-                   ci_lower = NA, N = n_sweden, 
-                   published = 1, Notes = NA)
+kt_sweden = data.frame(type="Survey", 
+                       year=2013 , 
+                       author = "Klasna & Tucker", 
+                       author_reduced = "Klasna & Tucker (Sweden)", 
+                       country = "Sweden", 
+                       ate_vote = ate_sweden, 
+                       se_vote = se_sweden, 
+                       ci_upper = NA,
+                       ci_lower = NA, 
+                       p_reported = p_report_sweden, 
+                       p_replicated = p_rep_sweden,
+                       N = n_sweden, 
+                       published = 1, 
+                       Notes = NA)
 
 # Klasnja & Tucker: Electoral Studies 2013 - Moldova
-kt_moldova = data.frame(type="Survey", year=2013 , author = "Klasna & Tucker", 
-                   author_reduced = "Klasna & Tucker (Moldova)", country = "Moldova", 
-                   ate_vote = ate_moldova, se_vote = se_moldova, ci_upper = NA, 
-                   p_reported = p_report_moldova, p_replicated = p_rep_moldova,
-                   ci_lower = NA, published = 1, N = n_moldova, Notes = NA)
+kt_moldova = data.frame(type="Survey", 
+                        year=2013 , 
+                        author = "Klasna & Tucker", 
+                        author_reduced = "Klasna & Tucker (Moldova)", 
+                        country = "Moldova", 
+                        ate_vote = ate_moldova, 
+                        se_vote = se_moldova, 
+                        ci_upper = NA,
+                        ci_lower = NA, 
+                        p_reported = p_report_moldova, 
+                        p_replicated = p_rep_moldova,
+                        published = 1, 
+                        N = n_moldova, 
+                        Notes = NA)
 
 # Mares and Visconti: Political Science Research and Methods 2019
-mv = data.frame(type="Survey", year=2019 , author = "Mares & Visconti", 
-                   author_reduced = "Mares & Visconti", country = "Romania", 
-                   ate_vote = ate_mv, se_vote = se_mv, ci_upper = NA, 
-                   p_reported = p_report_mv, p_replicated = p_rep_mv,
-                   ci_lower = NA, N = n_mv, published = 1, 
-                   Notes = NA)
+mv = data.frame(type="Survey", 
+                year=2019 , 
+                author = "Mares & Visconti", 
+                author_reduced = "Mares & Visconti", 
+                country = "Romania",
+                ate_vote = ate_mv, 
+                se_vote = se_mv, 
+                ci_upper = NA,
+                p_reported = p_report_mv, 
+                p_replicated = p_rep_mv,
+                ci_lower = NA, 
+                N = n_mv, 
+                published = 1,
+                Notes = NA)
 
 # Breitenstein: Research and Politics 2019
-b = data.frame(type="Survey", year=2019 , author = "Breitenstein", 
-                   author_reduced = "Breitenstein", country = "Spain", 
-                   ate_vote = ate_b, se_vote = se_b, ci_upper = NA,
-                   p_reported = p_report_b, p_replicated = p_rep_b,
-                   ci_lower = NA, N = n_b, published = 1, 
-                   Notes = NA)
+b = data.frame(type="Survey", 
+               year=2019 , 
+               author = "Breitenstein", 
+               author_reduced = "Breitenstein", 
+               country = "Spain",
+               ate_vote = ate_b, 
+               se_vote = se_b, 
+               ci_upper = NA,
+               p_reported = p_report_b, 
+               p_replicated = p_rep_b,
+               ci_lower = NA, 
+               N = n_b, 
+               published = 1,
+               Notes = NA)
 
 # Franchino and Zucchini: Political Science Research and Methods 2014
-fz = data.frame(type="Survey", year=2014 , author = "Franchino and Zucchini", 
-                   author_reduced = "Franchino and Zucchini", country = "Italy", 
-                   ate_vote = ate_fz, se_vote = se_fz, 
-                   p_reported = p_report_fz, p_replicated = p_rep_fz,
-                   ci_upper = NA, ci_lower = NA, N = n_fz, 
-                   published = 1, Notes = NA)
+fz = data.frame(type="Survey", 
+                year=2014 , 
+                author = "Franchino and Zucchini", 
+                author_reduced = "Franchino and Zucchini", 
+                country = "Italy",
+                ate_vote = ate_fz, 
+                se_vote = se_fz,
+                p_reported = p_report_fz, 
+                p_replicated = p_rep_fz,
+                ci_upper = NA, 
+                ci_lower = NA, 
+                N = n_fz,
+                published = 1, 
+                Notes = NA)
 
 # Eggers, Vivyan, and Wagner: Journal of Politics 2017
-evw = data.frame(type="Survey", year=2017 , author = "Eggers, Vivyan, and Wagner", 
-                   author_reduced = "Eggers et al.", country = "UK", 
-                   ate_vote = ate_evw, se_vote = se_evw, 
-                   p_reported = p_report_evw, p_replicated = p_rep_evw,
-                   ci_upper = NA, ci_lower = NA, N = n_evw, 
-                   published = 1, Notes = NA)
+evw = data.frame(type="Survey", 
+                 year=2017, 
+                 author = "Eggers, Vivyan, and Wagner", 
+                 author_reduced = "Eggers et al.", 
+                 country = "UK",
+                 ate_vote = ate_evw, 
+                 se_vote = se_evw,
+                 p_reported = p_report_evw, 
+                 p_replicated = p_rep_evw,
+                 ci_upper = NA, 
+                 ci_lower = NA, 
+                 N = n_evw,
+                 published = 1, 
+                 Notes = NA)
 
 # Klasnja, Lupu, and Tucker: Working Paper - Argentina
-klt_arg = data.frame(type="Survey", year=2017 , author = "Klasna, Lupu, and Tucker", 
-                   author_reduced = "Klasna et al. (Argentina)", country = "Argentina", 
-                   ate_vote = ate_klt_arg, se_vote = se_klt_arg, ci_upper = NA, 
-                   p_reported = p_report_klt_arg, p_replicated = p_rep_klt_arg,
-                   ci_lower = NA, N = n_klt_arg, published = 0, Notes = NA)
+klt_arg = data.frame(type="Survey", 
+                     year=2017, 
+                     author = "Klasna, Lupu, and Tucker", 
+                     author_reduced = "Klasna et al. (Argentina)", 
+                     country = "Argentina", 
+                     ate_vote = ate_klt_arg, 
+                     se_vote = se_klt_arg, 
+                     ci_upper = NA,
+                     p_reported = p_report_klt_arg, 
+                     p_replicated = p_rep_klt_arg,
+                     ci_lower = NA, 
+                     N = n_klt_arg, 
+                     published = 0, 
+                     Notes = NA)
 
 # Klasnja, Lupu, and Tucker: Working Paper - Chile
-klt_chile = data.frame(type="Survey", year=2017 , author = "Klasna, Lupu, and Tucker", 
-                   author_reduced = "Klasna et al. (Chile)", country = "Chile", 
-                   ate_vote = ate_klt_chile, se_vote = se_klt_chile, ci_upper = NA, 
-                   p_reported = p_report_klt_chile, p_replicated = p_rep_klt_chile,
-                   ci_lower = NA, N = n_klt_chile, 
-                   published = 0, Notes = NA)
+klt_chile = data.frame(type="Survey", 
+                       year=2017, 
+                       author = "Klasna, Lupu, and Tucker", 
+                       author_reduced = "Klasna et al. (Chile)", 
+                       country = "Chile", 
+                       ate_vote = ate_klt_chile, 
+                       se_vote = se_klt_chile, 
+                       ci_upper = NA,
+                       p_reported = p_report_klt_chile, 
+                       p_replicated = p_rep_klt_chile,
+                       ci_lower = NA, 
+                       N = n_klt_chile,
+                       published = 0, 
+                       Notes = NA)
 
 # Klasnja, Lupu, and Tucker: Working Paper - Uruguay
-klt_uru = data.frame(type="Survey", year=2017 , author = "Klasna, Lupu, and Tucker", 
-                   author_reduced = "Klasna et al. (Uruguay)", country = "Uruguay", 
-                   ate_vote = ate_klt_uru, se_vote = se_klt_uru, ci_upper = NA,
-                   p_reported = p_report_klt_uru, p_replicated = p_rep_klt_uru,
-                   ci_lower = NA, N = n_klt_uru, 
-                   published = 0, Notes = NA)
+klt_uru = data.frame(type="Survey", year=2017, 
+                     author = "Klasna, Lupu, and Tucker", 
+                     author_reduced = "Klasna et al. (Uruguay)", 
+                     country = "Uruguay",
+                     ate_vote = ate_klt_uru, 
+                     se_vote = se_klt_uru, 
+                     ci_upper = NA,
+                     p_reported = p_report_klt_uru, 
+                     p_replicated = p_rep_klt_uru,
+                     ci_lower = NA, N = n_klt_uru,
+                     published = 0, 
+                     Notes = NA)
 
 # Chauchard, Klasnja, and Harish: Journal of Politics 2019
-ckh = data.frame(type="Survey", year=2019, author = "Chauchard, Klasnja, and Harish", 
-                   author_reduced = "Chauchard et al.", country = "India", 
-                   ate_vote = ate_ckh, se_vote = se_ckh, ci_upper = NA, 
-                   p_reported = p_report_ckh, p_replicated = p_rep_ckh,
-                   ci_lower = NA, N = n_ckh, 
-                   published = 1, Notes = NA)
+ckh = data.frame(type="Survey", 
+                 year = 2019,
+                 author = "Chauchard, Klasnja, and Harish",
+                 author_reduced = "Chauchard et al.",
+                 country = "India",
+                 ate_vote = ate_ckh,
+                 se_vote = se_ckh,
+                 ci_upper = NA,
+                 ci_lower = NA,
+                 p_reported = p_report_ckh,
+                 p_replicated = p_rep_ckh,
+                 N = n_ckh,
+                 published = 1,
+                 Notes = NA)
 
 # Agerberg: Comparative Political Studies 2019
-ager = data.frame(type="Survey", year=2019 , author = "Agerberg", 
-                   author_reduced = "Agerberg", country = "Spain", 
-                   ate_vote = ate_ager, se_vote = se_ager, ci_upper = NA, 
-                   ci_lower = NA, N = n_ager,
-                   p_reported = p_report_ager, p_replicated = p_rep_ager,
-                   published = 1, Notes = NA)
+ager = data.frame(type="Survey", 
+                  year = 2019,
+                  author = "Agerberg",
+                  author_reduced = "Agerberg",
+                  country = "Spain",
+                  ate_vote = ate_ager,
+                  se_vote = se_ager,
+                  ci_upper = NA,
+                  ci_lower = NA,
+                  N = n_ager,
+                  p_reported = p_report_ager,
+                  p_replicated = p_rep_ager,
+                  published = 1,
+                  Notes = NA)
 
 # Avenberg: Journal of Politics in Latin America 2019
-aven = data.frame(type="Survey", year=2019 , author = "Avenberg", 
-                   author_reduced = "Avenberg", country = "Brazil", 
-                   ate_vote = ate_aven, se_vote = se_aven, ci_upper = NA, 
-                   ci_lower = NA, N = n_aven,
-                   p_reported = p_report_aven, p_replicated = p_rep_aven,
-                   published = 1, Notes = NA)
+aven = data.frame(type="Survey", 
+                  year = 2019 ,
+                  author = "Avenberg",
+                  author_reduced = "Avenberg",
+                  country = "Brazil",
+                  ate_vote = ate_aven,
+                  se_vote = se_aven,
+                  ci_upper = NA,
+                  ci_lower = NA,
+                  N = n_aven,
+                  p_reported = p_report_aven,
+                  p_replicated = p_rep_aven,
+                  published = 1,
+                  Notes = NA)
 
 # Vera Rojas: Political Studies 2019
-vera = data.frame(type="Survey", year=2019 , author = "Vera Rojas", 
-                   author_reduced = "Vera Rojas", country = "Peru", 
-                   ate_vote = ate_vera, se_vote = se_vera, ci_upper = NA, 
-                   ci_lower = NA, N = n_vera,
-                   p_reported = p_report_vera, p_replicated = p_rep_vera,
-                   published = 1, Notes = NA)
+vera = data.frame(type="Survey", 
+                  year = 2019 ,
+                  author = "Vera Rojas",
+                  author_reduced = "Vera Rojas",
+                  country = "Peru",
+                  ate_vote = ate_vera,
+                  se_vote = se_vera,
+                  ci_upper = NA,
+                  ci_lower = NA,
+                  N = n_vera,
+                  p_reported = p_report_vera,
+                  p_replicated = p_rep_vera,
+                  published = 1,
+                  Notes = NA)
 
 # Azfar and Nelson: Public Choice 2007 (lab)
-an = data.frame(type="Lab", year=2007 , author = "Azfar and Nelson", 
-                   author_reduced = "Azfar and Nelson", country = "USA", 
-                   ate_vote = ate_an, se_vote = se_an, ci_upper = NA, 
-                   ci_lower = NA, N = n_an,
-                   p_reported = p_report_an, p_replicated = p_rep_an,
-                   published = 1, Notes = NA)
+an = data.frame(type="Lab", 
+                year = 2007 ,
+                author = "Azfar and Nelson",
+                author_reduced = "Azfar and Nelson",
+                country = "USA",
+                ate_vote = ate_an,
+                se_vote = se_an,
+                ci_upper = NA,
+                ci_lower = NA,
+                N = n_an,
+                p_reported = p_report_an,
+                p_replicated = p_rep_an,
+                published = 1,
+                Notes = NA)
 
 # Combine dataframes
 meta = rbind(results, bhm, wsw17, wsw13, wsw18, kt_sweden, kt_moldova, ckh,
