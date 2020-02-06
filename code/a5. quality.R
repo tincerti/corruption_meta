@@ -1,13 +1,10 @@
 ################################################################################
 # Libraries and Import
 ################################################################################
-library(survey)
 library(tidyverse)
-library(huxtable)
 library(foreign)
 library(readxl)
 library(readstata13)
-library(cjoint)
 library(estimatr)
 
 # Data imports
@@ -175,49 +172,49 @@ wsw17_low = data.frame(type="Low quality", year=2016, author = "Winters & Weitz-
                    ate_vote = atelow.wsw17, se_vote = selow.wsw17, ci_upper = NA, 
                    ci_lower = NA, N = nlow.wsw17, published = 1, Notes = NA)
 
-# Winters/Weitz-Shapiro PSRM
+# Winters/Weitz-Shapiro PSRM: High
 wsw18_high = data.frame(type="High quality", year=2018 , author = "Winters & Weitz-Shapiro", 
                    author_reduced = "Winters & Weitz-Shapiro 2018", country = "Argentina", 
                    ate_vote = atehigh.wsw18, se_vote = sehigh.wsw18, ci_upper = NA, 
                    ci_lower = NA,N = nhigh.wsw18, published = 1, Notes = NA)
 
-# Winters/Weitz-Shapiro PSRM
+# Winters/Weitz-Shapiro PSRM: Low
 wsw18_low = data.frame(type="Low quality", year=2018 , author = "Winters & Weitz-Shapiro", 
                    author_reduced = "Winters & Weitz-Shapiro 2018", country = "Argentina", 
                    ate_vote = atelow.wsw18, se_vote = selow.wsw18, ci_upper = NA, 
                    ci_lower = NA,N = nlow.wsw18, published = 1, Notes = NA)
 
-# Breitenstein 2019
+# Breitenstein 2019: High
 b_high = data.frame(type="High quality", year=2019 , author = "Breitenstein", 
                    author_reduced = "Breitenstein", country = "Spain", 
                    ate_vote = atehigh.b, se_vote = sehigh.b, ci_upper = NA, 
                    ci_lower = NA, N = nhigh.b, published = 1, Notes = NA)
 
-# Breitenstein 2019
+# Breitenstein 2019: Low
 b_low = data.frame(type="Low quality", year=2019 , author = "Breitenstein", 
                    author_reduced = "Breitenstein", country = "Spain", 
                    ate_vote = atelow.b, se_vote = selow.b, ci_upper = NA, 
                    ci_lower = NA, N = nlow.b, published = 1, Notes = NA)
 
-# Mares and Visconti 2019
+# Mares and Visconti 2019: High
 mv_high = data.frame(type="High quality", year=2019 , author = "Mares & Visconti", 
                    author_reduced = "Mares & Visconti", country = "Romania", 
                    ate_vote = atehigh.mv, se_vote = sehigh.mv, ci_upper = NA, 
                    ci_lower = NA, N = nhigh.mv, published = 1, Notes = NA)
 
-# Mares and Visconti 2019
+# Mares and Visconti 2019: Low
 mv_low = data.frame(type="Low quality", year=2019 , author = "Mares & Visconti", 
                    author_reduced = "Mares & Visconti", country = "Romania", 
                    ate_vote = atelow.mv, se_vote = selow.mv, ci_upper = NA, 
                    ci_lower = NA, N = nlow.mv, published = 1, Notes = NA)
 
-# Franchino and Zucchini 2015
+# Franchino and Zucchini 2015: High
 fz_high = data.frame(type="High quality", year=2014 , author = "Franchino and Zucchini", 
                    author_reduced = "Franchino and Zucchini", country = "Italy", 
                    ate_vote = atehigh.fz, se_vote = sehigh.fz, ci_upper = NA, 
                    ci_lower = NA, N = nhigh.fz, published = 1, Notes = NA)
 
-# Franchino and Zucchini 2015
+# Franchino and Zucchini 2015: Low
 fz_low = data.frame(type="Low quality", year=2014 , author = "Franchino and Zucchini", 
                    author_reduced = "Franchino and Zucchini", country = "Italy", 
                    ate_vote = atelow.fz, se_vote = selow.fz, ci_upper = NA, 
@@ -272,4 +269,3 @@ ggplot(quality, aes(ate_vote, author_quality, label = type)) +
   guides(colour = guide_legend(override.aes = list(size=5)))
 
 ggsave("figs/quality.pdf", height = 5, width = 6)
-

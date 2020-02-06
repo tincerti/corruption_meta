@@ -5,12 +5,10 @@ rm(list=ls())
 
 # Libraries
 library(tidyverse)
-library(readxl)
 library(metafor)
 library(stargazer)
 
-# Data import - Gallup
-meta = read_excel("data/study_results.xlsx")
+# Data import
 load(file="data/meta.RData")
 
 ################################################################################
@@ -94,8 +92,11 @@ meta_re = data.frame(type="Field", year=NA, author = "Random effects model",
 field = rbind(field, meta_fe, meta_re)
 
 # Re-order factor levels
-field$author_reduced = fct_relevel(field$author_reduced, "Fixed effects model", after = 0)
-field$author_reduced = fct_relevel(field$author_reduced, "Random effects model", after = 0)
+field$author_reduced = fct_relevel(field$author_reduced, 
+                                   "Fixed effects model", after = 0)
+
+field$author_reduced = fct_relevel(field$author_reduced, 
+                                   "Random effects model", after = 0)
 
 # Mutliply effect size by 100
 field$ate_vote = field$ate_vote*100
@@ -277,12 +278,14 @@ res_het = me_mod$tau2 # Estimate of residual heterogeneity with moderator
 
 # Calculate total heterogeneity accounted for by survey moderator
 het_accounted = (het_total - res_het)/het_total
-het_accounted = sapply(het_accounted, 
-                       function(x)paste0(round(x*100, 3),"%",collapse="%"))
 
 ################################################################################
 # Export models: moderator analysis excluding Banerjee et. al studies
 ################################################################################
+# Prepare heterogenity metric for export
+het_accounted = sapply(het_accounted, 
+                       function(x)paste0(round(x*100, 3),"%",collapse="%"))
+
 # Create row labels
 Value = c("Estimate",
           "",

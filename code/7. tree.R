@@ -10,7 +10,6 @@ set.seed(200) # Estimates will of course vary slightly with change in seed
 library(foreign)
 library(readstata13)
 library(tidyverse)
-library(gbm)
 library(rpart)
 library(rpart.plot)
 library(caTools)
@@ -99,6 +98,7 @@ b_tree <- rpart(Y ~ Corrupt + Party + Economy + Experience + Gender,
                     method = 'class')
 
 # Pick tree size that minimizes classification error rate and prune tree
+# Using lowest rel_error + xstd < x_error rule 
 bestcp <- b_tree$cptable[which.min(b_tree$cptable[,"xerror"]),"CP"]
 plotcp(b_tree)
 printcp(b_tree)
@@ -136,7 +136,12 @@ b_tree_clean <- rpart(Y ~ Corrupt + Party + Economy + Experience + Gender,
 bestcp <- b_tree_clean$cptable[which.min(b_tree_clean$cptable[,"xerror"]),"CP"]
 plotcp(b_tree_clean)
 printcp(b_tree_clean)
-b_tree_clean_pruned <- prune(b_tree_clean, cp = -0.01)
+b_tree_clean_pruned <- prune(b_tree_clean, cp = -0.01) 
+# Choosing different CP for visualization: error rate remains constant
+
+# Examine correct classification rate
+test$t_pred = predict(b_tree_pruned, test, type = "class")
+mean(test$Y == test$t_pred)
 
 # Plot classification tree
 rpart.plot(b_tree_clean_pruned, extra = 7, type = 5, cex = 0.6)
@@ -205,17 +210,10 @@ ckh_corrupt = ckh %>% filter(Corrupt == "Yes")
 
 # Split data into training and test
 sample = sample.split(ckh_corrupt, SplitRatio = .9) # From caTools package
-train = subset(ckh, sample == TRUE)
-test  = subset(ckh, sample == FALSE)
+train = subset(ckh_corrupt, sample == TRUE)
+test  = subset(ckh_corrupt, sample == FALSE)
 
 # Run classification tree (uses package rpart)
-ckh_tree <- rpart(dv_vote ~ `Corrupt` + `Copartisan` + `Coethnic` + 
-                          `Criminality` + `Performance` + `Background` + 
-                          `Wealth increase`,
-                    data = train, 
-                    cp = 0,
-                    method = 'class')
-
 ckh_tree <- rpart(dv_vote ~ `Copartisan` + `Coethnic` + 
                           `Criminality` + `Performance` + 
                           `Wealth increase`,
@@ -224,9 +222,10 @@ ckh_tree <- rpart(dv_vote ~ `Copartisan` + `Coethnic` +
                     method = 'class')
 
 # Pick tree size that minimizes classification error rate and prune tree
-bestcp <- ckh_tree$cptable[which.min(ckh_tree$cptable[,"xerror"]),"CP"]
 plotcp(ckh_tree)
-ckh_tree_pruned <- prune(ckh_tree, cp = .0036)
+printcp(ckh_tree)
+ckh_tree_pruned <- prune(ckh_tree, cp = 0) 
+# Using lowest rel_error + xstd < x_error rule
 
 # Examine correct classification rate
 test$t_pred = predict(ckh_tree_pruned, test, type = "class")

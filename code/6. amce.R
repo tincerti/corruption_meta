@@ -65,8 +65,8 @@ fz$`Same sex marriage` <- factor(fz$samesex,
 
 # Run AMCE regression and store results
 reg_all <- amce(formula = Y ~ `Corrupt` + `Education` + `Income` + 
-                              `Tax policy` + `Same sex marriage`, 
-                data = fz, cluster=TRUE, respondent.id = "IDContatto")
+                          `Tax policy` + `Same sex marriage`,
+                data = fz, cluster = TRUE, respondent.id = "IDContatto")
 
 ################################################################################
 # Analysis: Breitenstein
@@ -164,10 +164,10 @@ reg_mv <- amce(formula = outcome ~ `Corrupt` + `Policy` + `Negative` +
                 data = mv, cluster=TRUE, respondent.id = "idnum")
 
 ################################################################################
-# Plot
+# Plot AMCE results
 ################################################################################
 # Create conjoint plot: Breitenstein
-plot(reg_b,
+plot(reg_b,  
      group.order = c("Corrupt", "Gender", "Party", 
                      "Economy", "Experience"),
      xlab = "Change in probability of voting",
@@ -176,10 +176,11 @@ plot(reg_b,
      plot.theme = theme_bw() + 
      theme(panel.grid.major = element_line(colour = "grey98")) + 
      theme(legend.position="none") +
-     theme(axis.title.x = element_text(size = 10)) +
      theme(axis.ticks = element_blank()) + 
+     theme(axis.title.x = element_text(size = 10)) +
      theme(plot.title = element_text(size=12)) +
-     theme(plot.title = element_text(hjust = 0.5)),
+     theme(plot.title = element_text(hjust = 0.5)) +
+     theme(axis.text.y = element_text(hjust=0)),
      text.color = "black",
      text.size = 14
 )
@@ -199,10 +200,11 @@ plot(reg_all,
      plot.theme = theme_bw() + 
      theme(panel.grid.major = element_line(colour = "grey98")) + 
      theme(legend.position="none") +
-     theme(axis.title.x = element_text(size = 10)) +
      theme(axis.ticks = element_blank()) + 
+     theme(axis.title.x = element_text(size = 10)) +
      theme(plot.title = element_text(size=12)) +
-     theme(plot.title = element_text(hjust = 0.5)),
+     theme(plot.title = element_text(hjust = 0.5)) +
+     theme(axis.text.y = element_text(hjust=0)),
      text.color = "black",
      text.size = 14
 )
@@ -222,10 +224,11 @@ plot(reg_mv,
      plot.theme = theme_bw() + 
      theme(panel.grid.major = element_line(colour = "grey98")) + 
      theme(legend.position="none") +
-     theme(axis.title.x = element_text(size = 10)) +
      theme(axis.ticks = element_blank()) + 
+     theme(axis.title.x = element_text(size = 10)) +
      theme(plot.title = element_text(size=12)) +
-     theme(plot.title = element_text(hjust = 0.5)),
+     theme(plot.title = element_text(hjust = 0.5)) +
+     theme(axis.text.y = element_text(hjust=0)),
      text.color = "black",
      text.size = 14
 )
