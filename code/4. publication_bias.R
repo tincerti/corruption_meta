@@ -46,7 +46,8 @@ meta$p_reported = with(meta, ifelse(author_reduced == "Boas et al.",
                        2*pt(-abs(ate_vote/se_vote), df = N-1),
                        p_reported))
 
-# Buntaine, Jablonski, Nielson & Pickering (Councillor): paper reports 1-tailed test
+# Buntaine, Jablonski, Nielson & Pickering (Councillor): 
+# Note that paper reports 1-tailed test, so recalculating as two-tailed
 meta$p_reported = with(meta, ifelse(author_reduced == "Buntain et al. (Councillor)",
                        2*pt(-abs(ate_vote/se_vote), df = N-1),
                        p_reported))
@@ -129,12 +130,9 @@ re_all_pcurve <- metagen(ate_vote,
 # Create visual p-curve
 pcurve(re_all_pcurve)
 
+# Save p-curve
 dev.copy(pdf,'figs/p_curve_all.pdf', width=12, height=7)
 dev.off()
-
-# Estimate effect size using p-curve
-N = meta$N
-pcurve(re_all_pcurve, effect.estimation = TRUE, N = N)
 
 #### Survey experiments ####
 # Restimate meta-analysis with metagen: survey experiments
@@ -152,12 +150,9 @@ re_survey_pcurve <- metagen(ate_vote,
 # Create p-curve 
 pcurve(re_survey_pcurve, N = N)
 
+# Save p-curve
 dev.copy(pdf,'figs/p_curve_survey.pdf', width=12, height=7)
 dev.off()
-
-# Estimate effect size using p-curve
-N = survey$N
-pcurve(re_survey_pcurve, effect.estimation = TRUE, N = N)
 
 #### Field experiments ####
 # Restimate meta-analysis with metagen: field experiments
@@ -175,21 +170,13 @@ re_field_pcurve <- metagen(ate_vote,
 # Create p-curve 
 pcurve(re_field_pcurve, N = N)
 
+# Save p-curve
 dev.copy(pdf,'figs/p_curve_field.pdf', width=12, height=7)
 dev.off()
-
-# Estimate effect size using p-curve
-N = field$N
-pcurve(re_field_pcurve, effect.estimation = TRUE, N = N)
 
 ################################################################################
 # Funnel Plot Analysis
 ################################################################################
-# Examine number of published articles by field or survey
-sum = meta %>% 
-  group_by(published, type) %>% 
-  summarise (number = n())
-
 # Funnel plot for all experiments
 re_funnel = funnel(re, 
             back = "grey95", col = "steelblue2",
@@ -207,10 +194,6 @@ dev.copy(pdf,'figs/funnel_re_field.pdf', width=10, height=7)
 dev.off()
 
 # Funnel plot for survey experiments
-funnel(fe_survey, 
-       back = "grey95", col = "steelblue2",
-       digits = c(1,2))
-
 funnel(re_survey, 
        back = "grey95", col = "steelblue2",
        digits = c(1,2))
@@ -235,7 +218,7 @@ regtest_re_field = regtest(re_field, model = "lm", predictor = "sei")
 # Regression tests for funnel plot asymmetry: export table
 studies = c("All", "All with moderator", "Field", "Survey")
 pvalue = c(regtest_re$pval, regtest_mod$pval, regtest_re_field$pval,
-                       regtest_re_survey$pval)
+           regtest_re_survey$pval)
 
 regtest = data.frame(studies, pvalue)
 regtest = regtest %>% rename("Studies included" = studies, "p value" = pvalue)
@@ -250,9 +233,9 @@ stargazer(regtest, summary = FALSE, rownames = FALSE,
 # Trim and fill
 ################################################################################
 # Perform trim and fill analysis
-trimfill_all = trimfill(re)
-trimfill_field = trimfill(re_field)
-trimfill_survey = trimfill(re_survey)
+trimfill_all = trimfill(re) # Estimates increase compared to random effects
+trimfill_field = trimfill(re_field) # Esimates unchanged
+trimfill_survey = trimfill(re_survey) # Estimates unchanged
 
 # Export funnel plot with trimfill method
 funnel(trimfill_all, 
@@ -321,7 +304,7 @@ summary(peese_all) # PET intercept significantly different from zero (use PEESE)
 # Field experiments: 
 pet_field = lm(ate_vote ~ se_vote, weight = 1/var_vote, data = field) 
 peese_field = lm(ate_vote ~ var_vote, weight = 1/var_vote, data = field)
-summary(pet_field) # PET intercept significantly different from zero (use PET)
+summary(pet_field) # PET intercept not significantly different from zero (use PET)
 
 # Survey experiments
 pet_survey = lm(ate_vote ~ se_vote, weight = 1/var_vote, data = survey) 
@@ -333,9 +316,9 @@ int_peese_all = summary(peese_all)$coefficients[1]
 int_pet_field = summary(pet_field)$coefficients[1]
 int_peese_survey = summary(peese_survey)$coefficients[1]
 
-se_peese_survey = summary(peese_survey)$coefficients[1,2]
 se_peese_all = summary(peese_all)$coefficients[1,2]
 se_pet_field = summary(pet_field)$coefficients[1,2]
+se_peese_survey = summary(peese_survey)$coefficients[1,2]
 
 # Define categories
 Value = 

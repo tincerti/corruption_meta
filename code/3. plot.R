@@ -5,13 +5,12 @@ rm(list=ls())
 
 # Libraries
 library(tidyverse)
-library(metafor)
 
 # Data import
 load(file="data/meta_results.RData")
 
 ################################################################################
-# Plot field results
+# Prepare field results for plotting
 ################################################################################
 # Add meta-anlaysis parameters
 ate_vote_fe = coef(fe_field)
@@ -19,29 +18,38 @@ se_vote_fe = summary(fe_field)$se
 ate_vote_re = coef(re_field)
 se_vote_re = summary(re_field)$se
 
+# Create fixed effects row in dataframe
 meta_fe = data.frame(type="Field", year=NA, author = "Fixed effects model", 
                      author_reduced = "Fixed effects model", country = NA, 
                      ate_vote = ate_vote_fe, se_vote = se_vote_fe, ci_upper = NA, 
                      ci_lower = NA, p_reported = NA, p_replicated = NA, 
                      published = NA, N = NA, Notes = NA)
 
+# Create random efffects row in dataframe
 meta_re = data.frame(type="Field", year=NA, author = "Random effects model", 
                      author_reduced = "Random effects model", country = NA, 
                      ate_vote = ate_vote_re, se_vote = se_vote_re, ci_upper = NA, 
                      ci_lower = NA, p_reported = NA, p_replicated = NA,
                      published = NA, N = NA, Notes = NA)
 
+# Bind into dataframe
 field = rbind(field, meta_fe, meta_re)
 
 # Re-order factor levels
-field$author_reduced = fct_relevel(field$author_reduced, "Fixed effects model", after = 0)
-field$author_reduced = fct_relevel(field$author_reduced, "Random effects model", after = 0)
+field$author_reduced = fct_relevel(field$author_reduced, 
+                                   "Fixed effects model", after = 0)
+
+field$author_reduced = fct_relevel(field$author_reduced, 
+                                   "Random effects model", after = 0)
 
 # Mutliply effect size by 100
 field$ate_vote = field$ate_vote*100
 field$se_vote = field$se_vote*100
 
+################################################################################
 # Plot field results
+################################################################################
+
 ggplot(field, aes(ate_vote, author_reduced)) +
   geom_point(color = "seagreen3", size = 1.5) + 
   geom_point(data = subset(field, 
@@ -67,7 +75,7 @@ ggplot(field, aes(ate_vote, author_reduced)) +
 ggsave("figs/field.pdf", height = 3.5, width = 6)
 
 ################################################################################
-# Plot survey results
+# Prepare survey results for plotting
 ################################################################################
 # Add meta-anlaysis parameters
 ate_vote_fe = coef(fe_survey)
@@ -75,29 +83,38 @@ se_vote_fe = summary(fe_survey)$se
 ate_vote_re = coef(re_survey)
 se_vote_re = summary(re_survey)$se
 
+# Create fixed effects row in dataframe
 meta_fe = data.frame(type="Survey", year=NA, author = "Fixed effects model", 
                      author_reduced = "Fixed effects model", country = NA, 
                      ate_vote = ate_vote_fe, se_vote = se_vote_fe, ci_upper = NA, 
                      ci_lower = NA, p_reported = NA, p_replicated = NA,
                      published = NA, N = NA, Notes = NA)
 
+# Create random efffects row in dataframe
 meta_re = data.frame(type="Survey", year=NA, author = "Random effects model", 
                   author_reduced = "Random effects model", country = NA, 
                   ate_vote = ate_vote_re, se_vote = se_vote_re, ci_upper = NA, 
                   ci_lower = NA, p_reported = NA, p_replicated = NA,
                   published = NA, N = NA, Notes = NA)
 
+# Bind into dataframe
 survey = rbind(survey, meta_fe, meta_re)
 
 # Re-order factor levels
-survey$author_reduced = fct_relevel(survey$author_reduced, "Fixed effects model", after = 0)
-survey$author_reduced = fct_relevel(survey$author_reduced, "Random effects model", after = 0)
+survey$author_reduced = fct_relevel(survey$author_reduced, 
+                                    "Fixed effects model", after = 0)
+
+survey$author_reduced = fct_relevel(survey$author_reduced, 
+                                    "Random effects model", after = 0)
 
 # Mutliply effect size by 100
 survey$ate_vote = survey$ate_vote*100
 survey$se_vote = survey$se_vote*100
 
+################################################################################
 # Plot survey results
+################################################################################
+
 ggplot(survey, aes(ate_vote, author_reduced)) +
   geom_point(color = "steelblue2", size = 1.5) + 
   geom_point(data = subset(survey, 
