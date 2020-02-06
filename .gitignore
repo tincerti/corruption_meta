@@ -7,6 +7,8 @@
 # Folders
 notes/
 literature/
+archive/
+presentation/
 
 # LaTeX intermediary files - core
 *.aux
