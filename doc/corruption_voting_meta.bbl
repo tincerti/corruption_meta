@@ -183,7 +183,7 @@ Dunning, Thad, Guy Grossman, Macartan Humphreys, Susan~D Hyde, Craig McIntosh
 
 \harvarditem{Duval \harvardand\ Tweedie}{2000}{duval2000nonparametric}
 Duval, Sue \harvardand\ Richard Tweedie. 2000.
-\newblock ``A nonparametric ?trim and fill? method of accounting for
+\newblock ``A nonparametric ``trim and fill'' method of accounting for
   publication bias in meta-analysis.'' {\em Journal of the american statistical
   association} 95(449):89--98.
 
@@ -358,6 +358,11 @@ Simonsohn, Uri, Leif~D Nelson \harvardand\ Joseph~P Simmons. 2014{\em b}.
 Solaz, Hector, Catherine~E De~Vries \harvardand\ Roosmarijn~A de~Geus. 2018.
 \newblock ``In-Group Loyalty and the Punishment of Corruption.'' {\em
   Comparative Political Studies} p.~0010414018797951.
+
+\harvarditem{Stanley \harvardand\ Doucouliagos}{2014}{stanley2014meta}
+Stanley, Tom~D \harvardand\ Hristos Doucouliagos. 2014.
+\newblock ``Meta-regression approximations to reduce publication selection
+  bias.'' {\em Research Synthesis Methods} 5(1):60--78.
 
 \harvarditem{Stanley \harvardand\ Doucouliagos}{2017}{stanley2017neither}
 Stanley, Tom~D \harvardand\ Hristos Doucouliagos. 2017.
