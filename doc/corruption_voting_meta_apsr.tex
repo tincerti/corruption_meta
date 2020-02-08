@@ -102,10 +102,12 @@
 
 % appendix settings
 \usepackage[toc,page,header]{appendix}
-\renewcommand{\appendixpagename}{Appendix for My Paper XXX}
+\renewcommand{\appendixpagename}{\centering Appendices}
 \usepackage{chngcntr}
 \usepackage{etoolbox}
 \usepackage{lipsum}
+
+\setcounter{secnumdepth}{0}
 
 
 % file paths and definitions
@@ -149,9 +151,7 @@
 % and three anonymous reviewers
 
 \author{Trevor Incerti\thanks{PhD Student in the Department of Political Science, Yale University. trevor.incerti@yale.edu.}\vspace{-2ex}}
-%\affil{\textit{Yale University}\vspace{-2.5ex}}
-\date{First draft: July 7, 2019 \\ This draft: \today}
-%\date{November 27, 2019}
+\date{\today}
 \maketitle
 
 \begin{abstract}
@@ -186,7 +186,7 @@ By contrast, survey experiments consistently show large negative effects from in
 
 \citet{boas2018norms} find differential results in a pair of field and survey experiments conducted in Brazil---zero and null in field; large, negative, and significant in survey. They argue that norms against malfeasance in Brazil are constrained by other factors at the polls, but that ``differences in research design are unlikely to account for much of the difference in effect size.''\footnote{The specific design differences \citeauthor{boas2018norms} note are unlikely to cause the discrepancy are differences in the language used between the information in the vignette and flier, and timing of outcome measurement.} \citeauthor{boas2018norms} identify moderating factors specific to Brazil---low salience of corruption to voters in municipal elections and the strong effects of dynastic politics---to explain the small effects in their field experiment. However, meta-analysis demonstrates that this discrepancy exists not only in \citeauthor{boas2018norms}'s experiments in Brazil, but extends across a systematic review of all countries and studies conducted to date. This suggests that the discrepancy between field and survey experimental findings is driven by methodological differences, rather than Brazil-specific features. I therefore enumerate features inherent in the research designs of field and survey experiments that may drive the small effects in field experiments and large effects in survey experiments.
 
-Lab experiments that reveal corrupt actions of politicians to fellow players, then measure vote choice also show large negative treatment effects. While recognizing that the sample size of studies is extremely small, a meta-analysis of the three lab experiments that meet this study's \hyperref[sec: criteria]{selection criteria} reveal a point estimate of approximately -33 percentage points \citep{arvate2017condemning, azfar2007transparency, solaz2018group} (see \autoref{fig: lab}).\footnote{See \citet{valentine2010many} for a discussion of statistical power in meta-analysis. Note that \citeauthor{valentine2010many}  conclude that the minimum number of studies needed to conduct a meta-analysis is ``two studies.''} This discrepancy is worth noting as previous examinations of lab-field correspondence have found evidence of general replicability \citep{camerer2011promise, coppock2015assessing}.
+Lab experiments that reveal corrupt actions of politicians to fellow players, then measure vote choice also show large negative treatment effects. While recognizing that the sample size of studies is extremely small, a meta-analysis of the three lab experiments that meet this study's \hyperref[sec: criteria]{selection criteria} reveal a point estimate of approximately -33 percentage points \citep{arvate2017condemning, azfar2007transparency, solaz2018group} (see Online Appendix Figure A.1).\footnote{See \citet{valentine2010many} for a discussion of statistical power in meta-analysis. Note that \citeauthor{valentine2010many}  conclude that the minimum number of studies needed to conduct a meta-analysis is ``two studies.''} This discrepancy is worth noting as previous examinations of lab-field correspondence have found evidence of general replicability \citep{camerer2011promise, coppock2015assessing}.
 
 \section{Research Design and Methods} \label{sec: Methods}
 
@@ -200,7 +200,7 @@ For survey experiments, studies must test a no-information or clean control grou
 
 \subsection{Included studies}\label{sec: included}
 
-A list of all papers - disaggregated by field and survey experiments - that meet the criteria outlined above are provided in \autoref{tab:field} and \autoref{tab:survey}. A list of lab experiments (4 total) can also be found in and \autoref{tab:lab}, although these studies are not included in the meta-analysis. A list of excluded studies with justification for their exclusion can be found in \autoref{tab:excluded}.
+A list of all papers - disaggregated by field and survey experiments - that meet the criteria outlined above are provided in \autoref{tab:field} and \autoref{tab:survey}. A list of lab experiments (4 total) can also be found in  Online Appendix Table A.1, although these studies are not included in the meta-analysis. A list of excluded studies with justification for their exclusion can be found in Online Appendix Table A.2.
 
 \begin{table}[!htbp] \centering 
   \caption{Field experiments}
@@ -258,9 +258,9 @@ A list of all papers - disaggregated by field and survey experiments - that meet
 
 \subsection{Additional selection comments}\label{sec: additional_comments}
 
-Additional justification for the inclusion or exclusion of certain studies, as well as coding and/or replication choices may be warranted in some cases. Despite often being considered a form of corruption \citep{rose2016corruption}, I exclude electoral fraud experiments as whether vote buying constitutes clientelism or corruption is a matter of debate \citep{stokes2013brokers}. The field experiment conducted by \citet{banerjee2010can} is included. However, the authors treated voters with a campaign not to vote for corrupt candidates in general, but did not provide voters with information on which candidates were corrupt. Similarly, the field experiment conducted by \citet{banerjee2011informed} is included, but their treatment provided information on politicians' asset accumulation and criminality, which may imply corruption but is not as direct as other types of information provision. The point estimates remain approximately zero when these studies are excluded from the meta-analysis (see \autoref{fig: meta-field_no_banerjee} and \autoref{meta_no_banerjee}). 
+Additional justification for the inclusion or exclusion of certain studies, as well as coding and/or replication choices may be warranted in some cases. Despite often being considered a form of corruption \citep{rose2016corruption}, I exclude electoral fraud experiments as whether vote buying constitutes clientelism or corruption is a matter of debate \citep{stokes2013brokers}. The field experiment conducted by \citet{banerjee2010can} is included. However, the authors treated voters with a campaign not to vote for corrupt candidates in general, but did not provide voters with information on which candidates were corrupt. Similarly, the field experiment conducted by \citet{banerjee2011informed} is included, but their treatment provided information on politicians' asset accumulation and criminality, which may imply corruption but is not as direct as other types of information provision. The point estimates remain approximately zero when these studies are excluded from the meta-analysis (see Online Appendix Figure A.2 and Table A.6). 
 
-With respect to survey experiments, \citet{chauchard2019getting} include two treatments---wealth accumulation and whether the wealth accumulation was illegal. The effect reported here is the illegal treatment only. This is likely a conservative estimate, as the true effect is a combination of illegality and wealth accumulation. \citet{winters2016s} and \citet{weitz2017can} report results from the same survey experiment, as do \citet{winters2013lacking} and \citet{winters2015political}. Each of these results are therefore only reported once. The survey experiment in \citet{de2011voters} is excluded from the analysis as it does not use hypothetical candidates, but instead asks voters if they would have changed their actual voting behavior in response to receiving corruption information. This study has a slightly positive and null finding. Including this study, the point estimates are 32 and 31 percentage points using fixed and random effects estimation, respectively (see \autoref{fig: meta-field_defig} and \autoref{meta_survey_defig}). 
+With respect to survey experiments, \citet{chauchard2019getting} include two treatments---wealth accumulation and whether the wealth accumulation was illegal. The effect reported here is the illegal treatment only. This is likely a conservative estimate, as the true effect is a combination of illegality and wealth accumulation. \citet{winters2016s} and \citet{weitz2017can} report results from the same survey experiment, as do \citet{winters2013lacking} and \citet{winters2015political}. Each of these results are therefore only reported once. The survey experiment in \citet{de2011voters} is excluded from the analysis as it does not use hypothetical candidates, but instead asks voters if they would have changed their actual voting behavior in response to receiving corruption information. This study has a slightly positive and null finding. Including this study, the point estimates are 32 and 31 percentage points using fixed and random effects estimation, respectively (see Online Appendix Figure A.3 and Table A.9). 
 
 \pagebreak
 
@@ -286,7 +286,7 @@ With respect to survey experiments, \citet{chauchard2019getting} include two tre
 
 Survey experiments estimate much larger negative treatment effects of providing information about corruption to voters relative to field experiments. In fact, the field-experimental results in \autoref{fig: meta-field} reveal a precisely estimated point estimate of approximately zero and suggest that we cannot reject the null hypothesis of no treatment effect (the 95\% confidence interval is -0.56 to 0.15 percentage points using fixed effects and -2.1 to 1.4 using random effects). By contrast, \autoref{fig: meta-survey} shows that corrupt candidates are punished by respondents by approximately 32 percentage points in survey experiments based on fixed and random effects meta-analysis (the 95\% confidence interval is -32.6 to -31.2 percentage points using fixed effects and -38.2 to -26.2 using random effects). Of the 18 survey experiments, only one shows a null effect \citep{klavsnja2013economy}, while all others are negative and significantly different from zero at conventional levels. 
 
-Examining all studies together, a test for heterogeneity by type of experiment (field or survey) reveals that up to 68\% of the total heterogeneity across studies can be accounted for by a dummy variable for type of experiment (0 = field, 1 = survey) (see \autoref{me_mod}). This dummy variable has a significant association with the effectiveness of the information treatment at the 1\% level. In fact, with this dummy variable included, the overall estimate across studies is -0.007, while the point estimate of the survey dummy is -0.315.\footnote{Using a mixed effects model with a survey experiment moderator (see \autoref{me_mod}). With \citet{banerjee2010can} and \citet{banerjee2011informed} excluded from the model, the point estimate of the survey dummy is 0.31 and the heterogeneity accounted for by the survey experiment moderator is 65\% (see \autoref{me_mod_no_banerjee} and \autoref{re_model_no_banerjee}).} This implies that the predicted treatment effect across experiments is not significantly different from zero when an indicator for type of experiment is included in the model. In other words, the majority of the heterogeneity in findings is accounted for by the type of experiment conducted. 
+Examining all studies together, a test for heterogeneity by type of experiment (field or survey) reveals that up to 68\% of the total heterogeneity across studies can be accounted for by a dummy variable for type of experiment (0 = field, 1 = survey) (see Online Appendix Table A.5). This dummy variable has a significant association with the effectiveness of the information treatment at the 1\% level. In fact, with this dummy variable included, the overall estimate across studies is -0.007, while the point estimate of the survey dummy is -0.315.\footnote{Using a mixed effects model with a survey experiment moderator (see Online Appendix Table A.5). With \citet{banerjee2010can} and \citet{banerjee2011informed} excluded from the model, the point estimate of the survey dummy is 0.31 and the heterogeneity accounted for by the survey experiment moderator is 65\% (see Online Appendix Tables A.7-A.8).} This implies that the predicted treatment effect across experiments is not significantly different from zero when an indicator for type of experiment is included in the model. In other words, the majority of the heterogeneity in findings is accounted for by the type of experiment conducted. 
 
 \section{Exploring the discrepancy} \label{sec: discussion}
 
@@ -296,11 +296,11 @@ What accounts for the large difference in treatment effects between field and su
 
 Publication bias and p-hacking can lead to overestimated effects in meta-analysis \citep{carter2019correcting, duval2000nonparametric, sterne2001investigating, van2019publication}. While I have identified heterogeneity stemming from the type of experiment performed as a potential source of overestimation, this may reflect that null results are less likely to be published than studies with large and significant negative treatment effects. I therefore now turn to the possibility of publication bias and/or p-hacking. In order to formally test for publication bias, I use the p-curve, examination of funnel plot asymmetry, trim and fill, and PET-PEESE\footnote{Precision effect test---precision effect estimate with standard error \citep{stanley2014meta}.} methods.\footnote{Note that the ``best'' technique for assessing bias in meta-analysis varies by circumstance, and the proper test for each circumstance is a subject of active debate. See \citet{carter2019correcting} for a recent overview.}
 
-Of the eight field experimental papers located, only five are published. By contrast, only one of the 15 survey experimental papers remains unpublished, and this is a recent draft. This may reflect that the null results from field experiments are less likely to be published than their survey counterparts with large and highly significant negative treatment effects. While recognizing that the sample size of studies is small, OLS and logistic regression do not indicate that reported p-value is a significant predictor of publication status, although the directionality of coefficients is consistent with lower p-values being more likely to be published (\autoref{p_publication}). However, this simple analysis is complicated by the fact that the p-value associated with the average treatment effect across all subjects may not be the primary p-value of interest in the paper. 
+Of the eight field experimental papers located, only five are published. By contrast, only one of the 15 survey experimental papers remains unpublished, and this is a recent draft. This may reflect that the null results from field experiments are less likely to be published than their survey counterparts with large and highly significant negative treatment effects. While recognizing that the sample size of studies is small, OLS and logistic regression do not indicate that reported p-value is a significant predictor of publication status, although the directionality of coefficients is consistent with lower p-values being more likely to be published (see Online Appendix Table A.11). However, this simple analysis is complicated by the fact that the p-value associated with the average treatment effect across all subjects may not be the primary p-value of interest in the paper. 
 
-In order to more formally test for publication bias, I first use the p-curve \citep{simonsohn2014p1, simonsohn2014p2, simonsohn2015better}. The p-curve is based on the premise that only ``significant'' results are typically published, and depicts the distribution of statistically significant p-values for a set of published studies. The shape of the p-curve is indicative of whether or not the results of a set of studies are derived from true effects, or from publication bias. If p-values are clustered around 0.05 (i.e. the p-curve is left skewed), this may be evidence of p-hacking, indicating that studies with p-values just below 0.05 are selectively reported. If the p-curve is right skewed and there are more low p-values (0.01), this is evidence of true effects. All significant survey experimental results included in the meta-analysis are significant at the 1\% level, implying that publication bias likely does not explain the large negative treatment effects in survey experiments.\footnote{See \autoref{fig: p_curve_survey} for a visual p-curve and formal test for right-skewness for survey experiments and \autoref{p_study} for a list of p-values associated with each study. There is also no indication of publication bias at the 1\% level using this method.} Rather, it is relatively easier to generate large and highly significant negative treatment effects in survey experiments. For field experiments, there is not a large enough number of published experiments to make the p-curve viable.\footnote{See \autoref{fig: p_curve_field} for a visual p-curve and formal test for right-skewness for field experiments.} Only six studies are published, and of these only four are significant at at least the 5\% level.
+In order to more formally test for publication bias, I first use the p-curve \citep{simonsohn2014p1, simonsohn2014p2, simonsohn2015better}. The p-curve is based on the premise that only ``significant'' results are typically published, and depicts the distribution of statistically significant p-values for a set of published studies. The shape of the p-curve is indicative of whether or not the results of a set of studies are derived from true effects, or from publication bias. If p-values are clustered around 0.05 (i.e. the p-curve is left skewed), this may be evidence of p-hacking, indicating that studies with p-values just below 0.05 are selectively reported. If the p-curve is right skewed and there are more low p-values (0.01), this is evidence of true effects. All significant survey experimental results included in the meta-analysis are significant at the 1\% level, implying that publication bias likely does not explain the large negative treatment effects in survey experiments.\footnote{See Online Appendix Figure A.5 for a visual p-curve and formal test for right-skewness for survey experiments and Online Appendix Table A.10 for a list of p-values associated with each study. There is also no indication of publication bias at the 1\% level using this method.} Rather, it is relatively easier to generate large and highly significant negative treatment effects in survey experiments. For field experiments, there is not a large enough number of published experiments to make the p-curve viable.\footnote{See Online Appendix Figure A.6 for a visual p-curve and formal test for right-skewness for field experiments.} Only six studies are published, and of these only four are significant at at least the 5\% level.
 
-Next, I test for publication bias by examining funnel plot asymmetry. A funnel plot depicts the outcomes from each study on the x-axis and their corresponding standard errors on the y-axis. The chart is overlaid with an inverted triangular confidence interval region (i.e. the funnel), which should contain 95\% of the studies if there is no bias or between study heterogeneity. If studies with insignificant results remain unpublished the funnel plot may be asymmetric. Both visual inspection and regression tests of funnel plot asymmetry reveal an asymmetric funnel plot when survey and field experiments are grouped together (see \autoref{fig: funnel_re_all} and \autoref{tab: funnel}). However, this asymmetry disappears when accounting for heterogeneity by type of experiment, either with the inclusion of a survey experiment moderator (dummy) variable or by analyzing field and survey experiments separately (see \autoref{tab: funnel}, \autoref{fig: funnel_all_mod}, \autoref{fig: funnel_re_field}, and \autoref{fig: funnel_re_survey}.). Trim and fill analysis overestimates effect sizes and hypothesizes that three studies are missing due to publication bias when analyzing all studies together (see \autoref{fig: funnel_trimfill} and \autoref{trimfill}). However, when trim and fill is used on survey experiments or field experiments as separate subgroups, estimates remain unchanged from random effects meta-analysis and no studies are hypothesized to be missing. Similarly, PET-PEESE estimates remain virtually unchanged when survey and field experiments are analyzed as separate subgroups.\footnote{With all experiments grouped together, PET-PEESE estimates an effect of 0.8 percentage points (95\% CI -4.5 to 6.2). See \autoref{petpeese} for the results from PET-PEESE estimation.} \footnote{The results from this section are in accordance with the findings in \citet{terrin2003adjusting}, \citet{peters2007performance}, \citet{carter2019correcting}, and \citet{van2019publication}. \citet{peters2007performance} show that trim and fill returns biased estimates under high between-study heterogeneity. \cite{carter2019correcting} find that both the trim and fill method and p-curve overestimate effect sizes and show high false positive rates in the presence of heterogeneity. \citet{van2016conducting} show similar findings with respect to p-curve estimation, which assumes homogenous effect sizes. PET-PEESE also assumes homogenous effect size and has been shown to be biased when between-study variance in effect sizes is large \citep{van2019publication, stanley2017neither}. \citet{reed2015monte} show that random effects meta-analysis exhibits lower mean-squared error than PET-PEESE under high heterogeneity. \citet{carter2019correcting} recommend standard random effects meta-analysis (as performed here) if publication bias is unlikely.}
+Next, I test for publication bias by examining funnel plot asymmetry. A funnel plot depicts the outcomes from each study on the x-axis and their corresponding standard errors on the y-axis. The chart is overlaid with an inverted triangular confidence interval region (i.e. the funnel), which should contain 95\% of the studies if there is no bias or between study heterogeneity. If studies with insignificant results remain unpublished the funnel plot may be asymmetric. Both visual inspection and regression tests of funnel plot asymmetry reveal an asymmetric funnel plot when survey and field experiments are grouped together (see Online Appendix Figure A.7 and Table A.12). However, this asymmetry disappears when accounting for heterogeneity by type of experiment, either with the inclusion of a survey experiment moderator (dummy) variable or by analyzing field and survey experiments separately (see Online Appendix Table A.12 and Figures A.9-A.11). Trim and fill analysis overestimates effect sizes and hypothesizes that three studies are missing due to publication bias when analyzing all studies together (see Online Appendix Figure A.8 and Table A.13). However, when trim and fill is used on survey experiments or field experiments as separate subgroups, estimates remain unchanged from random effects meta-analysis and no studies are hypothesized to be missing. Similarly, PET-PEESE estimates remain virtually unchanged when survey and field experiments are analyzed as separate subgroups.\footnote{With all experiments grouped together, PET-PEESE estimates an effect of 0.8 percentage points (95\% CI -4.5 to 6.2). See Online Appendix Table A.14 for the results from PET-PEESE estimation.} \footnote{The results from this section are in accordance with the findings in \citet{terrin2003adjusting}, \citet{peters2007performance}, \citet{carter2019correcting}, and \citet{van2019publication}. \citet{peters2007performance} show that trim and fill returns biased estimates under high between-study heterogeneity. \cite{carter2019correcting} find that both the trim and fill method and p-curve overestimate effect sizes and show high false positive rates in the presence of heterogeneity. \citet{van2016conducting} show similar findings with respect to p-curve estimation, which assumes homogenous effect sizes. PET-PEESE also assumes homogenous effect size and has been shown to be biased when between-study variance in effect sizes is large \citep{van2019publication, stanley2017neither}. \citet{reed2015monte} show that random effects meta-analysis exhibits lower mean-squared error than PET-PEESE under high heterogeneity. \citet{carter2019correcting} recommend standard random effects meta-analysis (as performed here) if publication bias is unlikely.}
 
 In sum, while publication bias cannot be ruled out completely---particularly with such a small sample size of field experiments---there is no smoking gun. This implies that differences in experimental design likely account for the difference in the magnitude of treatment effects in field versus survey experiments, rather than publication bias.
 
@@ -341,7 +341,7 @@ While vote choice is the outcome variable across all of the experiments investig
 
 Previous researchers have noted that even if voters generally find corruption distasteful, the quality of the information provided or positive candidate attributes and policies may outweigh the negative effects of corruption to voters, mitigating the effects of information provision on vote share.\footnote{See \citet{de2017electoral} for a comprehensive overview.} These mitigating factors will naturally arise in a field setting, but may only be salient to respondents if specifically manipulated in a survey setting. 
 
-A number of survey experiments have therefore added factors other than corruption as mitigating variables, such as information quality, policy, economic benefit, and co-partisanship. Studies have randomized the quality of corruption information\footnote{For example, accusations from an independent anti-corruption authority may be deemed more credible than those from an opposition party, and accusations may be deemed less credible than a conviction.} \citep{botero2015says, breitenstein2019choosing, mares2019voting, banerjee2014poor, weitz2017can, winters2018information}, finding that lower quality information produces smaller negative treatment effects (see \autoref{fig: quality}). Policy stances in line with voter preferences have also been shown to mitigate the impact of corruption \citep{rundquist1977corrupt, franchino2015voting}. Evidence also suggests that respondents are more forgiving of corruption when it benefits them economically \citep{klavsnja2017voters, winters2013lacking}. Evidence of co-partisanship as a limiting factor to corruption deterrence is mixed.\footnote{\citet{anduiza2013turning}, \citet{agerberg2019lesser}, and \citet{breitenstein2019choosing} show that co-partisanship decreases the importance of corruption to Spanish respondents in survey experiments, and \citet{solaz2018group} find that in-group membership reduces sanction of ``corrupt'' participants in a lab-experiment of UK subjects. However, \citet{klavsnja2017voters} find relatively small effects of co-partisanship in Argentina, Chile, and Uruguay, \citet{rundquist1977corrupt} find null effects in a lab experiment in the US in the 1970s, and \citet{konstantinidis2013sources} find no significant relationship in a survey experiment in Greece.} \citet{boas2018norms} posit that abandoning dynastic candidates is particularly costly in Brazil. This evidence suggests that voters punish corruption less when it is costly to do so, and that these costly factors differ by country.  
+A number of survey experiments have therefore added factors other than corruption as mitigating variables, such as information quality, policy, economic benefit, and co-partisanship. Studies have randomized the quality of corruption information\footnote{For example, accusations from an independent anti-corruption authority may be deemed more credible than those from an opposition party, and accusations may be deemed less credible than a conviction.} \citep{botero2015says, breitenstein2019choosing, mares2019voting, banerjee2014poor, weitz2017can, winters2018information}, finding that lower quality information produces smaller negative treatment effects (see Online Appendix Figure A.13). Policy stances in line with voter preferences have also been shown to mitigate the impact of corruption \citep{rundquist1977corrupt, franchino2015voting}. Evidence also suggests that respondents are more forgiving of corruption when it benefits them economically \citep{klavsnja2017voters, winters2013lacking}. Evidence of co-partisanship as a limiting factor to corruption deterrence is mixed.\footnote{\citet{anduiza2013turning}, \citet{agerberg2019lesser}, and \citet{breitenstein2019choosing} show that co-partisanship decreases the importance of corruption to Spanish respondents in survey experiments, and \citet{solaz2018group} find that in-group membership reduces sanction of ``corrupt'' participants in a lab-experiment of UK subjects. However, \citet{klavsnja2017voters} find relatively small effects of co-partisanship in Argentina, Chile, and Uruguay, \citet{rundquist1977corrupt} find null effects in a lab experiment in the US in the 1970s, and \citet{konstantinidis2013sources} find no significant relationship in a survey experiment in Greece.} \citet{boas2018norms} posit that abandoning dynastic candidates is particularly costly in Brazil. This evidence suggests that voters punish corruption less when it is costly to do so, and that these costly factors differ by country.  
 
 The fact that moderating variables may dampen the salience of corruption to voters has clearly not been lost on previous researchers. However, in the field setting numerous moderating factors may be salient to the voter. While there is likely no way to capture the complexity of real-world decision making in a survey setting, conjoint experiments allow researchers to randomize many candidate characteristics simultaneously, and thus have become a popular survey method for investigating the relative weights respondents give to different candidate attributes.  In addition, conjoints force respondents to pick between two candidates, better emulating the choice required in an election. Finally, conjoints may minimize social desirability bias as they reduce the probability that the respondent is aware of the researcher's primary experimental manipulation of interest (e.g. corruption).\footnote{This is explicitly mentioned by \citet{hainmueller2014causal}, who argue that conjoint experiments give respondents ``various attributes and thus [they] can often find multiple justifications for a given choice.'' Note, however, that an experiment does not necessarily need to be a conjoint design to have this feature. Conjoint experiments encourage researchers to randomize more attributes and therefore typically contain more complex hypothetical vignettes. However, the same vignette complexity could be achieved without full randomization of these attributes.} 
 
@@ -349,9 +349,9 @@ Researchers often present the results of conjoint experiments as average margina
 
 When researchers have strong theories about the conditions that shape voter decision-making, a more appropriate method may be to calculate average marginal effects in order to present predicted probabilities of voting for a candidate under these conditions.\footnote{This method is utilized by \citet{teele2018ties} to examine the probability of voting for female or male candidates holding other candidate attributes (marital status and number of children) constant, and in corruption experiments by \citet{agerberg2019lesser}, \citet{breitenstein2019choosing}, and \citet{chauchard2019getting}. This method is discussed in more detail by \citet{leeper2019measuring}.} For example, in a conjoint experiment including corruption information, the probability of voting for a candidate who is both corrupt and possesses other particular feature levels (e.g. party membership and/or policy positions), marginalizing across all other features in the experiment.\footnote{Note that standard errors will increase as a result of conditioning on certain combinations of attributes.  However, this can be avoided by utilizing an experimental design that conditions on these features at the design stage.} 
 
-To illustrate this point, I replicate the conjoint experiments conducted in Spain by \citet{breitenstein2019choosing} and in Italy by \citet{franchino2015voting}, and present both AMCEs and predicted probabilities. The \citet{breitenstein2019choosing} re-analysis is presented in the main text, while the re-analysis of \citet{franchino2015voting} is in the appendix.\footnote{Additional predicted probability replications from \citet{mares2019voting} and \citet{chauchard2019getting} can also be found in the appendix.}  Note that I group all corruption accusation levels into a single ``corrupt'' level in my replications. The \citet{breitenstein2019choosing} predicted probabilities are presented as a function of corruption, co-partisanship, political experience, and economic performance. The charts therefore show the probability of preferring a candidate who is always corrupt, but is a co-partisan or not, has low or high experience, and whose district experienced good or bad economic performance, marginalizing across all other features in the experiment. For \citet{franchino2015voting}, the predicted probabilities are presented as a function of corruption and two policy positions---tax policy and same sex marriage---separately for conservative and liberal respondents. The charts therefore show the probability of preferring a candidate who is corrupt, but has particular levels of tax and same sex marriage policy, marginalizing across all other features in the experiment. Note that \citet{franchino2015voting} correctly conclude that their typical ``respondent prefers a corrupt but socially and economically progressive candidate to a clean but conservative one,'' and \citet{breitenstein2019choosing} presents certain predicted probabilities. While I therefore illustrate how predicted probabilities can be used to draw conclusions that may be masked by examination of AMCEs alone, the authors themselves do not make this mistake. I perform the same analysis including only cases where the challenger is clean in the appendix. 
+To illustrate this point, I replicate the conjoint experiments conducted in Spain by \citet{breitenstein2019choosing} and in Italy by \citet{franchino2015voting}, and present both AMCEs and predicted probabilities. The \citet{breitenstein2019choosing} re-analysis is presented in the main text, while the re-analysis of \citet{franchino2015voting} is in the appendix.\footnote{Additional predicted probability replications from \citet{mares2019voting} and \citet{chauchard2019getting} can also be found in Online Appendix Section A.7.}  Note that I group all corruption accusation levels into a single ``corrupt'' level in my replications. The \citet{breitenstein2019choosing} predicted probabilities are presented as a function of corruption, co-partisanship, political experience, and economic performance. The charts therefore show the probability of preferring a candidate who is always corrupt, but is a co-partisan or not, has low or high experience, and whose district experienced good or bad economic performance, marginalizing across all other features in the experiment. For \citet{franchino2015voting}, the predicted probabilities are presented as a function of corruption and two policy positions---tax policy and same sex marriage---separately for conservative and liberal respondents. The charts therefore show the probability of preferring a candidate who is corrupt, but has particular levels of tax and same sex marriage policy, marginalizing across all other features in the experiment. Note that \citet{franchino2015voting} correctly conclude that their typical ``respondent prefers a corrupt but socially and economically progressive candidate to a clean but conservative one,'' and \citet{breitenstein2019choosing} presents certain predicted probabilities. While I therefore illustrate how predicted probabilities can be used to draw conclusions that may be masked by examination of AMCEs alone, the authors themselves do not make this mistake. I perform the same analysis including only cases where the challenger is clean in the appendix. 
 
-A casual interpretation of the traditional AMCE plots presented in \autoref{fig: b_amce} and \autoref{fig: fz_amce} suggests that it is very unlikely a corrupt candidate would be chosen by a respondent. By contrast, the predicted probabilities plots presented in \autoref{fig: b_margins}, \autoref{fig: fz_margins_right}, and \autoref{fig: fz_margins_left} show that even for corrupt candidates in the conjoint, the right candidate or policy platform presented to the right respondents can garner over 50\% of the predicted hypothetical vote.\footnote{Note that a negative corruption treatment effect is still present. See \autoref{fig: b_margins_corrupt_clean} for a visual depiction of predicted probabilities for both a corrupt and clean candidate. The difference between the point estimates for the corrupt and clean candidate can be interpreted as a  treatment effect. I thank an anonymous reviewer for suggesting this clarification.} Further, the attributes included in these conjoints surely do not represent all candidate attributes relevant to voters, and indeed differ greatly across experiments. As in \cite{agerberg2019lesser}, the level of support for corrupt candidates also varies based on whether or not the challenger is clean (\autoref{fig: b_margins_clean}, \autoref{fig: fz_margins_right_clean}, and \autoref{fig: fz_margins_left_clean}). In other words, respondents find it costly to abandon their preferences even if it forces them to select a corrupt candidate, and this costliness varies highly depending on contextual changes and choice of other attributes included in the experiments. 
+A casual interpretation of the traditional AMCE plots presented in \autoref{fig: b_amce} and Online Appendix Figure A.17 suggests that it is very unlikely a corrupt candidate would be chosen by a respondent. By contrast, the predicted probabilities plots presented in \autoref{fig: b_margins} and Online Appendix Figures A.18-A.19 show that even for corrupt candidates in the conjoint, the right candidate or policy platform presented to the right respondents can garner over 50\% of the predicted hypothetical vote.\footnote{Note that a negative corruption treatment effect is still present. See Online Appendix Figure A.15 for a visual depiction of predicted probabilities for both a corrupt and clean candidate. The difference between the point estimates for the corrupt and clean candidate can be interpreted as a  treatment effect. I thank an anonymous reviewer for suggesting this clarification.} Further, the attributes included in these conjoints surely do not represent all candidate attributes relevant to voters, and indeed differ greatly across experiments. As in \cite{agerberg2019lesser}, the level of support for corrupt candidates also varies based on whether or not the challenger is clean (see Online Appendix Figures A.14, A.20, and A.21). In other words, respondents find it costly to abandon their preferences even if it forces them to select a corrupt candidate, and this costliness varies highly depending on contextual changes and choice of other attributes included in the experiments. 
 
 \begin{figure}[H]
 \includegraphics{../figs/b_amce.pdf}
@@ -370,7 +370,7 @@ A casual interpretation of the traditional AMCE plots presented in \autoref{fig:
 
 Candidate or policy profiles that result in over 50\% of voters selecting a corrupt candidate may not be outliers in real-world scenarios. Unlike in conjoint experiments, real-world candidates' attributes and policy profiles are not selected randomly, but rather represent choices designed to appeal to voters. Voters may also be unsure if the challenger is also corrupt or clean. It may therefore be preferable to analyze conjoint experiments as above, comparing outlier characteristics (e.g. corruption) to realistic candidate profiles that target specific voters, rather than fully randomized candidate profiles.
 
-When the most theoretically relevant tradeoffs are unclear, we may be able to illuminate voter decision making processes through the use of decision trees.\footnote{Decision trees offer a parsimonious way to model fundamental non-linearities in the conjoint data and will typically have lower bias than an OLS-based predicted probability estimator, but may exhibit higher variance.} The decision tree in \autoref{fig: b_tree} was trained using all randomized variables in the \citet{breitenstein2019choosing} conjoint, and the tree was pruned to minimize cross-validated classification error rate.  \autoref{fig: b_tree} draws similar conclusions as the predicted probabilities chart shown in \autoref{fig: b_margins} with respect to what factors matter most to voters. A similar figure depicting corrupt candidates facing clean challengers only can be found in \autoref{fig: b_tree_clean}. 
+When the most theoretically relevant tradeoffs are unclear, we may be able to illuminate voter decision making processes through the use of decision trees.\footnote{Decision trees offer a parsimonious way to model fundamental non-linearities in the conjoint data and will typically have lower bias than an OLS-based predicted probability estimator, but may exhibit higher variance.} The decision tree in \autoref{fig: b_tree} was trained using all randomized variables in the \citet{breitenstein2019choosing} conjoint, and the tree was pruned to minimize cross-validated classification error rate.  \autoref{fig: b_tree} draws similar conclusions as the predicted probabilities chart shown in \autoref{fig: b_margins} with respect to what factors matter most to voters. A similar figure depicting corrupt candidates facing clean challengers only can be found in Online Appendix Figure A.16. 
 
 % Decision trees offer a parsimonious way to model fundamental non-linearities in the conjoint data and likely have lower bias an OLS-based predicted probability estimator, but may exhibit higher variance. 
 
@@ -407,442 +407,5 @@ These findings suggest that while candidate choice survey experiments may provid
 
 \pdfbookmark[1]{References}{References}
 \bibliography{bibliography}
-
-\pagebreak
-\pagenumbering{gobble}
-\begin{centering}
-\large
-\textbf{\textit{Online Appendix:}} \\
- \vspace{0.5cm}
-\textbf{Corruption information and vote share: A meta-analysis and lessons for experimental design} \\
- 
-\end{centering}
-
-\vspace{2cm}
- 
-\noindent
-A.1: Lab experiments \\
-A.2: Excluded studies \\
-A.3: Meta-analysis and heterogeneity by type of experiment \\
-A.4: Robustness checks \\
-A.5: Publication bias \\
-A.6: Information quality \\
-A.7: Additional conjoint replications using predicted probabilities \\
-
-\pagebreak 
-
-\appendix
-\pagenumbering{arabic}
-\setcounter{page}{1}
-\setcounter{table}{0}
-\setcounter{figure}{0}
-\renewcommand\thetable{\Alph{section}.\arabic{table}}
-\renewcommand\thefigure{\Alph{section}.\arabic{figure}}
-
-\section{Appendix} \label{Appendix}
-
-\subsection{Lab experiments}
-
-\begin{table}[!htbp] \centering 
-  \caption{Lab experiments}
-  \label{tab:lab} 
-  \small
-\begin{tabular}{@{\extracolsep{5pt}} cccccccc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- Study & Country & ATE \\ 
- \hline \\[-1.8ex] 
-\citet{arvate2017condemning} & Brazil & Negative \\
-\citet{azfar2007transparency} & USA & Negative \\
-\citet{rundquist1977corrupt}\textsuperscript{1} & USA & Negative \\
-\citet{solaz2018group} & UK & Negative \\
-\hline \\[-1.8ex] 
-\end{tabular} 
- \begin{tablenotes}
-\footnotesize
-\item \textsuperscript{1} The candidate is always corrupt in the \citet{rundquist1977corrupt} experiment. A ``corruption'' point estimate is therefore not provided in the coefficient plot below.
-    \end{tablenotes}
-\end{table} 
-\FloatBarrier
-
-\vspace{2cm}
-
-\begin{figure}[!htb]
-\includegraphics[scale=0.93]{../figs/lab_meta.pdf}
-\vspace{0.2cm}
-\caption{Lab experiments: Average treatment effect of corruption information on vote share}.
-\small
-\vspace{-0.3cm}
-\label{fig: lab}
-\end{figure}
-
-\pagebreak
-\subsection{Excluded studies}
-
-\begin{table}[!htbp] \centering 
-  \caption{Excluded experiments}
-  \label{tab:excluded} 
-  \small
-\begin{tabular}{@{\extracolsep{0pt}} cccccccc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- Study & Type & Reason for exclusion \\ 
-\hline \\[-1.8ex] 
-\citet{anduiza2013turning} & Survey & Lack of no-corruption control group \\
-\citet{botero2015says} & Survey & Lack of no-corruption control group \\
-\citet{de2011voters} & Survey & Outcome is hypothetically changing actual vote \\
-\citet{green2018publicizing} & Field & Outcome is favorability rating, not vote share \\
-\citet{konstantinidis2013sources} & Survey & Lack of no-corruption control group \\
-\citet{munoz2012voters} & Survey & Lack of no-corruption control group \\
-\citet{rundquist1977corrupt} & Lab & Lack of no-corruption control group \\
-\citet{winters2016s} & Survey & Data identical to \citet{weitz2017can} \\
-\citet{winters2015political} & Survey & Data identical to \citet{winters2013lacking} \\
-\citet{weschle2016punishing} & Survey & Lack of no-corruption control group \\
-\hline \\[-1.8ex] 
-\end{tabular} 
-\end{table} 
-\FloatBarrier
-
-\pagebreak
-
-\subsection{Meta-analysis and heterogeneity by type of experiment}
-
-\input{../figs/meta_estimates.tex}
-
-\vspace*{-0.5cm}
-
-\input{../figs/re_out.tex}
-
-\vspace*{-0.5cm}
-
-\input{../figs/me_mod_out.tex}
-
-\vspace{0.75cm}
-
-\noindent
-``Heterogeneity accounted for'' is calculated as: $\dfrac{(\text{Total heterogeneity} - \text{Residual heterogeneity})}{(\text{Total heterogeneity})}$
-
-\pagebreak
-
-
-\pagebreak
-\subsection{Robustness checks}
-
-\vspace{-0.5cm}
-\begin{figure}[!htb]
-\includegraphics[scale=0.93]{../figs/field_no_banerjee.pdf}
-\vspace{0.2cm}
-\caption{Field experiments: Average treatment effect of corruption information on incumbent vote share (excluding \cite{banerjee2010can} and \citet{banerjee2011informed})}.
-\small
-\vspace{-0.3cm}
-\label{fig: meta-field_no_banerjee}
-
-\includegraphics[scale=0.93]{../figs/survey_defig.pdf}
-\vspace{0.2cm}
-\caption{Survey experiments: Average treatment effect of corruption information on incumbent vote share (including \cite{de2011voters})}.
-\small
-\vspace{-0.3cm}
-\label{fig: meta-field_defig}
-\end{figure}
-
-\pagebreak
-
-\input{../figs/meta_estimates_no_banerjee.tex}
-
-\input{../figs/re_out_no_banerjee.tex}
-
-\input{../figs/me_mod_out_no_banerjee.tex}
-
-\input{../figs/meta_estimates_defig.tex}
-
-
-\clearpage
-\pagebreak
-
-\subsection{Publication bias}
-
-\input{../figs/p_values_all}
-\noindent
-\footnotesize
-Notes: Publication status as of November 2019. All p-values rounded to the nearest thousandth decimal place.  Reported p-value is the p-value associated with the corruption ATE directly reported in the paper if available. If not available, p-values are  reconstructed from point estimates, standard errors, and sample size in regression tables. Replicated p-values are shown for all studies which were fully replicated. 
-
-\input{../figs/published.tex}
-
-\input{../figs/regtest_funnel.tex}
-
-\input{../figs/trimfill.tex}
-
-\input{../figs/petpeese.tex}
-
-\clearpage
-
-\begin{figure}[!htb]
-\begin{centering}
-\includegraphics[scale=0.55]{../figs/p_curve_all.pdf}
-\vspace{0.1cm}
-\caption{P-curve: all experiments}.
-\small
-\vspace{-0.8cm}
-\label{fig: p_curve_all}
-\end{centering}
-\end{figure}
-
-\begin{figure}[!htb]
-\begin{centering}
-\includegraphics[scale=0.55]{../figs/p_curve_survey.pdf}
-\vspace{0.1cm}
-\caption{P-curve: survey experiments}.
-\small
-\vspace{-0.8cm}
-\label{fig: p_curve_survey}
-\end{centering}
-\end{figure}
-
-\clearpage
-
-\begin{figure}[!htb]
-\begin{centering}
-\includegraphics[scale=0.55]{../figs/p_curve_field.pdf}
-\vspace{0.1cm}
-\caption{P-curve: field experiments}.
-\small
-\vspace{-0.8cm}
-\label{fig: p_curve_field}
-\end{centering}
-\end{figure}
-
-\clearpage
-
-\begin{figure}[!htb]
-\begin{centering}
-\includegraphics[scale=0.55]{../figs/funnel_re_all.pdf}
-\vspace{0.1cm}
-\caption{Funnel plot: all experiments}.
-\small
-\vspace{-0.8cm}
-\label{fig: funnel_re_all}
-\end{centering}
-\end{figure}
-
-\begin{figure}[!htb]
-\begin{centering}
-\includegraphics[scale=0.55]{../figs/funnel_trimfill.pdf}
-\vspace{0.2cm}
-\caption{Funnel plot including trim and fill ``missing'' studies: all experiments}
-\small
-\vspace{-0.4cm}
-\footnotesize
-Note: Actual studies in blue and estimated missing studies in white.
-\normalsize
-\label{fig: funnel_trimfill}
-\end{centering}
-\end{figure}
-
-\vspace{1cm}
-
-\begin{figure}[!htb]
-\begin{centering}
-\includegraphics[scale=0.55]{../figs/funnel_all_mod.pdf}
-\vspace{0.2cm}
-\caption{Funnel plot: all experiments with field experiment moderator}.
-\small
-\vspace{-0.25cm}
-\label{fig: funnel_all_mod}
-\end{centering}
-\end{figure}
-
-\begin{figure}[!htb]
-\begin{centering}
-\includegraphics[scale=0.57]{../figs/funnel_re_field.pdf}
-\vspace{0.2cm}
-\caption{Funnel plot: field experiments}.
-\small
-\vspace{-0.3cm}
-\label{fig: funnel_re_field}
-\end{centering}
-\end{figure}
-
-\begin{figure}[!htb]
-\begin{centering}
-\includegraphics[scale=0.57]{../figs/funnel_re_survey.pdf}
-\vspace{0.2cm}
-\caption{Funnel plot: survey experiments}.
-\small
-\vspace{-0.3cm}
-\label{fig: funnel_re_survey}
-\end{centering}
-\end{figure}
-
-\begin{figure}[!htb]
-\begin{centering}
-\includegraphics[scale=1]{../figs/published.pdf}
-\vspace{0.2cm}
-\caption{All experiments by publication status: Average treatment effect of corruption information on vote share and 95\% confidence intervals}.
-\small
-\vspace{-0.3cm}
-\label{fig: pub_status_chart}
-\end{centering}
-\end{figure}
-
-\clearpage
-\pagebreak
-
-\subsection{Information quality}
-
-\begin{figure}[!htb]
-\includegraphics[scale=0.93]{../figs/quality.pdf}
-\vspace{0.2cm}
-\caption{Survey experiments by information quality: Average treatment effect of corruption information on vote share and 95\% confidence intervals}.
-\small
-\vspace{-0.3cm}
-\label{fig: quality}
-\end{figure}
-
-\clearpage
-\pagebreak
-
-\subsection{Additional conjoint replications using predicted probabilities}
-
-\subsubsection{\citet{breitenstein2019choosing}}
-
-\begin{figure}[!htb]
-\includegraphics{../figs/b_margins_clean.pdf}
-\vspace{0.05cm}
-\caption{\citet{breitenstein2019choosing} conjoint: can the right candidate overcome corruption (clean challenger)?}
-\small
-\vspace{-0.5cm}
-\label{fig: b_margins_clean}
-\end{figure}
-
-\begin{figure}[!htb]
-\includegraphics{../figs/b_margins_corrupt_clean.pdf}
-\vspace{0.05cm}
-\caption{\citet{breitenstein2019choosing} conjoint: probability of choosing candidate (by clean or corrupt)}
-\small
-\vspace{-0.5cm}
-\label{fig: b_margins_corrupt_clean}
-\end{figure}
-
-\begin{figure}[!ht]
-\includegraphics{../figs/b_tree_clean.pdf}
-\vspace{-0.5cm}
-\caption{\citet{breitenstein2019choosing} conjoint decision tree: predicted probabilities of voting for corrupt politician with clean challenger}
-\small
-\label{fig: b_tree_clean}
-\end{figure}
-
-
-\clearpage
-\pagebreak
-
-\subsubsection{\citet{franchino2015voting}}
-
-\begin{figure}[!htb]
-\includegraphics{../figs/fz_amce.pdf}
-\caption{\citet{franchino2015voting} conjoint: AMCEs}
-\label{fig: fz_amce}
-\end{figure}
-
-
-\begin{figure}[!htb]
-\includegraphics{../figs/fz_margins_right.pdf}
-\vspace{0.2cm}
-\caption{\citet{franchino2015voting} conjoint: can policy positions overcome corruption (conservative respondents)?}
-\small
-\vspace{-0.3cm}
-\label{fig: fz_margins_right}
-
-\vspace{1cm}
-
-\includegraphics{../figs/fz_margins_left.pdf}
-\vspace{0.2cm}
-\caption{\citet{franchino2015voting} conjoint: can policy positions overcome corruption (liberal respondents)?}
-\small
-\vspace{-0.3cm}
-\label{fig: fz_margins_left}
-\end{figure}
-
-\begin{figure}[!htb]
-\includegraphics{../figs/fz_margins_right_clean.pdf}
-\vspace{0.2cm}
-\caption{\citet{franchino2015voting} conjoint: can policy positions overcome corruption (conservative respondents and clean challenger)?}
-\small
-\vspace{-0.3cm}
-\label{fig: fz_margins_right_clean}
-
-\vspace{1cm}
-
-\includegraphics{../figs/fz_margins_left_clean.pdf}
-\vspace{0.2cm}
-\caption{\citet{franchino2015voting} conjoint: can policy positions overcome corruption (liberal respondents and clean challenger)?}
-\small
-\vspace{-0.3cm}
-\label{fig: fz_margins_left_clean}
-\end{figure}
-
-\clearpage
-\pagebreak
-
-\subsubsection{\citet{mares2019voting}}
-
-\begin{figure}[!htb]
-\includegraphics{../figs/mv_amce.pdf}
-\caption{\citet{mares2019voting} conjoint: AMCEs}
-\label{fig: mv_amce}
-\end{figure}
-
-\begin{figure}[!htb]
-\includegraphics{../figs/mv_margins.pdf}
-\vspace{0.2cm}
-\caption{\citet{mares2019voting} conjoint: can programmatic offerings and experience overcome corruption?}
-\small
-\vspace{-0.3cm}
-\label{fig: mv_margins}
-\end{figure}
-
-\noindent
-\normalsize	
-Note that the primary goal of \citet{mares2019voting} is to determine the degree to which respondents punish various illicit electoral activities. The experiment therefore includes a number of other negative attributes in addition to corruption, such as vote buying, clientelistic offerings, and threats of violence against political opponents.  Due to uniform randomization, calculating predicted probabilities that do not include these attributes therefore marginalizes over a number of other illicit activities that respondents view negatively and reduces overall vote probability. Conditioning on the candidate not engaging in illicit activities other than corruption reveals probabilities of voting for corrupt candidates over 50\%. 
-
-\begin{figure}[!htb]
-\includegraphics{../figs/mv_margins_illicit.pdf}
-\vspace{0.2cm}
-\caption{\citet{mares2019voting} conjoint: can programmatic offerings and experience overcome corruption (conditional on other illicit activities)?}
-\small
-\vspace{-0.3cm}
-\label{fig: mv_margins_illicit}
-\end{figure}
-
-\clearpage
-\pagebreak
-
-\subsubsection{\citet{chauchard2019getting}}
-
-%\begin{figure}[!htb]
-%\includegraphics{../figs/ckh_amce.pdf}
-%\caption{\citet{chauchard2019getting} conjoint: AMCEs}
-%\label{fig: ckh_amce}
-%\end{figure}
-
-\begin{figure}[!htb]
-\includegraphics{../figs/ckh_margins.pdf}
-\vspace{0.2cm}
-\caption{\citet{chauchard2019getting} conjoint: can performance, partisanship, and coethnicity overcome corruption?}
-\small
-\vspace{-0.3cm}
-\label{fig: ckh_margins}
-\end{figure}
-
-\begin{figure}[!ht]
-\includegraphics{../figs/ckh_tree_corrupt.pdf}
-\vspace{-0.5cm}
-\caption{\citet{chauchard2019getting} conjoint decision tree: predicted probabilities of voting for corrupt politician}
-\small
-\label{fig: ckh_tree_clean}
-\end{figure}
-
-\clearpage
-\FloatBarrier
-
 
 \end{document} 
