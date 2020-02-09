@@ -70,7 +70,7 @@ a4. quality.R
 %%%%%%%%%%%%%% Data Files (relative path "~/data") %%%%%%%%%%%%%%
 
 Replication data for survey experiments:
-- WintersWeitzShapiro_2013_Replication.dta- analysis-data.dta- Argentina LAPOP AmericasBarometer 2017 V1.0_W.dta- chauchard_klasnja_harish.dta- Chile LAPOP AmericasBarometer 2017 V1.0_W.dta
+- WintersWeitzShapiro_2013_Replication.dta- analysis-data.dta (Klasnja, Lupu, and Tucker)- Argentina LAPOP AmericasBarometer 2017 V1.0_W.dta- chauchard_klasnja_harish.dta- Chile LAPOP AmericasBarometer 2017 V1.0_W.dta
 - Choosing_crook.dta- Choosing_crook_recode.do (cleans data for Breitenstein experiment)- choosing_crook_clean.dta- eggers.dta- experiment_data_eggers.rds- franchino_zucchini.dta- mares_visconti.dta- panel_cleaned.csv (Boas, Hidalgo, and Melo)- Uruguay LAPOP AmericasBarometer 2017 V1.0_W.dta- Weitz-ShapiroWinters_JOP_Credibility_ReplicationData.dta- WintersWeitz-Shapiro_PRQ_Specificity_ReplicationData.dta- WintersWeitz-Shapiro_PSRM_Argentina_ReplicationData.dta
 
 Point estimates and standard errors from field experiments
