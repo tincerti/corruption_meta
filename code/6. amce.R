@@ -13,7 +13,6 @@ library(readstata13)
 fz = read.dta('data/franchino_zucchini.dta')
 b = read.dta13('data/choosing_crook_clean.dta')
 mv = read.dta('data/mares_visconti.dta')
-ckh = read.dta13('data/chauchard_klasnja_harish.dta', nonint.factors = TRUE)
 
 ################################################################################
 # Analysis: Franchino and Zucchini

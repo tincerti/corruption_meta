@@ -3,8 +3,9 @@
 ********************************************************************************
 clear all
 
-global import "/Users/trevorincerti/gitrepos/corruption_meta/data/"
-global export "/Users/trevorincerti/gitrepos/corruption_meta/figs/"
+* Insert paths to data folder and figure folder here
+global import "/data/"
+global export "/figs/"
 
 ********************************************************************************
 * Define categories: Breitenstein
