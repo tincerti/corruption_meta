@@ -129,7 +129,7 @@ p_report_wsw17 = 0
 p_rep_wsw17 = summary(reg_wsw17_all)$coef[2, 4]
 
 ################################################################################
-# Winters and Weitz-Shapiro: Politial Science Research and Methods 2018
+# Winters and Weitz-Shapiro: Political Science Research and Methods 2018
 ################################################################################
 # Create all variable
 wsw18$corrupt = with(wsw18, ifelse(vignette <= 3 | vignette >= 10, 0, 1))

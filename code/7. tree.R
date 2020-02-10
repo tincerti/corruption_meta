@@ -16,7 +16,6 @@ library(caTools)
 
 # Import conjoint experiment
 b = read.dta13('data/choosing_crook_clean.dta')
-fz = read.dta('data/franchino_zucchini.dta')
 ckh = read.dta13('data/chauchard_klasnja_harish.dta', nonint.factors = TRUE)
 
 ################################################################################
