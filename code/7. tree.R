@@ -4,7 +4,8 @@
 rm(list=ls())
 
 # Set seed
-set.seed(200) # Estimates will of course vary slightly with change in seed
+# Estimates will vary slightly with change in seed due to cross validation procedure
+set.seed(200) 
 
 # Libraries
 library(foreign)

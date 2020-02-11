@@ -234,7 +234,7 @@ stargazer(regtest, summary = FALSE, rownames = FALSE,
 ################################################################################
 # Perform trim and fill analysis
 trimfill_all = trimfill(re) # Estimates increase compared to random effects
-trimfill_field = trimfill(re_field) # Esimates unchanged
+trimfill_field = trimfill(re_field) # Estimates unchanged
 trimfill_survey = trimfill(re_survey) # Estimates unchanged
 
 # Export funnel plot with trimfill method
@@ -390,7 +390,7 @@ p_table$Study = gsub("&", "and", p_table$Study)
   
 # Output table using stargazer
 stargazer(p_table,
-          #out = "figs/p_values_all.tex",
+          out = "figs/p_values_all.tex",
           title= "P-values by study",
           label = "p_study",
           digits = 3,

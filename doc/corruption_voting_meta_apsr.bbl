@@ -11,14 +11,17 @@ Abramson, Scott~F, Korhan Ko{\c{c}}ak \harvardand\ Asya Magazinnik. 2019.
   McClendon}{2019}{adidaunder}
 Adida, Claire, Jessica Gottlieb, Eric Kramon \harvardand\ Gwyneth McClendon.
   2019.
-\newblock ``Under what conditions does performance information influence voting
-  behavior? Lessons from Benin.'' {\em Metaketa I: The Limits of Electoral
-  Accountability} .
+\newblock Under what conditions does performance information influence voting
+  behavior? Lessons from Benin.  In {\em Information, Accountability, and
+  Cumulative Learning: Lessons from Metaketa I}, ed. Thad Dunning, Guy
+  Grossman, Macartan Humphreys, Susan~D Hyde, Craig McIntosh \harvardand\
+  Gareth Nellis.
+\newblock Cambridge:  Cambridge University Press chapter~4, pp.~81--116.
 
-\harvarditem{Agerberg}{2019}{agerberg2019lesser}
-Agerberg, Mattias. 2019.
-\newblock ``The Lesser Evil? Corruption Voting and the Importance of Clean
-  Alternatives.'' {\em Comparative Political Studies} p.~0010414019852697.
+\harvarditem{Agerberg}{2020}{agerberg2019lesser}
+Agerberg, Mattias. 2020.
+\newblock ``The lesser evil? Corruption voting and the importance of clean
+  alternatives.'' {\em Comparative Political Studies} 53(2):253--287.
 
 \harvarditem[Anduiza, Gallego \harvardand\ Mu{\~n}oz]{Anduiza, Gallego
   \harvardand\ Mu{\~n}oz}{2013}{anduiza2013turning}
@@ -34,12 +37,13 @@ Arias, Eric, Horacio Larreguy, John Marshall \harvardand\ Pablo Querubin. 2018.
   Parties? Technical report National Bureau of Economic Research.
 \newline\harvardurl{\url{https://www.nber.org/papers/w24888}}
 
-\harvarditem[Arias et~al.]{Arias, Larreguy, Marshall \harvardand\
-  Querubin}{2019}{arias2019information}
-Arias, Eric, Horacio Larreguy, John Marshall \harvardand\ Pablo Querubin. 2019.
-\newblock ``Information Provision, Voter Coordination, and Electoral
-  Accountability: Evidence from Mexican Social Networks.'' {\em American
-  Political Science Review} .
+\harvarditem[Arias et~al.]{Arias, Bal{\'a}n, Larreguy, Marshall \harvardand\
+  Querub{\'\i}n}{2019}{arias2019information}
+Arias, Eric, Pablo Bal{\'a}n, Horacio Larreguy, John Marshall \harvardand\
+  Pablo Querub{\'\i}n. 2019.
+\newblock ``Information provision, voter coordination, and electoral
+  accountability: Evidence from Mexican social networks.'' {\em American
+  Political Science Review} 113(2):475--498.
 
 \harvarditem{Arvate \harvardand\ Mittlaender}{2017}{arvate2017condemning}
 Arvate, Paulo \harvardand\ Sergio Mittlaender. 2017.
@@ -85,15 +89,15 @@ Banerjee, Abhijit, Selvan Kumar, Rohini Pande \harvardand\ Felix Su. 2011.
 \harvarditem[Blair, Coppock \harvardand\ Moor]{Blair, Coppock \harvardand\
   Moor}{2018}{blair2018worry}
 Blair, Graeme, Alexander Coppock \harvardand\ Margaret Moor. 2018.
-\newblock When to Worry About Sensitivity Bias: Evidence from 30 Years of List
-  Experiments. Technical report Working Paper.
+\newblock ``When to Worry About Sensitivity Bias: Evidence from 30 Years of
+  List Experiments.'' {\em Working Paper} .
 \newline\harvardurl{\url{https://alexandercoppock.com/papers/BCM_list.pdf}}
 
 \harvarditem[Boas, Hidalgo \harvardand\ Melo]{Boas, Hidalgo \harvardand\
-  Melo}{2018}{boas2018norms}
-Boas, Taylor~C, F~Daniel Hidalgo \harvardand\ Marcus~Andr{\'e} Melo. 2018.
-\newblock ``Norms versus Action: Why Voters Fail to Sanction Malfeasance in
-  Brazil.'' {\em American Journal of Political Science} .
+  Melo}{2019}{boas2019norms}
+Boas, Taylor~C, F~Daniel Hidalgo \harvardand\ Marcus~Andr{\'e} Melo. 2019.
+\newblock ``Norms versus action: Why voters fail to sanction malfeasance in
+  Brazil.'' {\em American Journal of Political Science} 63(2):385--400.
 
 \harvarditem[Botero et~al.]{Botero, Cornejo, Gamboa, Pavao \harvardand\
   Nickerson}{2015}{botero2015says}
@@ -105,7 +109,7 @@ Botero, Sandra, Rodrigo~Castro Cornejo, Laura Gamboa, Nara Pavao \harvardand\
 \harvarditem{Breitenstein}{2019}{breitenstein2019choosing}
 Breitenstein, Sofia. 2019.
 \newblock ``Choosing the crook: A conjoint experiment on voting for corrupt
-  politicians.'' {\em Research \& Politics} 6(1):2053168019832230.
+  politicians.'' {\em Research \& Politics} 6(1):1--8.
 
 \harvarditem[Buntaine et~al.]{Buntaine, Jablonski, Nielson \harvardand\
   Pickering}{2018}{buntaine2018sms}
@@ -118,8 +122,9 @@ Buntaine, Mark~T, Ryan Jablonski, Daniel~L Nielson \harvardand\ Paula~M
 \harvarditem{Camerer}{2011}{camerer2011promise}
 Camerer, Colin. 2011.
 \newblock ``The promise and success of lab-field generalizability in
-  experimental economics: A critical reply to Levitt and List.'' {\em Available
-  at SSRN 1977749} .
+  experimental economics: A critical reply to Levitt and List.'' {\em SSRN
+  1977749} .
+\newline\harvardurl{\url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1977749}}
 
 \harvarditem[Carter et~al.]{Carter, Sch{\"o}nbrodt, Gervais \harvardand\
   Hilgard}{2019}{carter2019correcting}
@@ -159,7 +164,7 @@ Coppock, Alexander \harvardand\ Donald~P Green. 2015.
   Hidalgo \harvardand\ Kasahara}{2011}{de2011voters}
 De~Figueiredo, Miguel~FP, F~Daniel Hidalgo \harvardand\ Yuri Kasahara. 2011.
 \newblock ``When do voters punish corrupt politicians? Experimental evidence
-  from Brazil.'' {\em Unpublished manuscript, UC Berkeley} .
+  from Brazil.'' {\em Working Paper} .
 \newline\harvardurl{\url{https://law.utexas.edu/wp-content/uploads/sites/25/figueiredo_when_do_voters_punish.pdf}}
 
 \harvarditem[De~la Cuesta, Egami \harvardand\ Imai]{De~la Cuesta, Egami
@@ -175,17 +180,18 @@ De~Vries, Catherine~E \harvardand\ Hector Solaz. 2017.
   Political Science} 20:391--408.
 
 \harvarditem[Dunning et~al.]{Dunning, Grossman, Humphreys, Hyde, McIntosh
-  \harvardand\ Nellis}{2018}{dunning2018metaketa}
+  \harvardand\ Nellis}{2019}{dunning2019information}
 Dunning, Thad, Guy Grossman, Macartan Humphreys, Susan~D Hyde, Craig McIntosh
-  \harvardand\ Gareth Nellis. 2018.
-\newblock ``Metaketa I: Information, accountability, and cumulative
-  learning.''.
+  \harvardand\ Gareth Nellis. 2019.
+\newblock {\em Information, Accountability, and Cumulative Learning: Lessons
+  from Metaketa I}.
+\newblock Cambridge:  Cambridge University Press.
 
 \harvarditem{Duval \harvardand\ Tweedie}{2000}{duval2000nonparametric}
 Duval, Sue \harvardand\ Richard Tweedie. 2000.
 \newblock ``A nonparametric ``trim and fill'' method of accounting for
-  publication bias in meta-analysis.'' {\em Journal of the american statistical
-  association} 95(449):89--98.
+  publication bias in meta-analysis.'' {\em Journal of the American Statistical
+  Association} 95(449):89--98.
 
 \harvarditem[Eggers, Vivyan \harvardand\ Wagner]{Eggers, Vivyan \harvardand\
   Wagner}{2018}{eggers2018corruption}
@@ -206,16 +212,10 @@ Franchino, Fabio \harvardand\ Francesco Zucchini. 2015.
   valence and ideology attributes of candidates.'' {\em Political Science
   Research and Methods} 3(2):221--241.
 
-\harvarditem[Green et~al.]{Green, Zelizer, Kirby
-  et~al.}{2018}{green2018publicizing}
-Green, Donald~P, Adam Zelizer, David Kirby et~al. 2018.
-\newblock ``Publicizing Scandal: Results from Five Field Experiments.'' {\em
-  Quarterly Journal of Political Science} 13(3):237--261.
-
 \harvarditem{Green \harvardand\ Gerber}{2019}{green2019get}
 Green, Donald~P \harvardand\ Alan~S Gerber. 2019.
 \newblock {\em Get out the vote: How to increase voter turnout}.
-\newblock Brookings Institution Press.
+\newblock Washington, D.C.:  Brookings Institution Press.
 
 \harvarditem[Hainmueller, Hopkins \harvardand\ Yamamoto]{Hainmueller, Hopkins
   \harvardand\ Yamamoto}{2014}{hainmueller2014causal}
@@ -234,7 +234,8 @@ Hainmueller, Jens, Dominik Hangartner \harvardand\ Teppei Yamamoto. 2015.
 \harvarditem[Horiuchi, Markovich \harvardand\ Yamamoto]{Horiuchi, Markovich
   \harvardand\ Yamamoto}{2018}{horiuchi2018can}
 Horiuchi, Yusaku, Zachary~D Markovich \harvardand\ Teppei Yamamoto. 2018.
-\newblock ``Can Conjoint Analysis Mitigate Social Desirability Bias?''.
+\newblock ``Can Conjoint Analysis Mitigate Social Desirability Bias?'' {\em MIT
+  Political Science Department Research Paper} .
 \newline\harvardurl{\url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3219323}}
 
 \harvarditem{Kalla \harvardand\ Broockman}{2018}{kalla2018minimal}
@@ -270,7 +271,7 @@ Konstantinidis, Iannis \harvardand\ Georgios Xezonakis. 2013.
 \harvarditem[Leeper, Hobolt \harvardand\ Tilley]{Leeper, Hobolt \harvardand\
   Tilley}{2019}{leeper2019measuring}
 Leeper, Thomas~J, Sara~B Hobolt \harvardand\ James Tilley. 2019.
-\newblock ``Measuring Subgroup Preferences in Conjoint Experiments.'' {\em
+\newblock ``Measuring subgroup preferences in conjoint experiments.'' {\em
   Political Analysis} .
 
 \harvarditem{Loomis}{2011}{loomis2011s}
@@ -281,11 +282,11 @@ Loomis, John. 2011.
 \harvarditem{Mares \harvardand\ Visconti}{2019}{mares2019voting}
 Mares, Isabela \harvardand\ Giancarlo Visconti. 2019.
 \newblock ``Voting for the lesser evil: Evidence from a conjoint experiment in
-  Romania.'' {\em Political Science Research and Methods} .
+  Romania.'' {\em Political Science Research and Methods} pp.~1--14.
 
 \harvarditem{McDonald}{2019}{mcdonald2019avoiding}
 McDonald, Jared. 2019.
-\newblock ``Avoiding the Hypothetical: Why ?Mirror Experiments? are an
+\newblock ``Avoiding the Hypothetical: Why ``Mirror Experiments'' are an
   Essential Part of Survey Research.'' {\em International Journal of Public
   Opinion Research} .
 
@@ -303,7 +304,7 @@ Peters, Jaime~L, Alex~J Sutton, David~R Jones, Keith~R Abrams \harvardand\
   Lesley Rushton. 2007.
 \newblock ``Performance of the trim and fill method in the presence of
   publication bias and between-study heterogeneity.'' {\em Statistics in
-  medicine} 26(25):4544--4562.
+  Medicine} 26(25):4544--4562.
 
 \harvarditem{Philp \harvardand\ David-Barrett}{2015}{philp2015realism}
 Philp, Mark \harvardand\ Elizabeth David-Barrett. 2015.
@@ -313,19 +314,19 @@ Philp, Mark \harvardand\ Elizabeth David-Barrett. 2015.
 \harvarditem[Reed, Florax \harvardand\ Poot]{Reed, Florax \harvardand\
   Poot}{2015}{reed2015monte}
 Reed, W~Robert, Raymond~JGM Florax \harvardand\ Jacques Poot. 2015.
-\newblock A Monte Carlo analysis of alternative meta-analysis estimators in the
-  presence of publication bias. Technical report Economics Discussion Papers.
+\newblock ``A Monte Carlo analysis of alternative meta-analysis estimators in
+  the presence of publication bias.'' {\em Economics Discussion Papers} .
 
 \harvarditem{Rogers \harvardand\ Nickerson}{2013}{rogers2013can}
 Rogers, Todd \harvardand\ David Nickerson. 2013.
 \newblock ``Can Inaccurate Beliefs About Incumbents be Changed? And Can
-  Reframing Change Votes?''.
+  Reframing Change Votes?'' {\em HKS Working Paper No. RWP13-018} .
 \newline\harvardurl{\url{https://research.hks.harvard.edu/publications/getFile.aspx?Id=941}}
 
 \harvarditem{Rose-Ackerman \harvardand\ Palifka}{2016}{rose2016corruption}
 Rose-Ackerman, Susan \harvardand\ Bonnie~J Palifka. 2016.
 \newblock {\em Corruption and government: Causes, consequences, and reform}.
-\newblock Cambridge university press.
+\newblock Cambridge:  Cambridge university press.
 
 \harvarditem[Rundquist, Strom \harvardand\ Peters]{Rundquist, Strom
   \harvardand\ Peters}{1977}{rundquist1977corrupt}
@@ -335,10 +336,10 @@ Rundquist, Barry~S, Gerald~S Strom \harvardand\ John~G Peters. 1977.
 
 \harvarditem[Simonsohn, Simmons \harvardand\ Nelson]{Simonsohn, Simmons
   \harvardand\ Nelson}{2015}{simonsohn2015better}
-Simonsohn, Uri, Joseph~P Simmons \harvardand\ Leif~D Nelson. 2015.
+Simonsohn, U, JP Simmons \harvardand\ LD Nelson. 2015.
 \newblock ``Better P-curves: Making P-curve analysis more robust to errors,
-  fraud, and ambitious P-hacking, a Reply to Ulrich and Miller (2015).''.
-\newline\harvardurl{\url{https://repository.upenn.edu/fnce_papers/62/}}
+  fraud, and ambitious P-hacking, a Reply to Ulrich and Miller (2015).'' {\em
+  Journal of Experimental Psychology: General} 144(6):1146.
 
 \harvarditem[Simonsohn, Nelson \harvardand\ Simmons]{Simonsohn, Nelson
   \harvardand\ Simmons}{2014{\em a}}{simonsohn2014p1}
@@ -354,10 +355,10 @@ Simonsohn, Uri, Leif~D Nelson \harvardand\ Joseph~P Simmons. 2014{\em b}.
   9(6):666--681.
 
 \harvarditem[Solaz, De~Vries \harvardand\ de~Geus]{Solaz, De~Vries \harvardand\
-  de~Geus}{2018}{solaz2018group}
-Solaz, Hector, Catherine~E De~Vries \harvardand\ Roosmarijn~A de~Geus. 2018.
-\newblock ``In-Group Loyalty and the Punishment of Corruption.'' {\em
-  Comparative Political Studies} p.~0010414018797951.
+  de~Geus}{2019}{solaz2018group}
+Solaz, Hector, Catherine~E De~Vries \harvardand\ Roosmarijn~A de~Geus. 2019.
+\newblock ``In-group loyalty and the punishment of corruption.'' {\em
+  Comparative Political Studies} 52(6):896--926.
 
 \harvarditem{Stanley \harvardand\ Doucouliagos}{2014}{stanley2014meta}
 Stanley, Tom~D \harvardand\ Hristos Doucouliagos. 2014.
@@ -367,13 +368,13 @@ Stanley, Tom~D \harvardand\ Hristos Doucouliagos. 2014.
 \harvarditem{Stanley \harvardand\ Doucouliagos}{2017}{stanley2017neither}
 Stanley, Tom~D \harvardand\ Hristos Doucouliagos. 2017.
 \newblock ``Neither fixed nor random: Weighted least squares meta-regression.''
-  {\em Research synthesis methods} 8(1):19--42.
+  {\em Research Synthesis Methods} 8(1):19--42.
 
 \harvarditem[Sterne, Egger \harvardand\ Smith]{Sterne, Egger \harvardand\
   Smith}{2001}{sterne2001investigating}
 Sterne, Jonathan~AC, Matthias Egger \harvardand\ George~Davey Smith. 2001.
 \newblock ``Investigating and dealing with publication and other biases in
-  meta-analysis.'' {\em Bmj} 323(7304):101--105.
+  meta-analysis.'' {\em BMJ} 323(7304):101--105.
 
 \harvarditem[Stokes et~al.]{Stokes, Dunning, Nazareno \harvardand\
   Brusco}{2013}{stokes2013brokers}
@@ -381,11 +382,11 @@ Stokes, Susan~C, Thad Dunning, Marcelo Nazareno \harvardand\ Valeria Brusco.
   2013.
 \newblock {\em Brokers, voters, and clientelism: The puzzle of distributive
   politics}.
-\newblock Cambridge University Press.
+\newblock Cambridge:  Cambridge University Press.
 
 \harvarditem[Sulitzeanu-Kenan, Dotan \harvardand\ Yair]{Sulitzeanu-Kenan, Dotan
-  \harvardand\ Yair}{2019}{sulitzeanu2019judicial}
-Sulitzeanu-Kenan, Raanan, Yoav Dotan \harvardand\ Omer Yair. 2019.
+  \harvardand\ Yair}{Forthcoming}{sulitzeanu2019judicial}
+Sulitzeanu-Kenan, Raanan, Yoav Dotan \harvardand\ Omer Yair. Forthcoming.
 \newblock ``Can Institutions Make Voters Care about Corruption?'' {\em The
   Journal of Politics} .
 
@@ -401,7 +402,7 @@ Teele, Dawn~Langan, Joshua Kalla \harvardand\ Frances Rosenbluth. 2018.
 Terrin, Norma, Christopher~H Schmid, Joseph Lau \harvardand\ Ingram Olkin.
   2003.
 \newblock ``Adjusting for publication bias in the presence of heterogeneity.''
-  {\em Statistics in medicine} 22(13):2113--2126.
+  {\em Statistics in Medicine} 22(13):2113--2126.
 
 \harvarditem[Valentine, Pigott \harvardand\ Rothstein]{Valentine, Pigott
   \harvardand\ Rothstein}{2010}{valentine2010many}
@@ -421,13 +422,13 @@ van Aert, Robbie~CM, Jelte~M Wicherts \harvardand\ Marcel~ALM van Assen. 2016.
   \harvardand\ Van~Assen}{2019}{van2019publication}
 Van~Aert, Robbie~CM, Jelte~M Wicherts \harvardand\ Marcel~ALM Van~Assen. 2019.
 \newblock ``Publication bias examined in meta-analyses from psychology and
-  medicine: A meta-meta-analysis.'' {\em PloS one} 14(4).
+  medicine: A meta-meta-analysis.'' {\em PloS one} 14(4):e0215052.
 
 \harvarditem{Vera}{2019}{vera2019accepting}
 Vera, Sofia~B. 2019.
 \newblock ``Accepting or Resisting? Citizen Responses to Corruption Across
   Varying Levels of Competence and Corruption Prevalence.'' {\em Political
-  Studies} p.~0032321719868210.
+  Studies} .
 
 \harvarditem{Weitz-Shapiro \harvardand\ Winters}{2017}{weitz2017can}
 Weitz-Shapiro, Rebecca \harvardand\ Matthew~S Winters. 2017.
@@ -438,7 +439,7 @@ Weitz-Shapiro, Rebecca \harvardand\ Matthew~S Winters. 2017.
 \harvarditem{Weschle}{2016}{weschle2016punishing}
 Weschle, Simon. 2016.
 \newblock ``Punishing personal and electoral corruption: Experimental evidence
-  from India.'' {\em Research \& Politics} 3(2):2053168016645136.
+  from India.'' {\em Research \& Politics} 3(2):1--6.
 
 \harvarditem{Winters \harvardand\ Weitz-Shapiro}{2013}{winters2013lacking}
 Winters, Matthew~S \harvardand\ Rebecca Weitz-Shapiro. 2013.
@@ -456,10 +457,10 @@ Winters, Matthew~S \harvardand\ Rebecca Weitz-Shapiro. 2016.
   punishment of corruption.'' {\em Political Research Quarterly}
   69(2):207--219.
 
-\harvarditem{Winters \harvardand\ Weitz-Shapiro}{2018}{winters2018information}
-Winters, Matthew~S \harvardand\ Rebecca Weitz-Shapiro. 2018.
+\harvarditem{Winters \harvardand\ Weitz-Shapiro}{2020}{winters2018information}
+Winters, Matthew~S \harvardand\ Rebecca Weitz-Shapiro. 2020.
 \newblock ``Information credibility and responses to corruption: a replication
   and extension in Argentina.'' {\em Political Science Research and Methods}
-  pp.~1--9.
+  8(1):169--177.
 
 \end{thebibliography}
