@@ -11,7 +11,7 @@ Date: February 9th, 2020
 Required Software: Stata (Version 14 or Above), R (3.6.1 or Above). 
 Additional required software packages and libraries are specified in the replication code.
 
-Overview: These files replicate all analyses in Trevor Incerti, “Corruption information and vote share: A meta-analysis and lessons for experimental design.” To replicate all analyses and figures, download all data files to a folder entitled “~/data”, create a second folder entitled “~/figs” in the same directory, and run all code files in order. 
+Overview: These files replicate all analyses in Trevor Incerti, “Corruption information and vote share: A meta-analysis and lessons for experimental design.” To replicate all analyses and figures, download all data files to a folder entitled “~/data”, create a second folder entitled “~/figs” in the same directory, and run all code files in numerical order. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% File Structure %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -40,7 +40,7 @@ Overview: These files replicate all analyses in Trevor Incerti, “Corruption in
 - Creates Figure 4 and Online Appendix Figures A.14-A.15, A.18-A.21, and A.23-A.25.
 
 6. amce.R
-- Loads replication data for Breitenstein 2019, Franchino and Zucchini 2014, and Mares and Visconti 2019, and calculates Average Marginal Component Effects.
+- Loads replication data for Breitenstein 2019, Franchino and Zucchini 2014, and Mares and Visconti 2019, and calculates Average Marginal Component Effects (AMCEs).
 - Creates Figure 3 and Online Appendix Figures A.17 and A.22. 
 
 7. tree.R
