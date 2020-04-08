@@ -20,14 +20,14 @@ se_vote_re = summary(re_field)$se
 
 # Create fixed effects row in dataframe
 meta_fe = data.frame(type="Field", year=NA, author = "Fixed effects model", 
-                     author_reduced = "Fixed effects model", country = NA, 
+                     author_reduced = "Fixed-effects model", country = NA, 
                      ate_vote = ate_vote_fe, se_vote = se_vote_fe, ci_upper = NA, 
                      ci_lower = NA, p_reported = NA, p_replicated = NA, 
                      published = NA, N = NA, Notes = NA)
 
 # Create random efffects row in dataframe
 meta_re = data.frame(type="Field", year=NA, author = "Random effects model", 
-                     author_reduced = "Random effects model", country = NA, 
+                     author_reduced = "Random-effects model", country = NA, 
                      ate_vote = ate_vote_re, se_vote = se_vote_re, ci_upper = NA, 
                      ci_lower = NA, p_reported = NA, p_replicated = NA,
                      published = NA, N = NA, Notes = NA)
@@ -37,10 +37,10 @@ field = rbind(field, meta_fe, meta_re)
 
 # Re-order factor levels
 field$author_reduced = fct_relevel(field$author_reduced, 
-                                   "Fixed effects model", after = 0)
+                                   "Fixed-effects model", after = 0)
 
 field$author_reduced = fct_relevel(field$author_reduced, 
-                                   "Random effects model", after = 0)
+                                   "Random-effects model", after = 0)
 
 # Mutliply effect size by 100
 field$ate_vote = field$ate_vote*100
@@ -53,8 +53,8 @@ field$se_vote = field$se_vote*100
 ggplot(field, aes(ate_vote, author_reduced)) +
   geom_point(color = "seagreen3", size = 1.5) + 
   geom_point(data = subset(field, 
-             author_reduced == "Fixed effects model" | 
-             author_reduced == "Random effects model"), 
+             author_reduced == "Fixed-effects model" | 
+             author_reduced == "Random-effects model"), 
            size = 1.5, color = "black", fill = "black") +
   geom_errorbarh(aes(y = author_reduced, 
                      xmin = ate_vote - 1.96*se_vote, 
@@ -85,14 +85,14 @@ se_vote_re = summary(re_survey)$se
 
 # Create fixed effects row in dataframe
 meta_fe = data.frame(type="Survey", year=NA, author = "Fixed effects model", 
-                     author_reduced = "Fixed effects model", country = NA, 
+                     author_reduced = "Fixed-effects model", country = NA, 
                      ate_vote = ate_vote_fe, se_vote = se_vote_fe, ci_upper = NA, 
                      ci_lower = NA, p_reported = NA, p_replicated = NA,
                      published = NA, N = NA, Notes = NA)
 
 # Create random efffects row in dataframe
 meta_re = data.frame(type="Survey", year=NA, author = "Random effects model", 
-                  author_reduced = "Random effects model", country = NA, 
+                  author_reduced = "Random-effects model", country = NA, 
                   ate_vote = ate_vote_re, se_vote = se_vote_re, ci_upper = NA, 
                   ci_lower = NA, p_reported = NA, p_replicated = NA,
                   published = NA, N = NA, Notes = NA)
@@ -102,10 +102,10 @@ survey = rbind(survey, meta_fe, meta_re)
 
 # Re-order factor levels
 survey$author_reduced = fct_relevel(survey$author_reduced, 
-                                    "Fixed effects model", after = 0)
+                                    "Fixed-effects model", after = 0)
 
 survey$author_reduced = fct_relevel(survey$author_reduced, 
-                                    "Random effects model", after = 0)
+                                    "Random-effects model", after = 0)
 
 # Mutliply effect size by 100
 survey$ate_vote = survey$ate_vote*100
@@ -118,8 +118,8 @@ survey$se_vote = survey$se_vote*100
 ggplot(survey, aes(ate_vote, author_reduced)) +
   geom_point(color = "steelblue2", size = 1.5) + 
   geom_point(data = subset(survey, 
-             author_reduced == "Fixed effects model" | 
-             author_reduced == "Random effects model"), 
+             author_reduced == "Fixed-effects model" | 
+             author_reduced == "Random-effects model"), 
            size = 1.5, color = "black", fill = "black") +
   geom_errorbarh(aes(y = author_reduced, 
                      xmin = ate_vote - 1.96*se_vote, 
