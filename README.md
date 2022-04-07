@@ -1,4 +1,4 @@
-# Replication File for ‘‘Corruption information and vote share: A meta-analysis and lessons for experimental design.’’ American Political Science Review, 114.3 (2020): 761-774.
+## Replication code and data for ‘‘Corruption information and vote share: A meta-analysis and lessons for experimental design.’’ American Political Science Review, 114.3 (2020): 761-774.
 
 Author: Trevor Incerti
 
