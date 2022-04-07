@@ -1,22 +1,11 @@
 ## Replication code and data for ‘‘Corruption information and vote share: A meta-analysis and lessons for experimental design.’’ American Political Science Review, 114.3 (2020): 761-774.
 
-Author: Trevor Incerti
-
-Correspondence: Trevor Incerti, Yale University (trevor.incerti@yale.edu)
-
-Date: February 9th, 2020
-
 Required Software: Stata (Version 14 or Above), R (3.6.1 or Above). 
 Additional required software packages and libraries are specified in the replication code.
 
-Overview: These files replicate all analyses in Trevor Incerti, “Corruption information and vote share: A meta-analysis and lessons for experimental design.” To replicate all analyses and figures, download all data files to a folder entitled “~/data”, create a second folder entitled “~/figs” in the same directory, and run all code files in numerical order. 
+Overview: These files replicate all analyses in Trevor Incerti, “Corruption information and vote share: A meta-analysis and lessons for experimental design.” To replicate all analyses and figures, download all data files to a folder entitled “/data”, create a second folder entitled “/figs” in the same directory, and run all code files in numerical order. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%% File Structure %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
-
-%%%%%%%%%%%%%% Replication Code %%%%%%%%%%%%%%
+### Replication Code
 
 1. replications_all.R
 - Replicates all survey experiments with available replication data and/or compiles data needed for subsequent analysis for all included studies.
@@ -65,7 +54,7 @@ a4. quality.R
 - Creates Online Appendix Figure A.13. 
 
 
-%%%%%%%%%%%%%% Data Files (relative path "~/data") %%%%%%%%%%%%%%
+### Data Files (relative path "~/data")
 
 Replication data for survey experiments:
 - Choosing_crook.dta (Breitenstein Research and Politics 2019 raw data)
