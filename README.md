@@ -1,6 +1,6 @@
 ## Replication code and data for ‘‘Corruption information and vote share: A meta-analysis and lessons for experimental design.’’ American Political Science Review, 114.3 (2020): 761-774.
 
-Required Software: Stata (Version 14 or Above), R (3.6.1 or Above). 
+Required Software: R (3.6.1 or Above), Stata (Version 14 or Above). 
 Additional required software packages and libraries are specified in the replication code.
 
 Overview: These files replicate all analyses in Trevor Incerti, “Corruption information and vote share: A meta-analysis and lessons for experimental design.” To replicate all analyses and figures, download all data files to a folder entitled “/data”, create a second folder entitled “/figs” in the same directory, and run all code files in numerical order. 
